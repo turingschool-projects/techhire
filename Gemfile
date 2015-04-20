@@ -33,10 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'launchy'
   gem 'byebug'
+  gem 'pry'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rspec-rails'
   gem 'capybara'
 end
-
