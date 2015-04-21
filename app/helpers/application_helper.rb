@@ -56,8 +56,7 @@ module ApplicationHelper
   end
 
   def city_helper #(state)
-    []
     # https://github.com/loureirorg/city-state
-    # CS.cities(:state, :us)
+    CS.cities(:CO, :us)
   end
 end
