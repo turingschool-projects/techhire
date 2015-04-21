@@ -49,4 +49,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry'
+  gem 'capybara'
+  gem 'launchy'
 end
