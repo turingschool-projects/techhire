@@ -10,8 +10,7 @@ RSpec.feature "AdminLogins", type: :feature do
         fill_in 'admin[password]', with: admin.password
       end
       click_link_or_button('Login')
-      save_and_open_page
-
+      
       expect(current_path).to eq(admin_dashboard_index_path)
     end
   end
