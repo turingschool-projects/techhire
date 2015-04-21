@@ -42,7 +42,7 @@ module ApplicationHelper
       ["Pennsylvania", "PA"],
       ["Rhode Island", "RI"],
       ["South Carolina", "SC"],
-      ["South Dakota", "SD",
+      ["South Dakota", "SD"],
       ["Tennessee", "TN"],
       ["Texas", "TX"],
       ["Utah", "UT"],
@@ -51,11 +51,12 @@ module ApplicationHelper
       ["Washington", "WA"],
       ["West Virginia", "WV"],
       ["Wisconsin", "WI"],
-      ["Wyoming"], "WY"]
+      ["Wyoming", "WY"]
    ]
   end
 
-  def city_helper(state)
+  def city_helper #(state)
+    []
     # https://github.com/loureirorg/city-state
     # CS.cities(:state, :us)
   end

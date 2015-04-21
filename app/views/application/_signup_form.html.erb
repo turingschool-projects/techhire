@@ -1,16 +1,18 @@
-<% form_for @company, url: {action: "create"},
-html: {class: "signup_form"} do |f| %>
-  <%= f.label(:company, :name, "Name (First and Last)") %><br>
+<h1>Words</h1>
+<div class="signup">
+  <%= form_for @company, url: {action: "create"} do |f| %>
+  <%= f.label(:name, "Name (First and Last)") %><br>
   <%= f.text_field :name %><br>
-  <%= f.label(:company, :organization, "Organization") %><br>
+  <%= f.label(:organization, "Organization") %><br>
   <%= f.text_field :organization %><br>
-  <%= f. label(:company, :title, "Title") %><br>
+  <%= f.label(:title, "Title") %><br>
   <%= f.text_field :title %><br>
-  <%= f. label(:company, :state, "State") %>
+  <%= f.label(:state, "State") %>
   <%= f.select :state, options_for_select(state_helper), placeholder: "AL" %>
-  <%= f. label(:company, :city, "City") %>
-  <%= f.select :city, options_for_select(city_helper), placeholder: "Please select..." %>
-  <%= f. label(:company, :email, "Email") %>
-  <%= f.text_field :email %>
+  <%= f.label(:city, "City") %>
+  <%= f.select :city, options_for_select(city_helper), placeholder: "Please select..." %><br>
+  <%= f.label(:email, "Email") %>
+  <%= f.text_field :email %><br>
   <%= f.submit "Create techHire account" %>
  <% end %>
+ </div>
