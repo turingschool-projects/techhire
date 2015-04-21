@@ -8,7 +8,9 @@ RSpec.feature "AdminLogins", type: :feature do
 
     it "visits login" do
       visit admin_login_path
-      
+      puts current_path
+
+      save_and_open_page
       within('.login') do
         fill_in 'session[email]', with: admin.email
         fill_in 'session[password]', with: admin.password
