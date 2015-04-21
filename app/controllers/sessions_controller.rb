@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(session_params[:password])
       flash[:notice] = "You are successfully logged in"
       redirect_to admins_dashboard_index_path
-    # else
-      # flash[:notice] = "Incorrect username or password"
-    #   render :new
+    else
+      flash[:notice] = "Incorrect username or password"
+      render :new
     end
   end
 
