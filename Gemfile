@@ -13,6 +13,9 @@ gem 'bcrypt',         '~> 3.1.7'
 gem 'unicorn'
 gem 'geocoder',       '~> 1.2.8'
 
+# https://github.com/loureirorg/city-state
+gem 'city-state'
+
 group :development, :test do
   gem "pry"
   gem 'byebug'
@@ -20,4 +23,9 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry'
+  gem 'capybara'
+  gem 'launchy'
 end
