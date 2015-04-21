@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get '/admin', to: 'sessions#new', as: 'admin/login'
   post '/admin', to: 'sessions#create'
 
