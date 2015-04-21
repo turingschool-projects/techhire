@@ -6,8 +6,10 @@ class SessionsController < ApplicationController
   def create
     admin = Admin.new(admin_params)
     if admin.save
-      redirect_to admins_dashboard_index_path
+      flash[:notice] = "You are successfully logged in"
+      redirect_to admin_dashboard_index_path
     else
+      flash[:notice] = "Incorrect username or password"
       render :new
     end
   end
