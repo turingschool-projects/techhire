@@ -11,13 +11,14 @@ path {
 
 <script>
 var width = 650,
-    height = 400;
+    height = 340;
 
+<!-- setting a map type (mercator) to the variable projection -->
 var projection = d3.geo.mercator()
     .center([10,36])
-    .scale(550)
+    .scale(580)
     .translate([width / 2, height / 2])
-    .rotate([-250,0]);
+    .rotate([-253,-2]);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
