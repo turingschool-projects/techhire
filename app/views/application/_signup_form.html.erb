@@ -1,18 +1,22 @@
-<h1>Words</h1>
-<div class="signup">
-  <%= form_for @company, url: {action: "create"} do |f| %>
-  <%= f.label(:name, "Name (First and Last)") %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label(:organization, "Organization") %><br>
-  <%= f.text_field :organization %><br>
-  <%= f.label(:title, "Title") %><br>
-  <%= f.text_field :title %><br>
-  <%= f.label(:state, "State") %>
-  <%= f.select :state, options_for_select(state_helper), placeholder: "AL" %>
-  <%= f.label(:city, "City") %>
-  <%= f.select :city, options_for_select(city_helper), placeholder: "Please select..." %><br>
-  <%= f.label(:email, "Email") %>
-  <%= f.text_field :email %><br>
-  <%= f.submit "Create techHire account" %>
- <% end %>
- </div>
+<div class="signup_form">
+  <h2>Start hiring</h2>
+  <h4>Whether you’re an employer, hiring manager, or community leader, all we need is an interest from you in learning/n
+more about TechHire, and a passion to find and hire talented employees in your community who are ready to work.</h4>
+  <div class="signup">
+    <%= form_for @company, url: {action: "create"} do |f| %>
+    <%= f.label(:name, "Name (First and Last)") %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label(:organization, "Organization") %><br>
+    <%= f.text_field :organization %><br>
+    <%= f.label(:title, "Title") %><br>
+    <%= f.text_field :title %><br>
+    <%= f.label(:state, "State") %>
+    <%= f.select :state, options_for_select(state_helper), placeholder: "AL" %>
+    <%= f.label(:city, "City") %>
+    <%= f.select :city, options_for_select(city_helper), placeholder: "Please select..." %><br>
+    <%= f.label(:email, "Email") %>
+    <%= f.text_field :email %><br>
+    <%= f.submit "Create techHire account" %>
+   <% end %>
+   </div>
+</div>
