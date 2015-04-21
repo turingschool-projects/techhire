@@ -15,10 +15,10 @@ var width = 650,
 
 <!-- setting a map type (mercator) to the variable projection -->
 var projection = d3.geo.mercator()
-    .center([10,36])
+    .center([-97,38])
     .scale(580)
     .translate([width / 2, height / 2])
-    .rotate([-253,-2]);
+    .rotate([0,0,0])
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
