@@ -34,4 +34,16 @@ d3.json("json/usa_map.json", function(error, us) {
     })
     .attr("d", path)
 });
+
+var marks = [{long: -77, lat: 43},{long: -100, lat: 44},{long: -70, lat: 43}];
+
+svg.selectAll(".mark")
+    .data(marks)
+    .enter()
+    .append("image")
+    .attr('class','mark')
+    .attr('width', 20)
+    .attr('height', 20)
+    .attr("xlink:href","map-pin2.png")
+    .attr("transform", function(d) {return "translate(" + projection([d.long,d.lat]) + ")";});
 </script>
