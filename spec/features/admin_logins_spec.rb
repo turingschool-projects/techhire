@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "AdminLogins", type: :feature do
   describe("an admin can login") do
-    let!(:admin) { Admin.create(username: 'admin', password: 'password') }
+    let!(:admin) { User.create(username: 'admin', password: 'password', role: 1) }
     it "visits login" do
       visit admin_login_path
       within('.login') do
