@@ -8,14 +8,11 @@ path {
 
 <script>
 var width = 650,
-    height = 340;
+    height = 380;
 
-<!-- setting a map type (mercator) to the variable projection -->
-var projection = d3.geo.mercator()
-    .center([-97,38])
-    .scale(580)
+var projection = d3.geo.albersUsa()
+    .scale(800)
     .translate([width / 2, height / 2])
-    .rotate([0,0,0])
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -37,5 +34,4 @@ d3.json("json/usa_map.json", function(error, us) {
     })
     .attr("d", path)
 });
-
 </script>
