@@ -4,11 +4,11 @@
   <title>OpportunityAtWork</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script type="text/javascript" src="d3/d3.v3.js"></script>
   <%= csrf_meta_tags %>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
 </head>
 <body>
-
 <%= yield %>
 
 </body>
