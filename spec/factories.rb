@@ -6,6 +6,5 @@ FactoryGirl.define do
     state "Colorado"
     city "Denver"
     email "google@email.com"
-    status "uncontacted"
   end
 end
