@@ -17,7 +17,6 @@ gem 'geocoder',       '~> 1.2.8'
 gem 'city-state'
 
 group :development, :test do
-  gem "pry"
   gem 'byebug'
   gem 'web-console',  '~> 2.0'
   gem 'spring'
