@@ -17,8 +17,9 @@ more about TechHire, and a passion to find and hire talented employees in your c
     <%= f.label(:email, "Email") %>
     <%= f.text_field :email, type: 'email' %><br>
     <%= f.check_box :hiring %>
-    <%= f.label(:hiring, "I am ready to commit to hiring") %>""
-    people through TechHire
+    <%= f.label(:hiring, "I am ready to commit to hiring") %>
+    <%= f.text_field :hire_count %><br>
+    <%= f.label(:hire_count, "people through TechHire") %>
     <%= f.submit "Create techHire account" %>
    <% end %>
    </div>
