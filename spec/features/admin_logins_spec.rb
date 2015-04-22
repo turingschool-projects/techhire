@@ -10,6 +10,7 @@ RSpec.feature "AdminLogins", type: :feature do
 
     it "visits login" do
       visit admin_login_path
+
       within('.login') do
         fill_in 'session[email]', with: admin.email
         fill_in 'session[password]', with: admin.password
@@ -19,18 +20,16 @@ RSpec.feature "AdminLogins", type: :feature do
       expect(current_path).to eq(admins_dashboard_index_path)
     end
 
-    it "doesn't allow a non admin user to login" do
-      user = User.create(email: 'user@example.com',
-                         password: 'password')
-
+    it "doesn't allow non-users to login" do
       visit admin_login_path
+
       within('.login') do
-        fill_in 'session[email]', with: user.email
-        fill_in 'session[password]', with: user.password
+        fill_in 'session[email]', with: "test@example.com"
+        fill_in 'session[password]', with: "password"
       end
       click_link_or_button('Login')
 
-      expect(current_path).to eq(companies_path(user.id))
+      expect(current_path).to eq(admin_login_path)
     end
   end
 end
