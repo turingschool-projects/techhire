@@ -1,0 +1,5 @@
+<% flash.each do |name, message| %>
+  <div class="<%= name %>">
+    <p><%= (message).html_safe %></p>
+  </div>
+<% end %>
