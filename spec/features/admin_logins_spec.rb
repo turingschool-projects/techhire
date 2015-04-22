@@ -17,7 +17,7 @@ RSpec.feature "AdminLogins", type: :feature do
       end
       click_link_or_button('Login')
 
-      expect(current_path).to eq(admins_dashboard_index_path)
+      expect(current_path).to eq(admin_dashboard_index_path)
     end
 
     it "doesn't allow non-users to login" do
