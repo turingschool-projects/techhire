@@ -3,6 +3,14 @@ require "rails_helper"
 describe "As a guest user" do
   include Capybara::DSL
 
+  it "can see links to signup and learn more on the home page" do
+    visit ('/')
+    within(".links") do
+      expect(page).to have_link("Sign Up")
+      expect(page).to have_link("Learn More")
+    end
+  end
+
   it "can see a form on the signup page" do
     visit ('/signup')
     within(".signup_form") do
