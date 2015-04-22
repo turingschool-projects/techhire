@@ -8,6 +8,6 @@ class StaticPagesController < ApplicationController
   def tools_resources
   end
 
-  def locations
+  def techhire_locations
   end
 end
