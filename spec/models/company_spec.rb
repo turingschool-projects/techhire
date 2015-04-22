@@ -19,4 +19,6 @@ RSpec.describe Company, type: :model do
                            'company'
                           ).for(:email)
   end
+
+  it { should validate_numericality_of(:hire_count) }
 end
