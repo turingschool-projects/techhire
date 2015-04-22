@@ -8,7 +8,7 @@ RSpec.feature "AdminDashboard", type: :feature do
                   role: 1)
     end
 
-    before(:each) do
+    def login
       visit admin_login_path
 
       within('.login') do
@@ -20,9 +20,10 @@ RSpec.feature "AdminDashboard", type: :feature do
 
     it "views dashboard" do
       companies = create_list(:company, 10)
-
+      login
+      
       expect(current_path).to eq(admin_dashboard_index_path)
-      save_and_open_page
+
       within(".uncontacted-companies") do
         expect(page).to have_content(companies[0].organization)
       end
