@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :pdf do
+    
+  end
+
 
   factory :company do
     name "Bob"

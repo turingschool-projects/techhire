@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :companies, only: [:create]
+  resources :pdfs, only: [:show]
   get 'signup', to: "companies#new"
 end
