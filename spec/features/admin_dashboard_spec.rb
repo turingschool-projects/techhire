@@ -36,8 +36,8 @@ RSpec.feature "AdminDashboard", type: :feature do
       expect(current_path).to eq(admin_dashboard_index_path)
 
       within(".contacted-companies") do
-        expect(page).to have_content(companies.first.organization)
-        expect(page).to have_content(companies.last.organization)
+        expect(page).to have_link(companies.first.organization)
+        expect(page).to have_link(companies.last.organization)
       end
     end
 
