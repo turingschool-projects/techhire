@@ -6,8 +6,13 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: session_params[:email])
     if user && user.authenticate(session_params[:password])
+      session[:user_id] = user.id
       flash[:notice] = "You are successfully logged in"
-      redirect_to admin_dashboard_index_path
+      if user.role == "company"
+        redirect_to root_path
+      elsif user.role == "admin"
+        redirect_to admin_dashboard_index_path
+      end
     else
       flash[:notice] = "Incorrect username or password"
       render :new
