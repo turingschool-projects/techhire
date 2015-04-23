@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :company do
     name "Bob"
     organization "Google"
