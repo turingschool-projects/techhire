@@ -44,9 +44,11 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       expect(page).to have_button("Delete Company")
       click_button("Delete Company")
+
       expect(current_path).to eq(admin_dashboard_index_path)
 
       expect(Company.count).to eq(4)
+
     end
 
   end

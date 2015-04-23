@@ -6,6 +6,6 @@
 </div>
 <div class="contacted-companies">
   <% @contacted_companies.each do |company| %>
-    <%= company.organization %>
+    <%= link_to company.organization, admin_company_path(company.id) %>
   <% end %>
 </div>
