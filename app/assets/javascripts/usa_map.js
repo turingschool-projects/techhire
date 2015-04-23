@@ -32,7 +32,7 @@ $(document).ready(function() {
     /* The below code will be coordinates obtained from using the geocoder gem to get
     long/lat of cities The code is : Geocoder.search(city)[0].data["geometry"]["location"]["lng"]*/
 
-    var marks = [{long: -77, lat: 43},{long: -100, lat: 44},{long: -70, lat: 43}];
+    var marks = [{long: -77, lat: 43},{long: -100, lat: 44},{long: -70, lat: 43}]
 
     svg.selectAll(".mark")
         .data(marks)
