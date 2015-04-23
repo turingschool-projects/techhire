@@ -1,7 +1,7 @@
 <h1>Admin Dashboard</h1>
 <div class="uncontacted-companies">
   <% @uncontacted_companies.each do |company| %>
-    <%= company.organization %>
+    <%= link_to company.organization, admin_company_path(company.id) %>
   <% end %>
 </div>
 <div class="contacted-companies">

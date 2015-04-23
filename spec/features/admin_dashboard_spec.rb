@@ -23,10 +23,9 @@ RSpec.feature "AdminDashboard", type: :feature do
       login
 
       expect(current_path).to eq(admin_dashboard_index_path)
-
       within(".uncontacted-companies") do
-        expect(page).to have_content(companies.first.organization)
-        expect(page).to have_content(companies.last.organization)
+        expect(page).to have_link(companies.first.organization)
+        expect(page).to have_link(companies.last.organization)
       end
     end
 
@@ -40,6 +39,16 @@ RSpec.feature "AdminDashboard", type: :feature do
         expect(page).to have_content(companies.first.organization)
         expect(page).to have_content(companies.last.organization)
       end
+    end
+
+    it "can click to view details of a company" do
+      companies = create_list(:company, 10, status: "uncontacted")
+      login
+
+      within(".uncontacted-companies") do
+        click_link(companies.first.organization, match: :first)
+      end
+      expect(current_path).to eq(admin_company_path(companies.first.id))
     end
   end
 end
