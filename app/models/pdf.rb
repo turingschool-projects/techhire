@@ -2,9 +2,9 @@ class Pdf < ActiveRecord::Base
   has_attached_file :pdf_file,
     :storage => :s3,
     :s3_credentials => "#{::Rails.root.to_s}/config/s3.yml",
-    :path => "/public/assets/pdfs/:id.:extension"
+    :path => "#{Rails.root}/public/assets/pdfs/:id.:extension"
 
-    validates_attachment_content_type :pdf,
+    validates_attachment_content_type :pdf_file,
                                       :content_type => [ 'application/pdf' ],
                                       :message => "only pdf files are allowed",
                                       :if => :pdf_attached?
