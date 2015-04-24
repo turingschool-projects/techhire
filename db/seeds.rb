@@ -14,12 +14,12 @@ Company.create(
   name: "company",
   organization: "org",
   title: "title",
-  state: "state",
+  state: "Kentucky",
   city: "Louisville",
   email: "email@email.com",
   hiring: true,
   hire_count: 100
-  )
+)
 
 Company.create(
   name: "company",
@@ -135,8 +135,8 @@ Company.create(
   name: "company",
   organization: "org",
   title: "title",
-  state: "state",
-  city: "Rural Eastern Kentucky",
+  state: "Kentucky",
+  city: "Eastern Kentucky",
   email: "email@email.com",
   hiring: true,
   hire_count: 100
