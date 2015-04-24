@@ -40,6 +40,6 @@ $(document).ready(function() {
         .attr('width', 20)
         .attr('height', 20)
         .attr("xlink:href","red_pin.png")
-        .attr("transform", function(d) {return "translate(" + projection([d.longitude,d.latitude]) + ")";});
+        .attr("transform", function(d) {return "translate(" + projection([d.longitude+1.2,d.latitude+1.2]) + ")";});
   }
 });
