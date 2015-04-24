@@ -7,7 +7,7 @@ class Company < ActiveRecord::Base
 
   geocoded_by :full_address
 
-  before_save :geocode, if: ->(obj){obj.full_address.present? && (obj.city_changed? || obj.state_changed?)}
+  after_validation :geocode, if: ->(obj){(obj.city_changed? || obj.state_changed?)}
 
   def full_address
     "#{city}, #{state}"
