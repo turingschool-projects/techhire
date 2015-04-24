@@ -13,7 +13,7 @@ gem 'bcrypt',         '~> 3.1.7'
 gem 'unicorn'
 gem 'geocoder',       '~> 1.2.8'
 gem 'paperclip',      '~> 4.2.1'
-gem 'aws-sdk',        '~> 2.0.38'
+gem 'aws-sdk',        '~> 1.61.0'
 gem "figaro"
 gem 'city-state'
 
