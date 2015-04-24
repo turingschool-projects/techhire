@@ -1,7 +1,7 @@
 // wrap this in a closure like below otherwise var variables are global
 $(document).ready(function() {
   if ($(".map").length > 0) {
-    var width = 650,
+    var width = 660,
         height = 380;
 
     var projection = d3.geo.albersUsa()
@@ -17,7 +17,6 @@ $(document).ready(function() {
 
     var g = svg.append("g");
 
-    <!-- load and display the World -->
     d3.json("json/usa_map.json", function(error, us) {
       g.selectAll("path")
         .data(us.features)
