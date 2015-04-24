@@ -28,11 +28,10 @@ $(document).ready(function() {
         })
         .attr("d", path)
     });
-
-    /* The below code will be coordinates obtained from using the geocoder gem to get
-    long/lat of cities The code is : Geocoder.search(city)[0].data["geometry"]["location"]["lng"]*/
-
-    var marks = [{long: -77, lat: 43},{long: -100, lat: 44},{long: -70, lat: 43}]
+    var marks = []
+    $(".map").data("coordinates").forEach(function(coordinate) {
+      marks.push(coordinate);
+    })
 
     svg.selectAll(".mark")
         .data(marks)
@@ -42,6 +41,6 @@ $(document).ready(function() {
         .attr('width', 20)
         .attr('height', 20)
         .attr("xlink:href","red_pin.png")
-        .attr("transform", function(d) {return "translate(" + projection([d.long,d.lat]) + ")";});
+        .attr("transform", function(d) {return "translate(" + projection([d.longitude,d.latitude]) + ")";});
   }
 });
