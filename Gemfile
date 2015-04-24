@@ -12,6 +12,8 @@ gem 'sdoc',           '~> 0.4.0', group: :doc
 gem 'bcrypt',         '~> 3.1.7'
 gem 'unicorn'
 gem 'geocoder',       '~> 1.2.8'
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'sass-rails', '>= 3.2'
 
 # https://github.com/loureirorg/city-state
 gem 'city-state'
