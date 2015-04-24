@@ -211,7 +211,7 @@ Company.create(
   name: "company",
   organization: "org",
   title: "title",
-  state: "state",
+  state: "Oregon",
   city: "Portland",
   email: "email@email.com",
   hiring: true,
@@ -224,6 +224,17 @@ Company.create(
   title: "title",
   state: "Delware",
   city: "Dover",
+  email: "email@email.com",
+  hiring: true,
+  hire_count: 100
+)
+
+Company.create(
+  name: "company",
+  organization: "org",
+  title: "title",
+  state: "Alaska",
+  city: "Anchorage",
   email: "email@email.com",
   hiring: true,
   hire_count: 100

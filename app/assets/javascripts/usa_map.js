@@ -27,7 +27,7 @@ $(document).ready(function() {
         })
         .attr("d", path)
     });
-    var marks = []
+    var marks = [];
     $(".map").data("coordinates").forEach(function(coordinate) {
       marks.push(coordinate);
     })
@@ -36,7 +36,7 @@ $(document).ready(function() {
         .data(marks)
         .enter()
         .append("image")
-        .attr('class','mark')
+        .attr('class', function(d,i) { return "mark" + (i) })
         .attr('width', 20)
         .attr('height', 20)
         .attr("xlink:href","red_pin.png")
