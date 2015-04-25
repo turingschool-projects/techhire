@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/techhire-locations", to: "static_pages#techhire_locations", as: "techhire_locations"
   get '/admin', to: 'sessions#new', as: 'admin/login'
   post '/admin', to: 'sessions#create'
+  get '/download', to: "static_pages#download", as: "download"
 
   namespace :admin do
     resources :dashboard, only: [:index]
