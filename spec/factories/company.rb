@@ -1,8 +1,4 @@
-FactoryGirl.define do  factory :pdf do
-    
-  end
-
-
+FactoryGirl.define do
   factory :company do
     name "Bob"
     organization "Google"
