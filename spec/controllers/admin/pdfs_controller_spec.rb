@@ -14,6 +14,6 @@ RSpec.describe Admin::PdfsController, type: :controller do
                           }
     end
 
-    expect(current_path).to eql(admin_dashboard_index_path)
+    expect(response).to redirect_to("/admin/dashboard")
   end
 end
