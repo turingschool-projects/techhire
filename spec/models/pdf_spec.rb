@@ -1,5 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Pdf, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should be valid with a pdf_file and has a paperclip attachment" do
+    pdf = create(:pdf)
+
+    expect(pdf).to be_valid
+    expect(pdf.pdf_file.class).to eql(Paperclip::Attachment)
+    expect(pdf.pdf_file.url).to match(/public\/assets\/pdfs\/sample_pdf.pdf/)
+  end
+
+  it "should be invalid with a jpeg_file" do
+    # Paperclip::Attachment.any_instance.stub(:save).and_return(true)
+    image = build(:pdf, pdf_file: File.new(Rails.root.join('spec', 'fixtures', 'whitehouse_jpeg.jpeg')))
+    
+    expect(image).to be_invalid
+    expect(image.errors.messages[:pdf_file][0]).to eql("only pdf files are allowed")
+  end
 end

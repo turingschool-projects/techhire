@@ -1,6 +1,7 @@
 class Pdf < ActiveRecord::Base
   has_attached_file :pdf_file,
-    :path => "public/assets/pdfs/:basename.:extension"
+    :path => "public/assets/pdfs/:basename.:extension",
+    :url => "public/assets/pdfs/:basename.:extension"
 
   validates_attachment_content_type :pdf_file,
                                     :content_type => [ 'application/pdf' ],
