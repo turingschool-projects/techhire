@@ -17,6 +17,7 @@ $(document).ready(function() {
 
     var g = svg.append("g");
 
+    // as written, the function(error, us) callback won't fire until the d3.json finishes
     d3.json("json/usa_map.json", function(error, us) {
       g.selectAll("path")
         .data(us.features)
