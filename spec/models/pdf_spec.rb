@@ -10,9 +10,8 @@ RSpec.describe Pdf, type: :model do
   end
 
   it "should be invalid with a jpeg_file" do
-    # Paperclip::Attachment.any_instance.stub(:save).and_return(true)
     image = build(:pdf, pdf_file: File.new(Rails.root.join('spec', 'fixtures', 'whitehouse_jpeg.jpeg')))
-    
+
     expect(image).to be_invalid
     expect(image.errors.messages[:pdf_file][0]).to eql("only pdf files are allowed")
   end

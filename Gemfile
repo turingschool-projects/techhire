@@ -31,4 +31,5 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'database_cleaner',   '~> 1.4.0'
   gem 'mocha',              '~> 1.1.0'
+  gem 'assert_difference'
 end
