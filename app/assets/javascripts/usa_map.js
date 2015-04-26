@@ -27,20 +27,20 @@ $(document).ready(function() {
           return d.properties.NAME
         })
         .attr("d", path)
-    });
-    var marks = [];
-    $(".map").data("coordinates").forEach(function(coordinate) {
-      marks.push(coordinate);
-    })
+        var marks = [];
+        $(".map").data("coordinates").forEach(function(coordinate) {
+          marks.push(coordinate);
+        })
 
-    svg.selectAll(".mark")
-        .data(marks)
-        .enter()
-        .append("image")
-        .attr('class', function(d,i) { return "mark" + (i) })
-        .attr('width', 20)
-        .attr('height', 20)
-        .attr("xlink:href","red_pin.png")
-        .attr("transform", function(d) {return "translate(" + projection([d.longitude+1.2,d.latitude+1.2]) + ")";});
+        svg.selectAll(".mark")
+            .data(marks)
+            .enter()
+            .append("image")
+            .attr('class', function(d,i) { return "mark" + (i) })
+            .attr('width', 20)
+            .attr('height', 20)
+            .attr("xlink:href","red_pin.png")
+            .attr("transform", function(d) {return "translate(" + projection([d.longitude - 0.9, d.latitude + 1.2]) + ")";});
+    });
   }
 });
