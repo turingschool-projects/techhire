@@ -26,6 +26,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry'
   gem 'capybara'
+  gem 'capybara-screenshot', :group => :test
   gem 'launchy'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'database_cleaner', '~> 1.4.0'

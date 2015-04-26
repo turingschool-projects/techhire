@@ -7,5 +7,7 @@ FactoryGirl.define do
     state "Colorado"
     city "Denver"
     email "google@email.com"
+    hiring 1
+    hire_count 5
   end
 end
