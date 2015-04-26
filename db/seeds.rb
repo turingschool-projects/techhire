@@ -6,8 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 # Pdfs
-Pdf.create(url: "public/LearnMore03.pdf", page: "tools and resources", slot: 1)
+pdf = Pdf.create(page: "learn more", slot: 1)
+pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
+pdf.save
 
 # Cities
 Company.create(
