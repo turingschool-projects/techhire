@@ -10,4 +10,8 @@ class StaticPagesController < ApplicationController
 
   def techhire_locations
   end
+
+  def download
+    send_file "public/LearnMore03.pdf", :type=>"application/pdf", :x_sendfile=>true
+  end
 end
