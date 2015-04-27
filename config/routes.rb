@@ -10,8 +10,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboard, only: [:index]
+    resources :pdfs, only: [:create, :new]
+    resource :tools_resources, only: [:edit]
   end
 
   resources :companies, only: [:create]
+  resources :pdfs, only: [:show]
   get 'signup', to: "companies#new"
 end
