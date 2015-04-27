@@ -18,8 +18,10 @@
                 <th><input type="text" class="form-control" placeholder="Title" disabled></th>
                 <th><input type="text" class="form-control" placeholder="City" disabled></th>
                 <th><input type="text" class="form-control" placeholder="State" disabled></th>
-                <th><input type="text" class="form-control" placeholder="Zip" disabled></th>
                 <th><input type="text" class="form-control" placeholder="email" disabled></th>
+                <th><input type="text" class="form-control" placeholder="contacted" disabled></th>
+                <th><input type="text" class="form-control" placeholder="hiring" disabled></th>
+                <th><input type="text" class="form-control" placeholder="hire_count" disabled></th>
                 <th>
                   <div class="checkbox-inline">
                     <input type="checkbox" id="checkbox1" class="large" data-label-prepend="prefix">
@@ -31,17 +33,20 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="id">1</td>
-              <td class="Organization">Turing</td>
-              <td class="contact">Jeff Wan</td>
-              <td class="contact-title">Student</td>
-              <td class="city">Denver</td>
-              <td class="state">CO</td>
-              <td class="zip">80202</td>
-              <td class="email">jeffwan@turing.com</td>
-              <td class="contacted">yes</td>
-            </tr>
+            <% @companies.each do |company| %>
+              <tr>
+                <td class="id">company.id</td>
+                <td class="Organization">company.organization</td>
+                <td class="contact">company.name</td>
+                <td class="contact-title">company.title</td>
+                <td class="city">company.city</td>
+                <td class="state">company.state</td>
+                <td class="email">company.email</td>
+                <td class="contacted">company.status</td>
+                <td class="hiring">company.hiring</td>
+                <td class="hire_count">compnay.hire_count</td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
       </div>
