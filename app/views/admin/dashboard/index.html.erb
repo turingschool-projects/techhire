@@ -1,11 +1,21 @@
 <h1>Admin Dashboard</h1>
 <div class="uncontacted-companies">
-  <% @uncontacted_companies.each do |company| %>
+  <% @dashboard_presenter.uncontacted_companies.each do |company| %>
     <%= company.organization %>
   <% end %>
 </div>
 <div class="contacted-companies">
-  <% @contacted_companies.each do |company| %>
+  <% @dashboard_presenter.contacted_companies.each do |company| %>
+    <%= company.organization %>
+  <% end %>
+</div>
+<div class="confirmed-companies">
+  <% @dashboard_presenter.confirmed_companies.each do |company| %>
+    <%= company.organization %>
+  <% end %>
+</div>
+<div class="dead-companies">
+  <% @dashboard_presenter.dead_companies.each do |company| %>
     <%= company.organization %>
   <% end %>
 </div>
