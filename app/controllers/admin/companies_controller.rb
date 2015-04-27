@@ -10,6 +10,6 @@ class Admin::CompaniesController < ApplicationController
 
   def destroy
     Company.find(params[:id]).destroy
-    redirect_to admin_dashboard_index_path
+    redirect_to admin_companies_path
   end
 end
