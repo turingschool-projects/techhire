@@ -1,7 +1,7 @@
 // wrap this in a closure like below otherwise var variables are global
 $(document).ready(function() {
   if ($(".map").length > 0) {
-    var width = 650,
+    var width = 660,
         height = 380;
 
     var projection = d3.geo.albersUsa()
@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     var g = svg.append("g");
 
-    <!-- load and display the World -->
+    // as written, the function(error, us) callback won't fire until the d3.json finishes
     d3.json("json/usa_map.json", function(error, us) {
       g.selectAll("path")
         .data(us.features)
@@ -27,21 +27,20 @@ $(document).ready(function() {
           return d.properties.NAME
         })
         .attr("d", path)
+        var marks = [];
+        $(".map").data("coordinates").forEach(function(coordinate) {
+          marks.push(coordinate);
+        })
+
+        svg.selectAll(".mark")
+            .data(marks)
+            .enter()
+            .append("image")
+            .attr('class', function(d,i) { return "mark" + (i) })
+            .attr('width', 20)
+            .attr('height', 20)
+            .attr("xlink:href","red_pin.png")
+            .attr("transform", function(d) {return "translate(" + projection([d.longitude - 0.9, d.latitude + 1.2]) + ")";});
     });
-
-    /* The below code will be coordinates obtained from using the geocoder gem to get
-    long/lat of cities The code is : Geocoder.search(city)[0].data["geometry"]["location"]["lng"]*/
-
-    var marks = [{long: -77, lat: 43},{long: -100, lat: 44},{long: -70, lat: 43}];
-
-    svg.selectAll(".mark")
-        .data(marks)
-        .enter()
-        .append("image")
-        .attr('class','mark')
-        .attr('width', 20)
-        .attr('height', 20)
-        .attr("xlink:href","red_pin.png")
-        .attr("transform", function(d) {return "translate(" + projection([d.long,d.lat]) + ")";});
   }
 });
