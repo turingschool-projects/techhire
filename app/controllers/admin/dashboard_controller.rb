@@ -2,8 +2,7 @@ class Admin::DashboardController < ApplicationController
   before_action :authorize!
 
   def index
-    @uncontacted_companies = Company.where(status: "uncontacted")
-    @contacted_companies = Company.where(status: "contacted")
+    @dashboard_presenter = DashboardPresenter.new
   end
 
   private
