@@ -35,16 +35,16 @@
           <tbody>
             <% @companies.each do |company| %>
               <tr>
-                <td class="id">company.id</td>
-                <td class="Organization">company.organization</td>
-                <td class="contact">company.name</td>
-                <td class="contact-title">company.title</td>
-                <td class="city">company.city</td>
-                <td class="state">company.state</td>
-                <td class="email">company.email</td>
-                <td class="contacted">company.status</td>
-                <td class="hiring">company.hiring</td>
-                <td class="hire_count">compnay.hire_count</td>
+                <td class="id"><%= company.id %></td>
+                <td class="Organization"><%= company.organization %></td>
+                <td class="contact"><%= company.name %></td>
+                <td class="contact-title"><%= company.title %></td>
+                <td class="city"><%= company.city %></td>
+                <td class="state"><%= company.state %></td>
+                <td class="email"><%= company.email %></td>
+                <td class="contacted"><%= company.status %></td>
+                <td class="hiring"><%= company.hiring %></td>
+                <td class="hire_count"><%= company.hire_count %></td>
               </tr>
             <% end %>
           </tbody>

@@ -7,8 +7,8 @@ class Company < ActiveRecord::Base
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, }
   scope :contacted, -> { where status: "contacted"}
   scope :uncontacted, -> { where status: "uncontacted"}
-  scope :contacted, -> { where status: "confirmed"}
-  scope :contacted, -> { where status: "dead"}
+  scope :confirmed, -> { where status: "confirmed"}
+  scope :dead, -> { where status: "dead"}
 
   geocoded_by :full_address
 
