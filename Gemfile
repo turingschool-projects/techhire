@@ -16,6 +16,7 @@ gem 'paperclip',            '~> 4.2.1'
 gem 'aws-sdk',              '~> 1.61.0'
 gem "figaro"
 gem 'city-state'
+gem 'simplecov', :group => :test
 
 group :development, :test do
   gem 'byebug'
