@@ -23,10 +23,9 @@ RSpec.feature "AdminDashboard", type: :feature do
       login
 
       expect(current_path).to eq(admin_dashboard_index_path)
-
       within(".uncontacted-companies") do
-        expect(page).to have_content(companies.first.organization)
-        expect(page).to have_content(companies.last.organization)
+        expect(page).to have_link(companies.first.organization)
+        expect(page).to have_link(companies.last.organization)
         expect(companies.first.updated_at <= companies.last.updated_at).to eq(true)
       end
     end
@@ -38,8 +37,8 @@ RSpec.feature "AdminDashboard", type: :feature do
       expect(current_path).to eq(admin_dashboard_index_path)
 
       within(".contacted-companies") do
-        expect(page).to have_content(companies.first.organization)
-        expect(page).to have_content(companies.last.organization)
+        expect(page).to have_link(companies.first.organization)
+        expect(page).to have_link(companies.last.organization)
         expect(companies.first.updated_at <= companies.last.updated_at).to eq(true)
       end
     end
@@ -51,8 +50,8 @@ RSpec.feature "AdminDashboard", type: :feature do
       expect(current_path).to eq(admin_dashboard_index_path)
 
       within(".confirmed-companies") do
-        expect(page).to have_content(companies.first.organization)
-        expect(page).to have_content(companies.last.organization)
+        expect(page).to have_link(companies.first.organization)
+        expect(page).to have_link(companies.last.organization)
         expect(companies.first.updated_at <= companies.last.updated_at).to eq(true)
       end
     end
@@ -64,10 +63,20 @@ RSpec.feature "AdminDashboard", type: :feature do
       expect(current_path).to eq(admin_dashboard_index_path)
 
       within(".dead-companies") do
-        expect(page).to have_content(companies.first.organization)
-        expect(page).to have_content(companies.last.organization)
+        expect(page).to have_link(companies.first.organization)
+        expect(page).to have_link(companies.last.organization)
         expect(companies.first.updated_at <= companies.last.updated_at).to eq(true)
       end
+    end
+
+    it "can click to view details of a company" do
+      companies = create_list(:company, 10, status: "uncontacted")
+      login
+
+      within(".uncontacted-companies") do
+        click_link(companies.last.organization, match: :first)
+      end
+      expect(current_path).to eq(admin_company_path(companies.last.id))
     end
   end
 end
