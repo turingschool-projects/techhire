@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421215746) do
+ActiveRecord::Schema.define(version: 20150427122043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,21 @@ ActiveRecord::Schema.define(version: 20150421215746) do
     t.boolean  "hiring"
     t.integer  "hire_count"
   end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "abbr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usa_cities", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "usa_cities", ["state_id"], name: "index_usa_cities_on_state_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
