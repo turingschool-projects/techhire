@@ -19,9 +19,13 @@ more about TechHire, and a passion to find and hire talented employees in your c
       <%= f.label(:state, "State") %>
       <%= f.select :state, options_for_select(state_helper), placeholder: "AL" %>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <%= f.label(:city, "City") %>
       <%= f.select :city, options_for_select(city_helper), placeholder: "Please select..." %><br>
+    </div> -->
+    <div class="form-group">
+      <%= f.label(:city, "City") %>
+      <%= f.grouped_collection_select :city, State.order(:id), :usa_cities, :abbr, :id, :name, inlcude_blank: true, placeholder: "Please select..." %><br>
     </div>
     <div class="form-group">
       <%= f.label(:email, "Email") %>
