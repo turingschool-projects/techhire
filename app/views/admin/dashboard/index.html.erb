@@ -1,5 +1,7 @@
 <h1>Admin Dashboard</h1>
 
+<%= link_to "Edit Tools and Resources", edit_admin_tools_resources_path %>
+
 <div class="uncontacted-companies">
   <% @dashboard_presenter.uncontacted_companies.each do |company| %>
     <%= link_to company.organization, admin_company_path(company.id) %>
