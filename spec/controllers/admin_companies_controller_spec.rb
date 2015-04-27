@@ -1,19 +1,32 @@
 require 'rails_helper'
 
-RSpec.describe CompaniesController, :type => :controller do
+RSpec.describe Admin::CompaniesController, :type => :controller do
+  attr_reader :company
 
-  it "can show a company" do
-    company_params = {
-      name: 'Bob',
-      organization: 'Google',
-      title: 'RoR',
-      state: 'CO',
-      city: 'Denver',
-      email: 'google@email.com'
-    }
-    post :create, company: company_params
-    assert_redirected_to root_path
-    expect(assigns(:company)).not_to be_nil
-    expect(assigns(:company)).to be_a(Company)
+  before(:each) do
+    @company = create(:company)
+  end
+
+  describe "GET #show" do
+    it "assigns the requested company to @company" do
+      get :show, id: company.id
+      expect(assigns(:company)).to eq(company)
+    end
+
+    it "renders the :show view" do
+      get :show, id: company.id
+      expect(response).to render_template(:show)
+    end
+  end
+
+  describe "DELETE #destroy" do
+    it "deletes the company" do
+      expect{ delete :destroy, id: company.id }.to change(Company,:count).by(-1)
+    end
+
+    it "redirects back to admin dashboard index after deletion" do
+      delete :destroy, id: company.id
+      expect(response).to redirect_to(admin_dashboard_index_path)
+    end
   end
 end
