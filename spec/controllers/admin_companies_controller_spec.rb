@@ -29,4 +29,11 @@ RSpec.describe Admin::CompaniesController, :type => :controller do
       expect(response).to redirect_to(admin_dashboard_index_path)
     end
   end
+
+  describe "PATCH #update" do
+    it "updates the status of a company" do
+      patch :update, id: company.id, company: { status: "Contacted" }
+      expect(response).to redirect_to(admin_company_path(company.id))
+    end
+  end
 end
