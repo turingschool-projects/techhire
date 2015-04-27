@@ -5,7 +5,7 @@
         <span class="sr-only">Toggle navigation</span>
         </button>
         <a class="navbar-brand" href="#">Admin Dashboard</a>
-        <a class="navbar-brand" href="#">Companies</a>
+        <a class="navbar-brand" href="/admin/companies">Companies</a>
         </div>
         <div class="collapse navbar-collapse js-navbar-collapse">
           <ul class="nav navbar-nav">
@@ -21,18 +21,18 @@
                     </li>
                     <li class="col-sm-4">
                   <ul>
-                    <li class="dropdown-header"><a href="#">Manage Static Content <span class="glyphicon glyphicon-list"></span></a></li>
-                    <li class="dropdown-header"><a href="#">Manage PDF Files <span class="glyphicon glyphicon-file"></span></a></li>
-                    <li class="dropdown-header"><a href="#">Manage Video Files <span class="glyphicon glyphicon-film"></span></a></li>
-                    <li class="dropdown-header"><a href="#">Manage Map <span class="glyphicon glyphicon-pushpin"></span></a></li>
+                    <li class="dropdown-header manage-static-link"><a href="#">Manage Static Content <span class="glyphicon glyphicon-list"></span></a></li>
+                    <li class="dropdown-header manage-pdf"><a href="#">Manage PDF Files <span class="glyphicon glyphicon-file"></span></a></li>
+                    <li class="dropdown-header manage-video"><a href="#">Manage Video Files <span class="glyphicon glyphicon-film"></span></a></li>
+                    <li class="dropdown-header manage-map"><a href="#">Manage Map <span class="glyphicon glyphicon-pushpin"></span></a></li>
                   </ul>
                     </li>
                     <li class="col-sm-4">
                   <ul>
-                    <li class="dropdown-header"><a href="#">Tools/Resources <span class="glyphicon glyphicon-wrench"></a></li>
-                    <li class="dropdown-header"><a href="#">Learn More <span class="glyphicon glyphicon-education"></span></a></li>
-                    <li class="dropdown-header"><a href="#">Company Sign Up <span class="glyphicon glyphicon-pencil"></span></a></li>
-                    <li class="dropdown-header"><a href="#">Home <span class="glyphicon glyphicon-home"></span></a></li>
+                    <li class="dropdown-header manage-tools"><a href="#">Tools/Resources <span class="glyphicon glyphicon-wrench"></a></li>
+                    <li class="dropdown-header manage-learn"><a href="#">Learn More <span class="glyphicon glyphicon-education"></span></a></li>
+                    <li class="dropdown-header manage-sign-up"><a href="#">Company Sign Up <span class="glyphicon glyphicon-pencil"></span></a></li>
+                    <li class="dropdown-header manage-home"><a href="#">Home <span class="glyphicon glyphicon-home"></span></a></li>
                   </ul>
                     </li>
                   </ul>
@@ -42,14 +42,3 @@
                 </div><!-- /.nav-collapse -->
               </nav>
             </div>
-<h1>Admin Dashboard</h1>
-<div class="uncontacted-companies">
-  <% @uncontacted_companies.each do |company| %>
-  <%= company.organization %>
-  <% end %>
-</div>
-<div class="contacted-companies">
-  <% @contacted_companies.each do |company| %>
-  <%= company.organization %>
-  <% end %>
-</div>
