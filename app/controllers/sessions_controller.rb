@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(session_params[:password])
       session[:user_id] = user.id
       flash[:notice] = "You are successfully logged in"
-      if user.role == "company"
+      if user.company?
         redirect_to root_path
-      elsif user.role == "admin"
+      elsif user.admin?
         redirect_to admin_dashboard_index_path
       end
     else

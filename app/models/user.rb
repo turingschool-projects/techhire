@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   def admin?
     role == "admin" || role == "super_admin"
   end
+
+  def company?
+    role == "company"
+  end
 end
