@@ -4,21 +4,24 @@
 
 <div class="uncontacted-companies">
   <% @dashboard_presenter.uncontacted_companies.each do |company| %>
-    <%= company.organization %>
+    <%= link_to company.organization, admin_company_path(company.id) %>
   <% end %>
 </div>
+
 <div class="contacted-companies">
   <% @dashboard_presenter.contacted_companies.each do |company| %>
-    <%= company.organization %>
+    <%= link_to company.organization, admin_company_path(company.id) %>
   <% end %>
 </div>
+
 <div class="confirmed-companies">
   <% @dashboard_presenter.confirmed_companies.each do |company| %>
-    <%= company.organization %>
+    <%= link_to company.organization, admin_company_path(company.id) %>
   <% end %>
 </div>
+
 <div class="dead-companies">
   <% @dashboard_presenter.dead_companies.each do |company| %>
-    <%= company.organization %>
+    <%= link_to company.organization, admin_company_path(company.id) %>
   <% end %>
 </div>
