@@ -6,12 +6,10 @@ class StaticPagesController < ApplicationController
   end
 
   def tools_resources
+    @pdf = Pdf.learn_more
   end
 
   def techhire_locations
-  end
-
-  def download
-    send_file "public/LearnMore03.pdf", :type=>"application/pdf", :x_sendfile=>true
+    @companies = Company.all
   end
 end
