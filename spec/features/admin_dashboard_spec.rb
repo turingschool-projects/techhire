@@ -105,10 +105,10 @@ RSpec.feature "AdminDashboard", type: :feature do
       login
 
       expect(current_path).to eq(admin_dashboard_index_path)
-
       within("li.manage-sign-up") do
         expect(page).to have_content('Sign Up')
       end
+      expect(current_path).to eq(admin_company_path(companies.last.id))
     end
   end
 end

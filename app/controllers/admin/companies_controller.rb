@@ -1,7 +1,15 @@
 class Admin::CompaniesController < ApplicationController
+
   def index
     @companies = Company.all
-    # @uncontacted_companies = Company.where(status: "uncontacted")
-    # @contacted_companies = Company.where(status: "contacted")
+  end
+
+  def show
+    @company = Company.find(params[:id])
+  end
+
+  def destroy
+    Company.find(params[:id]).destroy
+    redirect_to admin_dashboard_index_path
   end
 end
