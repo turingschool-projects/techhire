@@ -26,7 +26,7 @@ RSpec.describe Admin::CompaniesController, :type => :controller do
 
     it "redirects back to admin dashboard index after deletion" do
       delete :destroy, id: company.id
-      expect(response).to redirect_to(admin_dashboard_index_path)
+      expect(response).to redirect_to(admin_companies_path)
     end
   end
 end
