@@ -10,7 +10,6 @@ gem 'jbuilder',             '~> 2.0'
 gem 'sdoc',                 '~> 0.4.0', group: :doc
 gem 'bcrypt',               '~> 3.1.7'
 gem 'unicorn'
-# https://github.com/loureirorg/city-state
 
 gem 'geocoder',             '~> 1.2.8'
 gem 'paperclip',            '~> 4.2.1'
