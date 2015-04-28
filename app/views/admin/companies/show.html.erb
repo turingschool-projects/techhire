@@ -1,0 +1,30 @@
+<h1><%= @company.organization %></h1>
+<h4><%= @company.name %></h4>
+<h4><%= @company.title %></h4>
+<h4><%= @company.email %></h4>
+<h4><%= @company.city %></h4>
+<h4><%= @company.state %></h4>
+
+<div class="notes">
+  <% @company.notes.each do |note| %>
+    <div>
+      <%= note.body %>
+    </div>
+  <% end %>
+</div>
+
+<div class="add_note">
+  <%= form_tag admin_company_notes_path(company_id: @company.id), method: :post do %>
+    <%= text_area_tag :note %>
+    <%= submit_tag "Add Note" %>
+  <% end %>
+</div>
+
+<%= form_for @company, url: admin_company_path do |f| %>
+  <%= f.select(:status, Company::STATUS_OPTIONS) %>
+  <%= f.submit "Update Status" %>
+<% end %>
+
+<%= button_to "Delete Company", admin_company_path(@company.id), method: :delete,
+  data: { confirm: 'Are you sure you want to delete this company?
+  This action cannot be undone.'} %>
