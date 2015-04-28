@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "AdminDashboard", type: :feature do
   describe("an admin can see the dashboard") do
     let(:admin) do
-      User.create(email: 'admin@example.com', password: 'password')
+      User.create(email: 'admin@example.com', password: 'password', role: 1)
     end
 
     def login
