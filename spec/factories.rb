@@ -4,7 +4,7 @@ FactoryGirl.define do
     name "Bob"
     organization "Google"
     title "RoR Developer"
-    state "Colorado"
+    state "CO"
     city "Denver"
     email "google@email.com"
     hiring 1

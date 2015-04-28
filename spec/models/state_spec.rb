@@ -23,7 +23,7 @@ RSpec.describe State, type: :model do
   }
 
   it "responds to usa_cities" do
-    expect(state.usa_cities.first.name).to eq("Denver")
+    expect(state.usa_cities.first.name).to eq("Boulder")
   end
 
   it "can have many cities" do
