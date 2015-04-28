@@ -1,8 +1,7 @@
 jQuery ->
   cities = $('#company_city').html()
   $('#company_state').change ->
-    state_abbr = $('company_state :selected').text()
-    debugger;
+    state = $('#company_state :selected').text()
     options = $(cities).filter("optgroup[label='#{state}']").html()
     if options
       $('#company_city').html(options)

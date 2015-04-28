@@ -13,6 +13,4 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:create]
   get 'signup', to: "companies#new"
-
-  get ':controller/:action.:format'
 end
