@@ -1,0 +1,25 @@
+label.error {
+  clear: both;
+  color: #ef514c;
+  padding: 0 0 10px 0;
+  margin-top: 5;
+  display: inline;
+  float: left;
+  width: 100%;
+  line-height: 1em;
+  text-align: left;
+}
+
+div.error {
+  font-size: 14px;
+  background-color: #f4dfdf;
+  color: #ef514c;
+  border: #fdc7c7 3px solid;
+  padding: 10px;
+  margin-top: 10px;
+  display: none;
+}
+
+input.error, select.error, textarea.error {
+  border-color: #fdc7c7;
+}
