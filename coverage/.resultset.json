@@ -11,7 +11,7 @@
         1,
         null,
         1,
-        49,
+        87,
         null,
         null,
         1,
@@ -48,6 +48,7 @@
       ],
       "/Users/robinsonalex/Turing/projects/opportunity_at_work/app/controllers/admin/companies_controller.rb": [
         1,
+        1,
         null,
         1,
         8,
@@ -79,6 +80,12 @@
         16,
         null,
         1,
+        null,
+        null,
+        null,
+        1,
+        38,
+        0,
         null,
         null,
         null
@@ -233,17 +240,9 @@
       ],
       "/Users/robinsonalex/Turing/projects/opportunity_at_work/app/controllers/admin/dashboard_controller.rb": [
         1,
-        null,
-        null,
         1,
         null,
-        null,
-        null,
         1,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null
@@ -264,6 +263,6 @@
         null
       ]
     },
-    "timestamp": 1430263039
+    "timestamp": 1430264034
   }
 }
