@@ -36,7 +36,8 @@
             <% @companies.each do |company| %>
               <tr>
                 <td class="id"><%= company.id %></td>
-                <td class="Organization"><%= company.organization %></td>
+                <td class="Organization"><%= link_to company.organization,
+                    admin_company_path(company.id) %></td>
                 <td class="contact"><%= company.name %></td>
                 <td class="contact-title"><%= company.title %></td>
                 <td class="city"><%= company.city %></td>
