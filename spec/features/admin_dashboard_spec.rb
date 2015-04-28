@@ -3,19 +3,15 @@ require 'rails_helper'
 RSpec.feature "AdminDashboard", type: :feature do
   describe("an admin can see the dashboard with companies") do
     let(:admin) do
-      User.create(email: 'admin@example.com',
-                  password: 'password',
-                  role: 1)
+      User.create(email: 'admin@example.com', password: 'password')
     end
 
     def login
-      visit admin_login_path
+      visit new_user_session_path
 
-      within('.login') do
-        fill_in 'session[email]', with: admin.email
-        fill_in 'session[password]', with: admin.password
-      end
-      click_link_or_button('Login')
+      fill_in 'user[email]', with: admin.email
+      fill_in 'user[password]', with: admin.password
+      click_link_or_button('Log in')
     end
 
    it "views uncontacted companies on dashboard" do
