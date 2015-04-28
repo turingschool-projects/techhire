@@ -11,12 +11,11 @@
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 </head>
 <body>
-
-  <%= render partial: "layouts/flash" %>
-
-  <% if current_user.admin? %>
+  <% if current_user && current_user.admin? %>
     <%= render 'partials/navbar' %>
   <% end %>
+
+  <%= render partial: "layouts/flash" %>
 
   <%= yield %>
 </body>
