@@ -1,5 +1,5 @@
 class Admin::DashboardController < ApplicationController
-  before_action :authorize!
+  #before_action :authorize!
 
   def index
     @dashboard_presenter = DashboardPresenter.new
@@ -7,9 +7,9 @@ class Admin::DashboardController < ApplicationController
 
   private
 
-  def authorize!
-    unless current_user.admin?
-      redirect_to root_path
-    end
-  end
+  #def authorize!
+    #unless current_user.admin?
+      #redirect_to root_path
+    #end
+  #end
 end
