@@ -19,4 +19,12 @@ RSpec.describe Company, type: :model do
                            'company'
                           ).for(:email)
   end
+
+  it { should validate_numericality_of(:hire_count) }
+
+  it "should have a default status of uncontacted" do
+    company = create(:company)
+
+    expect(company.status).to eq("uncontacted")
+  end
 end
