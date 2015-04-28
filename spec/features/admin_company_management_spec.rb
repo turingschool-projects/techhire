@@ -56,7 +56,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
         click_link(companies.first.organization, match: :first)
       end
       within(".add_note") do
-        fill_in "company[notes]", with: "test note"
+        fill_in "note", with: "test note"
       end
       click_link_or_button("Add Note")
 
