@@ -11,14 +11,10 @@ class Pdf < ActiveRecord::Base
   before_save :add_page
 
   def self.learn_more
-    where("page = 'learn more' and slot = 1").first
+    where("slot = 1").first
   end
 
   def pdf_attached?
     self.pdf_file.present?
-  end
-
-  def add_page
-    self.page ||= "learn more"
   end
 end
