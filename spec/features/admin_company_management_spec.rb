@@ -45,10 +45,28 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       click_link(companies.first.organization, match: :first)
 
       expect(page).to have_button("Delete Company")
+
       click_button("Delete Company")
 
       expect(current_path).to eq(admin_companies_path)
       expect(Company.count).to eq(4)
+    end
+
+    it "can add notes to a contacted company" do
+      companies = create_list(:company, 5, status: "contacted")
+      login
+
+      click_link_or_button("Companies")
+      first(".Organization").click_link(companies.first.organization)
+      within(".add_note") do
+        fill_in "note", with: "test note"
+      end
+      click_link_or_button("Add Note")
+
+      within(".notes") do
+        expect(page).to have_content("test note")
+      end
+      expect(current_path).to eq(admin_company_path(companies.first.id))
     end
 
     it "views all companies on dashboard" do
