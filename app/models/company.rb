@@ -4,6 +4,7 @@ class Company < ActiveRecord::Base
   validates :name, :organization, :title, :state, :city, presence: true
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, }
+  validates :hire_count, numericality: { only_integer: true, }
 
   geocoded_by :full_address
 
