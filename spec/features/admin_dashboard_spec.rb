@@ -31,6 +31,20 @@ RSpec.feature "AdminDashboard", type: :feature do
       expect(current_path).to eq(admin_companies_path)
     end
 
+   it "can click a link to return to the admin dashboard page" do
+      login
+
+      visit '/admin/companies'
+
+      expect(current_path).to eq(admin_companies_path)
+
+      within('.navbar-header') do
+        click_link_or_button('Admin Dashboard')
+      end
+
+      expect(current_path).to eq(admin_dashboard_index_path)
+    end
+
     it "can click a link to manage static content" do
       login
 
