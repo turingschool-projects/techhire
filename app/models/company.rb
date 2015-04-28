@@ -18,4 +18,5 @@ class Company < ActiveRecord::Base
     slice(:longitude, :latitude)
   end
 
+  STATUS_OPTIONS = { "Uncontacted" => "uncontacted", "Contacted" => "contacted", "Confirmed" => "confirmed", "Dead" => "dead" }
 end
