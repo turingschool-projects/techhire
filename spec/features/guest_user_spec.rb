@@ -62,7 +62,6 @@ RSpec.feature "Company Signup Page", type: :feature do
         fill_in 'company[name]', with: "Bob"
         fill_in 'company[organization]', with: "Google"
         fill_in 'company[title]', with: "RoR Developer"
-        save_and_open_page
         select('CO', from: 'company[state]')
         select('Denver', from: 'company[city]')
         fill_in 'company[email]', with: "google@email.com"
