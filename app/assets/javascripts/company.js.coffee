@@ -1,4 +1,5 @@
 jQuery ->
+  $('company_city').parent().hide()
   cities = $('#company_city').html()
   $('#company_state').change ->
     state = $('#company_state :selected').text()
@@ -7,3 +8,4 @@ jQuery ->
       $('#company_city').html(options)
     else
       $('#company_city').empty()
+      $('#company_city').parent().hide
