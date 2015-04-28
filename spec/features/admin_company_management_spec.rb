@@ -23,9 +23,9 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       login
       visit 'companies'
 
-      within(".uncontacted") do
-        click_link(companies.first.organization, match: :first)
-      end
+      click_link(companies.first.organization, match: :first)
+
+      expect(current_path).to eq(admin_company_path(companies.first.id))
 
       expect(page).to have_content(companies.first.organization)
       expect(page).to have_content(companies.first.name)
@@ -33,6 +33,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(page).to have_content(companies.first.email)
       expect(page).to have_content(companies.first.city)
       expect(page).to have_content(companies.first.state)
+      expect(page).to have_content(companies.first.status.capitalize)
     end
 
     it "can delete a company" do
@@ -41,58 +42,43 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       visit '/admin/companies'
 
-      within(".uncontacted") do
-        click_link(companies.first.organization, match: :first)
-      end
+      click_link(companies.first.organization, match: :first)
 
       expect(page).to have_button("Delete Company")
       click_button("Delete Company")
 
       expect(current_path).to eq(admin_companies_path)
-
       expect(Company.count).to eq(4)
     end
 
-  it "views confirmed companies on dashboard" do
-    companies = create_list(:company, 10, status: "confirmed")
-    login
-
-    visit '/admin/companies'
-
-    expect(current_path).to eq(admin_companies_path)
-
-    within(".confirmed") do
-      expect(page).to have_link(companies.first.organization)
-      expect(page).to have_link(companies.last.organization)
-      expect(companies.first.updated_at <= companies.last.updated_at).to eq(true)
-    end
-  end
-
-  it "views dead companies on dashboard" do
-    companies = create_list(:company, 10, status: "dead")
-    login
-
-    visit '/admin/companies'
-
-    expect(current_path).to eq(admin_companies_path)
-
-    within(".dead") do
-      expect(page).to have_link(companies.first.organization)
-      expect(page).to have_link(companies.last.organization)
-      expect(companies.first.updated_at <= companies.last.updated_at).to eq(true)
-    end
-  end
-
-  it "can click to view details of a company" do
-    companies = create_list(:company, 10, status: "uncontacted")
+    it "views all companies on dashboard" do
+      company1 = create(:company, status: "confirmed")
+      company2 = create(:company, status: "contacted")
+      company3 = create(:company, status: "uncontacted")
+      company4 = create(:company, status: "dead")
       login
 
       visit '/admin/companies'
 
-      within(".uncontacted") do
-        click_link(companies.first.organization, match: :first)
-      end
-      expect(current_path).to eq(admin_company_path(companies.first.id))
+      expect(current_path).to eq(admin_companies_path)
+
+      expect(page).to have_link(company1.organization)
+      expect(page).to have_link(company2.organization)
+      expect(page).to have_link(company3.organization)
+      expect(page).to have_link(company4.organization)
+    end
+
+    it "can update the status of a company" do
+      company = create(:company)
+      login
+      click_link("Companies")
+
+      expect(current_path).to eq(admin_companies_path)
+      click_link(company.organization)
+      select "Contacted", :from => "company_status"
+      click_button("Update Status")
+
+      expect(Company.first.status).to eq("contacted")
     end
   end
 end

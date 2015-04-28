@@ -53,27 +53,3 @@
       </div>
     </div>
   </div>
-
-  <div class="uncontacted">
-    <% @companies.uncontacted.each do |company| %>
-      <%= link_to company.organization, admin_company_path(company.id) %>
-    <% end %>
-  </div>
-
-  <div class="contacted">
-    <% @companies.contacted.each do |company| %>
-      <%= link_to company.organization, admin_company_path(company.id) %>
-    <% end %>
-  </div>
-
-  <div class="confirmed">
-    <% @companies.confirmed.each do |company| %>
-      <%= link_to company.organization, admin_company_path(company.id) %>
-    <% end %>
-  </div>
-
-  <div class="dead">
-    <% @companies.dead.each do |company| %>
-      <%= link_to company.organization, admin_company_path(company.id) %>
-    <% end %>
-  </div>
