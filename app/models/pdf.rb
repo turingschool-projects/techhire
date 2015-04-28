@@ -1,4 +1,19 @@
 class Pdf < ActiveRecord::Base
+  validates :slot, numericality: { only_integer: true,
+                                   greater_than_or_equal_to: 1,
+                                   less_than_or_equal_to: 4
+                                  },
+                                  allow_blank: true
+
+                                                  }
+
+  validates :page, inclusion: { in: ["tools and resources",
+                                      "learn more",
+                                      "home",
+                                      "techhire locations",
+                                      "start hiring"]
+                              },
+                                allow_blank: true
   has_attached_file :pdf_file,
     :path => "public/assets/pdfs/:basename.:extension",
     :url => "public/assets/pdfs/:basename.:extension"
@@ -7,8 +22,6 @@ class Pdf < ActiveRecord::Base
                                     :content_type => [ 'application/pdf' ],
                                     :message => "only pdf files are allowed",
                                     :if => :pdf_attached?
-
-  before_save :add_page
 
   def self.learn_more
     where("slot = 1").first
