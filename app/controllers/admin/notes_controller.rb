@@ -1,11 +1,8 @@
 class Admin::NotesController < ApplicationController
   def create
     company = Company.find(params[:company_id])
-    note = Note.new(body: notes_params, company_id: company.id)
-    if note.save
-      redirect_to admin_company_path(company.id)
-    else
-    end
+    Note.create(body: notes_params, company_id: company.id)
+    redirect_to admin_company_path(company.id)
   end
 
   private
