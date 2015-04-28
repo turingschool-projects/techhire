@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails',                '4.2.1'
 gem 'pg'
-gem 'sass-rails',           '~> 5.0'
 gem 'uglifier',             '>= 1.3.0'
 gem 'coffee-rails',         '~> 4.1.0'
 gem 'jquery-rails'
@@ -17,6 +16,8 @@ gem 'aws-sdk',              '~> 1.61.0'
 gem "figaro"
 gem 'city-state'
 gem 'simplecov', :group => :test
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'sass-rails', '>= 3.2'
 
 group :development, :test do
   gem 'byebug'
