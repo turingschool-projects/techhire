@@ -21,10 +21,11 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
     it "can view the details of a company" do
       companies = create_list(:company, 5, status: "uncontacted")
       login
+      visit 'companies'
 
-      within(".uncontacted-companies") do
-        click_link(companies.first.organization, match: :first)
-      end
+      click_link(companies.first.organization, match: :first)
+
+      expect(current_path).to eq(admin_company_path(companies.first.id))
 
       expect(page).to have_content(companies.first.organization)
       expect(page).to have_content(companies.first.name)
@@ -39,25 +40,41 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       companies = create_list(:company, 5, status: "uncontacted")
       login
 
-      within(".uncontacted-companies") do
-        click_link(companies.first.organization, match: :first)
-      end
+      visit '/admin/companies'
+
+      click_link(companies.first.organization, match: :first)
 
       expect(page).to have_button("Delete Company")
       click_button("Delete Company")
 
-      expect(current_path).to eq(admin_dashboard_index_path)
+      expect(current_path).to eq(admin_companies_path)
       expect(Company.count).to eq(4)
+    end
+
+    it "views all companies on dashboard" do
+      company1 = create(:company, status: "confirmed")
+      company2 = create(:company, status: "contacted")
+      company3 = create(:company, status: "uncontacted")
+      company4 = create(:company, status: "dead")
+      login
+
+      visit '/admin/companies'
+
+      expect(current_path).to eq(admin_companies_path)
+
+      expect(page).to have_link(company1.organization)
+      expect(page).to have_link(company2.organization)
+      expect(page).to have_link(company3.organization)
+      expect(page).to have_link(company4.organization)
     end
 
     it "can update the status of a company" do
       company = create(:company)
       login
+      click_link("Companies")
 
-      within(".uncontacted-companies") do
-        click_link(company.organization)
-      end
-
+      expect(current_path).to eq(admin_companies_path)
+      click_link(company.organization)
       select "Contacted", :from => "company_status"
       click_button("Update Status")
 
