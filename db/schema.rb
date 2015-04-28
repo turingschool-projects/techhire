@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425174508) do
+ActiveRecord::Schema.define(version: 20150427223923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20150425174508) do
     t.float    "longitude"
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "notes", ["company_id"], name: "index_notes_on_company_id", using: :btree
+
   create_table "pdfs", force: :cascade do |t|
     t.string   "page"
     t.integer  "slot"
@@ -51,4 +60,5 @@ ActiveRecord::Schema.define(version: 20150425174508) do
     t.datetime "updated_at",                  null: false
   end
 
+  add_foreign_key "notes", "companies"
 end

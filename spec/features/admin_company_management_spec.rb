@@ -56,12 +56,14 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
         click_link(companies.first.organization, match: :first)
       end
       within(".add_note") do
-        fill_in "company[note]", with: "test note"
+        fill_in "company[notes]", with: "test note"
       end
-      #click_link_or_button('Add Note')
+      click_link_or_button("Add Note")
 
-      expect(page).to have_content("test note")
-      #expect(current_path).to eq(admin_dashboard_index_path)
+      within(".notes") do
+        expect(page).to have_content("test note")
+      end
+      expect(current_path).to eq(admin_company_path(companies.last.id))
     end
   end
 end
