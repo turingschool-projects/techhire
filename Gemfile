@@ -15,6 +15,7 @@ gem 'geocoder',       '~> 1.2.8'
 
 # https://github.com/loureirorg/city-state
 gem 'city-state'
+gem 'dalli'
 
 group :development, :test do
   gem 'byebug'

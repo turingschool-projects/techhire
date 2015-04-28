@@ -21,7 +21,9 @@ more about TechHire, and a passion to find and hire talented employees in your c
     </div>
     <div class="form-group">
       <%= f.label(:city, "City") %>
-      <%= f.grouped_collection_select :city, State.order(:id), :usa_cities, :abbr, :id, :name %><br>
+      <% cache @cities do %>
+        <%= f.grouped_collection_select :city, State.order(:id), :usa_cities, :abbr, :id, :name %><br>
+      <% end %>
     </div>
     <div class="form-group">
       <%= f.label(:email, "Email") %>
