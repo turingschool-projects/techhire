@@ -48,7 +48,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       click_button("Delete Company")
 
-      expect(current_path).to eq(admin_dashboard_index_path)
+      expect(current_path).to eq(admin_companies_path)
       expect(Company.count).to eq(4)
     end
 
@@ -56,9 +56,8 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       companies = create_list(:company, 5, status: "contacted")
       login
 
-      within(".contacted-companies") do
-        click_link(companies.first.organization, match: :first)
-      end
+      click_link_or_button("Companies")
+      first(".Organization").click_link(companies.first.organization)
       within(".add_note") do
         fill_in "note", with: "test note"
       end
@@ -67,9 +66,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       within(".notes") do
         expect(page).to have_content("test note")
       end
-      expect(current_path).to eq(admin_company_path(companies.last.id))
-      expect(current_path).to eq(admin_companies_path)
-      expect(Company.count).to eq(4)
+      expect(current_path).to eq(admin_company_path(companies.first.id))
     end
 
     it "views all companies on dashboard" do
