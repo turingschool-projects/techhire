@@ -18,3 +18,11 @@
 
 # Ignore notes
 /notes.md
+
+# Ignore application configuration
+
+# Ignore simplecov coverage
+coverage
+
+# Ignore application.yml
+config/application.yml
