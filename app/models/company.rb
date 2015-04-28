@@ -1,6 +1,8 @@
 class Company < ActiveRecord::Base
   include ActiveModel::Dirty
 
+  has_many :notes
+
   validates :name, :organization, :title, :state, :city, presence: true
   validates :status, inclusion: ["contacted", "uncontacted", "dead", "confirmed"]
   validates :email, presence: true, length: { maximum: 255 },
