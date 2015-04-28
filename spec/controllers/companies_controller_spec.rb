@@ -9,7 +9,9 @@ RSpec.describe CompaniesController, :type => :controller do
                        title: 'RoR',
                        state: 'CO',
                         city: 'Denver',
-                       email: 'google@email.com'
+                       email: 'google@email.com',
+                      hiring: 1,
+                  hire_count: 5
                        }
     post :create, company: company_params
     assert_redirected_to root_path

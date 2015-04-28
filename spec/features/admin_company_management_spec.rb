@@ -32,6 +32,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(page).to have_content(companies.first.email)
       expect(page).to have_content(companies.first.city)
       expect(page).to have_content(companies.first.state)
+      expect(page).to have_content(companies.first.status.capitalize)
     end
 
     it "can delete a company" do
@@ -64,6 +65,20 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
         expect(page).to have_content("test note")
       end
       expect(current_path).to eq(admin_company_path(companies.last.id))
+    end
+
+    it "can update the status of a company" do
+      company = create(:company)
+      login
+
+      within(".uncontacted-companies") do
+        click_link(company.organization)
+      end
+
+      select "Contacted", :from => "company_status"
+      click_button("Update Status")
+
+      expect(Company.first.status).to eq("contacted")
     end
   end
 end
