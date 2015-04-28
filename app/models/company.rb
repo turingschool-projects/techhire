@@ -16,5 +16,4 @@ class Company < ActiveRecord::Base
   def d3_coordinates
     slice(:longitude, :latitude)
   end
-
 end
