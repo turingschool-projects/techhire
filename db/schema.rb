@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20150425174508) do
     t.datetime "updated_at",                           null: false
     t.boolean  "hiring"
     t.integer  "hire_count"
+    t.string   "status",       default: "uncontacted"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "status",       default: "uncontacted"
   end
 
   create_table "pdfs", force: :cascade do |t|

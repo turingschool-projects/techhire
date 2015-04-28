@@ -1,0 +1,55 @@
+<div class="container">
+  <h3>Organizations</h3>
+  <hr>
+  <div class="row">
+    <div class="panel panel-primary filterable">
+      <div class="panel-heading">
+        <h3 class="panel-title">Organizations</h3>
+        <div class="pull-right">
+          <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+          </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr class="filters">
+                <th><input type="text" class="form-control company-id" placeholder="ID" disabled></th>
+                <th><input type="text" class="form-control" placeholder="Organization" disabled></th>
+                <th><input type="text" class="form-control" placeholder="Contact" disabled></th>
+                <th><input type="text" class="form-control" placeholder="Title" disabled></th>
+                <th><input type="text" class="form-control" placeholder="City" disabled></th>
+                <th><input type="text" class="form-control" placeholder="State" disabled></th>
+                <th><input type="text" class="form-control" placeholder="email" disabled></th>
+                <th><input type="text" class="form-control" placeholder="contacted" disabled></th>
+                <th><input type="text" class="form-control" placeholder="hiring" disabled></th>
+                <th><input type="text" class="form-control" placeholder="hire_count" disabled></th>
+                <th>
+                  <div class="checkbox-inline">
+                    <input type="checkbox" id="checkbox1" class="large" data-label-prepend="prefix">
+                    <label for="checkbox1">
+                      Contacted
+                    </label>
+                  </div>
+                </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @companies.each do |company| %>
+              <tr>
+                <td class="id"><%= company.id %></td>
+                <td class="Organization"><%= link_to company.organization,
+                    admin_company_path(company.id) %></td>
+                <td class="contact"><%= company.name %></td>
+                <td class="contact-title"><%= company.title %></td>
+                <td class="city"><%= company.city %></td>
+                <td class="state"><%= company.state %></td>
+                <td class="email"><%= company.email %></td>
+                <td class="contacted"><%= company.status %></td>
+                <td class="hiring"><%= company.hiring %></td>
+                <td class="hire_count"><%= company.hire_count %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
