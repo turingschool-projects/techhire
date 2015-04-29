@@ -17,8 +17,12 @@ class Admin::CompaniesController < ApplicationController
     company = Company.find(params[:id])
     company.update(update_params)
     company.update(status: params[:company][:status])
-    company.save
-    redirect_to admin_company_path(company.id)
+    if company.save
+      redirect_to admin_company_path(company.id)
+    else
+      flash[:errors] = "Please try again!"
+      render :edit
+    end
   end
 
   def edit
@@ -29,6 +33,6 @@ class Admin::CompaniesController < ApplicationController
 
   def update_params
     params.require(:company).permit(:name, :organization, :title,
-                                 :email, :state, :city, :status)
+                                 :email, :state, :city)
   end
 end

@@ -32,7 +32,7 @@ RSpec.describe Admin::CompaniesController, :type => :controller do
 
   describe "PATCH #update" do
     it "updates the status of a company" do
-      patch :update, id: company.id, company: { status: "Contacted" }
+      patch :update, id: company.id, company: { status: "contacted" }
       expect(response).to redirect_to(admin_company_path(company.id))
     end
   end
@@ -42,7 +42,7 @@ RSpec.describe Admin::CompaniesController, :type => :controller do
       get :edit, id: company.id
       expect(response).to render_template(:edit)
 
-      post :update, id: company.id, company: { name: "Netflix" }
+      post :update, id: company.id, company: { name: "Netflix", status: "contacted" }
       expect(response).to redirect_to(admin_company_path(company.id))
     end
   end
