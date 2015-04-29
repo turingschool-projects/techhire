@@ -10,6 +10,6 @@ class StaticPagesController < ApplicationController
   end
 
   def techhire_locations
-    @companies = Company.all
+    @techhire_locations = TechhireLocation.all
   end
 end
