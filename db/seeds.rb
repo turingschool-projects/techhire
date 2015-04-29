@@ -1,5 +1,5 @@
 # Pdfs
-pdf = Pdf.create(page: "learn more", slot: 1)
+pdf = Pdf.create(slot: 1)
 pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
 pdf.save
 
