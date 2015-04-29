@@ -1,6 +1,6 @@
 module ApplicationHelper
   def state_helper
-    alphastates = State.all.map { |state| state.abbr }
+    alphastates = State.all.map(&:abbr)
     return alphastates.insert(0, ["Select a State"])
   end
 end
