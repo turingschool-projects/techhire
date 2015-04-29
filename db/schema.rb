@@ -51,6 +51,12 @@ ActiveRecord::Schema.define(version: 20150429043602) do
     t.datetime "pdf_file_updated_at"
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string   "abbr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "techhire_locations", force: :cascade do |t|
     t.string   "city"
     t.string   "state"
@@ -58,12 +64,6 @@ ActiveRecord::Schema.define(version: 20150429043602) do
     t.datetime "updated_at", null: false
     t.float    "latitude"
     t.float    "longitude"
-  end
-
-  create_table "states", force: :cascade do |t|
-    t.string   "abbr"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "usa_cities", force: :cascade do |t|
