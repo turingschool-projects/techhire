@@ -36,4 +36,14 @@ RSpec.describe Admin::CompaniesController, :type => :controller do
       expect(response).to redirect_to(admin_company_path(company.id))
     end
   end
+
+  describe "POST #edit" do
+    it "updates a company information" do
+      get :edit, id: company.id
+      expect(response).to render_template(:edit)
+
+      post :update, id: company.id, company: { name: "Netflix" }
+      expect(response).to redirect_to(admin_company_path(company.id))
+    end
+  end
 end
