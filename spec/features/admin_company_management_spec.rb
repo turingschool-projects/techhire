@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "AdminCompanyManagement", type: :feature do
   describe("an admin can manage the contact details of a company") do
     let(:admin) do
-      User.create(email: 'admin@example.com', password: 'password')
+      User.create(email: 'admin@example.com', password: 'password', role: 1)
     end
 
     def login
@@ -17,7 +17,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
     it "can view the details of a company" do
       companies = create_list(:company, 5, status: "uncontacted")
       login
-      visit 'companies'
+      visit admin_companies_path
 
       click_link(companies.first.organization, match: :first)
 
@@ -51,7 +51,6 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
     it "can add notes to a contacted company" do
       companies = create_list(:company, 5, status: "contacted")
       login
-
       click_link_or_button("Companies")
       first(".Organization").click_link(companies.first.organization)
       within(".add_note") do
