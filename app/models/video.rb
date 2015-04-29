@@ -17,7 +17,7 @@ class Video < ActiveRecord::Base
 
   def verify_youtube_video
     yt_regex = /www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]*)/
-
+    
     if self.url.blank?
       errors[:error] << "Please enter a valid url."
     elsif !self.url.match(yt_regex)
