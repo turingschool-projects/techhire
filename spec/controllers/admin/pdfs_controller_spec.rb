@@ -8,8 +8,7 @@ RSpec.describe Admin::PdfsController, type: :controller do
     pdf = create(:pdf, pdf_file: pdf_file)
 
     assert_difference('Pdf.count') do
-      post :create, pdf: { page: pdf.page,
-                          slot: pdf.slot,
+      post :create, pdf: { slot: pdf.slot,
                           pdf_file: pdf_file
                           }
     end
