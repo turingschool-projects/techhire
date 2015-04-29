@@ -24,7 +24,5 @@
 # Ignore simplecov coverage
 coverage
 
-# Ignore application.yml
-
 # Ignore application configuration
 config/application.yml
