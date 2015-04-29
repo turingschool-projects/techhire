@@ -1,8 +1,36 @@
 require "rails_helper"
 
-RSpec.feature "UserSignups", type: :feature do
-  describe "As a guest user" do
+RSpec.feature "Company Signup Page", type: :feature do
+  describe "As a guest user, I" do
     include Capybara::DSL
+
+    let! (:state) {
+      State.create(
+                   abbr: "CO",
+                     id: 14
+                  )
+    }
+
+    let! (:usa_city1) {
+      UsaCity.create(
+                     name: "Denver",
+                 state_id: 14
+                    )
+    }
+
+    let! (:usa_city2) {
+      UsaCity.create(
+                     name: "Boulder",
+                 state_id: 14
+                    )
+    }
+
+    let! (:usa_city3) {
+      UsaCity.create(
+                     name: "Dallas",
+                 state_id: 13
+                    )
+    }
 
     it "can see links to signup and learn more on the home page" do
       visit ('/')
@@ -35,7 +63,7 @@ RSpec.feature "UserSignups", type: :feature do
         fill_in 'company[organization]', with: "Google"
         fill_in 'company[title]', with: "RoR Developer"
         select('CO', from: 'company[state]')
-        select('Fort Collins', from: 'company[city]')
+        select('Denver', from: 'company[city]')
         fill_in 'company[email]', with: "google@email.com"
         check 'company[hiring]'
         fill_in 'company[hire_count]', with: 5
@@ -52,14 +80,23 @@ RSpec.feature "UserSignups", type: :feature do
         fill_in 'company[organization]', with: "Google"
         fill_in 'company[title]', with: "RoR Developer"
         select('CO', from: 'company[state]')
-        select('Fort Collins', from: 'company[city]')
+        select('Boulder', from: 'company[city]')
         fill_in 'company[email]', with: "goog"
         check 'company[hiring]'
         fill_in 'company[hire_count]', with: 5
         click_button('Create techHire account')
       end
-      expect(current_path).to eq(signup_path)
+      expect(current_path).to eq(companies_path)
       expect(page.find('.errors')).to have_content("Please try again!")
+    end
+
+    it "can see dynamically generated cities" do
+      visit ('/signup')
+      within("#new_company") do
+        select('CO', from: 'company[state]')
+        expect(page).to have_content("Boulder")
+        expect(page).not_to have_content("Dallas")
+      end
     end
   end
 end

@@ -1,11 +1,6 @@
 module ApplicationHelper
   def state_helper
-    states = CS.states(:US)
-    alphastates = states.keys.sort_by{|k| states[k]}
-    return alphastates
-  end
-
-  def city_helper #(state)
-    CS.cities(:CO, :us)
+    alphastates = State.all.map(&:abbr)
+    return alphastates.insert(0, ["Select a State"])
   end
 end
