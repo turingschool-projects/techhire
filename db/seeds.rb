@@ -1,244 +1,125 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 # Pdfs
 pdf = Pdf.create(page: "learn more", slot: 1)
 pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
 pdf.save
 
-# Cities
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "Kentucky",
+# techhire_locations
+TechhireLocation.create(
   city: "Louisville",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Kentucky"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "New York City",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
-  )
+  state: "New York"
+)
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Philadelphia",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
-  )
+  state: "Pennsylvania"
+)
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
+  city: "Louisville",
+  state: "Kentucky"
+)
+
+TechhireLocation.create(
   city: "City of Kearney and Buffalo County",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
-  )
+  state: "Kentucky"
+)
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "St. Louis",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
-  )
+  state: "Missouri"
+)
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Salt Lake City",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
-  )
+  state: "Utah"
+)
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "San Antonio",
-  email: "email@email.com",
-  hiring: true,
-hire_count: 100
+  state: "Texas"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Los Angeles",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "California"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Minneapolis",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Minnesota"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Kansas City",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Kansas"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Memphis",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Tennessee"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "Kentucky",
+TechhireLocation.create(
+  city: "City of Kearney and Buffalo County",
+  state: "Kentucky"
+)
+
+TechhireLocation.create(
   city: "Eastern Kentucky",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Kentucky"
 )
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+
+TechhireLocation.create(
   city: "Nashville",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Tennessee"
 )
 
-
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Rochester",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "New York"
 )
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+
+TechhireLocation.create(
   city: "Detroit",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Michigan"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
+  city: "City of Kearney and Buffalo County",
+  state: "Kentucky"
+)
+
+TechhireLocation.create(
   city: "San Francisco",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "California"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Albuquerque",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "New Mexico"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "state",
+TechhireLocation.create(
   city: "Chattanooga",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Tennessee"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "Oregon",
+TechhireLocation.create(
   city: "Portland",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Oregon"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "Delware",
+TechhireLocation.create(
   city: "Dover",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Delaware"
 )
 
-Company.create(
-  name: "company",
-  organization: "org",
-  title: "title",
-  state: "Alaska",
+TechhireLocation.create(
   city: "Anchorage",
-  email: "email@email.com",
-  hiring: true,
-  hire_count: 100
+  state: "Alaska"
 )
