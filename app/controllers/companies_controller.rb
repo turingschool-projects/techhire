@@ -20,6 +20,7 @@ class CompaniesController < ApplicationController
       redirect_to company_path(company.id)
     else
       flash[:errors] = "Please try again!"
+      @company = Company.new
       render :new
     end
   end

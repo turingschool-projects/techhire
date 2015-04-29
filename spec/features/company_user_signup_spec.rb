@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "CompanyUserSignUp", type: :feature do
   describe("Company signup creates a user and a company") do
+    let! (:state) { State.create(abbr: "CO", id: 14) }
+
+    let! (:usa_city1) { UsaCity.create(name: "Denver", state_id: 14) }
 
     it "can signup" do
       allow(User).to receive(:generate_password).and_return("abc123abc")

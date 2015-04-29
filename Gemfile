@@ -15,6 +15,7 @@ gem 'paperclip',            '~> 4.2.1'
 gem 'aws-sdk',              '~> 1.61.0'
 gem "figaro"
 gem 'city-state'
+gem 'dalli'
 gem 'devise'
 gem 'simplecov', :group => :test
 gem 'bootstrap-sass', '~> 3.3.4'
@@ -36,4 +37,5 @@ group :development, :test do
   gem 'database_cleaner',   '~> 1.4.0'
   gem 'mocha',              '~> 1.1.0'
   gem 'assert_difference'
+  gem 'selenium-webdriver'
 end
