@@ -7,12 +7,11 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    user = User.create(email: company_params[:email], name: company_params[:name], title: company_params[:title], password: 'abc123abc')
-    binding.pry
-    @company = Company.new(company_params)
-    if @company.save
-      flash[:success] = "Welcome #{@company.name}"
-      redirect_to root_path
+    user = User.create(email: company_params[:email], name: company_params[:name], title: company_params[:title], password: User.generate_password)
+    company = Company.new(company_params)
+    if company.save
+      flash[:success] = "Welcome #{company.name}"
+      redirect_to company_path(company.id)
     else
       flash[:errors] = "Please try again!"
       render :new
