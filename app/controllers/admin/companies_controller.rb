@@ -34,6 +34,6 @@ class Admin::CompaniesController < ApplicationController
 
   def update_params
     params.require(:company).permit(:name, :organization, :title,
-                                 :email, :state, :city)
+                                 :email, :state, :city, :hire_count)
   end
 end
