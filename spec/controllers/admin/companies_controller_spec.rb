@@ -5,6 +5,9 @@ RSpec.describe Admin::CompaniesController, :type => :controller do
 
   before(:each) do
     @company = create(:company)
+    admin = User.create(email: "admin@example.com", password: "password", role: 1)
+    allow_any_instance_of(ApplicationController).to receive(:current_user)
+      .and_return(admin)
   end
 
   describe "GET #show" do
