@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "static_pages#home"
   get "/home", to: "static_pages#home", as: "home"
   get "/learn-more", to: "static_pages#learn_more", as: "learn_more"

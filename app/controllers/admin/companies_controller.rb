@@ -1,4 +1,5 @@
 class Admin::CompaniesController < ApplicationController
+  before_action :authorize!
 
   def index
     @companies = Company.all
