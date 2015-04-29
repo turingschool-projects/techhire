@@ -1,0 +1,9 @@
+.embed-video {
+  position: relative;
+  padding: 20px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
