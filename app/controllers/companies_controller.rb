@@ -3,7 +3,12 @@ class CompaniesController < ApplicationController
     @company = Company.new
   end
 
+  def show
+  end
+
   def create
+    user = User.create(email: company_params[:email], name: company_params[:name], title: company_params[:title], password: 'abc123abc')
+    binding.pry
     @company = Company.new(company_params)
     if @company.save
       flash[:success] = "Welcome #{@company.name}"

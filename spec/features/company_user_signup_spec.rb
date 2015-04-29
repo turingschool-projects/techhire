@@ -15,6 +15,10 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
       select 'CO', from: "company_state"
       fill_in 'company[email]', with: "orion@google.com"
       click_link_or_button('Create techHire account')
+      visit new_user_session_path
+      fill_in 'user[email]', with: "orion@google.com"
+      fill_in 'user[password]', with: User.last.password
+      click_link_or_button('Log in')
 
       expect(current_path).to eq(company_path(Company.last.id))
     end
