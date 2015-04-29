@@ -16,6 +16,7 @@ gem 'aws-sdk',              '~> 1.61.0'
 gem "figaro"
 gem 'city-state'
 gem 'dalli'
+gem 'devise'
 gem 'simplecov', :group => :test
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
