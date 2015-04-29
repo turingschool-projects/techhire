@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427223923) do
+ActiveRecord::Schema.define(version: 20150429035807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20150427223923) do
   add_index "notes", ["company_id"], name: "index_notes_on_company_id", using: :btree
 
   create_table "pdfs", force: :cascade do |t|
-    t.string   "page"
     t.integer  "slot"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
@@ -50,6 +49,13 @@ ActiveRecord::Schema.define(version: 20150427223923) do
     t.string   "pdf_file_content_type"
     t.integer  "pdf_file_file_size"
     t.datetime "pdf_file_updated_at"
+  end
+
+  create_table "techhire_locations", force: :cascade do |t|
+    t.string   "city"
+    t.string   "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
