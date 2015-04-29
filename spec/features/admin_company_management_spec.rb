@@ -98,5 +98,24 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       expect(Company.first.status).to eq("contacted")
     end
+
+    it "can edit a company information" do
+      company = create(:company)
+      login
+
+      click_link("Companies")
+      expect(current_path).to eq(admin_companies_path)
+
+      click_link(company.organization)
+      expect(page).to have_link("Edit Company")
+
+      click_link("Edit Company")
+      expect(current_path).to eq(edit_admin_company_path(company.id))
+      
+      fill_in "company[name]", with: "Netflix"
+      click_button("Submit")
+      expect(current_path).to eq(admin_company_path(company.id))
+      expect(page).to have_content("Netflix")
+    end
   end
 end
