@@ -106,8 +106,10 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       click_link("Edit Company")
       expect(current_path).to eq(edit_admin_company_path(company.id))
-      
-      fill_in "company[name]", with: "Netflix"
+
+      fill_in "company[name]", with: "Mr. Smithers"
+      fill_in "company[organization]", with: "Netflix"
+      fill_in "company[title]", with: ""
       click_button("Submit")
       expect(current_path).to eq(admin_company_path(company.id))
       expect(page).to have_content("Netflix")

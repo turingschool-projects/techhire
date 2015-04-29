@@ -17,7 +17,7 @@
 </div>
 <div class="form-group">
   <%= f.label(:city, "City") %>
-  <%= f.select :city, options_for_select(city_helper), placeholder: "Please select..." %><br>
+  <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :id, :name %><br>
 </div>
 <div class="form-group">
   <%= f.label(:email, "Email") %>
