@@ -60,6 +60,21 @@ ActiveRecord::Schema.define(version: 20150429043602) do
     t.float    "longitude"
   end
 
+  create_table "states", force: :cascade do |t|
+    t.string   "abbr"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usa_cities", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "usa_cities", ["state_id"], name: "index_usa_cities_on_state_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
