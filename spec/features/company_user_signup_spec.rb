@@ -4,6 +4,7 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
   describe("Company signup creates a user and a company") do
 
     it "can signup" do
+      allow(User).to receive(:generate_password).and_return("abc123abc")
       visit '/'
       click_link_or_button("Sign Up")
       expect(page).to have_content("Start hiring")
@@ -17,7 +18,7 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
       click_link_or_button('Create techHire account')
       visit new_user_session_path
       fill_in 'user[email]', with: "orion@google.com"
-      fill_in 'user[password]', with: User.last.password
+      fill_in 'user[password]', with: "abc123abc"
       click_link_or_button('Log in')
 
       expect(current_path).to eq(company_path(Company.last.id))

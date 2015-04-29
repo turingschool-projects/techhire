@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
     if current_user && current_user.admin?
       admin_dashboard_index_path
     elsif current_user && current_user.company?
-      company_path(curren_user.company.id)
+      binding.pry
+      company_path(current_user.company.id)
     else
       root_path
     end
