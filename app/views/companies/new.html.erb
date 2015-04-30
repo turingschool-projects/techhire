@@ -1,1 +1,20 @@
-<%= render partial: "signup_form" %>
+<div class="signup_form">
+  <h2>Start hiring</h2>
+  <h4>Whether you’re an employer, hiring manager, or community leader, all we need is an interest from you in learning
+    more about TechHire, and a passion to find and hire talented employees in your community who are ready to work.</h4>
+    <%= form_for @company do |f| %>
+      <%= render "signup_form", f: f %>
+      <div class="form-group">
+        <%= f.check_box :hiring %>
+        <%= f.label(:hiring, "I am ready to commit to hiring") %>
+      </div>
+      <div class="form-group">
+        <%= f.number_field :hire_count, in: 0..500, step: 1, value: 0 %><br>
+        <%= f.label(:hire_count, "people through TechHire") %>
+      </div>
+      <%= f.submit "Create techHire account" %>
+    <% end %>
+    <script>
+    $("#new_company").validate();
+    </script>
+</div>
