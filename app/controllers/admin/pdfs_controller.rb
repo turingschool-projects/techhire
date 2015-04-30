@@ -14,6 +14,7 @@ class Admin::PdfsController < ApplicationController
   end
 
   def pdf_params
-    params.require(:pdf).permit(:pdf_file, :url, :slot)
+    require 'pry' ; binding.pry
+    params.require(:pdf).permit(:pdf_file, :slot)
   end
 end
