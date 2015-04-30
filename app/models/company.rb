@@ -17,4 +17,11 @@ class Company < ActiveRecord::Base
   def self.company_count_by_status(status)
     self.send(status.to_sym).count
   end
+
+  def self.company_count_by_city
+    self.order(:city)
+        .pluck(:city)
+        .group_by{ |city| city}
+        .inject({}) {|hash, (k,v)| hash[k] = v.size; hash}
+  end
 end

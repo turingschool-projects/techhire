@@ -34,4 +34,11 @@ RSpec.describe Company, type: :model do
     end
     expect(Company.company_count_by_status("uncontacted")).to eq(10)
   end
+
+  it "should count order the cities by the number of companies" do
+    10.times do
+      create(:company)
+    end
+    expect(Company.company_count_by_city).to eq({"Denver" => 10})
+  end
 end
