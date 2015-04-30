@@ -23,12 +23,24 @@ RSpec.feature "AdminPdfManagements", type: :feature do
     attach_file "pdf[pdf_file]", Rails.root.join('spec', 'fixtures', 'whitehouse_jpeg.jpeg')
     click_button "Submit"
 
-    expect(page).to have_content("Something went wrong with the upload")
+    expect(page).to have_content("Only pdf files are allowed.")
     expect(current_path).to eql(admin_pdfs_path)
 
     attach_file "pdf[pdf_file]", Rails.root.join('spec', 'fixtures', 'whitehouse_png.png')
     click_button "Submit"
 
-    expect(page).to have_content("Something went wrong with the upload")
+    expect(page).to have_content("Only pdf files are allowed.")
+  end
+
+  it "should not allow a duplicate pdf to be uploaded" do
+    pdf = create(:pdf)
+
+    visit 'admin/pdfs'
+    attach_file "pdf[pdf_file]", Rails.root.join('spec', 'fixtures', 'sample_pdf.pdf')
+    click_button "Submit"
+
+    expect(page).to have_content("You already uploaded a pdf with this name.")
+    expect(current_path).to eql(admin_pdfs_path)
+    # expect(page).to have_selector("#table-row", count:2)
   end
 end

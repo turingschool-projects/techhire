@@ -13,7 +13,7 @@ class Admin::PdfsController < ApplicationController
         flash[:success] = "Pdf successfully uploaded"
         redirect_to admin_pdfs_path
       else
-        flash[:error] = "Something went wrong with the upload"
+        flash[:error] = pdf.errors.map { |error, message| message }.first
         redirect_to admin_pdfs_path
       end
     else

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/admin', to: 'sessions#new', as: 'admin/login'
   post '/admin', to: 'sessions#create'
   get '/download', to: "static_pages#download", as: "download"
+  get 'signup', to: "companies#new"
 
   namespace :admin do
     resources :dashboard, only: [:index]
@@ -29,5 +30,5 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:create]
   resources :pdfs, only: [:show]
-  get 'signup', to: "companies#new"
+
 end

@@ -9,20 +9,22 @@ RSpec.feature "AdminContentManagement", type: :feature do
 
     expect(page).to have_content("Content successfully created.")
     expect(current_path).to eql(admin_contents_path)
+    expect(page).to have_selector("#table-row", count:1)
   end
 
-  it "should not be able to add content with a 10+ char title" do
+  it "should not be able to add content with title under 10 char" do
     visit "admin/contents"
     fill_in "content[title]", with: "Too short"
     fill_in "content[body]", with: "My body is ready."
     click_button "Submit"
 
     expect(page).to have_content("The min title length is 10 characters.")
+    expect(page).to_not have_selector("#table-row", count: 2)
   end
 
-  it "should not be able to add content with a 10+ char title" do
+  it "should not be able to add content with a 60+ char title" do
     visit "admin/contents"
-    fill_in "content[title]", with: "60+characterslong60+characterslong60+characterslong60+characterslong"
+    fill_in "content[title]", with: "a" * 61
     fill_in "content[body]", with: "My body is ready."
     click_button "Submit"
 
@@ -56,6 +58,6 @@ RSpec.feature "AdminContentManagement", type: :feature do
     click_button "Submit"
 
     expect(page).to have_content("There cannot be duplicate titles.")
-    expect(page).to have_selector("#table-row", count: 1)ww
+    expect(page).to have_selector("#table-row", count: 1)
   end
 end
