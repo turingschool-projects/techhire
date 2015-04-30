@@ -5,5 +5,5 @@ class Content < ActiveRecord::Base
                               uniqueness: true
 
   validates :body, presence: { message: "The body can't be blank." },
-                  uniqueness: true
+                  uniqueness: { message: "The body can't be duplicate." }
 end
