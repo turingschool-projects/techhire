@@ -1,6 +1,6 @@
 <div class="signup_form">
   <h2>Start hiring</h2>
-  <h4>Whether you’re an employer, hiring manager, or community leader, all we need is an interest from you in learning/n
+  <h4>Whether you’re an employer, hiring manager, or community leader, all we need is an interest from you in learning
 more about TechHire, and a passion to find and hire talented employees in your community who are ready to work.</h4>
     <%= form_for @company do |f| %>
     <div class="form-group">
@@ -22,7 +22,7 @@ more about TechHire, and a passion to find and hire talented employees in your c
     <div class="form-group">
       <%= f.label(:city, "City") %>
       <% cache @cities do %>
-        <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :id, :name %><br>
+        <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
       <% end %>
     </div>
     <div class="form-group">
