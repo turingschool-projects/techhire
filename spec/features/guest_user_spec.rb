@@ -71,9 +71,8 @@ RSpec.feature "Company Signup Page", type: :feature do
       end
 
       expect(current_path).to eq(companies_welcome_path)
-      expect(page.find('.success')).to_not have_content('Welcome Bob')
-      expect(page).to have_content("Connecting businesses, communities and the tech talent pipeline")
-      expect(page).to have_content("Thanks for signing up.  Please check your email to confirm your account.")
+      expect(page).to have_content("Welcome Google")
+      expect(page).to have_content("Please check your email to confirm your account.  We will reach out to you shortly.")
     end
 
     it "can not signup a company if email validation fails" do
