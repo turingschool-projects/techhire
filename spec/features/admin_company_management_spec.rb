@@ -128,5 +128,26 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(page).to have_content("smithy@example.com")
       expect(page).to have_content("7")
     end
+
+    it "persists data on the edit page" do
+      State.create(abbr: "WY", id: 51)
+      State.create(abbr: "CO", id: 13)
+      UsaCity.create(name: "Laramie", state_id: 51)
+      UsaCity.create(name: "Denver", state_id: 13)
+      company = create(:company)
+      login
+
+      click_link("Companies")
+      click_link(company.organization)
+      click_link("Edit Company")
+
+      expect(page).to have_selector("input[value='Bob']")
+      expect(page).to have_selector("input[value='Google']")
+      expect(page).to have_selector("input[value='RoR Developer']")
+      expect( find(:css, 'select#company_state').value ).to eq('CO')
+      expect( find(:css, 'select#company_city').value ).to eq('Denver')
+      expect(page).to have_selector("input[value='google@email.com']")
+      expect(page).to have_selector("input[value='5']")
+    end
   end
 end
