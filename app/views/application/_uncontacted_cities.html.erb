@@ -1,4 +1,4 @@
-<div class="uncontacted-cities col-md-8">
+<div class="uncontacted-companies col-md-8">
   <hr>
     <div class="row">
       <div class="panel panel-primary filterable">
@@ -18,7 +18,7 @@
               </thead>
               <tbody>
                 <% @uncontacted_companies.each do |company| %>
-                  <tr>
+                  <tr class="table-values">
                     <td class="Organization"><%= link_to company.organization,
                         admin_company_path(company.id) %></td>
                     <td class="contact"><%= company.name %></td>
