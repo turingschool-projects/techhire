@@ -1,5 +1,5 @@
 <%= form_for [:admin, @company] do |f| %>
-  <%= render "partials/signup_form", f: f  %>
+  <%= render "signup_form", f: f  %>
   <div class="form-group">
     <%= f.check_box :hiring %>
     <%= f.label(:hiring, "This company is hiring") %>

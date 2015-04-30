@@ -3,7 +3,7 @@
   <h4>Whether you’re an employer, hiring manager, or community leader, all we need is an interest from you in learning
     more about TechHire, and a passion to find and hire talented employees in your community who are ready to work.</h4>
     <%= form_for @company do |f| %>
-      <%= render "partials/signup_form", f: f %>
+      <%= render "signup_form", f: f %>
       <div class="form-group">
         <%= f.check_box :hiring %>
         <%= f.label(:hiring, "I am ready to commit to hiring") %>
