@@ -88,10 +88,66 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       expect(current_path).to eq(admin_companies_path)
       click_link(company.organization)
-      select "Contacted", :from => "company_status"
+      select "Contacted", from: "company_status"
       click_button("Update Status")
 
       expect(Company.first.status).to eq("contacted")
+    end
+
+    it "can edit a company information" do
+      State.create(abbr: "WY", id: 51)
+      UsaCity.create(name: "Laramie", state_id: 51)
+      company = create(:company)
+      login
+
+      click_link("Companies")
+      expect(current_path).to eq(admin_companies_path)
+
+      click_link(company.organization)
+      expect(page).to have_link("Edit Company")
+
+      click_link("Edit Company")
+      expect(current_path).to eq(edit_admin_company_path(company.id))
+
+      fill_in "company[name]", with: "Mr. Smithers"
+      fill_in "company[organization]", with: "Netflix"
+      fill_in "company[title]", with: "President"
+      select "WY", from: "company[state]"
+      select "Laramie", from: "company[city]"
+      fill_in "company[email]", with: "smithy@example.com"
+      find(:css, "#company_hiring").set(false)
+      fill_in "company[hire_count]", with: 7
+      click_button("Submit")
+
+      expect(current_path).to eq(admin_company_path(company.id))
+      expect(page).to have_content("Mr. Smithers")
+      expect(page).to have_content("Netflix")
+      expect(page).to have_content("President")
+      expect(page).to have_content("WY")
+      expect(page).to have_content("Laramie")
+      expect(page).to have_content("smithy@example.com")
+      expect(page).to have_content("7")
+    end
+
+    it "persists data on the edit page" do
+      State.create(abbr: "WY", id: 51)
+      State.create(abbr: "CO", id: 13)
+      UsaCity.create(name: "Laramie", state_id: 51)
+      UsaCity.create(name: "Denver", state_id: 13)
+      company = create(:company)
+      login
+
+      click_link("Companies")
+      click_link(company.organization)
+      click_link("Edit Company")
+
+      expect(page).to have_selector("input[value='Bob']")
+      expect(page).to have_selector("input[value='Google']")
+      expect(page).to have_selector("input[value='RoR Developer']")
+      expect( find(:css, 'select#company_state').value ).to eq('CO')
+      expect( find(:css, 'select#company_city').value ).to eq('Denver')
+      expect(page).to have_selector("input[value='google@email.com']")
+      expect(page).to have_selector("input[value='5']")
     end
   end
 end

@@ -1,45 +1,26 @@
-<div class="signup_form">
-  <h2>Start hiring</h2>
-  <h4>Whether you’re an employer, hiring manager, or community leader, all we need is an interest from you in learning/n
-more about TechHire, and a passion to find and hire talented employees in your community who are ready to work.</h4>
-    <%= form_for @company do |f| %>
-    <div class="form-group">
-      <%= f.label(:name, "Name (First and Last)") %>
-      <%= f.text_field :name, required: true %><br>
-    </div>
-    <div class="form-group">
-      <%= f.label(:organization, "Organization") %>
-      <%= f.text_field :organization, required: true  %><br>
-    </div>
-    <div class="form-group">
-      <%= f.label(:title, "Title") %>
-      <%= f.text_field :title, required: true  %><br>
-    </div>
-    <div class="form-group">
-      <%= f.label(:state, "State") %>
-      <%= f.select :state, options_for_select(state_helper) %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:city, "City") %>
-      <% cache @cities do %>
-        <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :id, :name %><br>
-      <% end %>
-    </div>
-    <div class="form-group">
-      <%= f.label(:email, "Email") %>
-      <%= f.text_field :email, type: 'email', required: true  %><br>
-    </div>
-    <div class="form-group">
-      <%= f.check_box :hiring %>
-      <%= f.label(:hiring, "I am ready to commit to hiring") %>
-    </div>
-    <div class="form-group">
-      <%= f.number_field :hire_count, in: 0..500, step: 1, value: 0 %><br>
-      <%= f.label(:hire_count, "people through TechHire") %>
-    </div>
-    <%= f.submit "Create techHire account" %>
-    <% end %>
-    <script>
-    $("#new_company").validate();
-    </script>
+<div class="form-group">
+  <%= f.label(:name, "Name (First and Last)") %>
+  <%= f.text_field :name, required: true %><br>
+</div>
+<div class="form-group">
+  <%= f.label(:organization, "Organization") %>
+  <%= f.text_field :organization, required: true  %><br>
+</div>
+<div class="form-group">
+  <%= f.label(:title, "Title") %>
+  <%= f.text_field :title, required: true  %><br>
+</div>
+<div class="form-group">
+  <%= f.label(:state, "State") %>
+  <%= f.select :state, options_for_select(state_helper, @company.state) %>
+</div>
+<div class="form-group">
+  <%= f.label(:city, "City") %>
+  <% cache @cities do %>
+  <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
+  <% end %>
+</div>
+<div class="form-group">
+  <%= f.label(:email, "Email") %>
+  <%= f.text_field :email, type: 'email', required: true  %><br>
 </div>

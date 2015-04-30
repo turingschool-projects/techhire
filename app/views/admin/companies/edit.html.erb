@@ -1,0 +1,18 @@
+<%= form_for [:admin, @company] do |f| %>
+  <%= render "signup_form", f: f  %>
+  <div class="form-group">
+    <%= f.check_box :hiring %>
+    <%= f.label(:hiring, "This company is hiring") %>
+  </div>
+  <div class="form-group">
+    <%= f.number_field :hire_count, in: 0..500, step: 1, value: @company.hire_count %><br>
+    <%= f.label(:hire_count, "Number of people hiring") %>
+  </div>
+  <div class="form-group">
+    <%= f.hidden_field :status %>
+  </div>
+    <%= f.submit "Submit" %>
+<% end %>
+<script>
+$("#new_company").validate();
+</script>
