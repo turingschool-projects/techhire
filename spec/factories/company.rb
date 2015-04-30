@@ -6,7 +6,6 @@ FactoryGirl.define do
     password "password"
     name "Bob"
     title "RoR"
-    #company
   end
 
   factory :company do
