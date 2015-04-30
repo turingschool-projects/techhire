@@ -7,7 +7,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     if @company.save
       flash[:success] = "Welcome #{@company.name}"
-      redirect_to root_path
+      redirect_to companies_welcome_path
     else
       flash[:errors] = "Please try again!"
       render :new
