@@ -10,7 +10,7 @@ class Admin::VideosController < ApplicationController
       redirect_to admin_videos_path
     else
       flash[:error] = video.errors.messages.values[0][0]
-      render :index
+      redirect_to admin_videos_path
     end
   end
 

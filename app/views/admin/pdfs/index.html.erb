@@ -3,7 +3,7 @@
   <br>
   <%= form_for :pdf, url: admin_pdfs_path, :html => { :multipart => true , class: "form-horizontal" } do |f| %>
     <div class="form-group">
-      <%= f.label :pdf_file, "Upload PDF --->", class:"col-sm-2 control-group lead" %>
+      <%= f.label :pdf_file, "Upload PDF", class:"col-sm-2 control-group lead" %>
       <%= f.file_field :pdf_file %>
       <br>
       <%= f.submit "Submit", class: "btn btn-primary col-sm-1" %>
