@@ -68,10 +68,9 @@ RSpec.feature "Company Signup Page", type: :feature do
         check 'company[hiring]'
         fill_in 'company[hire_count]', with: 5
         click_button('Create techHire account')
-        expect(current_path).to eq(root_path)
+        expect(current_path).to eq(company_path(Company.last.id))
       end
       expect(page.find('.success')).to have_content('Welcome Bob')
-      expect(page).to have_content("Connecting businesses, communities and the tech talent pipeline")
     end
 
     it "can not signup a company if email validation fails" do

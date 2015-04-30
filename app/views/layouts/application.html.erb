@@ -10,11 +10,11 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 </head>
-<div class="container">  
-  <body>
-    <% if current_user && current_user.admin? %>
-      <%= render 'partials/navbar' %>
-    <% end %>
+<body>
+
+  <% if current_user && current_user.admin? %>
+    <%= render 'navbar' %>
+  <% end %>
 
     <%= render partial: "layouts/flash" %>
 

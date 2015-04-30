@@ -3,11 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root "static_pages#home"
   get "/home", to: "static_pages#home", as: "home"
-  get "/learn_more", to: "static_pages#learn_more", as: "learn_more"
-  get "/tools_resources", to: "static_pages#tools_resources", as: "tools_resources"
-  get "/techhire_locations", to: "static_pages#techhire_locations", as: "techhire_locations"
-  get '/admin', to: 'sessions#new', as: 'admin/login'
-  post '/admin', to: 'sessions#create'
+  get "/learn-more", to: "static_pages#learn_more", as: "learn_more"
+  get "/tools-resources", to: "static_pages#tools_resources", as: "tools_resources"
+  get "/techhire-locations", to: "static_pages#techhire_locations", as: "techhire_locations"
   get '/download', to: "static_pages#download", as: "download"
   get 'signup', to: "companies#new"
 
@@ -17,7 +15,7 @@ Rails.application.routes.draw do
     resources :videos
     resources :pdfs
     resources :techhire_locations
-    resources :companies, only: [:show, :destroy, :update, :index] do
+    resources :companies, except: [:create] do
       resources :notes, only: [:index, :create, :destroy]
     end
     namespace :static_pages do
@@ -28,7 +26,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :companies, only: [:create]
+  resources :companies, only: [:create, :show]
   resources :pdfs, only: [:show]
-
 end
