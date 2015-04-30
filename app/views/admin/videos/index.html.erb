@@ -1,0 +1,11 @@
+<h1>Upload a new video</h1>
+
+<%= form_for(:video, url:admin_videos_path) do |f| %>
+  <%= f.label :title, "Title of Video" %>
+  <%= f.text_field :title, placeholder: "ex: Whitehouse Tour" %>
+
+  <%= f.label :video, "Add Youtube Url Here--->" %>
+  <%= f.text_field :url, placeholder: "ex: https://www.youtube.com/watch?v=Ap31wUxF_m8" %>
+
+  <%= f.submit %>
+<% end %>
