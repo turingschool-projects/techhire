@@ -13,4 +13,8 @@ class Company < ActiveRecord::Base
   scope :dead, -> { where status: "dead"}
 
   STATUS_OPTIONS = { "Uncontacted" => "uncontacted", "Contacted" => "contacted", "Confirmed" => "confirmed", "Dead" => "dead" }
+
+  def self.company_count_by_status(status)
+    self.send(status.to_sym).count
+  end
 end
