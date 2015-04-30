@@ -13,6 +13,6 @@ RSpec.describe Admin::PdfsController, type: :controller do
                           }
     end
 
-    expect(response).to redirect_to("/admin/dashboard")
+    expect(response).to redirect_to("/admin/pdfs")
   end
 end
