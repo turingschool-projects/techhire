@@ -12,12 +12,12 @@
 </div>
 <div class="form-group">
   <%= f.label(:state, "State") %>
-  <%= f.select :state, options_for_select(state_helper) %>
+  <%= f.select :state, options_for_select(state_helper, @company.state) %>
 </div>
 <div class="form-group">
   <%= f.label(:city, "City") %>
   <% cache @cities do %>
-  <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :id, :name %><br>
+  <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
   <% end %>
 </div>
 <div class="form-group">
