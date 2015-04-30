@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory :techhire_location do
-    city "MyString"
-state "MyString"
-  end
-
+    city "New York City"
+    state "NY"
 end

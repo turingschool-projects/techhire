@@ -3,6 +3,8 @@ pdf = Pdf.create(slot: 1)
 pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
 pdf.save
 
+User.create(email: "admin@gmail.com", password: "password", role: 1)
+
 # techhire_locations
 TechhireLocation.create(
   city: "Louisville",
