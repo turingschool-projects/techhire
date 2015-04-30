@@ -14,6 +14,10 @@ class Admin::ContentsController < ApplicationController
     end
   end
 
+  def edit
+
+  end 
+
   private
 
   def new_content_params
