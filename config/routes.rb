@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resource :tools_resources, only: [:edit]
   end
 
-  resources :companies, only: [:create]
+  resources :companies, only: [:create, :show]
   resources :pdfs, only: [:show]
   get 'signup', to: "companies#new"
 end

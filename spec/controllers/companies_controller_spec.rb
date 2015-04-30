@@ -13,9 +13,9 @@ RSpec.describe CompaniesController, :type => :controller do
                       hiring: 1,
                   hire_count: 5
                        }
+    original_company_count = Company.count
     post :create, company: company_params
-    assert_redirected_to root_path
-    expect(assigns(:company)).not_to be_nil
-    expect(assigns(:company)).to be_a(Company)
+    assert_redirected_to company_path(Company.last.id)
+    expect(original_company_count + 1).to eq(Company.count)
   end
 end
