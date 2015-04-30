@@ -56,6 +56,6 @@ RSpec.feature "AdminContentManagement", type: :feature do
     click_button "Submit"
 
     expect(page).to have_content("There cannot be duplicate titles.")
-    expect(page).to have_selector("#table-row", count: 1)
+    expect(page).to have_selector("#table-row", count: 1)ww
   end
 end
