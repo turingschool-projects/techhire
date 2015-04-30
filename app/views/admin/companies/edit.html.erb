@@ -1,38 +1,15 @@
 <%= form_for [:admin, @company] do |f| %>
-<div class="form-group">
-  <%= f.label(:name, "Name (First and Last)") %>
-  <%= f.text_field :name, required: true %><br>
-</div>
-<div class="form-group">
-  <%= f.label(:organization, "Organization") %>
-  <%= f.text_field :organization, required: true  %><br>
-</div>
-<div class="form-group">
-  <%= f.label(:title, "Title") %>
-  <%= f.text_field :title, required: true  %><br>
-</div>
-<div class="form-group">
-  <%= f.label(:state, "State") %>
-  <%= f.select :state, options_for_select(state_helper), placeholder: "AL" %>
-</div>
-<div class="form-group">
-  <%= f.label(:city, "City") %>
-  <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :id, :name %><br>
-</div>
-<div class="form-group">
-  <%= f.label(:email, "Email") %>
-  <%= f.text_field :email, type: 'email', required: true  %><br>
-</div>
-<div class="form-group">
-  <%= f.check_box :hiring %>
-  <%= f.label(:hiring, "This company is hiring") %>
-</div>
-<div class="form-group">
-  <%= f.number_field :hire_count, in: 0..500, step: 1, value: 0 %><br>
-  <%= f.label(:hire_count, "Number of people hiring") %>
-</div>
-<div class="form-group">
-  <%= f.hidden_field :status %>
-</div>
-  <%= f.submit "Submit" %>
+  <%= render "partials/signup_form", f: f  %>
+  <div class="form-group">
+    <%= f.check_box :hiring %>
+    <%= f.label(:hiring, "This company is hiring") %>
+  </div>
+  <div class="form-group">
+    <%= f.number_field :hire_count, in: 0..500, step: 1, value: 0 %><br>
+    <%= f.label(:hire_count, "Number of people hiring") %>
+  </div>
+  <div class="form-group">
+    <%= f.hidden_field :status %>
+  </div>
+    <%= f.submit "Submit" %>
 <% end %>

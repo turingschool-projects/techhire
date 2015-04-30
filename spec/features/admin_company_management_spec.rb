@@ -88,13 +88,15 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       expect(current_path).to eq(admin_companies_path)
       click_link(company.organization)
-      select "Contacted", :from => "company_status"
+      select "Contacted", from: "company_status"
       click_button("Update Status")
 
       expect(Company.first.status).to eq("contacted")
     end
 
     it "can edit a company information" do
+      State.create(abbr: "WY", id: 14)
+      UsaCity.create(name: "Laramie", state_id: 14)
       company = create(:company)
       login
 
@@ -109,10 +111,20 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       fill_in "company[name]", with: "Mr. Smithers"
       fill_in "company[organization]", with: "Netflix"
-      fill_in "company[title]", with: ""
+      fill_in "company[title]", with: "President"
+      select "WY", from: "company[state]"
+      select "Laramie", from: "company[city]"
+      fill_in "company[email]", with: "smithy@example.com"
+      find(:css, "#company_hiring").set(false)
+      fill_in "company[hire_count]", with: 7
       click_button("Submit")
+
       expect(current_path).to eq(admin_company_path(company.id))
+      expect(page).to have_content("Mr. Smithers")
       expect(page).to have_content("Netflix")
+      expect(page).to have_content("President")
+      expect(page).to have_content("smithy@example.com")
+      expect(page).to have_content("7")
     end
   end
 end

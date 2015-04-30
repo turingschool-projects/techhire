@@ -3,18 +3,18 @@ require 'rails_helper'
 RSpec.describe State, type: :model do
   let! (:state) {
     State.create(
-                 abbr: "CO",
-                   id: 14
-                )
+    abbr: "CO",
+    id: 14
+    )
   }
 
   let! (:usa_city1) {
     UsaCity.create(
-                   name: "Denver",
-               state_id: 14
-                  )
+    name: "Denver",
+    state_id: 14
+    )
   }
-
+  
   let! (:usa_city2) {
     UsaCity.create(
                    name: "Boulder",

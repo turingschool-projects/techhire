@@ -12,5 +12,9 @@ class Company < ActiveRecord::Base
   scope :confirmed, -> { where status: "confirmed"}
   scope :dead, -> { where status: "dead"}
 
-  STATUS_OPTIONS = { "Uncontacted" => "uncontacted", "Contacted" => "contacted", "Confirmed" => "confirmed", "Dead" => "dead" }
+  STATUS_OPTIONS = { "Uncontacted" => "uncontacted",
+                     "Contacted" => "contacted",
+                     "Confirmed" => "confirmed",
+                     "Dead" => "dead"
+                   }
 end
