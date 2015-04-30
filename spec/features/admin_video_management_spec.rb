@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "AdminVideoManagements", type: :feature do
+RSpec.feature "AdminVideoManagement", type: :feature do
   it "should be able to upload a video" do
     visit 'admin/videos'
     fill_in "video[title]", with: "Title"

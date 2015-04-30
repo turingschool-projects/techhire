@@ -10,13 +10,13 @@ class Admin::ContentsController < ApplicationController
       redirect_to admin_contents_path
     else
       flash[:error] = content.errors.messages.values[0][0]
-      render :index
+      redirect_to admin_contents_path
     end
   end
 
   def edit
 
-  end 
+  end
 
   private
 
