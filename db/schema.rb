@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20150429205249) do
     t.float    "longitude"
   end
 
+  create_table "contents", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "page"
+    t.integer  "slot"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "notes", force: :cascade do |t|
     t.string   "body"
     t.integer  "company_id"
