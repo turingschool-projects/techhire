@@ -144,8 +144,8 @@ class Seed
       name: "user#{i}",
       organization: "company#{i}",
       title: "head person#{i}",
-      state: "CO",
-      city: "Denver",
+      state: "MO",
+      city: "St. Louis",
       email: "user#{i}@email.com",
       hiring: 1,
       hire_count: 5,
@@ -174,13 +174,13 @@ class Seed
 
   def build_confirmed_companies
     i = 21
-    10.times do
+    9.times do
       Company.create(
         name: "user#{i}",
         organization: "company#{i}",
         title: "head person#{i}",
-        state: "CO",
-        city: "Denver",
+        state: "KS",
+        city: "Witchita",
         email: "user#{i}@email.com",
         hiring: 1,
         hire_count: 5,
@@ -197,8 +197,8 @@ class Seed
         name: "user#{i}",
         organization: "company#{i}",
         title: "head person#{i}",
-        state: "CO",
-        city: "Denver",
+        state: "OK",
+        city: "Oklahoma City",
         email: "user#{i}@email.com",
         hiring: 1,
         hire_count: 5,
