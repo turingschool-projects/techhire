@@ -25,5 +25,10 @@ RSpec.feature "AdminPdfManagements", type: :feature do
 
     expect(page).to have_content("Something went wrong with the upload")
     expect(current_path).to eql(admin_pdfs_path)
+
+    attach_file "pdf[pdf_file]", Rails.root.join('spec', 'fixtures', 'whitehouse_png.png')
+    click_button "Submit"
+
+    expect(page).to have_content("Something went wrong with the upload")
   end
 end

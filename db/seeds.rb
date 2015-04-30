@@ -27,8 +27,8 @@ TechhireLocation.create(
 )
 
 TechhireLocation.create(
-  city: "City of Kearney and Buffalo County",
-  state: "Kentucky"
+  city: "Lincoln",
+  state: "Nebraska"
 )
 
 TechhireLocation.create(
@@ -67,11 +67,6 @@ TechhireLocation.create(
 )
 
 TechhireLocation.create(
-  city: "City of Kearney and Buffalo County",
-  state: "Kentucky"
-)
-
-TechhireLocation.create(
   city: "Eastern Kentucky",
   state: "Kentucky"
 )
@@ -89,11 +84,6 @@ TechhireLocation.create(
 TechhireLocation.create(
   city: "Detroit",
   state: "Michigan"
-)
-
-TechhireLocation.create(
-  city: "City of Kearney and Buffalo County",
-  state: "Kentucky"
 )
 
 TechhireLocation.create(
