@@ -95,8 +95,8 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
     end
 
     it "can edit a company information" do
-      State.create(abbr: "WY", id: 14)
-      UsaCity.create(name: "Laramie", state_id: 14)
+      State.create(abbr: "WY", id: 51)
+      UsaCity.create(name: "Laramie", state_id: 51)
       company = create(:company)
       login
 
@@ -123,6 +123,8 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(page).to have_content("Mr. Smithers")
       expect(page).to have_content("Netflix")
       expect(page).to have_content("President")
+      expect(page).to have_content("WY")
+      expect(page).to have_content("Laramie")
       expect(page).to have_content("smithy@example.com")
       expect(page).to have_content("7")
     end
