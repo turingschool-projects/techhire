@@ -14,7 +14,14 @@ RSpec.feature "AdminDashboard", type: :feature do
       click_link_or_button('Log in')
     end
 
-   it "can click a link to view and manage the companies page" do
+    it "can click a link to view cms instructions" do
+      login
+      within('.navbar-header') do
+        expect(page).to have_content('CMS Instructions')
+      end
+    end
+
+    it "can click a link to view and manage the companies page" do
       login
 
       expect(current_path).to eq(admin_dashboard_index_path)

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboard, only: [:index]
+    get "/dashboard/cms-instructions", to: "dashboard#cms_instructions", as: "cms_instructions"
     resources :companies, except: [:create] do
       resources :notes, only: [:index, :create, :destroy]
     end
