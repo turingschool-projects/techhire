@@ -12,7 +12,7 @@
 </head>
 <body>
   <% if current_user && current_user.admin? %>
-    <%= render 'partials/navbar' %>
+    <%= render 'navbar' %>
   <% end %>
 
   <%= render partial: "layouts/flash" %>
