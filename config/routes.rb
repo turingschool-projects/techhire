@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboard, only: [:index]
-    resources :companies do
+    resources :companies, except: [:create] do
       resources :notes, only: [:index, :create, :destroy]
     end
     resources :pdfs, only: [:create, :new]
