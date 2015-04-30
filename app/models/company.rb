@@ -1,4 +1,5 @@
 class Company < ActiveRecord::Base
+  has_many :users
   has_many :notes
 
   validates :name, :organization, :title, :state, :city, presence: true
