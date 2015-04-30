@@ -9,20 +9,23 @@
 <div class="container">
   <h1 >Pdfs</h1>
   <div class="row">
+    <!-- <%= text_field_tag :pdf_file_name %>
+    <%= submit_tag "Filter", id: "filter-pdfs", class: "btn btn-default filter"%> -->
     <div class="panel-heading">
     </div>
       <table class="table">
         <thead>
           <tr class="filters">
             <th><input type="text" class="form-control" placeholder="ID" disabled></th>
-            <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+            <th><input type="text" id="pdf_file_name" class="form-control" placeholder="Name"></th>
             <th><input type="text" class="form-control" placeholder="Current Position" disabled></th>
             <th><input type="text" class="form-control" placeholder="Last Updated" disabled></th>
+            <th><input type="submit" class="btn btn-default filter" id="filter-pdfs" value="Filter"></th>
           </tr>
         </thead>
-      <tbody>
+      <tbody class="all-pdfs">
         <% @pdfs.each do |pdf| %>
-          <tr>
+          <tr class="PDFs">
             <td class="id"><%= pdf.id %></td>
             <td class="name"><%= link_to pdf.pdf_file_file_name,
                 admin_pdf_path(pdf.id) %></td>
