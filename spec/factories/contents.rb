@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :content do
-    title "MyString"
-body "MyText"
-page "MyString"
-slot 1
+    title "This is a descriptive title"
+    body "My Body is ready"
+    page "learn more"
+    slot 1
   end
 
 end
