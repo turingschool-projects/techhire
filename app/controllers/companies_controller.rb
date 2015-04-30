@@ -16,13 +16,16 @@ class CompaniesController < ApplicationController
                   password: User.generate_password,
                   company_id: company.id
                  )
-      flash[:success] = "Welcome #{company.name}"
+      flash[:success] = "Welcome #{company.organization}"
       redirect_to companies_welcome_path
     else
       flash[:errors] = "Please try again!"
       @company = Company.new
       render :new
     end
+  end
+
+  def welcome
   end
 
   private
