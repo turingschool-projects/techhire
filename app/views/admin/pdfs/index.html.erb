@@ -4,4 +4,36 @@
     <%= f.label :pdf, "Upload PDF -->" %>
     <%= f.file_field :pdf_file %> <br>
     <%= f.submit "Submit" %>
-<% end %>
+<% end %><br>
+
+<div class="container">
+  <h1 >Pdfs</h1>
+  <div class="row">
+    <div class="panel-heading">
+    </div>
+      <table class="table">
+        <thead>
+          <tr class="filters">
+            <th><input type="text" class="form-control" placeholder="ID" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Name" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Current Position" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Last Updated" disabled></th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @pdfs.each do |pdf| %>
+          <tr>
+            <td class="id"><%= pdf.id %></td>
+            <td class="name"><%= link_to pdf.pdf_file_file_name,
+                admin_pdf_path(pdf.id) %></td>
+            <td class="current-position"><%= pdf.slot %></td>
+            <td class="contact-title"><%= distance_of_time_in_words(pdf.updated_at, Time.now) %></td>
+            <td>
+              <%= link_to "Delete", admin_pdf_path(pdf.id), :method => "Delete", class: "btn btn-default" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
