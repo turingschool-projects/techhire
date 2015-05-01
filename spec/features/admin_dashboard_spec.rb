@@ -26,7 +26,7 @@ RSpec.feature "AdminDashboard", type: :feature do
       create(:company)
       login
       within(".company-statistics") do
-        expect(page).to have_content('Companies Not Yet Contacted: 1')
+        expect(page).to have_content('Uncontacted Companies: 1')
       end
 
       within(".companies-by-city") do
