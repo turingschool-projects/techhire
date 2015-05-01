@@ -39,6 +39,6 @@ RSpec.describe Company, type: :model do
     10.times do
       create(:company)
     end
-    expect(Company.company_count_by_city).to eq({"Denver" => 10})
+    expect(Company.company_count_by_city).to eq([["Denver",10]])
   end
 end
