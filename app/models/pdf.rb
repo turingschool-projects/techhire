@@ -1,4 +1,3 @@
-require 'time'
 class Pdf < ActiveRecord::Base
   has_attached_file :pdf_file,
     :path => "public/assets/pdfs/:basename.:extension",
