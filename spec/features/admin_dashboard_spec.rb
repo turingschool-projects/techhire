@@ -124,5 +124,65 @@ RSpec.feature "AdminDashboard", type: :feature do
       end
       expect(current_path).to eq(admin_static_pages_learn_more_path)
     end
+
+    it "can click a link to view the home page" do
+      login
+
+      expect(current_path).to eq(admin_dashboard_index_path)
+
+      within("li.view-home") do
+        expect(page).to have_content('Home')
+        click_link_or_button("Home")
+      end
+      expect(current_path).to eq(home_path)
+    end
+
+    it "can click a link to view the tools and resources page" do
+      login
+
+      expect(current_path).to eq(admin_dashboard_index_path)
+
+      within("li.view-tools-resources") do
+        expect(page).to have_content('Tools/Resources')
+        click_link_or_button("Tools/Resources")
+      end
+      expect(current_path).to eq(tools_resources_path)
+    end
+
+    it "can click a link to view the signup page" do
+      login
+
+      expect(current_path).to eq(admin_dashboard_index_path)
+
+      within("li.view-signup") do
+        expect(page).to have_content('Sign Up')
+        click_link_or_button("Sign Up")
+      end
+      expect(current_path).to eq(signup_path)
+    end
+
+    it "can click a link to view the learn more page" do
+      login
+
+      expect(current_path).to eq(admin_dashboard_index_path)
+
+      within("li.view-learn-more") do
+        expect(page).to have_content('Learn More')
+        click_link_or_button("Learn More")
+      end
+      expect(current_path).to eq(learn_more_path)
+    end
+
+    it "can click a link to view the techhire locations page" do
+      login
+
+      expect(current_path).to eq(admin_dashboard_index_path)
+
+      within("li.view-techhire-locations") do
+        expect(page).to have_content('Tech Hire Locations')
+        click_link_or_button('Tech Hire Locations')
+      end
+      expect(current_path).to eq(techhire_locations_path)
+    end
   end
 end
