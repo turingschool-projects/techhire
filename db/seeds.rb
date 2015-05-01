@@ -5,6 +5,16 @@ pdf.save
 
 User.create(email: "admin@gmail.com", password: "password", role: 1)
 
+3.times do |x|
+  Content.create(title: "Some descriptive title",
+                  body: "Body of text",
+                  page: "learn more",
+                  slot: x + 1)
+
+
+
+
+
 # techhire_locations
 TechhireLocation.create(
   city: "Louisville",
