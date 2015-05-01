@@ -46,7 +46,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.manage-static-link") do
+      within("li.dropdown-header.manage-static-link") do
         expect(page).to have_content('Manage Static Content')
       end
     end
@@ -56,7 +56,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.dropdown-headermanage-home") do
+      within("li.dropdown-header.manage-home") do
         expect(page).to have_content('Home')
         click_link_or_button("Home")
       end
@@ -68,9 +68,10 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.manage-map") do
+      within("li.dropdown-header.manage-map") do
         expect(page).to have_content('Manage Map')
       end
+      expect(current_path).to eq(admin_static_pages_techhire_locations_path)
     end
 
     it "can click a link to manage PDF files content" do
@@ -78,9 +79,10 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.manage-pdf") do
+      within("li.dropdown-header.manage-pdf") do
         expect(page).to have_content('Manage PDF Files')
       end
+      expect(current_path).to eq(admin_pdfs_path)
     end
 
     it "can click a link to manage video content" do
@@ -88,9 +90,10 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.manage-video") do
+      within("li.dropdown-header.manage-video") do
         expect(page).to have_content('Manage Video Files')
       end
+      expect(current_path).to eq(admin_videos_path)
     end
 
     it "can click a link to manage tools and resources content" do
@@ -98,9 +101,10 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.manage-tools") do
+      within("li.dropdown-header.manage-tools") do
         expect(page).to have_content('Tools/Resources')
       end
+      expect(current_path).to eq(admin_static_pages_tools_resources_path)
     end
 
     it "can click a link to manage Learn More content" do
@@ -108,18 +112,10 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.manage-learn") do
+      within("li.dropdown-header.manage-learn") do
         expect(page).to have_content('Learn More')
       end
-    end
-
-    it "can click a link to manage sign up content" do
-      login
-
-      expect(current_path).to eq(admin_dashboard_index_path)
-      within("li.manage-sign-up") do
-        expect(page).to have_content('Sign Up')
-      end
+      expect(current_path).to eq(admin_static_pages_learn_more_path)
     end
   end
 end
