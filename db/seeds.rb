@@ -11,6 +11,12 @@ class Seed
     build_content
   end
 
+  def build_pdf
+    pdf = Pdf.create(slot: 1)
+    pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
+    pdf.save
+  end
+
   def build_techhire_locations
     TechhireLocation.create(
       city: "Louisville",
@@ -215,12 +221,13 @@ class Seed
     User.create(email: "admin@gmail.com", password: "password", role: 1)
   end
 
+
   def build_content
     3.times do |x|
       Content.create(title: "Some descriptive title",
-                    body: "Body of text",
-                    page: "learn more",
-                    slot: x + 1)
+                      body: "Body of text",
+                      page: "learn more",
+                      slot: x + 1)
     end
   end
 end
