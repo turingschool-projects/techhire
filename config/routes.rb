@@ -19,10 +19,10 @@ Rails.application.routes.draw do
       resources :notes, only: [:index, :create, :destroy]
     end
     namespace :static_pages do
-      get "/home", to: "home", as: "home"
-      get "/learn_more", to: "learn_more", as: "learn_more"
-      get "/tools_resources", to: "tools_resources", as: "tools_resources"
-      get "/techhire_locations", to: "techhire_locations", as: "techhire_locations"
+      get "/home", to: "static_pages#home", as: "home"
+      get "/learn_more", to: "static_pages#learn_more", as: "learn_more"
+      get "/tools_resources", to: "static_pages#tools_resources", as: "tools_resources"
+      get "/techhire_locations", to: "static_pages#techhire_locations", as: "techhire_locations"
     end
   end
 
