@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    role == "admin" 
+    role == "admin" || role == "super_admin"
   end
 
   def company?
