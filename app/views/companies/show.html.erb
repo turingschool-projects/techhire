@@ -2,12 +2,8 @@
 <h4><%= @company.city %></h4>
 <h4><%= @company.state %></h4>
 
-<% if current_user.company? %>
-  <h4><%= current_user.name %></h4>
-  <h4><%= current_user.title %></h4>
-  <h4><%= current_user.email %></h4>
-<% elsif current_user.admin? %>
-  <h4><%= @company.users.first.name %></h4>
-  <h4><%= @company.users.first.title %></h4>
-  <h4><%= @company.users.first.email %></h4>
+<% @company.users do |user| %>
+  <h4><%= user.name %></h4>
+  <h4><%= user.title %></h4>
+  <h4><%= user.email %></h4>
 <% end %>
