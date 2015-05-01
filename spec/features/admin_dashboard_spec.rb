@@ -56,9 +56,11 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
-      within("li.manage-home") do
+      within("li.dropdown-headermanage-home") do
         expect(page).to have_content('Home')
+        click_link_or_button("Home")
       end
+      expect(current_path).to eq(admin_static_pages_home_path)
     end
 
     it "can click a link to manage map content" do
