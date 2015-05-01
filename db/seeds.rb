@@ -214,15 +214,14 @@ class Seed
   def build_users
     User.create(email: "admin@gmail.com", password: "password", role: 1)
   end
-end
 
-def build_content
-  3.times do |x|
-    Content.create(title: "Some descriptive title",
+  def build_content
+    3.times do |x|
+      Content.create(title: "Some descriptive title",
                     body: "Body of text",
                     page: "learn more",
                     slot: x + 1)
+    end
   end
 end
-
 Seed.new
