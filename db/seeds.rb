@@ -6,6 +6,8 @@ class Seed
     build_dead_companies
     build_pdf
     build_techhire_locations
+    build_pdfs
+    build_users
   end
 
   def build_pdf
@@ -206,6 +208,16 @@ class Seed
       )
       i = i + 1
     end
+  end
+  # Pdfs
+  def build_pdfs
+    pdf = Pdf.create(slot: 1)
+    pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
+    pdf.save
+  end
+
+  def build_users
+    User.create(email: "admin@gmail.com", password: "password", role: 1)
   end
 end
 
