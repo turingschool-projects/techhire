@@ -24,7 +24,7 @@
                     <td class="contact"><%= company.name %></td>
                     <td class="contact-title"><%= company.title %></td>
                     <td class="email"><%= company.email %></td>
-                    <td class="hire_count"><%= distance_of_time_in_words(company.updated_at, Time.now) %></td>
+                    <td class="signed_up"><%= distance_of_time_in_words(company.updated_at, Time.now) %></td>
                   </tr>
                 <% end %>
               </tbody>

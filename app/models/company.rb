@@ -18,15 +18,12 @@ class Company < ActiveRecord::Base
                      "Confirmed" => "confirmed",
                      "Dead" => "dead"
                    }
-                   
+
   def self.company_count_by_status(status)
-    self.send(status.to_sym).count
+    send(status.to_sym).count
   end
 
   def self.company_count_by_city
-    self.order(:city)
-        .pluck(:city)
-        .group_by{ |city| city}
-        .inject({}) {|hash, (k,v)| hash[k] = v.size; hash}
+    group(:city).count.sort_by { |_key, value| value }.pop(10).reverse
   end
 end
