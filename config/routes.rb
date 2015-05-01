@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/tools-resources", to: "static_pages#tools_resources", as: "tools_resources"
   get "/techhire-locations", to: "static_pages#techhire_locations", as: "techhire_locations"
   get '/download', to: "static_pages#download", as: "download"
+  get 'signup', to: "companies#new"
 
   namespace :admin do
     resources :dashboard, only: [:index]
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
     resources :videos
     resources :pdfs
     resources :techhire_locations
-    resources :companies, only: [:show, :destroy, :update, :index] do
+    resources :companies, except: [:create] do
       resources :notes, only: [:index, :create, :destroy]
     end
     namespace :static_pages do
@@ -25,7 +26,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :companies, only: [:create]
+  resources :companies, only: [:create, :show]
   resources :pdfs, only: [:show]
-  get 'signup', to: "companies#new"
 end
