@@ -14,6 +14,26 @@ RSpec.feature "AdminDashboard", type: :feature do
       click_link_or_button('Log in')
     end
 
+    it "can see a list of uncontacted companies on the dashboard" do
+      create(:company)
+      login
+      expect(page).to have_content('Google')
+      expect(page).to have_content('Bob')
+      expect(page).to have_content('google@email.com')
+    end
+
+    it "can see company statistics on Admin Dashboard" do
+      create(:company)
+      login
+      within(".company-statistics") do
+        expect(page).to have_content('Companies Not Yet Contacted: 1')
+      end
+
+      within(".companies-by-city") do
+        expect(page).to have_content('Top TechHire Cities Denver : 1')
+      end
+    end
+
    it "can click a link to view and manage the companies page" do
       login
 
