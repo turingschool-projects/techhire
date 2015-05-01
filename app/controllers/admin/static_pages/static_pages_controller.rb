@@ -13,4 +13,9 @@ class Admin::StaticPages::StaticPagesController < ApplicationController
     @contents = Content.where(page: "home")
     @videos   = Video.where(page: "video")
   end
+
+  def tools_resources
+    @contents = Content.where(page: "tools_resources")
+    @videos = Video.where(page: "tools_resources")
+  end
 end
