@@ -7,10 +7,6 @@ class User < ActiveRecord::Base
 
   enum role: %w(company admin super_admin)
 
-  def super_admin?
-    role == "super_admin"
-  end
-
   def admin?
     role == "admin" || role == "super_admin"
   end

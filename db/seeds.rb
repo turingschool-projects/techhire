@@ -10,6 +10,7 @@ User.create(email: "admin@gmail.com", password: "password", role: 1)
                   body: "Body of text",
                   page: "learn more",
                   slot: x + 1)
+end
 
 
 
