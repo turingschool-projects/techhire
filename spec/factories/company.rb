@@ -17,6 +17,7 @@ FactoryGirl.define do
     name "John"
     title "RoR Developer"
     email "john@example.com"
+    status "uncontacted"
 
     transient do
       user_count 2
