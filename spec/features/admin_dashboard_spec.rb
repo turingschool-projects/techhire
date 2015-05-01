@@ -48,7 +48,9 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       within("li.dropdown-header.manage-static-link") do
         expect(page).to have_content('Manage Static Content')
+        click_link_or_button("Manage Static Content")
       end
+      expect(current_path).to eq(admin_contents_path)
     end
 
     it "can click a link to manage home content" do
@@ -70,6 +72,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       within("li.dropdown-header.manage-map") do
         expect(page).to have_content('Manage Map')
+        click_link_or_button("Manage Map")
       end
       expect(current_path).to eq(admin_static_pages_techhire_locations_path)
     end
@@ -81,6 +84,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       within("li.dropdown-header.manage-pdf") do
         expect(page).to have_content('Manage PDF Files')
+        click_link_or_button("Manage PDF Files")
       end
       expect(current_path).to eq(admin_pdfs_path)
     end
@@ -92,6 +96,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       within("li.dropdown-header.manage-video") do
         expect(page).to have_content('Manage Video Files')
+        click_link_or_button("Manage Video Files")
       end
       expect(current_path).to eq(admin_videos_path)
     end
@@ -103,6 +108,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       within("li.dropdown-header.manage-tools") do
         expect(page).to have_content('Tools/Resources')
+        click_link_or_button("Tools/Resources")
       end
       expect(current_path).to eq(admin_static_pages_tools_resources_path)
     end
@@ -114,6 +120,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
       within("li.dropdown-header.manage-learn") do
         expect(page).to have_content('Learn More')
+        click_link_or_button("Learn More")
       end
       expect(current_path).to eq(admin_static_pages_learn_more_path)
     end
