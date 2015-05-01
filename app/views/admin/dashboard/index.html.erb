@@ -19,7 +19,7 @@
     </ul>
     <div class="company-statistics well">
       <div class="company-data">
-        <h3>Company Data</h3>
+        <h3 class="well-header">Company Data</h3>
         <div class="uncontacted-companies">
           Companies Not Yet Contacted: <%= Company.company_count_by_status("uncontacted") %>
         </div>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="companies-by-city">
-        <h3>Top TechHire Cities</h3>
+        <h3 class="well-header">Top TechHire Cities</h3>
         <% Company.company_count_by_city.each do |city, count|%>
         <div class="top-cities">
           <%= city %> : <%= count %>

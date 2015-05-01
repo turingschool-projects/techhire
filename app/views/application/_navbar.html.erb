@@ -45,7 +45,9 @@
                   </ul>
                     </li>
                   </ul>
-                  <a class="nav navbar-right" href="#">Logout</a>
+                  <div class="nav navbar-right">
+                  <%= link_to "Logout", destroy_user_session_path(current_user.id), method: :delete %>
+                </div>
                 </div><!-- /.nav-collapse -->
               </nav>
             </div>
