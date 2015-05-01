@@ -20,8 +20,4 @@ class Pdf < ActiveRecord::Base
   def pdf_attached?
     self.pdf_file.present?
   end
-
-  def update_formatter
-    time = self.pdf_file_updated_at.strftime("%b %e, %l:%M %p")
-  end
 end

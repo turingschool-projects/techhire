@@ -18,12 +18,6 @@ class Admin::PdfsController < ApplicationController
   end
 
   def create
-# <<<<<<< HEAD
-#     pdf = Pdf.new(new_pdf_params)
-#     if pdf.save
-#       flash[:success] = "Pdf successfully uploaded"
-#       redirect_to admin_pdfs_path
-# =======
     if params[:pdf]
       pdf = Pdf.new(new_pdf_params)
       if pdf.save
@@ -33,7 +27,6 @@ class Admin::PdfsController < ApplicationController
         flash[:error] = pdf.errors.map { |error, message| message }.first
         redirect_to admin_pdfs_path
       end
-# >>>>>>> master
     else
       redirect_to admin_pdfs_path, flash: { error: "PDF cannot be blank" }
     end
