@@ -17,13 +17,16 @@ class CompaniesController < ApplicationController
                          company_id: company.id
                         )
       UserEmailer.send_welcome_email(@user).deliver
-      flash[:success] = "Welcome #{company.name}"
-      redirect_to company_path(company.id)
+      flash[:success] = "Welcome #{company.organization}"
+      redirect_to companies_welcome_path
     else
       flash[:errors] = "Please try again!"
       @company = Company.new
       render :new
     end
+  end
+
+  def welcome
   end
 
   private
