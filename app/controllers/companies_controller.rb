@@ -17,7 +17,7 @@ class CompaniesController < ApplicationController
                           company_id: company.id
                           )
       flash[:success] = "Welcome #{company.organization}"
-      UserEmailer.send_signup_email(@user).deliver
+      UserEmailer.send_welcome_email(@user).deliver
       redirect_to companies_welcome_path
     else
       flash[:errors] = "Please try again!"
