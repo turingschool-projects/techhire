@@ -12,9 +12,10 @@
 </head>
 <body>
   <div class="container">
-    <% if current_user && current_user.admin? %>
-      <%= render 'navbar' %>
-    <% end %>
+
+  <% if current_user && current_user.admin? %>
+    <%= render 'navbar' %>
+  <% end %>
 
   <%= render partial: "layouts/flash" %>
 
