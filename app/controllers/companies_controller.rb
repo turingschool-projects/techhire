@@ -11,11 +11,11 @@ class CompaniesController < ApplicationController
     company = Company.new(company_params)
     if company.save
       @user = User.create(email: company_params[:email],
-                  name: company_params[:name],
-                  title: company_params[:title],
-                  password: User.generate_password,
-                  company_id: company.id
-                 )
+                          name: company_params[:name],
+                          title: company_params[:title],
+                          password: User.generate_password,
+                          company_id: company.id
+                          )
       flash[:success] = "Welcome #{company.organization}"
       UserEmailer.send_signup_email(@user).deliver
       redirect_to companies_welcome_path
