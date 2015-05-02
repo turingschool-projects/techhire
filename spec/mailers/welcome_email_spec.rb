@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe UserEmailer, type: :mailer do
-  test "it sends a welcome email" do
+  it "sends a welcome email" do
     user = build(:user)
     email = UserEmailer.send_welcome_email(user).deliver_now
 

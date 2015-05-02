@@ -16,7 +16,7 @@ class CompaniesController < ApplicationController
                          password: User.generate_password,
                          company_id: company.id
                         )
-      UserEmailer.send_signup_email(@user).deliver
+      UserEmailer.send_welcome_email(@user).deliver
       flash[:success] = "Welcome #{company.name}"
       redirect_to company_path(company.id)
     else
