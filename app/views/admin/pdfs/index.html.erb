@@ -1,7 +1,7 @@
 <h1>This is where you can upload pdfs</h1>
 
 <%= form_for :pdf, url: admin_pdfs_path, :html => { :multipart => true } do |f| %>
-    <%= f.label :pdf, "Upload PDF -->" %>
+    <%= f.label :pdf, "Upload PDF" %>
     <%= f.file_field :pdf_file %> <br>
     <%= f.submit "Submit" %>
 <% end %><br>
@@ -25,8 +25,7 @@
         <% @pdfs.each do |pdf| %>
           <tr class="PDFs">
             <td class="id"><%= pdf.id %></td>
-            <td class="name"><%= link_to pdf.pdf_file_file_name,
-                admin_pdf_path(pdf.id) %></td>
+            <td class="name"><%= pdf.pdf_file_file_name %></td>
             <td class="current-position"><%= pdf.slot %></td>
             <td class="contact-title"><%= distance_of_time_in_words(pdf.updated_at, Time.now) %></td>
             <td>
