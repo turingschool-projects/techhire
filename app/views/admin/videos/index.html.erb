@@ -30,7 +30,7 @@
       <tr id="table-row" data-title= "<%= video.id %>">
         <td><%= video.title %></td>
         <td><%= video.url %></td>
-        <td><%= video.updated_at.strftime("Updated on %m/%d/%Y %I:%M%p") %></td>
+        <td><%= updated_at_time(video) %></td>
         <td> <%= link_to "Edit", edit_admin_pdf_path(video), class: "btn btn-primary" %>
           <%= link_to "Delete", admin_pdf_path(video), method: :destroy, class: "btn btn-primary" %> </td>
       </tr>

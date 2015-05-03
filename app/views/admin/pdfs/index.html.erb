@@ -25,7 +25,7 @@
     <% @pdfs.each do |pdf| %>
       <tr id="table-row" data-title= "<%= pdf.id %>">
         <td><%= pdf.pdf_file_file_name %></td>
-        <td><%= pdf.updated_at.strftime("Updated on %m/%d/%Y %I:%M%p") %></td>
+        <td><%= updated_at_time(pdf)</td>
         <td> <%= link_to "Edit", edit_admin_pdf_path(pdf), class: "btn btn-primary" %>
           <%= link_to "Delete", admin_pdf_path(pdf), method: :destroy, class: "btn btn-primary" %> </td>
       </tr>
