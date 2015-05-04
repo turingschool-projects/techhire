@@ -33,7 +33,6 @@ $(document).ready(function() {
           marks.push(coordinate);
         })
 
-        console.log(marks)
         svg.selectAll(".mark")
             .data(marks)
             .enter()
