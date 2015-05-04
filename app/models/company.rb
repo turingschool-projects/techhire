@@ -8,6 +8,8 @@ class Company < ActiveRecord::Base
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, }
                     validates :hire_count, numericality: { only_integer: true, }
 
+  after_create :create_new_user
+
   scope :contacted, -> { where status: "contacted"}
   scope :uncontacted, -> { where status: "uncontacted"}
   scope :confirmed, -> { where status: "confirmed"}
@@ -25,5 +27,23 @@ class Company < ActiveRecord::Base
 
   def self.company_count_by_city
     group(:city).count.sort_by { |_key, value| value }.pop(10).reverse
+  end
+
+  private
+
+  def create_new_user
+    password = User.generate_password
+    company = Company.last
+    user = User.create(email: company.email,
+                       name: company.name,
+                       title: company.title,
+                       password: password,
+                       company_id: company.id
+                       )
+    email_new_user(user, password)
+  end
+
+  def email_new_user(user, password)
+    UserEmailer.send_welcome_email(user, password).deliver_now
   end
 end

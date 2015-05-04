@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe UserEmailer, type: :mailer do
   describe('welcome email') do
-    let(:company) { create(:company) }
+    let(:company) { create(:company, email: "unused@example.com") }
     let(:full_subject) { "Thanks for signing up for TechHire!" }
 
     before(:each) do
