@@ -5,8 +5,9 @@ class Company < ActiveRecord::Base
   validates :name, :organization, :title, :state, :city, presence: true
   validates :status, inclusion: ["contacted", "uncontacted", "dead", "confirmed"]
   validates :email, presence: true, length: { maximum: 255 },
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, }
-                    validates :hire_count, numericality: { only_integer: true, }
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, },
+                    uniqueness: true
+  validates :hire_count, numericality: { only_integer: true, }
 
   after_create :create_new_user
 
@@ -40,7 +41,7 @@ class Company < ActiveRecord::Base
                        password: password,
                        company_id: company.id
                        )
-    email_new_user(user, password)
+   email_new_user(user, password) if user.save
   end
 
   def email_new_user(user, password)
