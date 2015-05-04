@@ -1,16 +1,18 @@
-<%= form_for :pdf, url: admin_pdfs_path, :html => { :multipart => true, class: "form-horizontal" } do |f| %>
-  <h1>This is where you can upload pdfs</h1>
+<h1>This is where you can upload pdfs</h1>
+
+<%= form_for :pdf, url: admin_pdfs_path, :html => { :multipart => true } do |f| %>
     <%= f.label :pdf, "Upload PDF" %>
     <%= f.file_field :pdf_file %> <br>
-    <%= f.submit "Submit", class:"btn btn-success" %>
+    <%= f.submit "Submit" %>
 <% end %><br>
+
 
 <div class="row">
   <table class="table table-condensed">
     <thead>
     <tr class="warning">
-      <th data-field='Title'>Title</th>
-      <th data-field='Updated_at'>Last Updated</th>
+      <th data-field='title'>Title</th>
+      <th data-field='updated_at'>Last Updated</th>
       <th data-field="Edit/Delete">Edit/Delete</th>
     </tr>
     </thead>
