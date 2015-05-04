@@ -210,6 +210,7 @@ class Seed
       i = i + 1
     end
   end
+
   # Pdfs
   def build_pdfs
     pdf = Pdf.create(slot: 1)
@@ -220,7 +221,6 @@ class Seed
   def build_users
     User.create(email: "admin@gmail.com", password: "password", role: 1)
   end
-
 
   def build_content
     3.times do |x|

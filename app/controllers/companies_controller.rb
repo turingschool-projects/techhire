@@ -12,12 +12,6 @@ class CompaniesController < ApplicationController
   def create
     company = Company.new(company_params)
     if company.save
-      User.create(email: company_params[:email],
-                  name: company_params[:name],
-                  title: company_params[:title],
-                  password: User.generate_password,
-                  company_id: company.id
-                 )
       flash[:success] = "Welcome #{company.organization}"
       redirect_to companies_welcome_path
     else
