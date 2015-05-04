@@ -17,7 +17,11 @@ RSpec.feature "AdminDashboard", type: :feature do
     it "can click a link to view cms instructions" do
       login
       within('.navbar-header') do
-        expect(page).to have_content('CMS Instructions')
+        click_link_or_button('CMS Instructions')
+      end
+      expect(current_path).to eq(admin_cms_instructions_path)
+      within('.cms-instructions-header') do
+        expect(page).to have_content('Content Management System(CMS) Instructions')
       end
     end
 
