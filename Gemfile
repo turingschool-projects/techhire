@@ -29,6 +29,11 @@ gem 'autoprefixer-rails'
 gem 'bourbon'
 # gem 'haml'
 
+#Roy assets
+gem 'bourbon'
+gem 'rails-sass-images'
+gem 'modernizr-rails'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

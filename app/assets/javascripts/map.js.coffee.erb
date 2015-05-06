@@ -1,5 +1,5 @@
 # Location of the JSON file containing all locations to be mapped
-locations_source = '<%= asset_path 'data/locations.json' %>'
+locations_source = '/assets/data/locations.json'
 
 # Set up variables
 location_url_base = '/location'
@@ -9,9 +9,13 @@ locations_list = null
 # Fetch JSON data and send it to the create_map function
 $(document).ready ->
   map = $('.mod-map .map')
+  console.log("got map", map)
   locations_list = $('.mod-map .locations ul')
+  console.log("got locs",locations_list)
+
 
   $.getJSON(locations_source, (data) =>
+    console.log(data);
     create_map data
   )
 
@@ -20,6 +24,7 @@ $(document).ready ->
 # Add locations to the map
 create_map = (data) ->
   $.each(data, (idx, location) =>
+    console.log("adding data, ", data, idx, location)
     create_marker location
     create_label location
   )
@@ -30,11 +35,14 @@ create_marker = (location) ->
   position =
     "left": "#{location.map_position[0]}px"
     "top": "#{location.map_position[1]}px"
+  console.log("generated position: ", position);
   marker.css position
   marker.hover(
     (e) -> highlight_location location.slug, true
     (e) -> highlight_location location.slug, false
   )
+  console.log("generated marker ", marker);
+  console.log("will append to map", map, "done");
   marker.appendTo map
 
 # Create a label for a location
