@@ -8,14 +8,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="<%= yield (:body_class) %>">
-    <%= render 'static_header' %>
+    <%= render 'layouts/static_header' %>
     <div class="layout-main">
       <main role="main">
         <%= yield %>
       </main>
     </div>
-    <%= render 'static_footer' %>
-    <%= render 'static_analytics' %>
+    <%= render 'layouts/static_footer' %>
+    <%= render 'layouts/static_analytics' %>
     <%= javascript_include_tag 'static_application' %>
   </body>
 </html>
