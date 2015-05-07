@@ -9,17 +9,12 @@ locations_list = null
 # Fetch JSON data and send it to the create_map function
 $(document).ready ->
   map = $('.mod-map .map')
-  console.log("got map", map)
   locations_list = $('.mod-map .locations ul')
-  console.log("got locs",locations_list)
-
 
   $.getJSON(locations_source, (data) =>
     console.log(data);
     create_map data
   )
-
-  init_debug()
 
 # Add locations to the map
 create_map = (data) ->
