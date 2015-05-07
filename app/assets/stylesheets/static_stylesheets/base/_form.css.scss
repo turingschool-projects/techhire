@@ -127,6 +127,20 @@ form {
     }
   }
 
+  .commit {
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    color: #3f96a6;
+
+    input[type="number"] {
+      width: 75px;
+      display: inline-block;
+      margin: 10px 15px;
+    }
+  }
+
   @include max-width(750px) {
     .row {
       margin-right: 0;
