@@ -45,12 +45,15 @@
     <div class="row commit">
       <%= f.check_box :hiring %>
       I am ready to commit to hiring
-      <%= f.text_field :hire_count %>
+      <%= f.number_field :hire_count, in: 0..500, step: 1, value: "" %>
       people through TechHire
     </div>
 
     <div class="row button-center">
       <%= f.submit "Create TechHire account", class: 'button' %>
     </div>
+  <script>
+  $("#new_company").validate();
+  </script>
   <% end %>
 </div>
