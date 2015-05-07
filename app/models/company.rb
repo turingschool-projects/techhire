@@ -50,7 +50,6 @@ class Company < ActiveRecord::Base
   end
 
   def verify_hire_count
-    binding.pry
     hire_count = 0 if hire_count == ""
   end
 end
