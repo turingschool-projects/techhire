@@ -34,9 +34,12 @@ RSpec.feature "Company Signup Page", type: :feature do
 
     it "can see links to signup and learn more on the home page" do
       visit ('/')
-      within(".links") do
-        expect(page).to have_link("Sign Up")
+      within("nav#static-site-nav") do
+        expect(page).to have_link("Home")
         expect(page).to have_link("Learn More")
+        expect(page).to have_link("TechHire Locations")
+        expect(page).to have_link("Sign Up")
+        expect(page).to have_link("Tools/Resources")
       end
     end
 
