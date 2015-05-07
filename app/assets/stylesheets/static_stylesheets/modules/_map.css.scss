@@ -1,7 +1,3 @@
-%clearfix {
-  @include clearfix;
-}
-
 .mod-map {
   @extend %clearfix;
 
@@ -65,27 +61,27 @@
     }
   }
 
-  /*@include max-width(999px) {*/
-    /*.map,*/
-    /*.locations {*/
-      /*float: none;*/
-      /*margin: 0 auto;*/
-    /*}*/
+  @include max-width(999px) {
+    .map,
+    .locations {
+      float: none;
+      margin: 0 auto;
+    }
 
-    /*.map {*/
-      /*margin-bottom: 40px;*/
-    /*}*/
+    .map {
+      margin-bottom: 40px;
+    }
 
-    /*.locations {*/
-      /*width: 100%;*/
-      /*text-align: center;*/
-    /*}*/
-  /*}*/
+    .locations {
+      width: 100%;
+      text-align: center;
+    }
+  }
 
-  /*@include max-width(630px) {*/
-    /*.map {*/
-      /*display: none;*/
-    /*}*/
-  /*}*/
+  @include max-width(630px) {
+    .map {
+      display: none;
+    }
+  }
 
 }
