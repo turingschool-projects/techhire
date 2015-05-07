@@ -9,17 +9,17 @@
   <%= form_for @company do |f| %>
     <div class="row">
       <%= f.label(:name, "Name (First and Last)") %>
-      <%= f.text_field :name, required: true %><br>
+      <%= f.text_field :name, required: true %>
     </div>
 
     <div class="row">
       <%= f.label(:organization, "Organization") %>
-      <%= f.text_field :organization, required: true  %><br>
+      <%= f.text_field :organization, required: true  %>
     </div>
 
     <div class="row">
       <%= f.label(:title, "Title") %>
-      <%= f.text_field :title, required: true  %><br>
+      <%= f.text_field :title, required: true  %>
     </div>
 
     <div class="row cols-25-75">
@@ -32,21 +32,20 @@
     <div class="row">
       <%= f.label(:city, "City") %>
       <% cache @cities do %>
-      <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
+      <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %>
       <% end %>
     </div>
 
     <div class="row">
       <%= f.label(:email, "Email") %>
-      <%= f.text_field :email, type: 'email', required: true  %><br>
+      <%= f.text_field :email, type: 'email', required: true  %>
     </div>
 
-    <div class="row">
+    <div class="row commit">
       <%= f.check_box :hiring %>
       <%= f.label(:hiring, "I am ready to commit to hiring") %>
-    </div>
-    <div class="row">
-      <%= f.number_field :hire_count, in: 0..500, step: 1, value: 0 %><br>
+
+      <%= f.text_field :hire_count %>
       <%= f.label(:hire_count, "people through TechHire") %>
     </div>
     <%= f.submit "Create techHire account" %>
