@@ -1,5 +1,5 @@
 # Location of the JSON file containing all locations to be mapped
-locations_source = '<%= asset_path 'data/locations.json' %>'
+locations_source = '/assets/data/locations.json'
 
 # Set up variables
 location_url_base = '/location'
@@ -14,8 +14,6 @@ $(document).ready ->
   $.getJSON(locations_source, (data) =>
     create_map data
   )
-
-  init_debug()
 
 # Add locations to the map
 create_map = (data) ->
@@ -65,7 +63,6 @@ location_url = (slug) ->
 # Alert x,y coordinates on click when the "data-debug" attribute is set
 init_debug = ->
   if map.is('[data-debug]')
-    console.log 'Starting debug mode'
     offset = map.offset()
 
     map.click (e) ->
