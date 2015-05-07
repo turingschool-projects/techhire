@@ -35,7 +35,5 @@ class CompaniesController < ApplicationController
                                     :email,
                                     :hiring,
                                     :hire_count )
-    temp[:hire_count] = "0" if temp[:hire_count] == ""
-    temp
   end
 end
