@@ -6,30 +6,30 @@ RSpec.feature "Company Signup Page", type: :feature do
 
     let! (:state) {
       State.create(
-                   abbr: "CO",
-                     id: 14
-                  )
+        abbr: "CO",
+        id: 14
+      )
     }
 
     let! (:usa_city1) {
       UsaCity.create(
-                     name: "Denver",
-                 state_id: 14
-                    )
+        name: "Denver",
+        state_id: 14
+      )
     }
 
     let! (:usa_city2) {
       UsaCity.create(
-                     name: "Boulder",
-                 state_id: 14
-                    )
+        name: "Boulder",
+        state_id: 14
+      )
     }
 
     let! (:usa_city3) {
       UsaCity.create(
-                     name: "Dallas",
-                 state_id: 13
-                    )
+        name: "Dallas",
+        state_id: 13
+      )
     }
 
     it "can see links to signup and learn more on the home page" do
@@ -43,7 +43,7 @@ RSpec.feature "Company Signup Page", type: :feature do
     it "can see a form on the signup page" do
       visit ('/signup')
       within(".signup_form") do
-          expect(page).to have_content("Start hiring")
+        expect(page).to have_content("Start hiring")
         within("#new_company") do
           expect(page).to have_content("Name (First and Last)")
           expect(page).to have_content("Organization")
