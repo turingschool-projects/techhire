@@ -27,12 +27,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-sass-images'
 gem 'autoprefixer-rails'
 gem 'bourbon'
-# gem 'haml'
-
-#Roy assets
-gem 'bourbon'
-gem 'rails-sass-images'
-gem 'modernizr-rails'
 
 group :development, :test do
   gem 'byebug'
