@@ -10,13 +10,12 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    company = Company.new(company_params)
-    if company.save
-      flash[:success] = "Welcome #{company.organization}"
+    @company = Company.new(company_params)
+    if @company.save
+      flash[:success] = "Welcome #{@company.organization}"
       redirect_to companies_welcome_path
     else
       flash[:error] = "Please try again!"
-      @company = Company.new
       render :new
     end
   end
@@ -27,13 +26,7 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    temp = params.require(:company).permit(:name,
-                                    :organization,
-                                    :title,
-                                    :state,
-                                    :city,
-                                    :email,
-                                    :hiring,
-                                    :hire_count )
+    params.require(:company).permit(:name, :organization, :title,
+                                    :state, :city, :email, :hiring, :hire_counts)
   end
 end
