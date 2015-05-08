@@ -1,4 +1,7 @@
 class Admin::VideosController < ApplicationController
+
+  # TODO: Make sure this is covered by authorization
+
   def index
     @videos = Video.all
   end
@@ -7,11 +10,10 @@ class Admin::VideosController < ApplicationController
     video = Video.new(video_params)
     if video.save
       flash[:notice] = "Video succesfully uploaded"
-      redirect_to admin_videos_path
     else
       flash[:error] = video.errors.messages.values[0][0]
-      redirect_to admin_videos_path
     end
+    redirect_to admin_videos_path
   end
 
   private

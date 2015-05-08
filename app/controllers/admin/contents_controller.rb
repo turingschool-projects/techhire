@@ -1,4 +1,6 @@
 class Admin::ContentsController < ApplicationController
+  # TODO: Make sure this is covered by authorization
+
   def index
     @contents = Content.all
   end
