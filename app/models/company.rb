@@ -34,13 +34,11 @@ class Company < ActiveRecord::Base
 
   def create_new_user
     password = User.generate_password
-    company = Company.last
-    user = User.create(email: company.email,
-                       name: company.name,
-                       title: company.title,
+    user = User.create(email: email,
+                       name: name,
+                       title: title,
                        password: password,
-                       company_id: company.id
-                       )
+                       company: self)
    email_new_user(user, password) if user.save
   end
 
