@@ -39,7 +39,7 @@ class Company < ActiveRecord::Base
                        title: title,
                        password: password,
                        company: self)
-   email_new_user(user, password) if user.save
+   # email_new_user(user, password) if user.save
   end
 
   def email_new_user(user, password)
