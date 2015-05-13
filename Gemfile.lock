@@ -158,6 +158,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.11.2)
+      rack (>= 1.1, < 2.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
@@ -186,6 +188,11 @@ GEM
       dimensions (> 0)
       mime-types (> 0)
       sass (> 0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -308,9 +315,11 @@ DEPENDENCIES
   paperclip (~> 4.2.1)
   pg
   pry
+  puma
   quiet_assets
   rails (= 4.2.1)
   rails-sass-images
+  rails_12factor
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

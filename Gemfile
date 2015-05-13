@@ -28,6 +28,8 @@ gem 'rails-sass-images'
 gem 'autoprefixer-rails'
 gem 'bourbon'
 gem 'quiet_assets'
+gem 'rails_12factor'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
