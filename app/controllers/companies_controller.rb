@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  layout "static_application", only: [:new, :create]
   before_action :authorize_company!, only: [:show]
 
   def new
@@ -26,7 +27,11 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name, :organization, :title,
-                                    :state, :city, :email, :hiring, :hire_counts)
+    cp = params.require(:company).permit(:name,:organization,:title,:state,:city,:email)
+    if params[:company][:hiring] == "1"
+      cp.merge(hiring: true, hire_count: params[:company][:hire_count].to_i)
+    else
+      cp
+    end
   end
 end
