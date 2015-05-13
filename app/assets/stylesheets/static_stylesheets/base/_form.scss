@@ -175,3 +175,12 @@ form {
     }
   }
 }
+
+
+.signup-errors {
+  color: red;
+  margin: 20px;
+  p { margin: 10px 0px; }
+  strong { font-weight: bold;}
+}
+
