@@ -19,21 +19,19 @@
     </div>
 
     <div class="row">
-      <%= f.label(:title, "Title") %>
+      <%= f.label(:title, "Your Title") %>
       <%= f.text_field :title, required: true  %>
     </div>
 
-    <div class="row cols-25-75">
+    <div class="row cols-75-25">
       <div class="col">
-        <%= f.label(:state, "State") %>
-        <%= f.select :state, options_for_select(state_helper, @company.state) %>
+        <%= f.label(:city, "City") %>
+        <%= f.text_field :city, required: true %>
       </div>
 
       <div class="col">
-        <%= f.label(:city, "City") %>
-        <% cache states do %>
-          <%= f.grouped_collection_select :city, states, :usa_cities, :abbr, :name, :name %>
-        <% end %>
+        <%= f.label(:state, "State") %>
+        <%= f.select :state, options_for_select(Company.known_states) %>
       </div>
     </div>
 

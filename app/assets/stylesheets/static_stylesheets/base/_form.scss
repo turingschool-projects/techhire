@@ -113,6 +113,19 @@ form {
     }
   }
 
+  .cols-75-25 {
+    .col {
+      width: 72.75%;
+      float: left;
+
+      &:last-child {
+        width: 22.75%;
+        float: right;
+      }
+    }
+  }
+
+
   .commit {
     margin: 20px 0;
     font-size: 16px;
