@@ -27,6 +27,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails-sass-images'
 gem 'autoprefixer-rails'
 gem 'bourbon'
+gem 'quiet_assets'
 
 group :development, :test do
   gem 'byebug'
