@@ -10,9 +10,6 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
       allow(User).to receive(:generate_password).and_return("abc123abc")
       visit signup_path
 
-      c = Company.new(name: "Orion", organization: "Google", title: "what", city: "Denver", state: "CO",
-                      email: "orion@google.com", hiring: true, hire_count: 1)
-      expect(c).to be_valid
       fill_in 'company[name]', with: "Orion"
       fill_in 'company[organization]', with: "Google"
       fill_in 'company[title]', with: "Web Developer"
