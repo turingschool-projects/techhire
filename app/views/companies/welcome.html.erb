@@ -1,13 +1,25 @@
-<div class="mod-heading check">
-  <h1>Thank You!</h1>
+<div class="mod-content">
+  <div class="layout-wrap icon-check">
+    <h2>Thanks for registering!</h2>
+    <h4>We've saved your information and will be in touch with next steps.</h4>
+    <h4>In the meantime, you can find out more about the TechHire program at the links below.</h4>
+  </div>
 </div>
 
-<div class="layout-wrap">
-  <p>
-    Thanks for signing up! You should receive an email confirmation in just a few minutes.
-  </p>
-  <p>
-    <%= link_to "Return to the TechHire home page", "/" %>.
-  </p>
-</div>
+<div class="mod-content yellow">
+  <div class="layout-wrap icon-check">
+    <div class="two-columns">
+      <div class="col icon-case">
+        <h2>TechHire Locations</h2>
+        <p>See which cities are being targeted as pilot markets for the TechHire initiative</p>
+        <p><a href="<%= techhire_locations_path %>" class="button">Locations</a></p>
+      </div>
 
+      <div class="col icon-case">
+        <h2>Tools and Resources</h2>
+        <p>Learn more about the advantages TechHire brings to participating businesses.</p>
+        <p><a class="button" href="<%= tools_resources_path %>">TechHire Advantages</a></p>
+      </div>
+    </div>
+  </div>
+</div>
