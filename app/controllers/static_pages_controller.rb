@@ -14,9 +14,4 @@ class StaticPagesController < ApplicationController
   def techhire_locations
     @techhire_locations = TechhireLocation.all
   end
-
-  def signup
-    @states = State.all
-    @company = Company.new
-  end
 end
