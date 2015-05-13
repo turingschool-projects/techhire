@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  layout "static_application", only: [:new, :create]
+  layout "static_application", only: [:new, :create,:welcome]
   before_action :authorize_company!, only: [:show]
 
   def new
