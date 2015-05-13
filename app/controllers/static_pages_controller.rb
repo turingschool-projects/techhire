@@ -16,6 +16,7 @@ class StaticPagesController < ApplicationController
   end
 
   def signup
+    @states = State.all
     @company = Company.new
   end
 end

@@ -31,8 +31,8 @@
 
       <div class="col">
         <%= f.label(:city, "City") %>
-        <% cache @cities do %>
-        <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %>
+        <% cache @states do %>
+          <%= f.grouped_collection_select :city, @states, :usa_cities, :abbr, :name, :name %>
         <% end %>
       </div>
     </div>
