@@ -5,7 +5,7 @@ class TechhireLocation < ActiveRecord::Base
 
   geocoded_by :full_address
 
-  after_validation :geocode, if: ->(obj){ (!Rails.env.test? || obj.longitude.blank? || obj.latitude.blank?)} || ->(obj){(obj.city_changed? || obj.state_changed?)}
+  after_validation :geocode, if: ->(obj){ (obj.longitude.blank? || obj.latitude.blank?)} || ->(obj){(obj.city_changed? || obj.state_changed?)}
 
   after_validation :must_have_coordinates
 
