@@ -29,7 +29,7 @@ gem 'rails-sass-images'
 gem 'autoprefixer-rails'
 gem 'bourbon'
 gem 'quiet_assets'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'puma'
 
 group :development, :test do
@@ -50,6 +50,6 @@ group :development, :test do
   gem 'assert_difference'
   gem 'selenium-webdriver'
   gem 'faker'
-  gem 'vcr'
   gem 'webmock'
+  gem 'vcr'
 end
