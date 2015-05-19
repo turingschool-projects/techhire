@@ -44,6 +44,11 @@
         <%= f.label(:state, "State") %>
         <%= f.select :state, options_for_select(Company.known_states) %>
       </div>
+
+      <div class="col">
+        <%= f.label(:zip_code, "Zip Code") %>
+        <%= f.text_field :zip_code, required: true %>
+      </div>
     </div>
 
     <div class="row">

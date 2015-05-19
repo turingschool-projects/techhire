@@ -50,6 +50,7 @@ RSpec.feature "Company Signup Page", type: :feature do
       expect(page).to have_content("Title")
       expect(page).to have_content("State")
       expect(page).to have_content("City")
+      expect(page).to have_content("Zip Code")
       expect(page).to have_content("Email")
       find_button("Sign Up")
     end
@@ -60,8 +61,9 @@ RSpec.feature "Company Signup Page", type: :feature do
         fill_in 'company[name]', with: "Bob"
         fill_in 'company[organization]', with: "Google"
         fill_in 'company[title]', with: "RoR Developer"
-        fill_in 'company[city]', with: 'Denver'
+        fill_in 'company[city]', with: "Denver"
         select('Colorado', from: 'company[state]')
+        fill_in 'company[zip_code]', with: "80001"
         fill_in 'company[email]', with: "google@email.com"
         check 'company[hiring]'
         fill_in 'company[hire_count]', with: 5
@@ -78,6 +80,7 @@ RSpec.feature "Company Signup Page", type: :feature do
         fill_in 'company[title]', with: "RoR Developer"
         fill_in 'company[city]', with: 'Boulder'
         select('Colorado', from: 'company[state]')
+        fill_in 'company[zip_code]', with: "80124"
         fill_in 'company[email]', with: "goog"
         check 'company[hiring]'
         fill_in 'company[hire_count]', with: 5

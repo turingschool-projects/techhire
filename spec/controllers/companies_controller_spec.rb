@@ -9,6 +9,7 @@ RSpec.describe CompaniesController, :type => :controller do
                        title: 'RoR',
                        state: 'CO',
                         city: 'Denver',
+                    zip_code: '80124',
                        email: 'google@email.com',
                       hiring: 1,
                   hire_count: 5
