@@ -10,18 +10,21 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
       allow(User).to receive(:generate_password).and_return("abc123abc")
       visit signup_path
 
-      fill_in 'company[name]', with: "Orion"
-      fill_in 'company[organization]', with: "Google"
-      fill_in 'company[title]', with: "Web Developer"
-      select 'Denver', from: "company_city"
-      select 'CO', from: "company_state"
-      fill_in 'company[email]', with: "orion@google.com"
-      click_link_or_button('Create TechHire account')
+      within(".new_company") do
+        fill_in "company[name]", with: "Orion"
+        fill_in "company[organization]", with: "Google"
+        fill_in "company[title]", with: "Web Developer"
+        fill_in "company[city]", with: "Denver"
+        select "Colorado", from: "company_state"
+        fill_in "company[zip_code]", with: "80124"
+        fill_in "company[email]", with: "orion@google.com"
+        click_link_or_button('Sign Up')
+      end
 
       visit new_user_session_path
-      fill_in 'user[email]', with: "orion@google.com"
-      fill_in 'user[password]', with: "abc123abc"
-      click_link_or_button('Log in')
+      fill_in "user[email]", with: "orion@google.com"
+      fill_in "user[password]", with: "abc123abc"
+      click_link_or_button("Log in")
 
       expect(current_path).to eq(company_path(Company.last.id))
       expect(Company.last.hiring?).to eq(false)
@@ -32,15 +35,18 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
       allow(User).to receive(:generate_password).and_return("abc123abc")
       visit signup_path
 
-      fill_in 'company[name]', with: "Orion"
-      fill_in 'company[organization]', with: "Google"
-      fill_in 'company[title]', with: "Web Developer"
-      select 'Denver', from: "company_city"
-      select 'CO', from: "company_state"
-      fill_in 'company[email]', with: "orion@google.com"
-      check "company[hiring]"
-      fill_in 'company[hire_count]', with: "3"
-      click_link_or_button('Create TechHire account')
+      within(".new_company") do
+        fill_in "company[name]", with: "Orion"
+        fill_in "company[organization]", with: "Google"
+        fill_in "company[title]", with: "Web Developer"
+        fill_in "company[city]", with: "Denver"
+        select "Colorado", from: "company_state"
+        fill_in "company[zip_code]", with: "80124"
+        fill_in "company[email]", with: "orion@google.com"
+        check "company[hiring]"
+        fill_in "company[hire_count]", with: "3"
+        click_link_or_button('Sign Up')
+      end
 
       visit new_user_session_path
       fill_in 'user[email]', with: "orion@google.com"

@@ -12,6 +12,7 @@ FactoryGirl.define do
     organization "Google"
     state "CO"
     city "Denver"
+    zip_code "80124"
     hiring 1
     hire_count 5
     name "John"

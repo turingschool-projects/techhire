@@ -2,7 +2,7 @@ class Company < ActiveRecord::Base
   has_many :users, dependent: :destroy
   has_many :notes, dependent: :destroy
 
-  validates :name, :organization, :title, :state, :city, presence: true
+  validates :name, :organization, :title, :state, :city, :zip_code, presence: true
   validates :status, inclusion: ["contacted", "uncontacted", "dead", "confirmed"]
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, },

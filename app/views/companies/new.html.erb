@@ -44,6 +44,11 @@
         <%= f.label(:state, "State") %>
         <%= f.select :state, options_for_select(Company.known_states) %>
       </div>
+
+      <div class="col">
+        <%= f.label(:zip_code, "Zip Code") %>
+        <%= f.text_field :zip_code, required: true %>
+      </div>
     </div>
 
     <div class="row">
@@ -59,12 +64,15 @@
     </div>
 
     <div class="row button-center">
-      <%= f.submit "Create TechHire account", class: 'button' %>
+      <%= f.submit "Sign Up", class: 'button' %>
     </div>
 
   <script>
     $("#new_company").validate();
   </script>
   <% end %>
+  <p>
+    *This information may be shared with local and national partners
+    that are participating in TechHire.
+  </p>
 </div>
-

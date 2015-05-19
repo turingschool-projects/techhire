@@ -210,8 +210,7 @@ RSpec.feature "AdminDashboard", type: :feature do
       expect(current_path).to eq(admin_dashboard_index_path)
 
       within("li.view-techhire-locations") do
-        expect(page).to have_content('Tech Hire Locations')
-        click_link_or_button('Tech Hire Locations')
+        click_link_or_button('Where Is TechHire')
       end
       expect(current_path).to eq(techhire_locations_path)
     end
