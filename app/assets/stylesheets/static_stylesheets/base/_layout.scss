@@ -70,3 +70,25 @@ body {
     }
   }
 }
+
+.layout-callout {
+  @extend %clearfix;
+  margin: 30px 0;
+
+  .callout {
+    width: 50%;
+    float: left;
+    margin: 3px 20px 20px 0;
+
+    &.right {
+      float: right;
+      margin: 3px 0 20px 20px;
+    }
+
+    @include max-width(700px) {
+      width: 100%;
+      float: none;
+      margin-bottom: 21px;
+    }
+  }
+}
