@@ -55,11 +55,12 @@ RSpec.feature "Company Signup Page", type: :feature do
       find_button("Sign Up")
     end
 
-    it "can signup their company using the signup form" do
+    it "can signup their company using the signup form and a standard organization type" do
       visit signup_path
       within("#new_company") do
         fill_in 'company[name]', with: "Bob"
         fill_in 'company[organization]', with: "Google"
+        select 'Interested Individual', from: 'organization_type'
         fill_in 'company[title]', with: "RoR Developer"
         fill_in 'company[city]', with: "Denver"
         select('Colorado', from: 'company[state]')
