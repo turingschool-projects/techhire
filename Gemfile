@@ -48,7 +48,7 @@ group :development, :test do
   gem 'database_cleaner',   '~> 1.4.0'
   gem 'mocha',              '~> 1.1.0'
   gem 'assert_difference'
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
   gem 'faker'
 end
 
