@@ -73,7 +73,7 @@ RSpec.feature "Company Signup Page", type: :feature do
       expect(page).to have_content("Thanks for registering!")
     end
 
-    it "can not signup a company if email validation fails" do
+    it "can not signup a company if email validation fails", js: true do
       visit ('/signup')
       within("#new_company") do
         fill_in 'company[name]', with: "Bob"
@@ -87,9 +87,9 @@ RSpec.feature "Company Signup Page", type: :feature do
         fill_in 'company[hire_count]', with: 5
         click_button('Sign Up')
       end
-      expect(current_path).to eq(companies_path)
 
-      expect(page.find('.signup-errors')).to have_content("Sorry, we had problems processing that information. Please fix the following issues: email: is invalid")
+      expect(current_path).to eq(signup_path)
+      expect(page).to have_content("Please enter a valid email address.")
     end
   end
 end
