@@ -69,6 +69,11 @@
       <%= f.text_field :email, type: 'email', required: true  %>
     </div>
 
+    <div class="row">
+      <%= f.label(:techhire_involvement, "How would you or your organization like to be involved? (up to 3 sentences)") %>
+      <%= f.text_area :techhire_involvement  %>
+    </div>
+
     <div class="row commit">
       <%= f.check_box :hiring %>
       I am ready to commit to hiring
