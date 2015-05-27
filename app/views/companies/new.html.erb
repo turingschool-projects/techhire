@@ -47,7 +47,7 @@
       <%= f.text_field :title, required: true  %>
     </div>
 
-    <div class="row cols-75-25">
+    <div class="row cols-50-25-25">
       <div class="col">
         <%= f.label(:city, "City") %>
         <%= f.text_field :city, required: true %>
@@ -69,12 +69,28 @@
       <%= f.text_field :email, type: 'email', required: true  %>
     </div>
 
-    <div class="row commit">
-      <%= f.check_box :hiring %>
-      I am ready to commit to hiring
-      <%= f.number_field :hire_count, in: 0..500, step: 1, value: "" %>
-      people through TechHire
+    <div class="row">
+      <%= f.label(:techhire_involvement, "How would you or your organization like to be involved? (up to 3 sentences)") %>
+      <%= f.text_area :techhire_involvement  %>
     </div>
+
+    <div class="row check_box_set">
+      <p>
+        Please indicate your interest in TechHire (Check all that apply):
+      </p>
+      <%= f.check_box :interest_hiring %><%= f.label(:interest_hiring, "Employer interested in hiring based on skill and job readiness") %>
+      <%= f.check_box :interest_training %><%= f.label(:interest_training, "Training institution interested in preparing students in months not years") %>
+      <%= f.check_box :interest_connecting %><%= f.label(:interest_connecting, "Local leader interested in connecting people to jobs with on-ramp programs") %>
+      <%= f.check_box :interest_supporting %><%= f.label(:interest_supporting, "Workforce leader/nonprofit interested in supporting job seekers") %>
+      <%= f.check_box :interest_community %><%= f.label(:interest_community, "Workforce leader/nonprofit interested in supporting job seekers") %>
+    </div>
+
+    <!--<div class="row commit">-->
+      <!--<%= f.check_box :hiring %>-->
+      <!--I am ready to commit to hiring-->
+      <!--<%= f.number_field :hire_count, in: 0..500, step: 1, value: "" %>-->
+      <!--people through TechHire-->
+    <!--</div>-->
 
     <div class="row button-center">
       <%= f.submit "Sign Up", class: 'button registration-submit' %>
@@ -84,7 +100,7 @@
     $("#new_company").validate();
   </script>
   <% end %>
-  <p>
+  <p class="notification">
     *This information may be shared with local and national partners
     that are participating in TechHire.
   </p>
