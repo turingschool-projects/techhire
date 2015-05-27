@@ -28,7 +28,22 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    cp = params.require(:company).permit(:name,:organization,:title,:state,:city,:zip_code,:email, :organization_type)
+    cp = params.require(:company).permit(
+      :name,
+      :organization,
+      :title,
+      :state,
+      :city,
+      :zip_code,
+      :email,
+      :organization_type,
+      :techhire_involvement,
+      :interest_hiring,
+      :interest_training,
+      :interest_connecting,
+      :interest_supporting,
+      :interest_community,
+    )
     if params[:company][:hiring] == "1"
       cp.merge(hiring: true, hire_count: params[:company][:hire_count].to_i)
     else
