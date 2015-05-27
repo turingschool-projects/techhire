@@ -31,16 +31,19 @@ RSpec.describe Company, type: :model do
   end
 
   it "should count the number of companies by status" do
-    10.times do |i|
-      create(:company, email: "company#{i}@example.com")
-    end
-    expect(Company.company_count_by_status("uncontacted")).to eq(10)
+    expect{
+      10.times do |i|
+        create(:company, email: "company#{i}@example.com")
+      end
+    }.to change {
+      Company.company_count_by_status("uncontacted")
+    }.by(10)
   end
 
   it "should count order the cities by the number of companies" do
     10.times do |i|
       create(:company, email: "company#{i}@example.com")
     end
-    expect(Company.company_count_by_city).to eq([["Denver",10]])
+    expect(Company.company_count_by_city).to eq([["Denver", 10]])
   end
 end

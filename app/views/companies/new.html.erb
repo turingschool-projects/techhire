@@ -12,9 +12,9 @@
       <div class="signup-errors">
         <p>Sorry, we had problems processing that information. Please fix the following issues:</p>
         <ul>
-        <% @company.errors.each do |field, message| %>
-          <li><strong><%= field %>: </strong><span><%= message%></span></li>
-        <% end %>
+          <% @company.errors.each do |field, message| %>
+            <li><strong><%= field %>: </strong><span><%= message%></span></li>
+          <% end %>
         </ul>
       </div>
     <% end %>
@@ -27,6 +27,19 @@
     <div class="row">
       <%= f.label(:organization, "Organization") %>
       <%= f.text_field :organization, required: true  %>
+    </div>
+
+    <div class="row cols-75-25">
+      <div class="col">
+        <%= f.label(:organization_type, "Organization Type (select one)") %>
+        <%= select_tag "organization_type", options_for_select(@registration.organization_types), id: "org_type" %>
+      </div>
+
+      <div class="col" id="org_type_other">
+        <%= f.label(:organization_type_other, "Enter:") %>
+        <%= text_field_tag :organization_type_other, "",required: true  %>
+        <%= f.hidden_field :organization_type %>
+      </div>
     </div>
 
     <div class="row">
@@ -64,7 +77,7 @@
     </div>
 
     <div class="row button-center">
-      <%= f.submit "Sign Up", class: 'button' %>
+      <%= f.submit "Sign Up", class: 'button registration-submit' %>
     </div>
 
   <script>
