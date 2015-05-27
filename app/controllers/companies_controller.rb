@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
 
   def new
     @company = Company.new
+    @registration = RegistrationPresenter.new
   end
 
   def show

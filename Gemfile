@@ -50,6 +50,9 @@ group :development, :test do
   gem 'assert_difference'
   gem 'selenium-webdriver'
   gem 'faker'
+end
+
+group :test do
   gem 'webmock'
   gem 'vcr'
 end

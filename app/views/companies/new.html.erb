@@ -30,6 +30,11 @@
     </div>
 
     <div class="row">
+      <%= f.label(:organization_type, "Organization Type") %>
+      <%= select_tag "organization_type", options_for_select(@registration.organization_types) %>
+    </div>
+
+    <div class="row">
       <%= f.label(:title, "Your Title") %>
       <%= f.text_field :title, required: true  %>
     </div>
