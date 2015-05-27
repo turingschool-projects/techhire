@@ -55,22 +55,36 @@ RSpec.feature "Company Signup Page", type: :feature do
       find_button("Sign Up")
     end
 
-    it "can signup their company using the signup form and a standard organization type" do
-      visit signup_path
-      within("#new_company") do
-        fill_in 'company[name]', with: "Bob"
-        fill_in 'company[organization]', with: "Google"
-        select 'Interested Individual', from: 'organization_type'
-        fill_in 'company[title]', with: "RoR Developer"
-        fill_in 'company[city]', with: "Denver"
-        select('Colorado', from: 'company[state]')
-        fill_in 'company[zip_code]', with: "80001"
-        fill_in 'company[email]', with: "google@email.com"
-        check 'company[hiring]'
-        fill_in 'company[hire_count]', with: 5
-        click_button('Sign Up')
+    context "valid signup information" do
+      before :each do
+        visit signup_path
+        within("#new_company") do
+          fill_in 'company[name]', with: "Bob"
+          fill_in 'company[organization]', with: "Google"
+          fill_in 'company[title]', with: "RoR Developer"
+          fill_in 'company[city]', with: "Denver"
+          select('Colorado', from: 'company[state]')
+          fill_in 'company[zip_code]', with: "80001"
+          fill_in 'company[email]', with: "google@email.com"
+          check 'company[hiring]'
+          fill_in 'company[hire_count]', with: 5
+        end
       end
-      expect(page).to have_content("Thanks for registering!")
+
+      it "can signup their company using the signup form and a standard organization type" do
+        select 'Interested Individual', from: 'organization_type'
+        click_button('Sign Up')
+        expect(page).to have_content("Thanks for registering!")
+      end
+
+      it "can signup their company using the signup form and a custom organization type", js: true do
+        select 'Other', from: 'organization_type'
+        fill_in 'organization_type_other', with: 'After School Club'
+
+        expect{ click_button('Sign Up') }.to change { Company.count }.by(1)
+        expect(Company.last.organization_type).to eq('After School Club')
+        expect(page).to have_content("Thanks for registering!")
+      end
     end
 
     it "can not signup a company if email validation fails", js: true do
