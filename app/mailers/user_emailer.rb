@@ -1,9 +1,8 @@
 class UserEmailer < ApplicationMailer
-  default from: 'laurawhalin@gmail.com'
+  default from: 'info@opportunityatwork.org'
 
-  def send_welcome_email(user, password)
+  def send_welcome_email(user)
     @user = user
-    @password = password
     mail( to: @user.email,
           subject: 'Thanks for signing up for TechHire!'
           )

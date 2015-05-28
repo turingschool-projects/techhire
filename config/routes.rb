@@ -30,4 +30,7 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:create, :show]
   resources :pdfs, only: [:show]
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
