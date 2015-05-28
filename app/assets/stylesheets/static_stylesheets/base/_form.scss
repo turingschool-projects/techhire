@@ -235,6 +235,8 @@ form#rate-calculator {
     display: inline-block;
     padding: 0 10px;
   }
-  span.leading-dollar {
+  small {
+    font-size: 12px;
+    color: $gray;
   }
 }
