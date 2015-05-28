@@ -18,6 +18,7 @@ class CompaniesController < ApplicationController
       redirect_to companies_welcome_path
     else
       flash[:error] = "Please try again!"
+      @registration = RegistrationPresenter.new
       render :new
     end
   end

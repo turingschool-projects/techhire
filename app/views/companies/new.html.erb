@@ -55,7 +55,7 @@
 
       <div class="col">
         <%= f.label(:state, "State") %>
-        <%= f.select :state, options_for_select(Company.known_states) %>
+        <%= f.select :state, options_for_select(Company.known_states, @company.state) %>
       </div>
 
       <div class="col">

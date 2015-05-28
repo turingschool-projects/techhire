@@ -66,8 +66,7 @@ RSpec.feature "Company Signup Page", type: :feature do
           select('Colorado', from: 'company[state]')
           fill_in 'company[zip_code]', with: "80001"
           fill_in 'company[email]', with: "google@email.com"
-          check 'company[hiring]'
-          fill_in 'company[hire_count]', with: 5
+          check 'company[interest_hiring]'
         end
       end
 
@@ -97,8 +96,7 @@ RSpec.feature "Company Signup Page", type: :feature do
         select('Colorado', from: 'company[state]')
         fill_in 'company[zip_code]', with: "80124"
         fill_in 'company[email]', with: "goog"
-        check 'company[hiring]'
-        fill_in 'company[hire_count]', with: 5
+        check 'company[interest_hiring]'
         click_button('Sign Up')
       end
 
