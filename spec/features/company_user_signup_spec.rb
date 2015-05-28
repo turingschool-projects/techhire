@@ -43,8 +43,7 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
         select "Colorado", from: "company_state"
         fill_in "company[zip_code]", with: "80124"
         fill_in "company[email]", with: "orion@google.com"
-        check "company[hiring]"
-        fill_in "company[hire_count]", with: "3"
+        check "company[interest_hiring]"
         click_link_or_button('Sign Up')
       end
 
@@ -54,8 +53,7 @@ RSpec.feature "CompanyUserSignUp", type: :feature do
       click_link_or_button('Log in')
 
       expect(current_path).to eq(company_path(Company.last.id))
-      expect(Company.last.hiring?).to eq(true)
-      expect(Company.last.hire_count).to eq(3)
+      expect(Company.last.interest_hiring?).to eq(true)
     end
   end
 end
