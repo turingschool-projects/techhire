@@ -222,3 +222,19 @@ form {
   strong { font-weight: bold;}
 }
 
+form.rate-calculator {
+  font-size: 24px;
+  max-width: none;
+  input {
+    display: inline;
+    text-align: right;
+    max-width: 100px;
+  }
+  .calc-group {
+    max-width: 160px;
+    display: inline-block;
+    padding: 0 10px;
+  }
+  span.leading-dollar {
+  }
+}
