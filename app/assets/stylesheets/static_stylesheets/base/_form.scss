@@ -214,7 +214,6 @@ form {
   }
 }
 
-
 .signup-errors {
   color: red;
   margin: 20px;
@@ -222,7 +221,7 @@ form {
   strong { font-weight: bold;}
 }
 
-form.rate-calculator {
+form#rate-calculator {
   font-size: 24px;
   max-width: none;
   input {
@@ -230,6 +229,7 @@ form.rate-calculator {
     text-align: right;
     max-width: 100px;
   }
+  input.calc-total { max-width: 200px; }
   .calc-group {
     max-width: 160px;
     display: inline-block;

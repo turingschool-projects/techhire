@@ -1,3 +1,6 @@
+<% content_for :footer do %>
+  <%= javascript_include_tag "rate_calculator" %>
+<% end %>
 <div class="mod-heading tools">
   <h1>Tools/Resources</h1>
 </div>
@@ -29,38 +32,39 @@
 <div class="mod-content">
   <div class="layout-wrap">
     <h2>Find Out How Much Your Open Positions Are Costing You</h2>
-    <form class="rate-calculator">
+    <form id="rate-calculator">
       <p>
         <span class="leading-dollar"> $ </span>
         <span class="calc-group">
           <label for="calculator_rate">Daily Rate:</label>
-          <input type="text" name="calculator[rate]" id="calc-rate" value="434">
+          <input type="text" name="calculator[rate]" class="calc-input calc-rate" value="434">
         </span>
 
         <span> X </span>
 
         <span class="calc-group">
           <label for="calculator_positions"># of Open Positions:</label>
-          <input type="text" name="calculator[positions]" id="calc-positions" value="1">
+          <input type="text" name="calculator[positions]" class="calc-input calc-positions" value="1">
         </span>
 
         <span> X </span>
 
         <span class="calc-group">
           <label for="calculator_positions"># of Days Unfilled:</label>
-          <input type="text" name="calculator[days]" id="calc-days" value="1">
+          <input type="text" name="calculator[days]" class="calc-input calc-days" value="1">
         </span>
 
         <span> = </span>
 
         <span class="calc-group">
           <label for="calculator_total">Total Cost:</label>
-          <input type="text" name="calculator[days]" id="calc-days" readonly value="$434.00">
+          <input type="text" name="calculator[days]" class="calc-total" readonly value="$434.00">
         </span>
       </p>
     </form>
   </div>
 </div>
+
 <div class="mod-content yellow">
   <div class="layout-wrap icon-check">
     <!--<h2>The Case for Businesses</h2>-->
