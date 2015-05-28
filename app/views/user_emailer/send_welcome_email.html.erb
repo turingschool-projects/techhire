@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Really Simple HTML Email Template</title>
+    <title>Thanks For Your Interest in TechHire</title>
     <style>
     /* -------------------------------------
     GLOBAL
@@ -145,6 +145,7 @@
     .content table {
       width: 100%;
     }
+    span.opportunity-at { color: #00AAEF }
   </style>
 </head>
 
@@ -162,17 +163,7 @@
             <tr>
               <td>
                 <h2>Thanks for signing up for TechHire, <%= @user.company.organization %>!</h2>
-                <p>Someone from Opportunity@Work will contact you soon with more details.
-                  In the meantime, you can log in with these account details to get your
-                  company profile up and running.</p>
-                <table>
-                  <tr>
-                    <td class="padding">
-                      <p>Username: <%= @user.email %></p>
-                      <p>Password: <%= @password %></p>
-                    </td>
-                  </tr>
-                </table>
+                <p>Someone from Opportunity<span class="opportunity-at">@</span>Work will contact you soon with more details.</p>
               </td>
             </tr>
           </table>
@@ -196,9 +187,7 @@
           <table>
             <tr>
               <td align="center">
-                <p><a href="#"><unsubscribe>Unsubscribe</unsubscribe></a> from future emails.
-                </p>
-                <p>Opportunity@Work Main Street 123, Somewhere, NY 55555</p>
+                <p>Opportunity<span class="opportunity-at">@</span>Work 1899 L Street N.W., Washington DC 20036</p>
               </td>
             </tr>
           </table>
