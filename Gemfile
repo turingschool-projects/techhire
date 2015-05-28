@@ -23,6 +23,8 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # gem 'sass-rails', '>= 3.2'
 gem 'will_paginate', '~> 3.0.6'
 gem 'modernizr-rails'
+gem 'sidekiq'
+gem 'sinatra', :require => nil # used for sidekiq monitoring UI
 # roy's gems
 gem 'sass-rails', '~> 5.0'
 gem 'rails-sass-images'
@@ -50,6 +52,7 @@ group :development, :test do
   gem 'assert_difference'
   gem 'poltergeist'
   gem 'faker'
+  gem 'mailcatcher'
 end
 
 group :test do

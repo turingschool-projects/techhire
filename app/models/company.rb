@@ -39,11 +39,7 @@ class Company < ActiveRecord::Base
                        title: title,
                        password: password,
                        company: self)
-   # email_new_user(user, password) if user.save
-  end
-
-  def email_new_user(user, password)
-    UserEmailer.send_welcome_email(user, password).deliver_now
+    SignupEmailWorker.perform_async(user.id) if user.save
   end
 
   def self.known_states

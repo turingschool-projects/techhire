@@ -2,11 +2,13 @@ Rails.application.configure do
   config.cache_classes = false
   config.eager_load = false
   config.consider_all_requests_local       = true
-  # Might want to look into database caching, per Horace
   config.action_controller.perform_caching = true
   config.cache_store = :dalli_store
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  #Mailcatcher:
+  config.action_mailer.smtp_settings = { address: 'localhost',
+                                         port: 1025 }
+  config.action_mailer.delivery_method = :smtp
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load
   config.assets.debug = true
