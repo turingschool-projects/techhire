@@ -1,18 +1,16 @@
 require "rails_helper"
 
-RSpec.describe UserEmailer, type: :mailer do
+RSpec.describe CompanyMailer, type: :mailer do
   describe('welcome email') do
-    let(:company) { create(:company, email: "unused@example.com") }
+    let(:company) { create(:company, name: "Google", email: "unused@example.com", organization: "Google") }
     let(:full_subject) { "Thanks for signing up for TechHire!" }
 
     before(:each) do
-      @email = UserEmailer.send_welcome_email(company.users.first, 'password').deliver_now
+      @email = CompanyMailer.welcome_email(company).deliver_now
     end
 
     it "sends a welcome email" do
       expect(@email.body).to have_content("Thanks for signing up for TechHire, Google!")
-      expect(@email.body).to have_content("Username: #{company.users.first.email}")
-      expect(@email.body).to have_content("Password: password")
     end
 
     it "renders the headers" do

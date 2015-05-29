@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/tools-resources", to: "static_pages#tools_resources", as: "tools_resources"
   get "/techhire-locations", to: "static_pages#techhire_locations", as: "techhire_locations"
   get "/download", to: "static_pages#download", as: "download"
-  get "/companies/welcome", to: "companies#welcome"
+  get "/companies/welcome", to: "companies#welcome", as: "welcome"
   get 'signup', to: "companies#new", as: :signup
 
   namespace :admin do

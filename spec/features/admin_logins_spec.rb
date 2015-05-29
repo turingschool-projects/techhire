@@ -72,27 +72,13 @@ RSpec.feature "AdminLogins", type: :feature do
   end
 
   describe("Normal User") do
-    attr_reader :company
-
-    before(:each) do
-      allow(User).to receive(:generate_password).and_return("password")
-      @company = create(:company, email: 'user@example.com')
-    end
-
-    it "doesn't allow non-admin users to route to admin/dashboard on login" do
-      visit new_user_session_path
-
-      fill_in 'user[email]', with: company.users.first.email
-      fill_in 'user[password]', with: "password"
-      click_link_or_button('Log in')
-
-      expect(current_path).to eq(company_path(company.id))
-    end
+    let(:non_admin) { User.create(email: 'normal@example.com', password: 'password', role: 0) }
+    let(:company) { create(:company) }
 
     it "doesn't allow non-admin users to login and view admin/dashboard" do
       visit new_user_session_path
 
-      fill_in 'user[email]', with: company.users.first.email
+      fill_in 'user[email]', with: non_admin.email
       fill_in 'user[password]', with: "password"
       click_link_or_button('Log in')
       visit admin_dashboard_index_path
@@ -103,7 +89,7 @@ RSpec.feature "AdminLogins", type: :feature do
     it "doesn't allow non-admin users to login and view admin/companies" do
       visit new_user_session_path
 
-      fill_in 'user[email]', with: company.users.first.email
+      fill_in 'user[email]', with: non_admin.email
       fill_in 'user[password]', with: "password"
       click_link_or_button('Log in')
       visit admin_companies_path
@@ -114,7 +100,7 @@ RSpec.feature "AdminLogins", type: :feature do
     it "doesn't allow non-admin users to login and view admin/companies/:id" do
       visit new_user_session_path
 
-      fill_in 'user[email]', with: company.users.first.email
+      fill_in 'user[email]', with: non_admin.email
       fill_in 'user[password]', with: "password"
       click_link_or_button('Log in')
       visit admin_company_path(company.id)

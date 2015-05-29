@@ -1,5 +1,4 @@
 class Company < ActiveRecord::Base
-  has_many :users, dependent: :destroy
   has_many :notes, dependent: :destroy
 
   validates :name, :organization, :title, :state, :city, :zip_code, presence: true
@@ -9,7 +8,7 @@ class Company < ActiveRecord::Base
                     uniqueness: true
   validates :hire_count, numericality: { only_integer: true, }
 
-  after_create :create_new_user
+  after_create :send_welcome_email
 
   scope :contacted, -> { where status: "contacted"}
   scope :uncontacted, -> { where status: "uncontacted"}
@@ -32,14 +31,8 @@ class Company < ActiveRecord::Base
 
   private
 
-  def create_new_user
-    password = User.generate_password
-    user = User.create(email: email,
-                       name: name,
-                       title: title,
-                       password: password,
-                       company: self)
-    SignupEmailWorker.perform_async(user.id) if user.save
+  def send_welcome_email
+    SignupEmailWorker.perform_async(self.id)
   end
 
   def self.known_states

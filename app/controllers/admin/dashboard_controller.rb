@@ -9,6 +9,5 @@ class Admin::DashboardController < ApplicationController
   end
 
   def cms_instructions
-    
   end
 end

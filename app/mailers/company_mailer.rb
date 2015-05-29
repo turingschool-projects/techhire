@@ -1,9 +1,9 @@
-class UserEmailer < ApplicationMailer
+class CompanyMailer < ApplicationMailer
   default from: 'info@opportunityatwork.org'
 
-  def send_welcome_email(user)
-    @user = user
-    mail( to: @user.email,
+  def welcome_email(company)
+    @company = company
+    mail( to: @company.email,
           subject: 'Thanks for signing up for TechHire!'
           )
   end
