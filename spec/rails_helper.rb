@@ -9,6 +9,7 @@ require 'factory_girl_rails'
 require 'support/factory_girl'
 require 'capybara-screenshot/rspec'
 require 'capybara/poltergeist'
+require "login_helper"
 
 Capybara.javascript_driver = :poltergeist
 
@@ -18,6 +19,7 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.infer_spec_type_from_file_location!
   config.include AssertDifference
+  config.include LoginHelper
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

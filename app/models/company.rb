@@ -29,6 +29,30 @@ class Company < ActiveRecord::Base
     group(:city).count.sort_by { |_key, value| value }.pop(10).reverse
   end
 
+  def self.csv_permitted_fields
+    column_names - ["id", "created_at", "updated_at"]
+  end
+
+  def self.csv_upload(file)
+    created = []
+    invalid = []
+    CSV.foreach(file, headers: true) do |row|
+      data = row.to_hash
+      return {error: "Fields not supported"} unless (data.keys - csv_permitted_fields).empty?
+      c = Company.new(data)
+      if c.save
+        created << c
+      else
+        invalid << c
+      end
+    end
+    if invalid.any?
+      {error: "Errors uploading companies.", invalid: invalid, created: created}
+    else
+      {error: nil, created: created, success: true}
+    end
+  end
+
   private
 
   def send_welcome_email

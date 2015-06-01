@@ -1,0 +1,36 @@
+<h1>Upload Companies via a CSV</h1>
+
+<p>Expected CSV fields are (in order):</p>
+<ul>
+  <li>name (first and last name of company's contact person)</li>
+  <li>organization (title of the company/organization)</li>
+  <li>title (title of provided contact person)</li>
+  <li>state (e.g. CO)</li>
+  <li>city</li>
+  <li>email (email for provided contact person)</li>
+  <li>zip_code</li>
+  <li>organization_type (Employer, Training Institution, Government, Interested Individual, Other)</li>
+  <li>interest_hiring (is the organization interested in hiring candidates)</li>
+  <li>interest_training (is the organization interested in providing training services)</li>
+  <li>interest_connecting (is the organization interested in connecting candidates with potential job opportunities)</li>
+  <li>interest_supporting (is the organization interested in supporting job seekers)</li>
+  <li>interest_community (is the organization interested in otherwise participating in the TechHire community)</li>
+</ul>
+
+<% if @invalid && @invalid.any? %>
+<% @invalid.each do |i| %>
+<p>Error uploading company with attributes:</p>
+<ul>
+  <% i.attributes.each do |attr,val| %>
+  <li><%= attr %>: <%= val %></li>
+  <% end %>
+</ul>
+<p>Errors: <%= i.errors.full_messages %></p>
+<% end %>
+<% end %>
+
+<%= form_tag admin_csv_uploads_path, multipart: true do %>
+<label for="companies_csv">Upload CSV</label>
+<%= file_field_tag "companies_csv" %>
+<%= submit_tag "Upload" %>
+<% end %>
