@@ -32,6 +32,7 @@ gem 'autoprefixer-rails'
 gem 'bourbon'
 gem 'quiet_assets'
 gem 'rails_12factor', group: :production
+gem 'honeybadger', '~> 2.0', group: :production
 gem 'puma'
 
 group :development, :test do
