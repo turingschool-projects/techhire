@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/companies/welcome", to: "companies#welcome", as: "welcome"
   get 'signup', to: "companies#new", as: :signup
 
+  resources :case_studies, only: [:show]
+
   namespace :admin do
     resources :dashboard, only: [:index]
     get "/dashboard/cms-instructions", to: "dashboard#cms_instructions", as: "cms_instructions"
