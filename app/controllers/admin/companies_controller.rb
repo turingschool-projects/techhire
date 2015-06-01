@@ -1,5 +1,6 @@
 class Admin::CompaniesController < ApplicationController
   before_action :authorize!
+  before_action :authorize_company!, only: [:show, :update, :edit]
 
   def index
     @companies = Company.all

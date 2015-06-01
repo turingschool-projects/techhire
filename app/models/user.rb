@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum role: %w(admin super_admin)
+  enum role: %w(company admin super_admin)
 
   def admin?
     role == "admin" || role == "super_admin"
