@@ -1,26 +1,13 @@
 <% content_for :footer do %>
-  <%= javascript_include_tag "rate_calculator" %>
+<%= javascript_include_tag "rate_calculator" %>
 <% end %>
 <div class="mod-heading tools">
   <h1>Tools/Resources</h1>
 </div>
 
-<div class="mod-content two-columns">
-  <div class="layout-wrap">
-    <!--<div class="col icon-playbook">-->
-      <!--<h2>TechHire Playbook</h2>-->
-      <!--<p>How can you find non-traditional channels to gain a competitive talent edge? What steps should you be taking to find employees to fit your needs? How can TechHire help you fill open tech positions?</p>-->
-      <!--<p>Watch the short video and download the playbook to get started today.</p>-->
-      <!--<p><a class="button" href="#">Download the Playbook</a></p>-->
-    <!--</div>-->
-
-    <!--<div class="col">-->
-      <!--<div clas="embed-container">-->
-        <!--<iframe frameborder="0" src="https://www.youtube-nocookie.com/embed/3iiXLXo2hic?rel=0&amp;showinfo=0"></iframe>-->
-      <!--</div>-->
-    <!--</div>-->
-
-    <div class="icon-check">
+<div class="mod-content">
+  <div class="layout-wrap icon-check">
+    <div class="col">
       <h2>The Case for Businesses</h2>
       <p>Meaningful work is essential to human flourishing and to America’s promise of upward mobility and civic equality, while tapping the full talents of our people is essential for productive and inclusive economic growth. The gradual erosion of such work for many in the US economy over the past 30 years threatens both America’s promise and economic vitality.</p>
       <p>Every day that goes by without filling an open position costs a business $434 on average. This number is likely higher for IT jobs which take an average of 95 business days to fill - higher than the overall average. Committing to TechHire means access to an expanded hiring pool with qualified candidates who are ready to work, but may have previously been overlooked.</p>
@@ -61,36 +48,90 @@
           <input type="text" name="calculator[days]" class="calc-total" readonly value="$434.00">
         </span>
       </p>
-    <small>Source: CEB Corporate Leadership Council</small>
+      <small>Source: CEB Corporate Leadership Council</small>
     </form>
   </div>
 </div>
 
 <div class="mod-content yellow">
   <div class="layout-wrap icon-check">
-    <!--<h2>The Case for Businesses</h2>-->
-    <!--<p>Meaningful work is essential to human flourishing and to America’s promise of upward mobility and civic equality, while tapping the full talents of our people is essential for productive and inclusive economic growth. The gradual erosion of such work for many in the US economy over the past 30 years threatens both America’s promise and economic vitality.</p>-->
-    <!--<p>On average, business lose $434 each day that they leave in-demand tech positions unfilled. By partnering with TechHire, you’ll be able to find and employ people who are ready to work, and in your community.</p>-->
-
     <div class="two-columns">
       <div class="col icon-case">
-        <h2>MasterCard Case Study</h2>
-        <p>Mastercard began working with LaunchCode in the spring of 2014. Mastercard started with one apprentice developer. That developer got a job coming out of their apprenticeship. Growing out of the successful apprenticeship, Mastercard decided to start a larger pilot in the fall of 2014. At this time they took 3 additional apprentices in software engineering, project management, and development. One of these apprentices was LaShana Lewis, whose story of grit and hard work was later highlighted by President Obama.</p>
-        <p><a href="#" class="button">Download the MasterCard Case Study</a></p>
+        <h2>Case Study: Xpanxion</h2>
+
+        <p>
+          Xpanxion is an enterprise software consulting firm with locations in smaller towns throughout
+          the United States. In order to maintain offices outside of traditional tech centers, Xpanxion has invested
+          heavily in training and career development, resulting in a strong supply of quality, local talent.
+        </p>
+
+        <p><a class="button" href="<%= case_study_path(id: "xpanxion") %>">Read About Xpanxion's Training Strategy</a></p>
       </div>
 
       <div class="col icon-case">
-        <h2>SAIC Case Study</h2>
-        <p>SAIC approached LaunchCode to help fill their talent needs. So far, it has been a great success. They have hired and converted three LaunchCode apprentices in the past year, including Lee Wissmiller, a US Marine veteran, who was diagnosed with narcolepsy ten years ago. Lee is a skilled programmer, but due to his disability, was unable to find a permanent job despite attending 285 job interviews. After discovering LaunchCode, Lee was placed at SAIC where he successfully transitioned to a full-time position as a software developer. <a href="#">See SAIC and Lee’s story here.</a></p>
-        <p><a class="button" href="#">Download the SAIC Case Study</a></p>
+        <h2>Case Study: Rural Sourcing Inc. (RSI)</h2>
+
+        <p>
+          Rural Sourcing is a software consultancy committed to solving the "outsourcing crisis" by bringing
+          tech jobs back to American communities. RSI helps give tech employees the flexibility to live where
+          they want while also making investments back into local economies.
+        </p>
+
+
+        <p><a class="button" href="<%= case_study_path(id: "rural_sourcing") %>">See How RSI Helped Karen</a></p>
       </div>
     </div>
   </div>
 </div>
 
 <div class="mod-content">
-  <div class="layout-wrap">
-    <div class="col icon-sheet">
+  <div class="layout-wrap icon-case">
+    <h2>Private Sector Tools: Knack</h2>
+    <div class="col">
+      <h3>Business Apps for TechHire Community Members</h3>
+      <p>As a proud supporter of the White House TechHire initiative, <strong><a href="https://www.knack.it/">Knack</a></strong> made the commitment to provide the Knack Business App completely free to any employer, coding school, or community ready to identify, train, and hire job-seekers who are underrepresented in the tech field—minorities, women, veterans and economically and socially disadvantaged individuals—even if they have no higher education or work experience.</p>
+
+      <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">More about Knack</a>
+
+      <div class="content-dropdown" id="knack-content">
+        <div class="two-columns">
+          <div class="col">
+            <p>Knack makes smart mobile games that combine game theory, behavioral science, and proprietary big data algorithms to change the way people of all walks of life discover and broadcast their talents and tap into their potential.</p>
+            <p>Knack not only helps job-seekers pinpoint their "knacks"—their skills, abilities, and strengths—all from the way they play Knack's mobile games, but it also matches them with job opportunities tailored to one's potential for success on the job, aiming to replace the traditional credentials and job experience requirements that erect barriers for many high-potential, but low-credentialed individuals.</p>
+          </div>
+
+          <div class="col">
+            <p>Knack offers two apps:</p>
+
+            <ol class="bulleted">
+              <li><strong>What's Your Knack?</strong> uses smart mobile games to help job-seekers discover and broadcast their knacks and identify matching job opportunities based on their potential for success on the job.</li>
+              <li><strong>Knack Business App</strong> helps employers attract, engage and spot high-potential individuals who've got the knack to do the job—even if they don't have higher education credentials or job experience.</li>
+            </ol>
+
+            <p>Leading Fortune 500 employers in the US and around the world, and numerous small and medium size businesses in every industry, have adopted Knack and are on the path to changing the way they spot high-potential talent.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="mod-content">
+  <div class="layout-wrap icon-case">
+    <h2>Private Sector Tools: Better Weekdays</h2>
+    <div class="col">
+      <h3>Career Management Platform for TechHire Community Members</h3>
+      <p><strong><a href="http://www.betterweekdays.com/">Better Weekdays</a></strong> is a St. Louis based job-matching platform that helps universities improve job placement outcomes of its graduates, and companies to hire them based on job compatibility and culture fit.</p>
+      <p>Better Weekdays has committed to providing its pay-walled web and mobile career management platform free of charge for colleges and universities, Local Leaders, and other partners in TechHire communities to leverage and facilitate connections between employers and job seekers.</p>
+      <p>The service will feature a dashboard that connects job seekers to resources to prepare for gainful employment, and allows employers to showcase their brands in a meaningful way to aspiring employees.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mod-content">
+  <div class="layout-wrap icon-sheet">
+    <div class="col">
       <h2>Fact Sheet</h2>
       <p>On March 9, 2015, President Obama announced the creation of the TechHire initiative — a new campaign to work with communities to get more Americans rapidly trained for well-paying technology jobs.</p>
       <p><a href="https://www.whitehouse.gov/the-press-office/2015/03/09/fact-sheet-president-obama-launches-new-techhire-initiative" class="button">Download the Factsheet</a></p>
