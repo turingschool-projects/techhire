@@ -117,8 +117,16 @@
       margin-left: 0;
     }
   }
-  ul.bulleted {
+  ul.bulleted,ol.bulleted {
   margin-left: 20px;
   li { list-style-type: circle;}
   }
+}
+
+.content-dropdown {
+  p {
+    margin: 10px 0px;
+  }
+  display: none;
+  padding: 20px 0px;
 }
