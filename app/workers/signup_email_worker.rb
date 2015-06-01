@@ -1,7 +1,7 @@
 class SignupEmailWorker
   include Sidekiq::Worker
 
-  def perform(user_id)
-    UserEmailer.send_welcome_email(User.find(user_id)).deliver_now
+  def perform(company_id)
+    CompanyMailer.welcome_email(Company.find(company_id)).deliver_now
   end
 end

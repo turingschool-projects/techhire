@@ -24,9 +24,6 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(current_path).to eq(admin_company_path(company.id))
 
       expect(page).to have_content(company.organization)
-      expect(page).to have_content(company.users.first.name)
-      expect(page).to have_content(company.users.first.title)
-      expect(page).to have_content(company.users.first.email)
       expect(page).to have_content(company.city)
       expect(page).to have_content(company.state)
       expect(page).to have_content(company.status.capitalize)
