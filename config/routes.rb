@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :videos
     resources :pdfs
     resources :techhire_locations
+    resources :csv_uploads, only: [:new, :create]
     resources :companies, except: [:create] do
       resources :notes, only: [:index, :create, :destroy]
     end
