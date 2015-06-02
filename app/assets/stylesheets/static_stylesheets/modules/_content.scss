@@ -119,7 +119,10 @@
   }
   ul.bulleted,ol.bulleted {
   margin-left: 20px;
-  li { list-style-type: circle;}
+  li {
+    list-style-type: circle;
+    margin: 10px 0px;
+  }
   }
 }
 
