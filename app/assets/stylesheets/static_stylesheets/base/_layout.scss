@@ -19,12 +19,11 @@ body {
   max-width: 1000px;
   position: relative;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 20px 30px;
 }
 
 .layout-main {
   @extend %clearfix;
-  padding-bottom: 50px;
   background: #fff;
 
   .main-bg-yellow & {
