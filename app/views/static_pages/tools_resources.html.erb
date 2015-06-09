@@ -1,56 +1,5 @@
-<% content_for :footer do %>
-<%= javascript_include_tag "rate_calculator" %>
-<% end %>
 <div class="mod-heading tools">
   <h1>Tools/Resources</h1>
-</div>
-
-<div class="mod-content">
-  <div class="layout-wrap icon-check">
-    <div class="col">
-      <h2>The Case for Businesses</h2>
-      <p>Meaningful work is essential to human flourishing and to America’s promise of upward mobility and civic equality, while tapping the full talents of our people is essential for productive and inclusive economic growth. The gradual erosion of such work for many in the US economy over the past 30 years threatens both America’s promise and economic vitality.</p>
-      <p>Every day that goes by without filling an open position costs a business $434, on average. This number is likely higher for IT jobs which take an average of 95 business days to fill - higher than the overall average of 68. Committing to TechHire means access to an expanded hiring pool with qualified candidates who are ready to work, but may have previously been overlooked.</p>
-    </div>
-
-  </div>
-</div>
-
-<div class="mod-content">
-  <div class="layout-wrap">
-    <h2>Find Out How Much Your Open Positions Are Costing You</h2>
-    <form id="rate-calculator">
-      <p>
-        <span class="leading-dollar"> $ </span>
-        <span class="calc-group">
-          <label for="calculator_rate">Daily Rate:</label>
-          <input type="text" name="calculator[rate]" class="calc-input calc-rate" value="434">
-        </span>
-
-        <span> X </span>
-
-        <span class="calc-group">
-          <label for="calculator_positions"># of Open Positions:</label>
-          <input type="text" name="calculator[positions]" class="calc-input calc-positions" value="1">
-        </span>
-
-        <span> X </span>
-
-        <span class="calc-group">
-          <label for="calculator_positions"># of Days Unfilled:</label>
-          <input type="text" name="calculator[days]" class="calc-input calc-days" value="1">
-        </span>
-
-        <span> = </span>
-
-        <span class="calc-group">
-          <label for="calculator_total">Total Cost:</label>
-          <input type="text" name="calculator[days]" class="calc-total" readonly value="$434.00">
-        </span>
-      </p>
-      <small>Source: CEB Corporate Leadership Council</small>
-    </form>
-  </div>
 </div>
 
 <div class="mod-content yellow">
