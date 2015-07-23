@@ -8,5 +8,6 @@
 </div>
 
 <div class="row text-center">
-  <%= link_to "Back to Manage Content", admin_contents_path, class: "btn btn-primary" %>
+  <%= link_to "Back to Manage Content", admin_contents_path, class: "btn btn-primary" %><br/><br/>
+  <%= link_to "Edit", edit_admin_content_path(@content.id), class: "btn btn-primary" %>
 </div>
