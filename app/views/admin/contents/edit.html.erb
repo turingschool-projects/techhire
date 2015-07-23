@@ -1,5 +1,5 @@
 <div class="row">
-  <%= form_for(:content, url:admin_contents_path, html: { class: "form-horizontal"} ) do |f| %>
+  <%= form_for @content, url: admin_content_path(@content.id),method: :put, html: { class: "form-horizontal"} do |f| %>
     <h1>Edit Content </h1><br/>
     <div class="form-group">
       <%= f.label :title, "Title", class: "col-sm-2 control-label" %>

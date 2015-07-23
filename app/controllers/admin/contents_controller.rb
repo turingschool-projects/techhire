@@ -16,12 +16,32 @@ class Admin::ContentsController < ApplicationController
     end
   end
 
-  def edit
-    @content = Content.find(params[:id])
+  def update
+    content = Content.find(params[:id])
+    if content.update_attributes(new_content_params)
+      redirect_to admin_content_path(content.id)
+    else
+      flash[:errors] = "Please try again!"
+      render :edit
+    end
   end
 
   def show
     @content = Content.find(params[:id])
+  end
+
+  def edit
+    @content = Content.find(params[:id])
+  end
+
+  def destroy
+    if Content.find(params[:id]).destroy
+      flash[:notice] = "Content Deleted"
+      redirect_to admin_contents_path
+    else
+      flash[:errors] = "Content not deleted, Please try again."
+      redirect_to admin_contents_path
+    end
   end
 
   private
