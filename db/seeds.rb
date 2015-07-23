@@ -1,9 +1,9 @@
 class Seed
   def initialize
-    build_uncontacted_companies
-    build_contacted_companies
-    build_confirmed_companies
-    build_dead_companies
+    build_companies("uncontacted", "MO", "St. Louis")
+    build_companies("contacted", "CO", "Denver", 11)
+    build_companies("confirmed", "KS", "Witchita", 21)
+    build_companies("dead", "OK", "Oklahoma City", 31)
     build_pdf
     build_techhire_locations
     build_pdfs
@@ -140,74 +140,21 @@ class Seed
   end
 
   #Companies
-  def build_uncontacted_companies
-    i = 1
-    10.times do
-      Company.create(
-      name: "user#{i}",
-      organization: "company#{i}",
-      title: "head person#{i}",
-      state: "MO",
-      city: "St. Louis",
-      email: "user#{i}@email.com",
-      hiring: 1,
-      hire_count: 5,
-      status: "uncontacted"
-      )
-      i = i + 1
-    end
-  end
-
-  def build_contacted_companies
-    i = 11
-    10.times do
+  def build_companies(status, state, city, offset=1)
+    10.times do |iteration|
+     i = iteration + offset
       Company.create(
         name: "user#{i}",
         organization: "company#{i}",
         title: "head person#{i}",
-        state: "CO",
-        city: "Denver",
+        state: state,
+        city: city,
+        zip_code: "80013",
         email: "user#{i}@email.com",
         hiring: 1,
         hire_count: 5,
-        status: "contacted")
-      i = i + 1
-    end
-  end
-
-  def build_confirmed_companies
-    i = 21
-    9.times do
-      Company.create(
-        name: "user#{i}",
-        organization: "company#{i}",
-        title: "head person#{i}",
-        state: "KS",
-        city: "Witchita",
-        email: "user#{i}@email.com",
-        hiring: 1,
-        hire_count: 5,
-        status: "confirmed"
+        status: status
       )
-      i = i + 1
-    end
-  end
-
-  def build_dead_companies
-    i = 31
-    10.times do
-      Company.create(
-        name: "user#{i}",
-        organization: "company#{i}",
-        title: "head person#{i}",
-        state: "OK",
-        city: "Oklahoma City",
-        email: "user#{i}@email.com",
-        hiring: 1,
-        hire_count: 5,
-        status: "dead"
-      )
-      i = i + 1
     end
   end
 
