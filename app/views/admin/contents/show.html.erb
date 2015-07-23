@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1><%= @content.title%></h1>
+  </div>
+  <div class="panel-body">
+    <h2><%= @content.body%></h2>
+  </div>
+</div>
+
+<div class="row text-center">
+  <%= link_to "Back to Manage Content", admin_contents_path, class: "btn btn-primary" %><br/><br/>
+  <%= link_to "Edit", edit_admin_content_path(@content.id), class: "btn btn-primary" %>
+</div>
