@@ -2,7 +2,7 @@ class Admin::ContentsController < ApplicationController
   # TODO: Make sure this is covered by authorization
 
   def index
-    @contents = Content.all
+    @contents = Content.all.order('updated_at DESC')
   end
 
   def create
@@ -17,7 +17,11 @@ class Admin::ContentsController < ApplicationController
   end
 
   def edit
+    @content = Content.find(params[:id])
+  end
 
+  def show
+    @content = Content.find(params[:id])
   end
 
   private
