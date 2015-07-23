@@ -10,7 +10,7 @@ This app uses
 * Bing Geocode API
 * Sengrid
 
-For AWS/Bing/Sengrid credentials, you'll need to get the `application.yml` file from someone on the team.
+For AWS/Bing/Sendgrid credentials, you'll need to get the `application.yml` file from someone on the team.
 
 To Seed the DB
 
