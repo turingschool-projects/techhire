@@ -55,10 +55,12 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       end
       click_link_or_button("Add Note")
 
-      within(".notes") do
-        expect(page).to have_content("test note")
-      end
+
       expect(current_path).to eq(admin_company_path(company.id))
+
+      within(".notes") do
+        page.has_content?("test note")
+      end
     end
 
     it "views all companies on dashboard" do
@@ -101,9 +103,9 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(current_path).to eq(admin_companies_path)
 
       click_link(company.organization)
-      expect(page).to have_link("Edit Company")
+      expect(page).to have_button("Edit Company")
 
-      click_link("Edit Company")
+      click_button("Edit Company")
       expect(current_path).to eq(edit_admin_company_path(company.id))
 
       fill_in "company[organization]", with: "Netflix"
@@ -130,7 +132,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       click_link("Companies")
       click_link(company.organization)
-      click_link("Edit Company")
+      click_button("Edit Company")
 
       expect(page).to have_selector("input[value='Google']")
       expect( find(:css, 'select#company_state').value ).to eq('CO')
