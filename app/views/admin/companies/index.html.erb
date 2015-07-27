@@ -11,27 +11,26 @@
           Organizations
         </h3>
       </div>
-          <table class="table">
-            <thead>
-              <tr class="filters">
-                <th><input type="text" class="form-control company-id" placeholder="ID" disabled></th>
-                <th><input type="text" class="form-control" placeholder="Organization" disabled></th>
-                <th><input type="text" class="form-control" placeholder="Contact" disabled></th>
-                <th><input type="text" class="form-control" placeholder="Title" disabled></th>
-                <th><input type="text" class="form-control" placeholder="City" disabled></th>
-                <th><input type="text" class="form-control" placeholder="State" disabled></th>
-                <th><input type="text" class="form-control" placeholder="Email" disabled></th>
-                <th><input type="text" class="form-control" placeholder="Status" disabled></th>
-                <th><input type="text" class="form-control" placeholder="Hiring?" disabled></th>
-                <th><input type="text" class="form-control" placeholder="#" disabled></th>
+        <table class="table tablesorter">
+          <thead>
+            <tr class="filters">
+              <th><a class="form-control">ID</th>
+              <th><a class="form-control">Organization</th>
+              <th><a class="form-control">Contact</th>
+              <th><a class="form-control">Title</th>
+              <th><a class="form-control">City</th>
+              <th><a class="form-control">State</th>
+              <th><a class="form-control">Email</th>
+              <th><a class="form-control">Status</th>
+              <th><a class="form-control">Hiring?</th>
+              <th><a class="form-control">#</th>
             </tr>
           </thead>
           <tbody class="searchable">
             <% @companies.each do |company| %>
               <tr>
                 <td class="id"><%= company.id %></td>
-                <td class="Organization"><%= link_to company.organization,
-                    admin_company_path(company.id) %></td>
+                <td class="Organization"><%= link_to company.organization, admin_company_path(company.id) %></td>
                 <td class="contact"><%= company.name %></td>
                 <td class="contact-title"><%= company.title %></td>
                 <td class="city"><%= company.city %></td>
@@ -47,3 +46,4 @@
       </div>
     </div>
   </div>
+</div>

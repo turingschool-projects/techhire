@@ -35,9 +35,11 @@
           </div>
         </div>
         <div class="col-sm-3">
-          <%= f.select(:status, Company::STATUS_OPTIONS) %>
+          <div class="form-group">
+            <%= f.label(:status, "Status") %>
+            <%= f.select(:status, Company::STATUS_OPTIONS) %>
+          </div>
         </div>
-        <%= f.hidden_field :status %>
         <%= f.hidden_field :name %>
         <%= f.hidden_field :title %>
         <%= f.hidden_field :email %>
