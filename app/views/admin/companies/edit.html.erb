@@ -1,32 +1,51 @@
-<%= form_for @company, url: admin_company_path(@company.id), method: :put do |f| %>
-  <div class="form-group">
-    <%= f.label(:organization, "Organization") %>
-    <%= f.text_field :organization, required: true  %><br>
+<div class="row">
+  <div class="container">
+    <div class="well">
+      <%= form_for @company, url: admin_company_path(@company.id), method: :put do |f| %>
+        <div class="col-sm-12">
+          <div class="form-group">
+            <%= f.label(:organization, "Organization Name") %>
+            <%= f.text_field :organization, required: true  %><br>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group" style="width:50px;">
+            <%= f.label(:state, "State") %>
+            <%= f.select :state, options_for_select(state_helper, @company.state) %>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="form-group" style="width:190px;">
+            <%= f.label(:city, "City") %>
+            <% cache @cities do %>
+            <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
+            <% end %>
+          </div>
+        </div><br/>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <%= f.check_box :hiring %>
+            <%= f.label(:hiring, "This company is hiring") %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <%= f.label(:hire_count, "Number of people hiring") %>
+            <%= f.number_field :hire_count, in: 0..500, step: 1, value: @company.hire_count %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <%= f.select(:status, Company::STATUS_OPTIONS) %>
+        </div>
+        <%= f.hidden_field :status %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :title %>
+        <%= f.hidden_field :email %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label(:state, "State") %>
-    <%= f.select :state, options_for_select(state_helper, @company.state) %>
-  </div>
-  <div class="form-group">
-    <%= f.label(:city, "City") %>
-    <% cache @cities do %>
-    <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
-    <% end %>
-  </div>
-  <div class="form-group">
-    <%= f.check_box :hiring %>
-    <%= f.label(:hiring, "This company is hiring") %>
-  </div>
-  <div class="form-group">
-    <%= f.number_field :hire_count, in: 0..500, step: 1, value: @company.hire_count %><br>
-    <%= f.label(:hire_count, "Number of people hiring") %>
-  </div>
-  <%= f.hidden_field :status %>
-  <%= f.hidden_field :name %>
-  <%= f.hidden_field :title %>
-  <%= f.hidden_field :email %>
-  <%= f.submit "Submit" %>
-<% end %>
+</div>
 
 <script>
 $("#new_company").validate();
