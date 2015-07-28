@@ -9,35 +9,37 @@
       <strong>Contact Info:</strong>   <%= @company.name %>
     </p><hr/>
     <h3>Current Interests:</h3>
-    <div class="col-sm-6">
+    <div class="col-sm-5">
       <div class="checkbox">
         <h4>
-          <label>
-            <%= check_box_tag('hiring', value = '0', checked = @company.interest_hiring )%> Hiring
-          </label>
-          <label>
-            <%= check_box_tag('training', value = '0', checked = @company.interest_training )%> Training
-          </label>
-          <label>
-            <%= check_box_tag('connecting', value = '0', checked = @company.interest_connecting )%> Connecting
-          </label>
-          <label>
-            <%= check_box_tag('supporting', value = '0', checked = @company.interest_supporting )%> Supporting
-          </label>
-          <label>
-            <%= check_box_tag('community', value = '0', checked = @company.interest_community )%> Community
-          </label>
+          <ul>
+            <li>
+              <%= check_box_tag('hiring', value = '0', checked = @company.interest_hiring )%> Hiring
+            </li>
+            <li>
+              <%= check_box_tag('training', value = '0', checked = @company.interest_training )%> Training
+            </li>
+            <li>
+              <%= check_box_tag('connecting', value = '0', checked = @company.interest_connecting )%> Connecting
+            </li>
+            <li>
+              <%= check_box_tag('supporting', value = '0', checked = @company.interest_supporting )%> Supporting
+            </li>
+            <li>
+              <%= check_box_tag('community', value = '0', checked = @company.interest_community )%> Community
+            </li>
+          </ul>
         </h4>
       </div><br>
     </div>
-    <div class="col-sm-6 text-center">
+    <div class="col-sm-7 text-center">
       <% if @company.hiring? %>
         <h4><%= @company.organization %> is hiring<h4>
       <% else %>
         <h4><%= @company.organization %> is <strong>NOT</strong> hiring</h4>
       <% end %>
+      <strong>Organization Type:</strong> <%= @company.organization_type %>
     </div>
-    <div class="col-sm-12 text-center"><strong>Organization Type:</strong> <%= @company.organization_type %></div>
   </div>
   <div class="col-sm-12">
     <h3>techHireInvolvement:</h3>
