@@ -24,9 +24,13 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(current_path).to eq(admin_company_path(company.id))
 
       expect(page).to have_content(company.organization)
+      expect(page).to have_content(company.name)
+      expect(page).to have_content(company.organization_type)
+      expect(page).to have_content(company.techhire_involvement)
       expect(page).to have_content(company.city)
       expect(page).to have_content(company.state)
       expect(page).to have_content(company.status.capitalize)
+      find(:css, "#hiring").should_not be_checked
     end
 
     it "can delete a company" do
@@ -113,6 +117,8 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       select "Laramie", from: "company[city]"
       find(:css, "#company_hiring").set(false)
       fill_in "company[hire_count]", with: 7
+      find(:css, "#company_interest_training").set(true)
+      select "Government", from: "company[organization_type]"
       click_button("Submit")
 
       expect(current_path).to eq(admin_company_path(company.id))
