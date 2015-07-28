@@ -24,9 +24,13 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(current_path).to eq(admin_company_path(company.id))
 
       expect(page).to have_content(company.organization)
+      expect(page).to have_content(company.name)
+      expect(page).to have_content(company.organization_type)
+      expect(page).to have_content(company.techhire_involvement)
       expect(page).to have_content(company.city)
       expect(page).to have_content(company.state)
       expect(page).to have_content(company.status.capitalize)
+      find(:css, "#hiring").should_not be_checked
     end
 
     it "can delete a company" do
@@ -37,9 +41,9 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       click_link(company.organization)
 
-      expect(page).to have_button("Delete Company")
+      expect(page).to have_link("Delete Company")
 
-      click_button("Delete Company")
+      click_link("Delete Company")
 
       expect(current_path).to eq(admin_companies_path)
       expect(Company.count).to eq(0)
@@ -55,10 +59,12 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       end
       click_link_or_button("Add Note")
 
-      within(".notes") do
-        expect(page).to have_content("test note")
-      end
+
       expect(current_path).to eq(admin_company_path(company.id))
+
+      within(".notes") do
+        page.has_content?("test note")
+      end
     end
 
     it "views all companies on dashboard" do
@@ -111,6 +117,8 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       select "Laramie", from: "company[city]"
       find(:css, "#company_hiring").set(false)
       fill_in "company[hire_count]", with: 7
+      find(:css, "#company_interest_training").set(true)
+      select "Government", from: "company[organization_type]"
       click_button("Submit")
 
       expect(current_path).to eq(admin_company_path(company.id))

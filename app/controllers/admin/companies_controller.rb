@@ -17,9 +17,7 @@ class Admin::CompaniesController < ApplicationController
 
   def update
     company = Company.find(params[:id])
-    if company.update(status: params[:company][:status]) && company.update(update_params)
-      redirect_to admin_company_path(company.id)
-    elsif company.update(status: params[:company][:status])
+    if company.update(update_params)
       redirect_to admin_company_path(company.id)
     else
       flash[:errors] = "Please try again!"
@@ -35,6 +33,11 @@ class Admin::CompaniesController < ApplicationController
 
   def update_params
     params.require(:company).permit(:name, :organization, :title,
-                                 :email, :state, :city, :hire_count)
+                                    :state, :city, :email,
+                                    :hiring, :status, :hire_count,
+                                    :zip_code, :organization_type,
+                                    :techhire_involvement, :interest_hiring,
+                                    :interest_training, :interest_connecting,
+                                    :interest_supporting, :interest_community)
   end
 end

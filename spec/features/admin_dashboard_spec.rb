@@ -20,9 +20,7 @@ RSpec.feature "AdminDashboard", type: :feature do
         click_link_or_button('CMS Instructions')
       end
       expect(current_path).to eq(admin_cms_instructions_path)
-      within('.cms-instructions-header') do
-        expect(page).to have_content('Content Management System(CMS) Instructions')
-      end
+      expect(page).to have_content('Content Management System(CMS) Instructions')
     end
 
     it "can see a list of uncontacted companies on the dashboard" do

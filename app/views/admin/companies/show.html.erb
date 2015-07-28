@@ -1,27 +1,96 @@
-<%= render 'company_profile' %>
+<div class="well">
+  <%= render 'company_profile' %><hr/>
+</div>
+
+<div class="row">
+  <div class="col-lg-8">
+    <p class="lead">
+      <h1>Admin Information</h1>
+      <strong>Contact Info:</strong>   <%= @company.name %>
+    </p><hr/>
+    <h3>Current Interests:</h3>
+    <div class="col-sm-5">
+      <div class="checkbox">
+        <h4>
+          <ul>
+            <li>
+              <%= check_box_tag('hiring', value = '0', checked = @company.interest_hiring )%> Hiring
+            </li>
+            <li>
+              <%= check_box_tag('training', value = '0', checked = @company.interest_training )%> Training
+            </li>
+            <li>
+              <%= check_box_tag('connecting', value = '0', checked = @company.interest_connecting )%> Connecting
+            </li>
+            <li>
+              <%= check_box_tag('supporting', value = '0', checked = @company.interest_supporting )%> Supporting
+            </li>
+            <li>
+              <%= check_box_tag('community', value = '0', checked = @company.interest_community )%> Community
+            </li>
+          </ul>
+        </h4>
+      </div><br>
+    </div>
+    <div class="col-sm-7 text-center">
+      <% if @company.hiring? %>
+        <h4><%= @company.organization %> is hiring<h4>
+      <% else %>
+        <h4><%= @company.organization %> is <strong>NOT</strong> hiring</h4>
+      <% end %>
+      <strong>Organization Type:</strong> <%= @company.organization_type %>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <h3>techHireInvolvement:</h3>
+    <p><%= @company.techhire_involvement %></p>
+  </div>
+</div><br/><hr/>
+
+<div class="row text-center">
+  <div class="col-sm-4">
+    <%= form_for @company, url: admin_company_path do |f| %>
+      <%= f.select(:status, Company::STATUS_OPTIONS) %>
+      <%= f.submit "Update Status", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="col-sm-4">
+    <%= link_to admin_company_path(@company.id), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure you want to delete this company? This action cannot be undone.'} do %>
+      <span class="glyphicon glyphicon-remove"></span> Delete Company
+    <% end %>
+  </div>
+  <div class="col-sm-4">
+    <%= link_to edit_admin_company_path(@company.id), class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-edit"></span> Edit Company
+    <% end %>
+  </div>
+</div><hr/>
+
+<div class="well add_note">
+  <h4>Add a Note:</h4>
+  <%= form_tag admin_company_notes_path(company_id: @company.id), method: :post do %>
+    <form role="form">
+      <div class="form-group">
+        <textarea name="note" id="note" class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Note</button>
+    </form>
+  <% end %>
+</div>
 
 <div class="notes">
-  <% @company.notes.each do |note| %>
-    <div>
-      <%= note.body %>
+  <% @company.notes.order('updated_at DESC').each do |note| %>
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="http://placehold.it/64x64" alt="">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @company.organization %>
+        <small><%= note.created_at %></small>
+        </h4>
+        <%= note.body %>
+      </div>
     </div>
   <% end %>
 </div>
-
-<div class="add_note">
-  <%= form_tag admin_company_notes_path(company_id: @company.id), method: :post do %>
-    <%= text_area_tag :note %>
-    <%= submit_tag "Add Note" %>
-  <% end %>
-</div>
-
-<%= form_for @company, url: admin_company_path do |f| %>
-  <%= f.select(:status, Company::STATUS_OPTIONS) %>
-  <%= f.submit "Update Status" %>
-<% end %>
-
-<%= button_to "Delete Company", admin_company_path(@company.id), method: :delete,
-  data: { confirm: 'Are you sure you want to delete this company?
-  This action cannot be undone.'} %>
-
-<%= link_to "Edit Company", edit_admin_company_path(@company.id) %>
+<hr/>
