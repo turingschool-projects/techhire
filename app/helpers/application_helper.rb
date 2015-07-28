@@ -9,4 +9,15 @@ module ApplicationHelper
     cities = state.usa_cities.pluck(:name)
     return cities.insert(0, ["Please select..."])
   end
+
+
+  def organization_type_helper
+   types = ["Employer",
+            "Training Institution",
+            "Government",
+            "Interested Individual",
+            "Other"]
+
+    return types.insert(0, ["Please select..."])
+  end
 end
