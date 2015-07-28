@@ -37,9 +37,9 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       click_link(company.organization)
 
-      expect(page).to have_button("Delete Company")
+      expect(page).to have_link("Delete Company")
 
-      click_button("Delete Company")
+      click_link("Delete Company")
 
       expect(current_path).to eq(admin_companies_path)
       expect(Company.count).to eq(0)
@@ -103,9 +103,9 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       expect(current_path).to eq(admin_companies_path)
 
       click_link(company.organization)
-      expect(page).to have_button("Edit Company")
+      expect(page).to have_link("Edit Company")
 
-      click_button("Edit Company")
+      click_link("Edit Company")
       expect(current_path).to eq(edit_admin_company_path(company.id))
 
       fill_in "company[organization]", with: "Netflix"
@@ -132,7 +132,7 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
 
       click_link("Companies")
       click_link(company.organization)
-      click_button("Edit Company")
+      click_link("Edit Company")
 
       expect(page).to have_selector("input[value='Google']")
       expect( find(:css, 'select#company_state').value ).to eq('CO')
