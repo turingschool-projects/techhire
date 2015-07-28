@@ -3,8 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  scope :admin, -> { where admin: '1'}
 
   enum role: %w(company admin super_admin)
+
+  ROLE_OPTIONS = { "Company" => "company",
+                   "Admin"   => "admin"}
 
   def admin?
     role == "admin" || role == "super_admin"

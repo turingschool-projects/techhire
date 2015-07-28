@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :case_studies, only: [:show]
 
   namespace :admin do
+    resources :users
     resources :dashboard, only: [:index]
     get "/dashboard/cms-instructions", to: "dashboard#cms_instructions", as: "cms_instructions"
     resources :contents

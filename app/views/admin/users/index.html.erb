@@ -1,0 +1,42 @@
+<div class="row">
+  <h3>Add Admin User</h3><br/>
+  <div class="input-group col-sm-6"> <span class="input-group-addon">Search</span>
+    <input id="filter" type="text" class="form-control" placeholder="Type Here">
+  </div>
+  <hr>
+  <div class="row">
+    <div class="panel panel-primary filterable">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          All Users
+        </h3>
+      </div>
+        <table class="table tablesorter">
+          <thead>
+            <tr class="filters">
+              <th><a class="form-control">ID</th>
+              <th><a class="form-control">Name</th>
+              <th><a class="form-control">Title</th>
+              <th><a class="form-control">Email</th>
+              <th><a class="form-control">Admin?</th>
+            </tr>
+          </thead>
+          <tbody class="searchable">
+             <% @users.each do |user| %>
+              <%= form_for user, url: admin_user_path(user.id) do |f| %>
+                <tr>
+                  <td class="id text-center"><%= user.id %></td>
+                  <td class="name"><%= user.name %></td>
+                  <td class="title"><%= user.title %></td>
+                  <td class="email"><%= user.email %></td>
+                  <td class="role text-center"><%= f.select(:role, User::ROLE_OPTIONS) %>
+                  <%= f.submit "Update Role", class: "btn btn-xs btn-warning" %></td>
+                </tr>
+              <%end%>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
