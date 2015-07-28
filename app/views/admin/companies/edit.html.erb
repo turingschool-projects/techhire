@@ -1,49 +1,87 @@
 <div class="row">
   <div class="container">
     <div class="well">
-      <%= form_for @company, url: admin_company_path(@company.id), method: :put do |f| %>
-        <div class="col-sm-12">
+        <h2>Company Information</h2><hr/>
+        <%= form_for @company, url: admin_company_path(@company.id), method: :put do |f| %>
           <div class="form-group">
-            <%= f.label(:organization, "Organization Name") %>
-            <%= f.text_field :organization, required: true  %><br>
-          </div>
-        </div>
-        <div class="col-sm-2">
-          <div class="form-group" style="width:50px;">
-            <%= f.label(:state, "State") %>
-            <%= f.select :state, options_for_select(state_helper, @company.state) %>
-          </div>
-        </div>
-        <div class="col-sm-10">
-          <div class="form-group" style="width:190px;">
-            <%= f.label(:city, "City") %>
-            <% cache @cities do %>
-            <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
-            <% end %>
-          </div>
-        </div><br/>
-        <div class="col-sm-3">
-          <div class="form-group">
+            <h3><%= f.text_field :organization, required: true  %></h3>
+          </div><br><br/>
+          <div class="form-inline">
+            <div class="form-group">
+              <%= f.label(:state, "State") %>
+              <%= f.select :state, options_for_select(state_helper, @company.state) %>
+            </div>
+            <div class="form-group">
+              <%= f.label(:city, "City") %>
+              <% cache @cities do %>
+                <%= f.grouped_collection_select :city, State.all, :usa_cities, :abbr, :name, :name %><br>
+              <% end %>
+            </div>
+            <div class="form-group">
+              <%= f.label(:zip_code, "zip_code") %>
+              <%= f.text_field :zip_code %>
+            </div>
+          </div><br/><br/>
+          <div class="checkbox-inline">
             <%= f.check_box :hiring %>
-            <%= f.label(:hiring, "This company is hiring") %>
+            <%= f.label(:hiring, "This company is hiring   ") %>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="form-group">
+          <div class="checkbox-inline">
             <%= f.label(:hire_count, "Number of people hiring") %>
             <%= f.number_field :hire_count, in: 0..500, step: 1, value: @company.hire_count %>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="form-group">
-            <%= f.label(:status, "Status") %>
-            <%= f.select(:status, Company::STATUS_OPTIONS) %>
+          <div class="checkbox-inline">
+            <%= f.label(:organization_type, "Organization Type") %>
+            <%= f.select :organization_type, options_for_select(organization_type_helper, @company.organization_type) %>
           </div>
+        <br/><br/>
+
+        <h4>Interested In:</h4>
+          <div class="checkbox-inline">
+            <%= f.check_box :interest_hiring %>
+            <%= f.label(:interest_hiring, "Hiring") %>
+          </div>
+          <div class="checkbox-inline">
+            <%= f.check_box(:interest_training) %>
+            <%= f.label(:interest_training, "Training") %>
+          </div>
+          <div class="checkbox-inline">
+            <%= f.check_box :interest_connecting %>
+            <%= f.label(:interest_connecting, "Connecting") %>
+          </div>
+          <div class="checkbox-inline">
+            <%= f.check_box(:interest_supporting) %>
+            <%= f.label(:interest_supporting, "Support") %>
+          </div>
+          <div class="checkbox-inline">
+            <%= f.check_box(:interest_community) %>
+            <%= f.label(:interest_community, "Community") %>
+          </div><br/><br/>
+          <div class="form-group">
+            <%= f.label(:techhire_involvement, "techHire Involvement") %>
+            <%= f.text_area :techhire_involvement, size: "100X50" %><br>
+          </div>
+        <hr/>
+
+        <h2>Company's Contact Information</h2><hr/>
+          <div class="form-inline">
+            <div class="form-group">
+              <%= f.label(:title, "Title") %>
+              <%= f.text_field :title %>
+            </div>
+            <div class="form-group">
+              <%= f.label(:name, "Name") %>
+              <%= f.text_field :name %>
+            </div>
+            <div class="form-group">
+              <%= f.label(:email, "Email") %>
+              <%= f.text_field :email %>
+            </div>
+          </div>
+        <hr/>
+        <div class="text-right">
+          <%= f.submit "Submit", class: "btn btn-primary" %>
         </div>
-        <%= f.hidden_field :name %>
-        <%= f.hidden_field :title %>
-        <%= f.hidden_field :email %>
-        <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
