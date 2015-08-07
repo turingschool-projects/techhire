@@ -1,0 +1,7 @@
+<div class="row">
+  <%= @template.html_safe %>
+</div>
+
+<% content_for :footer do %>
+  <%= javascript_include_tag "rate_calculator" %>
+<% end %>

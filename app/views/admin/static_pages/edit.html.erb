@@ -1,0 +1,14 @@
+<div class="container">
+
+  <h1>Edit <%=@page.name%> Content</h1>
+
+  <% @contents.each do |content| %>
+
+    <%= form_for content, :url => admin_content_path(content.id), method: "PUT" do |f| %>
+      <%= f.label "Location Number: #{content.location}" %>
+      <%= f.text_area :body, style: "height:200px;width:100%;" %>
+      <%= f.submit %>
+    <% end %><br/>
+
+  <% end %>
+</div>
