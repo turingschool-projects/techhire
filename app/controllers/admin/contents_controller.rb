@@ -19,7 +19,7 @@ class Admin::ContentsController < ApplicationController
   def update
     content = Content.find(params[:id])
     if content.update_attributes(new_content_params)
-      redirect_to admin_content_path(content.id)
+      redirect_to admin_contents_path
     else
       flash[:errors] = "Please try again!"
       render :edit
