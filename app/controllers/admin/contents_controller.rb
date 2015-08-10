@@ -9,17 +9,6 @@ class Admin::ContentsController < ApplicationController
     @tools_resources = all.where(page_id: 2).order('location')
   end
 
-  def create
-    content = Content.new(new_content_params)
-    if content.save
-      flash[:notice] = "Content successfully created."
-      redirect_to admin_contents_path
-    else
-      flash[:error] = content.errors.messages.values[0][0]
-      redirect_to admin_contents_path
-    end
-  end
-
   def update
     content = Content.find(params[:id])
     if content.update_attributes(new_content_params)
@@ -37,16 +26,6 @@ class Admin::ContentsController < ApplicationController
   def edit
     @content = Content.find(params[:id])
     @page_name = Page.find(@content.page_id).name
-  end
-
-  def destroy
-    if Content.find(params[:id]).destroy
-      flash[:notice] = "Content Deleted"
-      redirect_to admin_contents_path
-    else
-      flash[:errors] = "Content not deleted, Please try again."
-      redirect_to admin_contents_path
-    end
   end
 
   private
