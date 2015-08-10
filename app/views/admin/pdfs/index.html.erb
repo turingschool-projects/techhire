@@ -26,7 +26,7 @@
           <tr class="PDFs">
             <td class="id"><%= pdf.id %></td>
             <td class="name"><%= pdf.pdf_file_file_name %></td>
-            <td class="current-position"><%= pdf.slot %></td>
+            <td class="current-position"><%= pdf.content_id %></td>
             <td class="contact-title"><%= distance_of_time_in_words(pdf.updated_at, Time.now) %></td>
             <td>
               <%= link_to "Delete", admin_pdf_path(pdf.id), :method => "Delete", class: "btn btn-default" %>

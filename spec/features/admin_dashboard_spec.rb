@@ -91,7 +91,7 @@ RSpec.feature "AdminDashboard", type: :feature do
         expect(page).to have_content('Home')
         click_link_or_button("Home")
       end
-      expect(current_path).to eq(admin_static_pages_home_path)
+      expect(current_path).to eq(admin_static_pages_path('home'))
     end
 
     it "can click a link to manage map content" do
@@ -103,7 +103,7 @@ RSpec.feature "AdminDashboard", type: :feature do
         expect(page).to have_content('Manage Map')
         click_link_or_button("Manage Map")
       end
-      expect(current_path).to eq(admin_static_pages_techhire_locations_path)
+      expect(current_path).to eq(admin_static_pages_path("techhire_locations"))
     end
 
     it "can click a link to manage PDF files content" do
@@ -118,18 +118,6 @@ RSpec.feature "AdminDashboard", type: :feature do
       expect(current_path).to eq(admin_pdfs_path)
     end
 
-    it "can click a link to manage video content" do
-      login
-
-      expect(current_path).to eq(admin_dashboard_index_path)
-
-      within("li.dropdown-header.manage-video") do
-        expect(page).to have_content('Manage Video Files')
-        click_link_or_button("Manage Video Files")
-      end
-      expect(current_path).to eq(admin_videos_path)
-    end
-
     it "can click a link to manage tools and resources content" do
       login
 
@@ -139,7 +127,7 @@ RSpec.feature "AdminDashboard", type: :feature do
         expect(page).to have_content('Tools/Resources')
         click_link_or_button("Tools/Resources")
       end
-      expect(current_path).to eq(admin_static_pages_tools_resources_path)
+      expect(current_path).to eq(admin_static_pages_path('tools_resources'))
     end
 
     it "can click a link to manage Learn More content" do
@@ -151,7 +139,7 @@ RSpec.feature "AdminDashboard", type: :feature do
         expect(page).to have_content('Learn More')
         click_link_or_button("Learn More")
       end
-      expect(current_path).to eq(admin_static_pages_learn_more_path)
+      expect(current_path).to eq(admin_static_pages_path('learn_more'))
     end
 
     it "can click a link to view the home page" do

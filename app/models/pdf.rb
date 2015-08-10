@@ -12,12 +12,6 @@ class Pdf < ActiveRecord::Base
                                 message: "You already uploaded a pdf with this name."
                                 }
 
-  belongs_to :content
-
-  def self.learn_more
-    where("slot = 1").first
-  end
-
   def pdf_attached?
     self.pdf_file.present?
   end

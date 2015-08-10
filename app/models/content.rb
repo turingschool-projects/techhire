@@ -3,7 +3,6 @@ class Content < ActiveRecord::Base
                    uniqueness: { message: "There cannot be duplicate bodies." }
 
   belongs_to :page
-  has_one :pdf
 
 
   def self.null(location=1)

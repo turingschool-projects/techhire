@@ -9,11 +9,9 @@ class StaticTemplateRenderer
     rendered = @page.template
                     .gsub("$NAME", @page.name)
                     .gsub(/\$LOCATION(\d+)/) { |n| content_for $1.to_i }
-
     if rendered.include?('<%')
-      raise "Not Good. There's erb in this template: #{rendered.inspect}"
+      raise "Validation Error. There's erb in this template: #{rendered.inspect}"
     end
-
     rendered
   end
 
