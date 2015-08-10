@@ -391,13 +391,13 @@ class Seed
 
         <div class="mod-content">
           <div class="layout-wrap">
-            <div class="col-md-5">
-              <a href="http://www.opportunityatwork.org" target="_blank">
-              <img src="assets/oatw_logo.png" alt="OppLogo"></a>
-            </div>
-            <div class="col-md-7">
-              $LOCATION7
-            </div>
+              <div class="col">
+                <a href="http://www.opportunityatwork.org" target="_blank">
+                <img src="assets/oatw_logo.png" alt="OppLogo" style="display: inline-block; float: left; padding: 20px;"></a>
+                <div stlye="display: inline-block; float: left;">
+                  $LOCATION7
+                </div>
+              </div>
           </div>
         </div>
 
