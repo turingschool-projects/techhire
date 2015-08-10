@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
     resources :dashboard, only: [:index]
     get "/dashboard/cms-instructions", to: "dashboard#cms_instructions", as: "cms_instructions"
-    resources :contents
+    resources :contents, only: [:index, :update, :edit, :show]
     resources :pdfs
     resources :techhire_locations
     resources :csv_uploads, only: [:new, :create]
