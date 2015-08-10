@@ -35,6 +35,6 @@ class Admin::PdfsController < ApplicationController
   private
 
   def new_pdf_params
-    params.require(:pdf).permit(:pdf_file, :slot)
+    params.require(:pdf).permit(:pdf_file, :content_id)
   end
 end

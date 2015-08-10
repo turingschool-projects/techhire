@@ -33,8 +33,8 @@ RSpec.feature "AdminPdfManagements", type: :feature do
   end
 
   it "should not allow a duplicate pdf to be uploaded" do
-    pdf = create(:pdf)
-
+    pdf_file = Rack::Test::UploadedFile.new('spec/fixtures/sample_pdf.pdf', 'application/pdf')
+    pdf = Pdf.create(pdf_file: pdf_file)
     visit 'admin/pdfs'
     attach_file "pdf[pdf_file]", Rails.root.join('spec', 'fixtures', 'sample_pdf.pdf')
     click_button "Submit"
@@ -58,7 +58,7 @@ RSpec.feature "AdminPdfManagements", type: :feature do
 
     it "can view the details of a pdf" do
       pdf_file = Rack::Test::UploadedFile.new('spec/fixtures/sample_pdf.pdf', 'application/pdf')
-      pdf = Pdf.create(slot: 98, pdf_file: pdf_file)
+      pdf = Pdf.create(content_id: 98, pdf_file: pdf_file)
       login
       visit admin_pdfs_path
       expect(page).to have_content(98)
@@ -68,7 +68,7 @@ RSpec.feature "AdminPdfManagements", type: :feature do
 
     it "can delete a pdf" do
       pdf_file = Rack::Test::UploadedFile.new('spec/fixtures/sample_pdf.pdf', 'application/pdf')
-      pdf = Pdf.create(slot: 98, pdf_file: pdf_file)
+      pdf = Pdf.create(content_id: 98, pdf_file: pdf_file)
       login
       visit admin_pdfs_path
       click_link_or_button("Delete")

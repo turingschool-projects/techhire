@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529183201) do
+ActiveRecord::Schema.define(version: 20150807151903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,12 +41,11 @@ ActiveRecord::Schema.define(version: 20150529183201) do
   end
 
   create_table "contents", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "page"
-    t.integer  "slot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "page_id"
+    t.integer  "location"
+    t.string   "body"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -58,14 +57,22 @@ ActiveRecord::Schema.define(version: 20150529183201) do
 
   add_index "notes", ["company_id"], name: "index_notes_on_company_id", using: :btree
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "number_of_locations"
+    t.text     "template"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "pdfs", force: :cascade do |t|
-    t.integer  "slot"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.string   "pdf_file_file_name"
     t.string   "pdf_file_content_type"
     t.integer  "pdf_file_file_size"
     t.datetime "pdf_file_updated_at"
+    t.integer  "content_id"
   end
 
   create_table "states", force: :cascade do |t|
@@ -112,15 +119,6 @@ ActiveRecord::Schema.define(version: 20150529183201) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "videos", force: :cascade do |t|
-    t.string   "url"
-    t.string   "page"
-    t.integer  "slot"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   add_foreign_key "notes", "companies"
 end

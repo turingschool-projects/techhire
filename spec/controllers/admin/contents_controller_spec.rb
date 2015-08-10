@@ -7,7 +7,7 @@ RSpec.describe Admin::ContentsController, type: :controller do
   end
 
   before(:each) do
-    @content = Content.create(title: "Best title Ever", body: "Yeah, the title is cool, but have you read the body?")
+    @content = Content.create(body: "<h2>Yeah, the title is cool, but have you read the body?</h2>", page_id: 1)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
   end
 
@@ -18,33 +18,21 @@ RSpec.describe Admin::ContentsController, type: :controller do
     end
   end
 
-  describe "DELETE #destroy" do
-    it "deletes the content" do
-      expect(Content.count).to eq(1)
-      delete :destroy, id: @content.id
-      expect(Content.count).to eq(0)
-    end
-
-    it "redirects back to admin content index after deletion" do
-      delete :destroy, id: @content.id
-      expect(response).to redirect_to(admin_contents_path)
-    end
-  end
-
   describe "PATCH #update" do
     it "updates the status of a content" do
-      patch :update, id: @content.id, content: { title: "Newish Title" }
-      expect(response).to redirect_to(admin_content_path(@content.id))
+      patch :update, id: @content.id, content: { body: "<h1>Newish Title</h1>" }
+      expect(response).to redirect_to(admin_contents_path)
     end
   end
 
   describe "POST #edit" do
     it "updates a content information" do
+      Page.create!(name: "home")
       get :edit, id: @content.id
       expect(response).to render_template(:edit)
 
-      post :update, id: @content.id, content: { title: "Just a Word", body: "lots of words" }
-      expect(response).to redirect_to(admin_content_path(@content.id))
+      post :update, id: @content.id, content: { body: "<p>lots of words</p>" }
+      expect(response).to redirect_to(admin_contents_path)
     end
   end
 end

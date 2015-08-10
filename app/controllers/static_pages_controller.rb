@@ -1,17 +1,9 @@
 class StaticPagesController < ApplicationController
   layout "static_application"
 
-  def home
+  def show
+    @page     = Page.find_by!(name: params[:name])
+    @template = StaticTemplateRenderer.new(@page).render
   end
 
-  def learn_more
-  end
-
-  def tools_resources
-    @pdf_learn_more = Pdf.learn_more
-  end
-
-  def techhire_locations
-    @techhire_locations = TechhireLocation.all
-  end
 end
