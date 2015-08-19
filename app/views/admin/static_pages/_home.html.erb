@@ -1,0 +1,23 @@
+<div class="container">
+ <h1>Edit <%=name%> Content</h1>
+  <div style="background-color:#F8EFE6;">
+    <section class="mod-hero">
+    <%= render partial: "update_form", :locals => {content: @contents[0], style: "width:100%;" } %><br/>
+      <p class="actions">
+        <a href="#" class="button">Learn More</a>
+        <a href="#" class="button">Sign Up</a>
+      </p>
+    </section>
+
+    <section class="mod-stories layout-wrap">
+      <div class="story">
+      <%= render partial: "update_form", :locals => {content: @contents[1], style: "height:200px;width:100%;" } %><br/>
+      </div>
+      <div class="story">
+        <%= render partial: "update_form", :locals => {content: @contents[2], style: "height:200px;width:100%;" } %><br/>
+      </div>
+    </section>
+
+    <p class="finisher"><a href="#">More stories about businesses that are implementing TechHire strategies</a>
+  </div>
+</div>
