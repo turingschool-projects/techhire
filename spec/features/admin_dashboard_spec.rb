@@ -34,9 +34,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     it "can see company statistics on Admin Dashboard" do
       create(:company)
       login
-      within(".company-statistics") do
-        expect(page).to have_content('Uncontacted Companies: 1')
-      end
+      expect(page).to have_content('Uncontacted Companies: 1')
 
       within(".companies-by-city") do
         expect(page).to have_content('Top TechHire Cities Denver : 1')
@@ -199,6 +197,13 @@ RSpec.feature "AdminDashboard", type: :feature do
         click_link_or_button('Where Is TechHire')
       end
       expect(current_path).to eq(techhire_locations_path)
+    end
+
+    it "can see a link to Admin Dashboard if logged in as Admin" do
+      login
+
+      visit root_path
+      expect(page).to have_link('Admin Dashboard')
     end
   end
 end
