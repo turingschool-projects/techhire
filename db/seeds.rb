@@ -444,7 +444,6 @@ class Seed
       HTML
     # ==== END ====
 
-
     # ==== Build Learn More Page Content ====
     Content.create! page_id: Page.find_by(name: "Learn More").id, location: 1, body: <<-HTML.strip_heredoc
         <iframe frameborder="0" src="https://www.youtube-nocookie.com/embed/3iiXLXo2hic?rel=0&amp;showinfo=0"></iframe>
@@ -604,7 +603,13 @@ class Seed
   end
 
   def build_users
-    User.create(email: "admin@gmail.com", password: "password", role: 1)
+    User.create(email: "admin@gmail.com", name: "admin", password: "password", role: 1)
+    User.create(email: "tim@gmail.com", name: "Tim", title: "title", password: "password", role: 0)
+    User.create(email: "marissa@gmail.com", name: "Marissa", title: "jobs", password: "password", role: 0)
+    User.create(email: "josh@gmail.com", name: "JOSH", title: "teacher", password: "password", role: 0)
+    User.create(email: "mike@gmail.com", name: "Mike", title: "teacher", password: "password", role: 0)
+    User.create(email: "horace@gmail.com", name: "Horace", title: "teacher", password: "password", role: 0)
+    User.create(email: "jeff@gmail.com", name: "Jeff", title: "teacher",password: "password", role: 0)
   end
 end
 Seed.new
