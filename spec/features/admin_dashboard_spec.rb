@@ -3,19 +3,16 @@ require 'rails_helper'
 RSpec.feature "AdminDashboard", type: :feature do
   describe("an admin can see the dashboard") do
     let(:admin) do
-      User.create(email: 'admin@example.com', password: 'password', role: 1)
+      create(:user)
     end
 
-    def login
-      visit new_user_session_path
-
-      fill_in 'user[email]', with: admin.email
-      fill_in 'user[password]', with: admin.password
-      click_link_or_button('Log in')
+    before(:each) do
+      allow_any_instance_of(ApplicationController).to receive(:current_user)
+        .and_return(admin)
     end
 
     it "can click a link to view cms instructions" do
-      login
+      login(admin)
       within('.navbar-header') do
         click_link_or_button('CMS Instructions')
       end
@@ -24,8 +21,10 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can see a list of uncontacted companies on the dashboard" do
+      login(admin)
       create(:company)
-      login
+      visit admin_dashboard_index_path
+      expect(current_path).to eq(admin_dashboard_index_path)
       expect(page).to have_content('Google')
       expect(page).to have_content('John')
       expect(page).to have_content('john@example.com')
@@ -33,7 +32,7 @@ RSpec.feature "AdminDashboard", type: :feature do
 
     it "can see company statistics on Admin Dashboard" do
       create(:company)
-      login
+      login(admin)
       expect(page).to have_content('Uncontacted Companies: 1')
 
       within(".companies-by-city") do
@@ -42,7 +41,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
    it "can click a link to view and manage the companies page" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -55,7 +54,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
    it "can click a link to return to the admin dashboard page" do
-      login
+      login(admin)
 
       visit '/admin/companies'
 
@@ -69,7 +68,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to manage static content" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -81,7 +80,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to manage home content" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -93,7 +92,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to manage map content" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -105,7 +104,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to manage PDF files content" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -117,7 +116,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to manage tools and resources content" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -129,7 +128,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to manage Learn More content" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -141,7 +140,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to view the home page" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -153,7 +152,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to view the tools and resources page" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -165,7 +164,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to view the signup page" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -177,7 +176,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to view the learn more page" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -189,7 +188,7 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can click a link to view the techhire locations page" do
-      login
+      login(admin)
 
       expect(current_path).to eq(admin_dashboard_index_path)
 
@@ -200,8 +199,8 @@ RSpec.feature "AdminDashboard", type: :feature do
     end
 
     it "can see a link to Admin Dashboard if logged in as Admin" do
-      login
-
+      login(admin)
+      expect(current_path).to eq(admin_dashboard_index_path)
       visit root_path
       expect(page).to have_link('Admin Dashboard')
     end
