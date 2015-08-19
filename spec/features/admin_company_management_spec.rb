@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "AdminCompanyManagement", type: :feature do
   describe("an admin can manage the contact details of a company") do
     let(:admin) do
-      create(:user)
+      create(:admin)
     end
     before(:each) do
       allow_any_instance_of(ApplicationController).to receive(:current_user)

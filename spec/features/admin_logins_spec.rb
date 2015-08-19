@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "AdminLogins", type: :feature do
   describe("Admin") do
     let(:admin) do
-      create(:user)
+      create(:admin)
     end
 
     it "allows admin to login" do
