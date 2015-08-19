@@ -26,10 +26,10 @@ module ApplicationHelper
   end
 
   def slugify(name)
-    if !name.strip.scan(/\s/).empty?
-      name.gsub("and", "").split(" ").join('_').downcase
-    else
+    if name.strip.scan(/\s/).empty?
       name.downcase
+    else
+      name.gsub("and", "").split(" ").join('_').downcase
     end
   end
 
