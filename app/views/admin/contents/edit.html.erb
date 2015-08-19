@@ -1,14 +1,14 @@
-<div class="row">
-  <%= form_for @content, url: admin_content_path(@content.id),method: :put, html: { class: "form-horizontal"} do |f| %>
-    <h1>Edit Content <small>for Location: <%= @content.location %> on <%= @page_name %> Page</small></h1><br/>
-    <div class="form-group">
-      <%= f.label :body, class: "col-sm-2 control-label" %>
-      <%= f.text_area :body, rows: 10, placeholder: "Write Descriptive Content For Site", class: "col-sm-8" %>
-    </div>
-    <%= f.submit "Submit", class: "btn btn-primary col-sm-2 col-sm-offset-5" %>
-  <% end %>
-</div><br/>
+  <div class="row">
+    <%= form_for @content, url: admin_content_path(@content.id), method: :put, html: { class: "form-horizontal"} do |f| %>
+      <h1>Edit Content <small>for Location: <%= @content.location %> on <%= @page.name %> Page</small></h1><br/>
+      <div class="form-group">
+        <%= f.text_area :body, rows: 30, placeholder: "Write Descriptive Content For Site", class: "col-sm-12" %>
+      </div>
+      <%= f.submit "Update Content", class: "btn btn-primary col-sm-2 col-sm-offset-5" %>
+    <% end %>
+  </div><br/>
 
-<div class="row text-center">
-  <%= link_to "Back to Manage Content", admin_contents_path, class: "btn btn-primary" %>
-</div>
+  <div class="row text-center">
+    <%= link_to "Content Index", admin_contents_path, class: "btn btn-primary" %>
+    <%= link_to "Edit Page", admin_static_pages_path(slugify(@page.name)), class: "btn btn-primary" %>
+  </div><br/>

@@ -3,9 +3,9 @@
     <h1><%= link_to "TechHire", root_path %></h1>
     <nav role="navigation" id="static-site-nav">
       <ul>
-        <li><%= link_to "Learn More", learn_more_path, class: action_name == "learn_more" ? "active" : nil %></li>
-        <li><%= link_to "Where Is TechHire", techhire_locations_path, class: action_name == "techhire_locations" ? "active" : nil %></li>
-        <li><%= link_to "Tools/Resources", tools_resources_path, class: action_name == "tools_resources" ? "active" : nil %></li>
+        <% pages[1..-1].each do |page| %>
+          <li><%= link_to page.name, "/#{slugify(page.name)}", class: action_name == slugify(page.name) ? "active" : nil %></li>
+        <% end %>
         <li><%= link_to "Sign Up", signup_path, class: action_name == "new" && controller_name == "companies" ? "active" : nil %></li>
         <% if current_user && current_user.admin? %>
           <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %></li>

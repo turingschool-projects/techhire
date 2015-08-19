@@ -1,13 +1,10 @@
-<div class="container">
-  <h1>Edit <%=@page.name%> Content</h1>
-
-  <% @contents.each do |content| %>
-
-    <%= form_for content, :url => admin_content_path(content.id), method: "PUT" do |f| %>
-      <%= f.label "Location Number: #{content.location}" %>
-      <%= f.text_area :body, style: "height:200px;width:100%;" %>
-      <%= f.submit %>
-    <% end %><br/>
-
-  <% end %>
-</div>
+<% case @page.name %>
+  <% when "Home" %>
+    <%= render partial: "home", :locals => {name: 'Home', contents: @page.contents} %>
+  <% when "Learn More" %>
+    <%= render partial: "learn_more", :locals => {name: 'Learn More', contents: @page.contents} %>
+  <% when "Tools and Resources" %>
+    <%= render partial: "tools_resources", :locals => {name: 'Tools and Resources', contents: @page.contents} %>
+  <% when "TechHire Locations" %>
+    <%= render partial: "techhire_locations", :locals => {name: 'TechHire Locations', contents: @page.contents} %>
+<% end %>
