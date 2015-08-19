@@ -17,11 +17,11 @@ class Admin::CompaniesController < ApplicationController
 
   def update
     company = Company.find(params[:id])
-    if company.update(update_params)
+    if company.update_attributes(update_params)
       redirect_to admin_company_path(company.id)
     else
       flash[:errors] = "Please try again!"
-      render :edit
+      redirect_to admin_company_path(company.id)
     end
   end
 

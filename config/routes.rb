@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :case_studies, only: [:show]
 
   namespace :admin do
+    resources :users
     get   "/static_pages/:name", to: "static_pages#edit",  as: :static_pages
     put   "/static_pages/:name", to: "static_pages#update"
     patch "/static_pages/:name", to: "static_pages#update"

@@ -15,7 +15,6 @@
     <% if current_user && current_user.admin? %>
       <%= render 'navbar' %>
     <% end %>
-
     <%= render partial: "layouts/flash" %>
 
     <%= yield %>

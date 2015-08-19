@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe StaticPagesController, :type => :controller do
 
   before :all do
+    Page.count > 0 ? Page.destroy_all : false
     ['Home', 'Learn More', 'TechHire Locations', 'Tools and Resources'].each do |name|
       Page.create! do |page|
         page.number_of_locations = 3

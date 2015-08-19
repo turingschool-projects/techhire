@@ -3,36 +3,36 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-12">
     <p class="lead">
       <h1>Admin Information</h1>
       <strong>Contact Info:</strong>   <%= @company.name %>
     </p><hr/>
     <h3>Current Interests:</h3>
-    <div class="col-sm-5">
+    <div class="col-sm-8">
       <div class="checkbox">
         <h4>
           <ul>
             <li>
-              <%= check_box_tag('hiring', value = '0', checked = @company.interest_hiring )%> Hiring
-            </li>
+              <%= check_box_tag('hiring', value = '0', checked = @company.interest_hiring )%> Employer interested in hiring based on skill and job readiness
+            </li><br/>
             <li>
-              <%= check_box_tag('training', value = '0', checked = @company.interest_training )%> Training
-            </li>
+              <%= check_box_tag('training', value = '0', checked = @company.interest_training )%> Training institution creating clear pathways that lead to better jobs
+            </li><br/>
             <li>
-              <%= check_box_tag('connecting', value = '0', checked = @company.interest_connecting )%> Connecting
-            </li>
+              <%= check_box_tag('connecting', value = '0', checked = @company.interest_connecting )%> Local leader interested in connecting people to jobs with on-ramp programs
+            </li><br/>
             <li>
-              <%= check_box_tag('supporting', value = '0', checked = @company.interest_supporting )%> Supporting
-            </li>
+              <%= check_box_tag('supporting', value = '0', checked = @company.interest_supporting )%> Workforce leader/nonprofit interested in supporting job seekers
+            </li><br/>
             <li>
-              <%= check_box_tag('community', value = '0', checked = @company.interest_community )%> Community
-            </li>
+              <%= check_box_tag('community', value = '0', checked = @company.interest_community )%> Organization interested in making a commitment to support TechHire community activities
+            </li><br/>
           </ul>
         </h4>
       </div><br>
     </div>
-    <div class="col-sm-7 text-center">
+    <div class="col-sm-4 text-center">
       <% if @company.hiring? %>
         <h4><%= @company.organization %> is hiring<h4>
       <% else %>

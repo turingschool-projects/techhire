@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.feature "AdminPdfManagements", type: :feature do
+  let(:admin) do
+    User.create(email: "tim@example.com", password: "password", password_confirmation: "password", role: 2)
+  end
+
+  before(:each) do
+    allow_any_instance_of(ApplicationController).to receive(:current_user)
+      .and_return(admin)
+  end
+
   it "can upload a pdf" do
     visit 'admin/pdfs'
     attach_file "pdf[pdf_file]", Rails.root.join('spec', 'fixtures', 'sample_pdf.pdf')

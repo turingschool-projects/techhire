@@ -32,15 +32,6 @@ RSpec.feature "Company Signup Page", type: :feature do
       )
     }
 
-    # it "can see links to signup and learn more on the home page" do
-    #   visit home_path
-    #   expect(page).to have_link("Home")
-    #   expect(page).to have_link("Learn More")
-    #   expect(page).to have_link("Where Is TechHire")
-    #   expect(page).to have_link("Sign Up")
-    #   expect(page).to have_link("Tools/Resources")
-    # end
-
     it "can see a form on the signup page" do
       visit ('/signup')
       expect(page).to have_content("Name (First and Last)")

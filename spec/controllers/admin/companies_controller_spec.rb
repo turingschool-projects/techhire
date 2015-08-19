@@ -33,9 +33,14 @@ RSpec.describe Admin::CompaniesController, :type => :controller do
     end
   end
 
-  describe "PATCH #update" do
+  describe "POST #update" do
     it "updates the status of a company" do
-      patch :update, id: company.id, company: { status: "contacted" }
+      post :update, id: company.id, company: { status: "contacted" }
+      expect(response).to redirect_to(admin_company_path(company.id))
+    end
+
+    it "renders show page if unsuccessful"  do
+      post :update, id: company.id, company: { pizza: "good" }
       expect(response).to redirect_to(admin_company_path(company.id))
     end
   end
