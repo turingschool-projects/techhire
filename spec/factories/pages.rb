@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :page do
-    name "MyString"
-number_of_locations 1
-template "MyText"
+    name "Home"
+    number_of_locations 5
+    template "MyText"
   end
 
 end
