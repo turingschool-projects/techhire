@@ -1,5 +1,5 @@
 class Admin::NotesController < ApplicationController
-  # TODO: Make sure this is covered by authorization
+  before_action :authorize!
 
   def create
     company = Company.find(params[:company_id])

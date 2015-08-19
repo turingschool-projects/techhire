@@ -1,5 +1,5 @@
 class Admin::PdfsController < ApplicationController
-  # TODO: Make sure this is covered by authorization
+  before_action :authorize!
 
   def index
     @pdfs = Pdf.all
