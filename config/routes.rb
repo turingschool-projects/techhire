@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root "static_pages#show", name: "Home"
   get "/home", to: "static_pages#show", as: "home", name: "Home"
-  get "/learn-more", to: "static_pages#show", as: "learn_more", name: "Learn More"
-  get "/tools-resources", to: "static_pages#show", as: "tools_resources", name: "Tools and Resources"
-  get "/techhire-locations", to: "static_pages#show", as: "techhire_locations", name: "TechHire Locations"
+  get "/learn_more", to: "static_pages#show", as: "learn_more", name: "Learn More"
+  get "/tools_resources", to: "static_pages#show", as: "tools_resources", name: "Tools and Resources"
+  get "/techhire_locations", to: "static_pages#show", as: "techhire_locations", name: "TechHire Locations"
 
   get "/companies/welcome", to: "companies#welcome", as: "welcome"
   get 'signup', to: "companies#new", as: :signup

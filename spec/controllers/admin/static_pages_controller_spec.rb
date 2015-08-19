@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Admin::StaticPagesController, type: :controller do
   let(:admin) do
-   create(:user)
+   create(:admin)
   end
 
   before(:each) do

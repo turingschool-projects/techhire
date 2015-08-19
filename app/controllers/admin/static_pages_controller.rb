@@ -1,5 +1,6 @@
 class Admin::StaticPagesController < ApplicationController
   before_action :authorize!
+  layout "admin_edit_static_application"
 
   def edit
     name  = clean_params(params)

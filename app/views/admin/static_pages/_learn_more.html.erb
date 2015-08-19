@@ -1,0 +1,87 @@
+<div class="container">
+ <h1>Edit <%=name%> Content</h1>
+  <div class="mod-heading learn">
+    <h1>Learn More</h1>
+  </div>
+  <div class="layout-wrap">
+    <div class="layout-callout">
+      <div class="col-sm-4">
+        <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
+      </div>
+      <div class="col-sm-8">
+        <%= render partial: "update_form", :locals => {content: @contents[1], style: "height:200px;width:100%;" } %><br/>
+      </div>
+    </div>
+  </div>
+  <div class="mod-content">
+    <div class="layout-wrap icon-check">
+      <div class="col">
+      <%= render partial: "update_form", :locals => {content: @contents[2], style: "height:200px;width:100%;" } %><br/>
+      </div>
+    </div>
+  </div>
+  <div class="mod-content">
+    <div class="layout-wrap">
+      <h2>Find Out How Much Your Open Positions Are Costing You</h2>
+      <form id="rate-calculator">
+        <p>
+          <span class="leading-dollar"> $ </span>
+          <span class="calc-group">
+            <label for="calculator_rate">Daily Rate:</label>
+            <input type="text" name="calculator[rate]" class="calc-input calc-rate" value="434">
+          </span>
+
+          <span> X </span>
+
+          <span class="calc-group">
+            <label for="calculator_positions"># of Open Positions:</label>
+            <input type="text" name="calculator[positions]" class="calc-input calc-positions" value="1">
+          </span>
+
+          <span> X </span>
+
+          <span class="calc-group">
+            <label for="calculator_positions"># of Days Unfilled:</label>
+            <input type="text" name="calculator[days]" class="calc-input calc-days" value="1">
+          </span>
+
+          <span> = </span>
+
+          <span class="calc-group">
+            <label for="calculator_total">Total Cost:</label>
+            <input type="text" name="calculator[days]" class="calc-total" readonly value="$434.00">
+          </span>
+        </p>
+        <small>Source: CEB Corporate Leadership Council</small>
+      </form>
+    </div>
+  </div>
+
+  <div class="mod-content yellow">
+    <div class="layout-wrap icon-check">
+      <%= render partial: "update_form", :locals => {content: @contents[3], style: "height:200px;width:100%;" } %><br/>
+      <div class="two-columns">
+        <div class="col icon-playbook">
+          <%= render partial: "update_form", :locals => {content: @contents[4], style: "height:200px;width:100%;" } %><br/>
+        </div>
+        <div class="col icon-sheet">
+          <%= render partial: "update_form", :locals => {content: @contents[5], style: "height:200px;width:100%;" } %><br/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mod-content">
+    <div class="layout-wrap">
+        <div class="row">
+          <div class="col-sm-5">
+            <a href="http://www.opportunityatwork.org" target="_blank">
+            <img src="/assets/oatw_logo.png" alt="OppLogo" style="display: inline-block; float: left; padding: 20px;"></a>
+          </div>
+          <div class="col-sm-7">
+            <%= render partial: "update_form", :locals => {content: @contents[6], style: "height:200px" } %><br/>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

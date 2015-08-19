@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::ContentsController, type: :controller do
 
   let(:admin) do
-    create(:user)
+    create(:admin)
   end
 
   before(:each) do
@@ -21,7 +21,7 @@ RSpec.describe Admin::ContentsController, type: :controller do
   describe "PATCH #update" do
     it "updates the status of a content" do
       patch :update, id: @content.id, content: { body: "<h1>Newish Title</h1>" }
-      expect(response).to redirect_to(admin_contents_path)
+      expect(response).to redirect_to(edit_admin_content_path(@content.id))
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe Admin::ContentsController, type: :controller do
       expect(response).to render_template(:edit)
 
       post :update, id: @content.id, content: { body: "<p>lots of words</p>" }
-      expect(response).to redirect_to(admin_contents_path)
+      expect(response).to redirect_to(edit_admin_content_path(@content.id))
     end
   end
 end

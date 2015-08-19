@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "AdminPdfManagements", type: :feature do
   let(:admin) do
-    create(:user)
+    create(:admin)
   end
 
   before(:each) do

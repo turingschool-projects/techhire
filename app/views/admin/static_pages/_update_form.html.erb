@@ -1,0 +1,5 @@
+<%= form_for content, :url => admin_content_path(content.id), method: "PUT" do |f| %>
+  <%= f.text_area :body, style: style %>
+  <%= f.submit class: "btn btn-tiny btn-warning" %>
+  <%= link_to "Expand", edit_admin_content_path(content.id), class: "btn btn-tiny btn-info" %>
+<% end %>
