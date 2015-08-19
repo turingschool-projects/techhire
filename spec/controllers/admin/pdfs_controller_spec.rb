@@ -3,7 +3,7 @@ require 'rack/test'
 
 RSpec.describe Admin::PdfsController, type: :controller do
   let(:admin) do
-    User.create(email: "tim@example.com", password: "password", password_confirmation: "password", role: 2)
+    create(:user)
   end
 
   let(:pdf_file) { Rack::Test::UploadedFile.new('spec/fixtures/sample_pdf.pdf', 'application/pdf') }

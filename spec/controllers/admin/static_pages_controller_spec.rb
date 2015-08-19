@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Admin::StaticPagesController, type: :controller do
   let(:admin) do
-    User.create(email: "tim@example.com", password: "password", password_confirmation: "password", role: 2)
+   create(:user)
   end
 
   before(:each) do

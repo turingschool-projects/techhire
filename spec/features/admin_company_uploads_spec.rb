@@ -4,7 +4,7 @@ RSpec.feature "AdminCompanyUploads", type: :feature do
 
   describe "uploading companies via csv" do
     let(:admin) do
-      User.create(email: 'admin1@example.com', password: 'password', role: 1)
+      create(:user)
     end
 
     let(:chump) do

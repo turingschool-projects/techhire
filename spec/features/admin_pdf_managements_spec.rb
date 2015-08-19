@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "AdminPdfManagements", type: :feature do
   let(:admin) do
-    User.create(email: "tim@example.com", password: "password", password_confirmation: "password", role: 2)
+    create(:user)
   end
 
   before(:each) do

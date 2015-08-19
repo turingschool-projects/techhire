@@ -3,7 +3,11 @@ require 'rails_helper'
 RSpec.feature "AdminCompanyManagement", type: :feature do
   describe("an admin can manage the contact details of a company") do
     let(:admin) do
-      User.create(email: 'admin55@example.com', password: 'password', role: 1)
+      create(:user)
+    end
+    before(:each) do
+      allow_any_instance_of(ApplicationController).to receive(:current_user)
+        .and_return(admin)
     end
 
     def login
@@ -18,7 +22,6 @@ RSpec.feature "AdminCompanyManagement", type: :feature do
       company = create(:company, status: "uncontacted")
       login
       visit admin_companies_path
-
       click_link(company.organization)
 
       expect(current_path).to eq(admin_company_path(company.id))
