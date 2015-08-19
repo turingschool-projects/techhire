@@ -15,7 +15,6 @@ class Admin::UsersController < ApplicationController
       flash[:success] = "User has been updated"
       redirect_to admin_users_path
     else
-      binding.pry
       flash[:errors] = "Cannot update this user"
       redirect_to admin_users_path
     end
