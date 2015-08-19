@@ -187,6 +187,113 @@ class Seed
     end
 
     Page.create! do |page|
+      page.name          = "Learn More"
+      page.number_of_locations = 7
+      page.template      = <<-HTML.strip_heredoc
+        <div class="mod-heading learn">
+          <h1>Learn More</h1>
+        </div>
+        <div class="layout-wrap">
+          <div class="layout-callout">
+            <div class="callout">
+              <div class="embed-container">
+                $LOCATION1
+              </div>
+            </div>
+            $LOCATION2
+          </div>
+        </div>
+        <div class="mod-content">
+          <div class="layout-wrap icon-check">
+            <div class="col">
+              $LOCATION3
+            </div>
+          </div>
+        </div>
+        <div class="mod-content">
+          <div class="layout-wrap">
+            <h2>Find Out How Much Your Open Positions Are Costing You</h2>
+            <form id="rate-calculator">
+              <p>
+                <span class="leading-dollar"> $ </span>
+                <span class="calc-group">
+                  <label for="calculator_rate">Daily Rate:</label>
+                  <input type="text" name="calculator[rate]" class="calc-input calc-rate" value="434">
+                </span>
+
+                <span> X </span>
+
+                <span class="calc-group">
+                  <label for="calculator_positions"># of Open Positions:</label>
+                  <input type="text" name="calculator[positions]" class="calc-input calc-positions" value="1">
+                </span>
+
+                <span> X </span>
+
+                <span class="calc-group">
+                  <label for="calculator_positions"># of Days Unfilled:</label>
+                  <input type="text" name="calculator[days]" class="calc-input calc-days" value="1">
+                </span>
+
+                <span> = </span>
+
+                <span class="calc-group">
+                  <label for="calculator_total">Total Cost:</label>
+                  <input type="text" name="calculator[days]" class="calc-total" readonly value="$434.00">
+                </span>
+              </p>
+              <small>Source: CEB Corporate Leadership Council</small>
+            </form>
+          </div>
+        </div>
+
+        <div class="mod-content yellow">
+          <div class="layout-wrap icon-check">
+            $LOCATION4
+            <div class="two-columns">
+              <div class="col icon-playbook">
+                $LOCATION5
+              </div>
+
+              <div class="col icon-sheet">
+                $LOCATION6
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mod-content">
+          <div class="layout-wrap">
+              <div class="col">
+                <a href="http://www.opportunityatwork.org" target="_blank">
+                <img src="assets/oatw_logo.png" alt="OppLogo" style="display: inline-block; float: left; padding: 20px;"></a>
+                <div stlye="display: inline-block; float: left;">
+                  $LOCATION7
+                </div>
+              </div>
+          </div>
+        </div>
+
+      HTML
+    end
+
+    Page.create! do |page|
+      page.name          = "TechHire Locations"
+      page.number_of_locations = 5
+      page.template      = <<-HTML.strip_heredoc
+        <div class="mod-heading location">
+          $LOCATION1
+        </div>
+        <div class="mod-map layout-wrap">
+          $LOCATION2
+          $LOCATION3
+          $LOCATION4
+          $LOCATION5
+        </div>
+      HTML
+    end
+
+    Page.create! do |page|
       page.name          = "Tools and Resources"
       page.number_of_locations = 6
       page.template      = <<-HTML.strip_heredoc
@@ -313,112 +420,7 @@ class Seed
       HTML
     end
 
-    Page.create! do |page|
-      page.name          = "Learn More"
-      page.number_of_locations = 7
-      page.template      = <<-HTML.strip_heredoc
-        <div class="mod-heading learn">
-          <h1>Learn More</h1>
-        </div>
-        <div class="layout-wrap">
-          <div class="layout-callout">
-            <div class="callout">
-              <div class="embed-container">
-                $LOCATION1
-              </div>
-            </div>
-            $LOCATION2
-          </div>
-        </div>
-        <div class="mod-content">
-          <div class="layout-wrap icon-check">
-            <div class="col">
-              $LOCATION3
-            </div>
-          </div>
-        </div>
-        <div class="mod-content">
-          <div class="layout-wrap">
-            <h2>Find Out How Much Your Open Positions Are Costing You</h2>
-            <form id="rate-calculator">
-              <p>
-                <span class="leading-dollar"> $ </span>
-                <span class="calc-group">
-                  <label for="calculator_rate">Daily Rate:</label>
-                  <input type="text" name="calculator[rate]" class="calc-input calc-rate" value="434">
-                </span>
 
-                <span> X </span>
-
-                <span class="calc-group">
-                  <label for="calculator_positions"># of Open Positions:</label>
-                  <input type="text" name="calculator[positions]" class="calc-input calc-positions" value="1">
-                </span>
-
-                <span> X </span>
-
-                <span class="calc-group">
-                  <label for="calculator_positions"># of Days Unfilled:</label>
-                  <input type="text" name="calculator[days]" class="calc-input calc-days" value="1">
-                </span>
-
-                <span> = </span>
-
-                <span class="calc-group">
-                  <label for="calculator_total">Total Cost:</label>
-                  <input type="text" name="calculator[days]" class="calc-total" readonly value="$434.00">
-                </span>
-              </p>
-              <small>Source: CEB Corporate Leadership Council</small>
-            </form>
-          </div>
-        </div>
-
-        <div class="mod-content yellow">
-          <div class="layout-wrap icon-check">
-            $LOCATION4
-            <div class="two-columns">
-              <div class="col icon-playbook">
-                $LOCATION5
-              </div>
-
-              <div class="col icon-sheet">
-                $LOCATION6
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mod-content">
-          <div class="layout-wrap">
-              <div class="col">
-                <a href="http://www.opportunityatwork.org" target="_blank">
-                <img src="assets/oatw_logo.png" alt="OppLogo" style="display: inline-block; float: left; padding: 20px;"></a>
-                <div stlye="display: inline-block; float: left;">
-                  $LOCATION7
-                </div>
-              </div>
-          </div>
-        </div>
-
-      HTML
-    end
-
-    Page.create! do |page|
-      page.name          = "TechHire Locations"
-      page.number_of_locations = 5
-      page.template      = <<-HTML.strip_heredoc
-        <div class="mod-heading location">
-          $LOCATION1
-        </div>
-        <div class="mod-map layout-wrap">
-          $LOCATION2
-          $LOCATION3
-          $LOCATION4
-          $LOCATION5
-        </div>
-      HTML
-    end
 
   end
 
