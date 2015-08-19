@@ -19,6 +19,7 @@
               <th><a class="form-control">Title</th>
               <th><a class="form-control">Email</th>
               <th><a class="form-control">Admin?</th>
+              <th></th>
             </tr>
           </thead>
           <tbody class="searchable">
@@ -26,12 +27,24 @@
               <%= form_for user, url: admin_user_path(user.id) do |f| %>
                 <tr>
                   <td class="id text-center"><%= user.id %></td>
-                  <td class="name"><%= user.name %></td>
+                  <td class="name"><%= link_to user.name, edit_admin_user_path(user.id) %></td>
                   <td class="title"><%= user.title %></td>
                   <td class="email"><%= user.email %></td>
                   <td class="role text-center"><%= f.select(:role, User::ROLE_OPTIONS) %>
                   <%= f.submit "Update Role", class: "btn btn-xs btn-warning" %></td>
+                  <td><button type="button" class="btn btn-xs btn-danger" id="deleteUserBtn" data-id="<%=user.id%>" data-toggle="modal" data-target="#confirm-delete-<%=user.id%>">Delete</button></td>
                 </tr>
+                <div class="modal fade" id="confirm-delete-<%=user.id%>" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">Are you sure you want to Delete this user?</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <%= link_to "Delete", admin_user_path(user.id), method: "DELETE", class: "btn btn-danger btn-delete" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               <%end%>
             <% end %>
           </tbody>
