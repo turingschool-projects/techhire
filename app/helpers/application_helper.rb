@@ -20,4 +20,29 @@ module ApplicationHelper
 
     return types.insert(0, ["Please select..."])
   end
+
+  def pages
+    Page.all
+  end
+
+  def slugify(name)
+    if !name.strip.scan(/\s/).empty?
+      name.gsub("and", "").split(" ").join('_').downcase
+    else
+      name.downcase
+    end
+  end
+
+  def glyph(name)
+    case name
+      when "Home"
+        "home"
+      when "TechHire Locations"
+        "pushpin"
+      when "Learn More"
+        "education"
+      when "Tools and Resources"
+        "wrench"
+    end
+  end
 end
