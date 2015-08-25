@@ -4,7 +4,7 @@ class Seed
     build_companies("contacted", "CO", "Denver", 11)
     build_companies("confirmed", "KS", "Witchita", 21)
     build_companies("dead", "OK", "Oklahoma City", 31)
-    build_pdf
+    # build_pdf
     build_users
     build_pages
     build_content
@@ -139,10 +139,13 @@ class Seed
 
         <div class="mod-content">
           <div class="layout-wrap">
-              <div class="col">
-                <a href="http://www.opportunityatwork.org" target="_blank">
-                <img src="assets/oatw_logo.png" alt="OppLogo" style="display: inline-block; float: left; padding: 20px;"></a>
-                <div stlye="display: inline-block; float: left;">
+              <div class="row">
+                <div class="col-sm-5">
+                  <a href="http://www.opportunityatwork.org" target="_blank">
+                    <span class="oatw-logo"></span>
+                  </a>
+                </div>
+                <div class="col-sm-7" stlye="display: inline-block; float: left;">
                   $LOCATION7
                 </div>
               </div>
@@ -196,17 +199,23 @@ class Seed
             <h3>Click a company to find out more about their commitment to TechHire.</h3>
             <div>
               <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">
-              <img src="assets/knack_logo.png" alt="knack" class="private-sector-tool-logo"/>
+                <span class="knack-logo private-sector-tool-logo"></span>
               </a>
             </div>
             <div>
-              <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content"><img src="assets/better_weekdays_logo.png" alt="better-weekdays" class="private-sector-tool-logo"/></a>
+              <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content">
+                <span class="better_weekdays-logo private-sector-tool-logo"></span>
+              </a>
             </div>
             <div>
-              <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content"><img src="assets/linkedin_logo.jpg" alt="linkedin" class="private-sector-tool-logo"/></a>
+              <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content">
+                <span class="linkedin-logo private-sector-tool-logo"></span>
+              </a>
             </div>
             <div>
-              <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content"><img src="assets/ceb_logo.png" alt="ceb" class="private-sector-tool-logo"/></a>
+              <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content">
+                <span class="ceb-logo private-sector-tool-logo"></span>
+              </a>
             </div>
 
 
@@ -361,7 +370,7 @@ class Seed
         <p>
         Opportunity<span class="opportunity-at">@</span>Work is a civic enterprise whose mission is to re-wire the U.S. labor market to enable more Americans to achieve upward mobility in the job market and workplace, to facilitate actions by U.S. employers to develop the talent they collectively need to succeed and grow, and to scale up innovations that unlock more fully all people’s potential for higher-value, meaningful work as a source of economic opportunity and national competitive advantage.
         </p>
-        <p>You can also read more about TechHire by visiting the <a href="https://www.whitehouse.gov/issues/technology/techhire">White House page</a>.</p>
+        <p style="text-align:center;" >You can also read more about TechHire by visiting the <a href="https://www.whitehouse.gov/issues/technology/techhire">White House page</a>.</p>
       HTML
     ).find_or_create_by(name: "learn_more7")
     # ==== END ====

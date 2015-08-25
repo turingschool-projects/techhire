@@ -192,7 +192,36 @@
   margin-right: auto;
 }
 .private-sector-tool-logo {
-display: block;
+  display: block;
   margin: 30px auto;
   max-width: 400px;
+}
+
+@include min-width(551px) {
+  @each $logo in knack, linkedin, better_weekdays, ceb {
+    .#{$logo}-logo {
+      padding-top: 5px;
+      $filename: "#{$logo}_logo.png";
+      background-image: image-url($filename);
+      background-size: 400px 100px;
+      background-repeat: no-repeat;
+      display: block;
+      margin: 30px auto;
+      width: 400px;
+      height: 120px;
+    }
+  }
+}
+.oatw-logo{
+  display: inline-block;
+  float: left;
+  padding: 20px;
+  $filename: "oatw_logo.png";
+  background-image: image-url($filename);
+  background-size: 260px 100px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 300px;
+  height: 120px;
+  margin-right: 20px;
 }
