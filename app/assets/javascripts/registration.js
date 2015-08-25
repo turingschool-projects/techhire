@@ -2,6 +2,7 @@ $(document).ready(function(){
   $('#org_type').change(function() {
     if($(this).val() === 'Other') {
       $('#org_type_other').fadeIn();
+      $('#organization_type_other').attr('required', true);
     } else {
       $('#org_type_other').fadeOut();
     }
