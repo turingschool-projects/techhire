@@ -14,6 +14,7 @@ class Seed
     pdf = Pdf.create(content_id: 5)
     pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
     pdf.save
+
   end
 
   #Companies
@@ -33,13 +34,12 @@ class Seed
         status: status
       )
     end
+    puts "companies built"
   end
 
   def build_pages
-    Page.create! do |page|
-      page.name          = "Home"
-      page.number_of_locations = 3
-      page.template      = <<-HTML.strip_heredoc
+    Page.create_with( number_of_locations: 3,
+                      template: <<-HTML.strip_heredoc
         <div style="background-color:#F8EFE6;">
           <section class="mod-hero">
             $LOCATION1
@@ -61,12 +61,10 @@ class Seed
           <p class="finisher"><a href="/tools-resources">More stories about businesses that are implementing TechHire strategies</a>
         </div>
       HTML
-    end
+    ).find_or_create_by(name: "Home")
 
-    Page.create! do |page|
-      page.name          = "Learn More"
-      page.number_of_locations = 7
-      page.template      = <<-HTML.strip_heredoc
+    Page.create_with( number_of_locations: 7,
+                      template: <<-HTML.strip_heredoc
         <div class="mod-heading learn">
           <h1>Learn More</h1>
         </div>
@@ -152,12 +150,10 @@ class Seed
         </div>
 
       HTML
-    end
+    ).find_or_create_by(name: "Learn More")
 
-    Page.create! do |page|
-      page.name          = "TechHire Locations"
-      page.number_of_locations = 4
-      page.template      = <<-HTML.strip_heredoc
+    Page.create_with(number_of_locations: 4,
+                    template: <<-HTML.strip_heredoc
         <div class="mod-heading location">
           <h1>Where is TechHire?</h1>
         </div>
@@ -168,12 +164,10 @@ class Seed
           $LOCATION4
         </div>
       HTML
-    end
+    ).find_or_create_by(name: "TechHire Locations")
 
-    Page.create! do |page|
-      page.name          = "Tools and Resources"
-      page.number_of_locations = 9
-      page.template      = <<-HTML.strip_heredoc
+    Page.create_with(number_of_locations: 9,
+                    template: <<-HTML.strip_heredoc
         <div class="mod-heading tools">
           <h1>Tools/Resources</h1>
         </div>
@@ -259,40 +253,43 @@ class Seed
         </div>
 
       HTML
-    end
+    ).find_or_create_by(name: "Tools and Resources")
 
-
-
+    puts "pages built"
   end
 
   def build_content
     # ==== Build Home Page Content ====
-    Content.create! page_id: Page.find_by(name: "Home").id, location: 1, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Home").id, location: 1, body: <<-HTML.strip_heredoc
         <h1>￼Connecting Businesses, Communities and the Tech Talent Pipeline</h1>
       HTML
+    ).find_or_create_by(name: "home1")
 
-    Content.create! page_id: Page.find_by(name: "Home").id, location: 2, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Home").id, location: 2, body: <<-HTML.strip_heredoc
         <h1>How Monsanto is doing it</h1>
         <div class="embed-container">
           <iframe src="https://player.vimeo.com/video/126637482" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/126637482" target="_blank">Kara, Marquis and Caleb @ Monsanto</a> from <a href="https://vimeo.com/user32162469" target="_blank">LaunchCode</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>.</p>
         </div>
       HTML
+    ).find_or_create_by(name: "home2")
 
-    Content.create! page_id: Page.find_by(name: "Home").id, location: 3, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Home").id, location: 3, body: <<-HTML.strip_heredoc
         <h1>How Capital One is doing it</h1>
         <div class="embed-container">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/85hEQF2GkyE" frameborder="0" allowfullscreen></iframe>
         </div>
         <p>&nbsp;</p>
       HTML
+    ).find_or_create_by(name: "home3")
     # ==== END ====
 
     # ==== Build Learn More Page Content ====
-    Content.create! page_id: Page.find_by(name: "Learn More").id, location: 1, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 1, body: <<-HTML.strip_heredoc
         <iframe frameborder="0" src="https://www.youtube-nocookie.com/embed/3iiXLXo2hic?rel=0&amp;showinfo=0"></iframe>
       HTML
+    ).find_or_create_by(name: "learn_more1")
 
-    Content.create! page_id: Page.find_by(name: "Learn More").id, location: 2, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 2, body: <<-HTML.strip_heredoc
          <p>
           Beginning with the 21 communities of the TechHire initiative – announced by President Obama in March 2015 – which today represent over 130,000 open IT jobs, Opportunity<span class="opportunity-at">@</span>Work will work with a range of technology, private sector, and philanthropic partners to create freely available tools to streamline the sign-up and participation of thousands of employers in inclusive hiring, and to facilitate a nationwide learning network to rapidly improve the impact of TechHire. Over 300 employers have already signed on.
         </p>
@@ -306,14 +303,16 @@ class Seed
           The long-term objective of TechHire is to create the labor market conditions nationally that enable employers to "hire when ready" and job seekers to be aware of, prepare for, and connect with IT jobs and careers. By creating compelling proof points in communities throughout the country; uncovering common challenges; developing scalable solutions; and bringing to bear national and regional partnerships and resources, TechHire, with support from Opportunity<span class="opportunity-at">@</span>Work, will serve as a catalyst to transforming the broader labor market.
         </p>
       HTML
+    ).find_or_create_by(name: "learn_more2")
 
-    Content.create! page_id: Page.find_by(name: "Learn More").id, location: 3, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 3, body: <<-HTML.strip_heredoc
         <h2>The Case for Businesses</h2>
         <p>Meaningful work is essential to human flourishing and to America’s promise of upward mobility and civic equality, while tapping the full talents of our people is essential for productive and inclusive economic growth. The gradual erosion of such work for many in the US economy over the past 30 years threatens both America’s promise and economic vitality.</p>
         <p>Every day that goes by without filling an open position costs a business $434 on average. This number is likely higher for IT jobs which take an average of 95 business days to fill - higher than the overall average. Committing to TechHire means access to an expanded hiring pool with qualified candidates who are ready to work, but may have previously been overlooked.</p>
       HTML
+    ).find_or_create_by(name: "learn_more3")
 
-    Content.create! page_id: Page.find_by(name: "Learn More").id, location: 4, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 4, body: <<-HTML.strip_heredoc
         <h2>Rethinking the “Skills Gap” as a Labor Market Failure: Need and the Opportunity</h2>
         <p>
           With over 5 million open jobs in the United States—the highest level in at least 15 years—how can so many American workers find themselves stuck, without a path to well-paid employment?
@@ -325,8 +324,9 @@ class Seed
           Yet, since 2000, real wages for the median worker have stagnated and voluntary job changes – i.e., quitting a job to take or seek a better (usually higher-paying) one – are down by 28 percent. This seems like a confounding paradox, but a few U.S. statistics offer some clues as to the underlying causes:
         </p>
       HTML
+    ).find_or_create_by(name: "learn_more4")
 
-    Content.create! page_id: Page.find_by(name: "Learn More").id, location: 5, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 5, body: <<-HTML.strip_heredoc
         <h2>U.S. Job Openings by the Numbers</h2>
         <ul class="bulleted">
 
@@ -345,8 +345,9 @@ class Seed
           </li>
         </ul>
       HTML
+    ).find_or_create_by(name: "learn_more5")
 
-    Content.create! page_id: Page.find_by(name: "Learn More").id, location: 6, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 6, body: <<-HTML.strip_heredoc
         <h2>Underlying Issues</h2>
         <p>
           What these dysfunctions all have in common is an origin on the “demand” side of the U.S. labor market – how employers recruit, hire, train, and promote. Yet most interventions that aim to improve employment outcomes focus purely on the “supply side”— education and job training. These efforts are important, but they can’t “close the skills gap” without demand-side reforms. We need smarter, more inclusive employer practices and the partnerships and public policies to support them.
@@ -354,17 +355,19 @@ class Seed
           The average time to fill an open IT job nearly doubled from 43 to 76 days in the past 5 years. With nearly 600,000 open IT jobs now – just 12 percent of total open jobs – and a million more projected in the next few years, just shrinking average time-to-fill IT jobs back to 2010 levels is worth around $40 billion annually to US employers: double what’s spent on all federal job training programs.
         </p>
       HTML
+    ).find_or_create_by(name: "learn_more6")
 
-    Content.create! page_id: Page.find_by(name: "Learn More").id, location: 7, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 7, body: <<-HTML.strip_heredoc
         <p>
         Opportunity<span class="opportunity-at">@</span>Work is a civic enterprise whose mission is to re-wire the U.S. labor market to enable more Americans to achieve upward mobility in the job market and workplace, to facilitate actions by U.S. employers to develop the talent they collectively need to succeed and grow, and to scale up innovations that unlock more fully all people’s potential for higher-value, meaningful work as a source of economic opportunity and national competitive advantage.
         </p>
         <p>You can also read more about TechHire by visiting the <a href="https://www.whitehouse.gov/issues/technology/techhire">White House page</a>.</p>
       HTML
+    ).find_or_create_by(name: "learn_more7")
     # ==== END ====
 
     # ==== Build Tools/Resources Page Content ====
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 1, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 1, body: <<-HTML.strip_heredoc
         <h2>Case Study: Xpanxion</h2>
         <p>
           Xpanxion is an enterprise software consulting firm with locations in smaller towns throughout
@@ -373,8 +376,9 @@ class Seed
           <a href="/case_studies/xpanxion">Read about Xpanxion's training strategy.</a>
         </p>
       HTML
+    ).find_or_create_by(name: "tools_resource1")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 2, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 2, body: <<-HTML.strip_heredoc
         <h2>Case Study: Capital One</h2>
         <p>
           To expand the tech talent pipeline, Capital One has committed to a hiring approach that requires demonstrated
@@ -385,8 +389,9 @@ class Seed
           <a href="case_studies/capital_one">See how Capital One helped Eric and Cory.</a>
         </p>
       HTML
+    ).find_or_create_by(name: "tools_resource2")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 3, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 3, body: <<-HTML.strip_heredoc
         <h2>Case Study: Rural Sourcing Inc. (RSI)</h2>
         <p>
           Rural Sourcing is a software consultancy committed to solving the "outsourcing crisis" by bringing
@@ -395,8 +400,9 @@ class Seed
           <a href="case_studies/rural_sourcing">Read about RSI's talent sourcing strategy.</a>
         </p>
       HTML
+    ).find_or_create_by(name: "tools_resource3")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 4, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 4, body: <<-HTML.strip_heredoc
         <h3>Business Apps for TechHire Community Members</h3>
         <p>As a proud supporter of the White House TechHire initiative, <strong><a href="https://www.knack.it/" target="_blank">Knack</a></strong> made the commitment to provide the Knack Business App completely free to any employer, coding school, or community ready to identify, train, and hire job-seekers who are underrepresented in the tech field—minorities, women, veterans and economically and socially disadvantaged individuals—even if they have no higher education or work experience.</p>
         <div class="two-columns">
@@ -417,15 +423,17 @@ class Seed
           </div>
         </div>
       HTML
+    ).find_or_create_by(name: "tools_resource4")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 5, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 5, body: <<-HTML.strip_heredoc
       <h3>Career Management Platform for TechHire Community Members</h3>
       <p><strong><a href="http://www.betterweekdays.com/" target="_blank">Better Weekdays</a></strong> is a St. Louis based job-matching platform that helps universities improve job placement outcomes of its graduates, and companies to hire them based on job compatibility and culture fit.</p>
       <p>Better Weekdays has committed to providing its pay-walled web and mobile career management platform free of charge for colleges and universities, Local Leaders, and other partners in TechHire communities to leverage and facilitate connections between employers and job seekers.</p>
       <p>The service will feature a dashboard that connects job seekers to resources to prepare for gainful employment, and allows employers to showcase their brands in a meaningful way to aspiring employees.</p>
       HTML
+    ).find_or_create_by(name: "tools_resource5")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 6, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 6, body: <<-HTML.strip_heredoc
         <h3>Economic Analysis to Aid Career Development</h3>
         <p>
           <a href="http://linkedin.com" target="_blank">LinkedIn</a> will draw from its Economic Graph data and work with interested communities to 1) help job seekers decide where to focus their skills development, 2) assist community partners to focus on the jobs that are most in-demand, and to 3) identify the workforce gaps to prepare for future investments.
@@ -437,8 +445,9 @@ class Seed
           LinkedIn will also work in support of the TechHire initiative to find better ways to connect talent to training programs and job seekers to employers.
         </p>
       HTML
+    ).find_or_create_by(name: "tools_resource6")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 7, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 7, body: <<-HTML.strip_heredoc
         <h3>Recruitment Guidance for Employers</h3>
         <p>
         <a href="http://www.executiveboard.com/" target="_blank">CEB</a> will develop their own best practices playbook for employers with CEB guidance to private and public employers on how to recruit tech talent from non-traditional sources.
@@ -447,14 +456,16 @@ class Seed
         CEB will also provide free labor market snapshots from CEB Talent Neuron to select communities involved in the TechHire Initiative in order to surface job and skill segments where talent supply-demand gaps create opportunity for local workforce innovation.
         </p>
       HTML
+    ).find_or_create_by(name: "tools_resource7")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 8, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 8, body: <<-HTML.strip_heredoc
         <h2>Fact Sheet</h2>
         <p>On March 9, 2015, President Obama announced the creation of the TechHire initiative — a new campaign to work with communities to get more Americans rapidly trained for well-paying technology jobs.</p>
         <p><a href="https://www.whitehouse.gov/the-press-office/2015/03/09/fact-sheet-president-obama-launches-new-techhire-initiative" class="button" target="_blank">Download the Factsheet</a></p>
       HTML
+    ).find_or_create_by(name: "tools_resource8")
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 9, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "Tools and Resources").id, location: 9, body: <<-HTML.strip_heredoc
         <h2>Opportunity<span class="opportunity-at">@</span>Work is currently working with partners to develop access to resources that serve the following functions for employers:</h2>
         <ul class="bulleted">
           <li>Understanding of what characteristics predict success for a hire</li>
@@ -465,38 +476,45 @@ class Seed
         </ul>
         <h3>We are still developing new partnerships related to these functions. Please <a href="/signup">be in touch</a> if you are interested in learning more.</h3>
       HTML
+    ).find_or_create_by(name: "tools_resource9")
     # ==== END ====
 
     # ==== Build TechHire Page Content ====
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 1, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "TechHire Locations").id, location: 1, body: <<-HTML.strip_heredoc
         <h2>Where TechHire is Now</h2>
         <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="//www.arcgis.com/apps/MapSeries/index.html?appid=d20555036a54406f859a99e8d094fe70"></iframe>
       HTML
+    ).find_or_create_by(name: "tech_locations1")
 
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 2, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "TechHire Locations").id, location: 2, body: <<-HTML.strip_heredoc
         <h2>The TechHire Opportunity</h2>
         <p>President Obama has issued a call to action for more communities across the country to join the movement and create TechHire partnerships, and employers in communities all across the country are in critical need of more talent with IT skills. The interactive map below provides a picture of the TechHire opportunity -- it shows real-time the open IT jobs across the U.S.. Gaining an understanding of these  job openings and the specific skills required will be a key step for new communities developing TechHire partnerships.</p>
         <p>Click into a state to see where technology jobs are currently being advertised, represented by a pin in each local market. As you click into each pin, you will be able to browse available technology job listings in a particular community.</p>
       HTML
+    ).find_or_create_by(name: "tech_locations2")
 
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 3, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "TechHire Locations").id, location: 3, body: <<-HTML.strip_heredoc
         <iframe src="https://www.glassdoor.com/Job/explorer/embed.htm?jobCat1=29" height="720" width="100%"></iframe>
       HTML
+    ).find_or_create_by(name: "tech_locations3")
 
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 4, body: <<-HTML.strip_heredoc
+    Content.create_with(page_id: Page.find_by(name: "TechHire Locations").id, location: 4, body: <<-HTML.strip_heredoc
         <p>Open jobs data is provided by Glassdoor, Inc. which aggregates millions of U.S. job listings from a variety of online sources, including hiring employers and job boards as well as other online sources. Data is updated several times per day.</p>
       HTML
+    ).find_or_create_by(name: "tech_locations4")
     # ==== END ====
+    puts "content built"
   end
 
   def build_users
-    User.create(email: "admin@gmail.com", name: "admin", password: "password", role: 1)
-    User.create(email: "tim@gmail.com", name: "Tim", title: "title", password: "password", role: 0)
-    User.create(email: "marissa@gmail.com", name: "Marissa", title: "jobs", password: "password", role: 0)
-    User.create(email: "josh@gmail.com", name: "JOSH", title: "teacher", password: "password", role: 0)
-    User.create(email: "mike@gmail.com", name: "Mike", title: "teacher", password: "password", role: 0)
-    User.create(email: "horace@gmail.com", name: "Horace", title: "teacher", password: "password", role: 0)
-    User.create(email: "jeff@gmail.com", name: "Jeff", title: "teacher",password: "password", role: 0)
+    User.create_with(email: "admin@gmail.com", password: "password", role: 1).find_or_create_by(name: "admin")
+    User.create_with(email: "tim@gmail.com", title: "title", password: "password", role: 0).find_or_create_by(name: "Tim")
+    User.create_with(email: "marissa@gmail.com", title: "jobs", password: "password", role: 0).find_or_create_by(name: "Marissa")
+    User.create_with(email: "josh@gmail.com", title: "teacher", password: "password", role: 0).find_or_create_by(name: "JOSH")
+    User.create_with(email: "mike@gmail.com", title: "teacher", password: "password", role: 0).find_or_create_by(name: "Mike")
+    User.create_with(email: "horace@gmail.com", title: "teacher", password: "password", role: 0).find_or_create_by(name: "Horace")
+    User.create_with(email: "jeff@gmail.com", title: "teacher",password: "password", role: 0).find_or_create_by(name: "Jeff")
+    puts "users built"
   end
 end
 Seed.new
