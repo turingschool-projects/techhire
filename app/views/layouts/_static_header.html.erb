@@ -3,7 +3,7 @@
     <h1><%= link_to "TechHire", root_path %></h1>
     <nav role="navigation" id="static-site-nav">
       <ul>
-        <% pages[1..-1].each do |page| %>
+        <% nav_pages.each do |page| %>
           <li><%= link_to page.name, "/#{slugify(page.name)}", class: action_name == slugify(page.name) ? "active" : nil %></li>
         <% end %>
         <li><%= link_to "Sign Up", signup_path, class: action_name == "new" && controller_name == "companies" ? "active" : nil %></li>

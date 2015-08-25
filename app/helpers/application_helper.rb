@@ -25,6 +25,10 @@ module ApplicationHelper
     Page.all
   end
 
+  def nav_pages
+    Page.where.not(name: "Home")
+  end
+
   def slugify(name)
     if name.strip.scan(/\s/).empty?
       name.downcase
