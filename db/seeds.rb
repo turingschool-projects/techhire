@@ -156,23 +156,23 @@ class Seed
 
     Page.create! do |page|
       page.name          = "TechHire Locations"
-      page.number_of_locations = 5
+      page.number_of_locations = 4
       page.template      = <<-HTML.strip_heredoc
         <div class="mod-heading location">
-          $LOCATION1
+          <h1>Where is TechHire?</h1>
         </div>
         <div class="mod-map layout-wrap">
+          $LOCATION1
           $LOCATION2
           $LOCATION3
           $LOCATION4
-          $LOCATION5
         </div>
       HTML
     end
 
     Page.create! do |page|
       page.name          = "Tools and Resources"
-      page.number_of_locations = 6
+      page.number_of_locations = 9
       page.template      = <<-HTML.strip_heredoc
         <div class="mod-heading tools">
           <h1>Tools/Resources</h1>
@@ -218,61 +218,25 @@ class Seed
 
             <div class="col">
               <div class="content-dropdown" id="knack-content">
-                <h3>Business Apps for TechHire Community Members</h3>
-                <p>As a proud supporter of the White House TechHire initiative, <strong><a href="https://www.knack.it/" target="_blank">Knack</a></strong> made the commitment to provide the Knack Business App completely free to any employer, coding school, or community ready to identify, train, and hire job-seekers who are underrepresented in the tech field—minorities, women, veterans and economically and socially disadvantaged individuals—even if they have no higher education or work experience.</p>
-                <div class="two-columns">
-                  <div class="col">
-                    <p>Knack makes smart mobile games that combine game theory, behavioral science, and proprietary big data algorithms to change the way people of all walks of life discover and broadcast their talents and tap into their potential.</p>
-                    <p>Knack not only helps job-seekers pinpoint their "knacks"—their skills, abilities, and strengths—all from the way they play Knack's mobile games, but it also matches them with job opportunities tailored to one's potential for success on the job, aiming to replace the traditional credentials and job experience requirements that erect barriers for many high-potential, but low-credentialed individuals.</p>
-                  </div>
-
-                  <div class="col">
-                    <p>Knack offers two apps:</p>
-
-                    <ol class="bulleted">
-                      <li><strong>What's Your Knack?</strong> uses smart mobile games to help job-seekers discover and broadcast their knacks and identify matching job opportunities based on their potential for success on the job.</li>
-                      <li><strong>Knack Business App</strong> helps employers attract, engage and spot high-potential individuals who've got the knack to do the job—even if they don't have higher education credentials or job experience.</li>
-                    </ol>
-
-                    <p>Leading Fortune 500 employers in the US and around the world, and numerous small and medium size businesses in every industry, have adopted Knack and are on the path to changing the way they spot high-potential talent.</p>
-                  </div>
-                </div>
+                $LOCATION4
               </div>
 
             </div>
             <div class="col">
               <div class="content-dropdown" id="bwd-content">
-                <h3>Career Management Platform for TechHire Community Members</h3>
-                <p><strong><a href="http://www.betterweekdays.com/" target="_blank">Better Weekdays</a></strong> is a St. Louis based job-matching platform that helps universities improve job placement outcomes of its graduates, and companies to hire them based on job compatibility and culture fit.</p>
-                <p>Better Weekdays has committed to providing its pay-walled web and mobile career management platform free of charge for colleges and universities, Local Leaders, and other partners in TechHire communities to leverage and facilitate connections between employers and job seekers.</p>
-                <p>The service will feature a dashboard that connects job seekers to resources to prepare for gainful employment, and allows employers to showcase their brands in a meaningful way to aspiring employees.</p>
+                $LOCATION5
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="linkedin-content">
-                <h3>Economic Analysis to Aid Career Development</h3>
-                <p>
-                <a href="http://linkedin.com" target="_blank">LinkedIn</a> will draw from its Economic Graph data and work with interested communities to 1) help job seekers decide where to focus their skills development, 2) assist community partners to focus on the jobs that are most in-demand, and to 3) identify the workforce gaps to prepare for future investments.
-                </p>
-                <p>
-                This may also include working with partners to track the career outcome of bootcamp and accelerator graduates, and working on curriculum development.
-                </p>
-                <p>
-                LinkedIn will also work in support of the TechHire initiative to find better ways to connect talent to training programs and job seekers to employers.
-                </p>
+                $LOCATION6
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="ceb-content">
-                <h3>Recruitment Guidance for Employers</h3>
-                <p>
-                <a href="http://www.executiveboard.com/" target="_blank">CEB</a> will develop their own best practices playbook for employers with CEB guidance to private and public employers on how to recruit tech talent from non-traditional sources.
-                </p>
-                <p>
-                CEB will also provide free labor market snapshots from CEB Talent Neuron to select communities involved in the TechHire Initiative in order to surface job and skill segments where talent supply-demand gaps create opportunity for local workforce innovation.
-                </p>
+                $LOCATION7
               </div>
             </div>
           </div>
@@ -281,7 +245,7 @@ class Seed
         <div class="mod-content yellow">
           <div class="layout-wrap icon-sheet">
             <div class="col">
-              $LOCATION5
+              $LOCATION8
             </div>
           </div>
         </div>
@@ -289,7 +253,7 @@ class Seed
         <div class="mod-content">
           <div class="layout-wrap">
             <div class="col">
-              $LOCATION6
+              $LOCATION9
             </div>
           </div>
         </div>
@@ -433,16 +397,64 @@ class Seed
       HTML
 
     Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 4, body: <<-HTML.strip_heredoc
-        <h1>Not yet set</h1>
+        <h3>Business Apps for TechHire Community Members</h3>
+        <p>As a proud supporter of the White House TechHire initiative, <strong><a href="https://www.knack.it/" target="_blank">Knack</a></strong> made the commitment to provide the Knack Business App completely free to any employer, coding school, or community ready to identify, train, and hire job-seekers who are underrepresented in the tech field—minorities, women, veterans and economically and socially disadvantaged individuals—even if they have no higher education or work experience.</p>
+        <div class="two-columns">
+          <div class="col">
+            <p>Knack makes smart mobile games that combine game theory, behavioral science, and proprietary big data algorithms to change the way people of all walks of life discover and broadcast their talents and tap into their potential.</p>
+            <p>Knack not only helps job-seekers pinpoint their "knacks"—their skills, abilities, and strengths—all from the way they play Knack's mobile games, but it also matches them with job opportunities tailored to one's potential for success on the job, aiming to replace the traditional credentials and job experience requirements that erect barriers for many high-potential, but low-credentialed individuals.</p>
+          </div>
+
+          <div class="col">
+            <p>Knack offers two apps:</p>
+
+            <ol class="bulleted">
+              <li><strong>What's Your Knack?</strong> uses smart mobile games to help job-seekers discover and broadcast their knacks and identify matching job opportunities based on their potential for success on the job.</li>
+              <li><strong>Knack Business App</strong> helps employers attract, engage and spot high-potential individuals who've got the knack to do the job—even if they don't have higher education credentials or job experience.</li>
+            </ol>
+
+            <p>Leading Fortune 500 employers in the US and around the world, and numerous small and medium size businesses in every industry, have adopted Knack and are on the path to changing the way they spot high-potential talent.</p>
+          </div>
+        </div>
       HTML
 
     Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 5, body: <<-HTML.strip_heredoc
+      <h3>Career Management Platform for TechHire Community Members</h3>
+      <p><strong><a href="http://www.betterweekdays.com/" target="_blank">Better Weekdays</a></strong> is a St. Louis based job-matching platform that helps universities improve job placement outcomes of its graduates, and companies to hire them based on job compatibility and culture fit.</p>
+      <p>Better Weekdays has committed to providing its pay-walled web and mobile career management platform free of charge for colleges and universities, Local Leaders, and other partners in TechHire communities to leverage and facilitate connections between employers and job seekers.</p>
+      <p>The service will feature a dashboard that connects job seekers to resources to prepare for gainful employment, and allows employers to showcase their brands in a meaningful way to aspiring employees.</p>
+      HTML
+
+    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 6, body: <<-HTML.strip_heredoc
+        <h3>Economic Analysis to Aid Career Development</h3>
+        <p>
+          <a href="http://linkedin.com" target="_blank">LinkedIn</a> will draw from its Economic Graph data and work with interested communities to 1) help job seekers decide where to focus their skills development, 2) assist community partners to focus on the jobs that are most in-demand, and to 3) identify the workforce gaps to prepare for future investments.
+        </p>
+        <p>
+          This may also include working with partners to track the career outcome of bootcamp and accelerator graduates, and working on curriculum development.
+        </p>
+        <p>
+          LinkedIn will also work in support of the TechHire initiative to find better ways to connect talent to training programs and job seekers to employers.
+        </p>
+      HTML
+
+    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 7, body: <<-HTML.strip_heredoc
+        <h3>Recruitment Guidance for Employers</h3>
+        <p>
+        <a href="http://www.executiveboard.com/" target="_blank">CEB</a> will develop their own best practices playbook for employers with CEB guidance to private and public employers on how to recruit tech talent from non-traditional sources.
+        </p>
+        <p>
+        CEB will also provide free labor market snapshots from CEB Talent Neuron to select communities involved in the TechHire Initiative in order to surface job and skill segments where talent supply-demand gaps create opportunity for local workforce innovation.
+        </p>
+      HTML
+
+    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 8, body: <<-HTML.strip_heredoc
         <h2>Fact Sheet</h2>
         <p>On March 9, 2015, President Obama announced the creation of the TechHire initiative — a new campaign to work with communities to get more Americans rapidly trained for well-paying technology jobs.</p>
         <p><a href="https://www.whitehouse.gov/the-press-office/2015/03/09/fact-sheet-president-obama-launches-new-techhire-initiative" class="button" target="_blank">Download the Factsheet</a></p>
       HTML
 
-    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 6, body: <<-HTML.strip_heredoc
+    Content.create! page_id: Page.find_by(name: "Tools and Resources").id, location: 9, body: <<-HTML.strip_heredoc
         <h2>Opportunity<span class="opportunity-at">@</span>Work is currently working with partners to develop access to resources that serve the following functions for employers:</h2>
         <ul class="bulleted">
           <li>Understanding of what characteristics predict success for a hire</li>
@@ -457,25 +469,21 @@ class Seed
 
     # ==== Build TechHire Page Content ====
     Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 1, body: <<-HTML.strip_heredoc
-        <h1>Where Is TechHire</h1>
-      HTML
-
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 2, body: <<-HTML.strip_heredoc
         <h2>Where TechHire is Now</h2>
         <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="//www.arcgis.com/apps/MapSeries/index.html?appid=d20555036a54406f859a99e8d094fe70"></iframe>
       HTML
 
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 3, body: <<-HTML.strip_heredoc
+    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 2, body: <<-HTML.strip_heredoc
         <h2>The TechHire Opportunity</h2>
         <p>President Obama has issued a call to action for more communities across the country to join the movement and create TechHire partnerships, and employers in communities all across the country are in critical need of more talent with IT skills. The interactive map below provides a picture of the TechHire opportunity -- it shows real-time the open IT jobs across the U.S.. Gaining an understanding of these  job openings and the specific skills required will be a key step for new communities developing TechHire partnerships.</p>
         <p>Click into a state to see where technology jobs are currently being advertised, represented by a pin in each local market. As you click into each pin, you will be able to browse available technology job listings in a particular community.</p>
       HTML
 
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 4, body: <<-HTML.strip_heredoc
+    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 3, body: <<-HTML.strip_heredoc
         <iframe src="https://www.glassdoor.com/Job/explorer/embed.htm?jobCat1=29" height="720" width="100%"></iframe>
       HTML
 
-    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 5, body: <<-HTML.strip_heredoc
+    Content.create! page_id: Page.find_by(name: "TechHire Locations").id, location: 4, body: <<-HTML.strip_heredoc
         <p>Open jobs data is provided by Glassdoor, Inc. which aggregates millions of U.S. job listings from a variety of online sources, including hiring employers and job boards as well as other online sources. Data is updated several times per day.</p>
       HTML
     # ==== END ====

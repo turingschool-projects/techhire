@@ -3,10 +3,10 @@ class Admin::ContentsController < ApplicationController
 
   def index
     all = Content.all
-    @map  = all.where(page_id: 4).order('location')
     @home = all.where(page_id: 1).order('location')
     @learn_more      = all.where(page_id: 3).order('location')
     @tools_resources = all.where(page_id: 2).order('location')
+    @techhire_locations  = all.where(page_id: 4).order('location')
   end
 
   def update
