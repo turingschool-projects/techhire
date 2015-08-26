@@ -1,92 +1,90 @@
-<div class="container">
-  <h1>Edit <%=name%> Content</h1>
-  <div class="mod-heading tools">
-    <h1>Tools/Resources</h1>
-  </div>
+<h1>Edit <%=name%> Content</h1>
+<div class="mod-heading tools">
+  <h1>Tools/Resources</h1>
+</div>
 
-  <div class="mod-content yellow">
-    <div class="layout-wrap">
-      <div class="three-columns">
-        <div class="col icon-case">
-          <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
-        </div>
+<div class="mod-content yellow">
+  <div class="layout-wrap">
+    <div class="three-columns">
+      <div class="col icon-case">
+        <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
+      </div>
 
-        <div class="col icon-case">
-          <%= render partial: "update_form", :locals => {content: @contents[1], style: "height:200px;width:100%;" } %><br/>
-        </div>
+      <div class="col icon-case">
+        <%= render partial: "update_form", :locals => {content: @contents[1], style: "height:200px;width:100%;" } %><br/>
+      </div>
 
-        <div class="col icon-case">
-          <%= render partial: "update_form", :locals => {content: @contents[2], style: "height:200px;width:100%;" } %><br/>
-        </div>
+      <div class="col icon-case">
+        <%= render partial: "update_form", :locals => {content: @contents[2], style: "height:200px;width:100%;" } %><br/>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="mod-content">
-    <div class="layout-wrap icon-case">
-      <h2>Private Sector Tools</h2>
-      <h3>Click a company to find out more about their commitment to TechHire.</h3>
-      <div>
-        <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">
-          <span class="knack-logo private-sector-tool-logo"></span>
-        </a>
-      </div>
-      <div>
-        <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content">
-          <span class="better_weekdays-logo private-sector-tool-logo"></span>
-        </a>
-      </div>
-      <div>
-        <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content">
-          <span class="linkedin-logo private-sector-tool-logo"></span>
-        </a>
-      </div>
-      <div>
-        <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content">
-          <span class="ceb-logo private-sector-tool-logo"></span>
-        </a>
-      </div>
+<div class="mod-content">
+  <div class="layout-wrap icon-case">
+    <h2>Private Sector Tools</h2>
+    <h3>Click a company to find out more about their commitment to TechHire.</h3>
+    <div>
+      <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">
+        <span class="knack-logo private-sector-tool-logo"></span>
+      </a>
+    </div>
+    <div>
+      <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content">
+        <span class="better_weekdays-logo private-sector-tool-logo"></span>
+      </a>
+    </div>
+    <div>
+      <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content">
+        <span class="linkedin-logo private-sector-tool-logo"></span>
+      </a>
+    </div>
+    <div>
+      <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content">
+        <span class="ceb-logo private-sector-tool-logo"></span>
+      </a>
+    </div>
 
 
-      <div class="col">
-        <div class="content-dropdown" id="knack-content">
-          <%= render partial: "update_form", :locals => {content: @contents[3], style: "height:200px;width:100%;" } %><br/>
-        </div>
-
-      </div>
-      <div class="col">
-        <div class="content-dropdown" id="bwd-content">
-           <%= render partial: "update_form", :locals => {content: @contents[4], style: "height:200px;width:100%;" } %><br/>
-        </div>
+    <div class="col">
+      <div class="content-dropdown" id="knack-content">
+        <%= render partial: "update_form", :locals => {content: @contents[3], style: "height:200px;width:100%;" } %><br/>
       </div>
 
-      <div class="col">
-        <div class="content-dropdown" id="linkedin-content">
-          <%= render partial: "update_form", :locals => {content: @contents[5], style: "height:200px;width:100%;" } %><br/>
-        </div>
+    </div>
+    <div class="col">
+      <div class="content-dropdown" id="bwd-content">
+         <%= render partial: "update_form", :locals => {content: @contents[4], style: "height:200px;width:100%;" } %><br/>
       </div>
+    </div>
 
-      <div class="col">
-        <div class="content-dropdown" id="ceb-content">
-          <%= render partial: "update_form", :locals => {content: @contents[6], style: "height:200px;width:100%;" } %><br/>
-        </div>
+    <div class="col">
+      <div class="content-dropdown" id="linkedin-content">
+        <%= render partial: "update_form", :locals => {content: @contents[5], style: "height:200px;width:100%;" } %><br/>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="content-dropdown" id="ceb-content">
+        <%= render partial: "update_form", :locals => {content: @contents[6], style: "height:200px;width:100%;" } %><br/>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="mod-content yellow">
-    <div class="layout-wrap icon-sheet">
-      <div class="col">
-          <%= render partial: "update_form", :locals => {content: @contents[7], style: "height:200px;width:100%;" } %><br/>
-      </div>
+<div class="mod-content yellow">
+  <div class="layout-wrap icon-sheet">
+    <div class="col">
+        <%= render partial: "update_form", :locals => {content: @contents[7], style: "height:200px;width:100%;" } %><br/>
     </div>
   </div>
+</div>
 
-  <div class="mod-content">
-    <div class="layout-wrap">
-      <div class="col">
-          <%= render partial: "update_form", :locals => {content: @contents[8], style: "height:200px;width:100%;" } %><br/>
-      </div>
+<div class="mod-content">
+  <div class="layout-wrap">
+    <div class="col">
+        <%= render partial: "update_form", :locals => {content: @contents[8], style: "height:200px;width:100%;" } %><br/>
     </div>
   </div>
 </div>

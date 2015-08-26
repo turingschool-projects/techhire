@@ -1,12 +1,10 @@
-<div class="container">
-  <h1>Edit <%=name%> Content</h1>
-  <div class="mod-heading location">
-    <h1>Where is TechHire?</h1><br/>
-  </div>
-  <div class="mod-map layout-wrap">
-    <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
-    <%= render partial: "update_form", :locals => {content: @contents[1], style: "height:200px;width:100%;" } %><br/>
-    <%= render partial: "update_form", :locals => {content: @contents[2], style: "height:200px;width:100%;" } %><br/>
-    <%= render partial: "update_form", :locals => {content: @contents[3], style: "height:200px;width:100%;" } %><br/>
-  </div>
+<h1>Edit <%=name%> Content</h1>
+<div class="mod-heading location">
+  <h1>Where is TechHire?</h1><br/>
+</div>
+<div class="mod-map layout-wrap">
+  <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
+  <%= render partial: "update_form", :locals => {content: @contents[1], style: "height:200px;width:100%;" } %><br/>
+  <%= render partial: "update_form", :locals => {content: @contents[2], style: "height:200px;width:100%;" } %><br/>
+  <%= render partial: "update_form", :locals => {content: @contents[3], style: "height:200px;width:100%;" } %><br/>
 </div>
