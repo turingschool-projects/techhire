@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825155056) do
+ActiveRecord::Schema.define(version: 20150826154407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,8 +62,9 @@ ActiveRecord::Schema.define(version: 20150825155056) do
     t.string   "name"
     t.integer  "number_of_locations"
     t.text     "template"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "navigation",          default: false
   end
 
   create_table "pdfs", force: :cascade do |t|

@@ -13,13 +13,19 @@ class Admin::StaticPagesController < ApplicationController
   def clean_params(params)
     case params[:name]
       when "learn_more"
-        name = "Learn More"
+        "Learn More"
       when "home"
-        name = "Home"
+        "Home"
       when "tools_resources"
-        name = "Tools and Resources"
+        "Tools and Resources"
       when "techhire_locations"
-        name = "TechHire Locations"
+        "TechHire Locations"
+      when "capital_one"
+        "Capital One"
+      when "rural_sourcing"
+        "Rural Sourcing"
+      when "xpanxion"
+        "Xpanxion"
     end
   end
 end
