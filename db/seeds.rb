@@ -1,11 +1,11 @@
 class Seed
   def initialize
-    build_companies("uncontacted", "MO", "St. Louis")
-    build_companies("contacted", "CO", "Denver", 11)
-    build_companies("confirmed", "KS", "Witchita", 21)
-    build_companies("dead", "OK", "Oklahoma City", 31)
+    # build_companies("uncontacted", "MO", "St. Louis")
+    # build_companies("contacted", "CO", "Denver", 11)
+    # build_companies("confirmed", "KS", "Witchita", 21)
+    # build_companies("dead", "OK", "Oklahoma City", 31)
     # build_pdf
-    build_users
+    # build_users
     build_pages
     build_content
   end
@@ -14,7 +14,6 @@ class Seed
     pdf = Pdf.create(content_id: 5)
     pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
     pdf.save
-
   end
 
   #Companies
