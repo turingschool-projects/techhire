@@ -4,11 +4,11 @@ class Admin::ContentsController < ApplicationController
   def index
     all = Content.all
     @home = all.where("name LIKE '%home%'").order('location')
-    @xpanxion     = all.where("name LIKE '%xpanxion%'").order('location')
-    @capital_one  = all.where("name LIKE '%capital_one%'").order('location')
+    @xpanxion     = all.where("name LIKE '%xpan%'").order('location')
+    @capital_one  = all.where("name LIKE '%cap_one%'").order('location')
     @learn_more      = all.where("name LIKE '%learn_more%'").order('location')
     @tools_resources = all.where("name LIKE '%tools_resource%'").order('location')
-    @rural_sourcing  = all.where("name LIKE '%rural_sourcing%'").order('location')
+    @rural_sourcing  = all.where("name LIKE '%rural_source%'").order('location')
     @techhire_locations  = all.where("name LIKE '%tech_locations%'").order('location')
   end
 
