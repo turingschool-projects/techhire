@@ -29,6 +29,15 @@ module ApplicationHelper
     Page.nav_pages
   end
 
+  def view_as_user_link(name)
+    case_study_names = ['Capital One', 'Xpanxion', 'Rural Sourcing']
+    if case_study_names.include? name
+      get_case_study_link(name)
+    else
+      slugify(name)
+    end
+  end
+
   def slugify(name)
     if name.strip.scan(/\s/).empty?
       name.downcase
@@ -48,5 +57,11 @@ module ApplicationHelper
       when "Tools and Resources"
         "wrench"
     end
+  end
+
+  private
+
+  def get_case_study_link(name)
+    "case_studies/#{slugify(name)}"
   end
 end

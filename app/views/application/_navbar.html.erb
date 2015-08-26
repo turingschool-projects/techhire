@@ -19,7 +19,7 @@
                 <li class="divider"></li>
                 <% pages.each do |page| %>
                   <li>
-                    <%= link_to("/#{slugify(page.name)}") do %>
+                    <%= link_to("/#{view_as_user_link(page.name)}") do %>
                       <%= page.name %><span class="glyphicon glyphicon-log-in pull-right"></span>
                     <% end %>
                   </li>
