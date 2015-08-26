@@ -7,4 +7,10 @@
     <%= render partial: "tools_resources", :locals => {name: 'Tools and Resources', contents: @page.contents} %>
   <% when "TechHire Locations" %>
     <%= render partial: "techhire_locations", :locals => {name: 'TechHire Locations', contents: @page.contents} %>
+  <% when "Capital One" %>
+    <%= render partial: "capital_one", :locals => {name: 'Capital One', contents: @page.contents} %>
+  <% when "Rural Sourcing" %>
+    <%= render partial: "rural_sourcing", :locals => {name: 'Rural Sourcing', contents: @page.contents} %>
+  <% when "Xpanxion" %>
+    <%= render partial: "xpanxion", :locals => {name: 'Xpanxion', contents: @page.contents} %>
 <% end %>

@@ -62,7 +62,7 @@ class Seed
       HTML
     ).find_or_create_by(name: "Home")
 
-    Page.create_with( number_of_locations: 7,
+    Page.create_with( number_of_locations: 7, navigation: true,
                       template: <<-HTML.strip_heredoc
         <div class="mod-heading learn">
           <h1>Learn More</h1>
@@ -154,7 +154,7 @@ class Seed
       HTML
     ).find_or_create_by(name: "Learn More")
 
-    Page.create_with(number_of_locations: 4,
+    Page.create_with(number_of_locations: 4, navigation: true,
                     template: <<-HTML.strip_heredoc
         <div class="mod-heading location">
           <h1>Where is TechHire?</h1>
@@ -168,7 +168,7 @@ class Seed
       HTML
     ).find_or_create_by(name: "TechHire Locations")
 
-    Page.create_with(number_of_locations: 9,
+    Page.create_with(number_of_locations: 9, navigation: true,
                     template: <<-HTML.strip_heredoc
         <div class="mod-heading tools">
           <h1>Tools/Resources</h1>
@@ -262,6 +262,82 @@ class Seed
 
       HTML
     ).find_or_create_by(name: "Tools and Resources")
+
+    Page.create_with(number_of_locations: 1,
+                    template: <<-HTML.strip_heredoc
+        <div class="mod-heading tools">
+          <h1>Case Study: Capital One</h1>
+        </div>
+        <div class="mod-content">
+          <div class="layout-wrap">
+            <span class="capital-one case-study-logo"></span>
+            </div>
+        </div>
+          <div class="layout-wrap icon-case">
+            <div class="col">
+              $LOCATION1
+            </div>
+          </div>
+        </div>
+      HTML
+    ).find_or_create_by(name: "Capital One")
+
+
+    Page.create_with(number_of_locations: 2,
+                      template: <<-HTML.strip_heredoc
+        <div class="mod-heading tools">
+          <h1>Case Study: Rural Sourcing, Inc.</h1>
+        </div>
+
+        <div class="mod-content">
+          <div class="layout-wrap">
+            <span class="rural-sourcing case-study-logo"></span>
+        </div>
+          <div class="layout-wrap icon-case">
+            <div class="col">
+              $LOCATION1
+            </div>
+          </div>
+        </div>
+
+        <div class="mod-content yellow">
+          <div class="layout-wrap icon-check">
+            <div class="col">
+              $LOCATION2
+            </div>
+          </div>
+        </div>
+
+      HTML
+    ).find_or_create_by(name: "Rural Sourcing")
+
+    Page.create_with(number_of_locations: 2,
+                    template: <<-HTML.strip_heredoc
+        <div class="mod-heading tools">
+          <h1>Case Study: Xpanxion</h1>
+        </div>
+
+        <div class="mod-content">
+          <div class="layout-wrap">
+            <span class="xpanxion case-study-logo"></span>
+          </div>
+          <div class="layout-wrap icon-case">
+            <div class="col">
+              $LOCATION1
+            </div>
+          </div>
+
+          <div class="mod-content yellow">
+            <div class="layout-wrap icon-check">
+              <div class="col">
+                $LOCATION2
+              </div>
+            </div>
+          </div>
+        </div>
+
+      HTML
+    ).find_or_create_by(name: "Xpanxion")
 
     puts "pages built"
   end
@@ -510,6 +586,144 @@ class Seed
         <p>Open jobs data is provided by Glassdoor, Inc. which aggregates millions of U.S. job listings from a variety of online sources, including hiring employers and job boards as well as other online sources. Data is updated several times per day.</p>
       HTML
     ).find_or_create_by(name: "tech_locations4")
+    # ==== END ====
+    # ==== Build Case Studies ====
+    Content.create_with(page_id: Page.find_by(name: "Rural Sourcing").id, location: 1, body: <<-HTML.strip_heredoc
+        <h2>Bringing Quality Tech Jobs to Local Communities</h2>
+
+        <p>
+          At the core of Rural Sourcing Inc’s (RSI) business model is the belief that too many talented Americans are forced to choose between pursuing their ideal vocation or living in their ideal location.
+        </p>
+
+        <p>
+          This choice or in reality tradeoff means that hundreds of thousands of Americans are either living in smaller cities but not pursuing fulfilling work or have left for the bright lights of the big city where the work is rewarding but the quality of life is not what they envisioned.
+        </p>
+
+        <p>
+          RSI believes that no one should be forced to choose. We work hard to make sure that our colleagues get to experience fulfilling careers without having to sacrifice the quality of life they desire.
+        </p>
+
+        <p>
+          We locate our software development centers in smaller cities and find talented software development professionals as well as grow new talent by partnering closely with local colleges and universities.
+        </p>
+
+        <p>
+          We create a google-esque work environment with plenty of space for collaboration and an impromptu game of foosball. And, with Fortune 1000 clients that hire us to help develop new mobile applications, cloud based solutions or migrate old tech platforms on to newer more robust technologies our colleagues find the work both exciting and challenging.
+        </p>
+      HTML
+    ).find_or_create_by(name: "rural_source1")
+
+    Content.create_with(page_id: Page.find_by(name: "Rural Sourcing").id, location: 2, body: <<-HTML.strip_heredoc
+        <h2>See How Rural Sourcing Helped Karen:</h2>
+        <p>
+          After four and a half years as a Senior Quality Assurance (QA) Engineer at eBay, I needed to leave my job to take care of my father.
+        </p>
+
+        <p>
+          After three years, I was able to rejoin the workforce and decided to move from California to South Carolina to live in a place that was slower and had a better quality of life.
+        </p>
+
+        <p>
+          Unfortunately, jobs were scarce. I was unable to find a position due to the downturn in the economy and the fact that companies were outsourcing many of the jobs that I could have gotten with my experience.
+        </p>
+
+        <p>
+          In November of 2011, I saw an interview on TV with Monty Hamilton, CEO of Rural Sourcing, talking about how the company planned to bring jobs back to America.
+        </p>
+
+        <p>
+          He said they were currently hiring developers and would be hiring for other tech positions soon. I decided to take a chance and send them my resume.
+        </p>
+
+        <p>
+          In less than a month I had an interview at RSI and began working for the company in January of 2012 as the first QA Analyst in the Augusta site. That was three and a half years ago.
+        </p>
+
+        <p>
+          If it wasn't for RSI and their vision, I would not have this great job that I have today with great people and a bright future. Thanks so much RSI for giving me my life back and believing in America again!
+        </p>
+      HTML
+    ).find_or_create_by(name: "rural_source2")
+
+    Content.create_with(page_id: Page.find_by(name: "Capital One").id, location: 1, body: <<-HTML.strip_heredoc
+        <p><strong>Eric Greise</strong>, of Richmond, Virginia, has worked at Capital One as a manager in an operations center in Virginia for several years. This past fall, he received a scholarship from Capital One to complete a Nanodegree from the online university Udacity to formally teach him the programming skills needed for building modern digital applications.
+        </p>
+
+        <p>
+        He is looking forward to graduating from the program soon and recently spent a day immersed with one of Capital One’s API development teams seeing how his skills can be applied. Upon graduation, Eric is planning to apply for a full-time junior software engineering role at Capital One.
+        </p>
+
+        <p>
+        <strong>Cory Woods</strong>, of Richmond, Virginia, joined Capital One in 2014 as an intern through Capital One’s Autism@Work program, an internship program that provides on-the-job technical training and specialized support for individuals on the spectrum.
+        </p>
+        <p>
+        While working as a system tester, Cory received on-the-job training and mastered a variety of web-based testing applications and tools. He performed the broad array of technical tasks so well that he was hired as a full-time testing specialist just six months after starting his internship.
+        </p>
+
+        <p>
+        Today, Cory serves as a mentor for others with autism spectrum disorders, through organizations like Courage to Succeed, where he provides advice about therapies, support groups and other resources to help individuals on the spectrum advance both in school and at work.
+        </p>
+
+        <p>
+        It’s Cory’s personal goal to help others understand autism spectrum disorders, proving that these diagnoses don’t halt professional and personal objectives.
+        </p>
+      HTML
+    ).find_or_create_by(name: "cap_one1")
+
+    Content.create_with(page_id: Page.find_by(name: "Xpanxion").id, location: 1, body: <<-HTML.strip_heredoc
+        <h2>Investing in Training to Maintain Local Talent Supply</h2>
+        <p>
+          Xpanxion is a software engineering firm that provides solutions to businesses through software architecture, design, development, data analytics, and testing services.</p>
+        <p>
+          The company utilizes a unique business model which places offices in rural areas to leverage lower cost structures and bring high tech jobs to smaller communities.
+        </p>
+
+        <p>
+          However, due to the lower population base, this approach also makes finding qualified talent more difficult in an already competitive and resource constrained industry.
+          Xpanxion as a result has come to an interesting solution – the company invests heavily into training and career development to create its own IT talent pool.
+        </p>
+        <p>
+          Through a rigorous interview process, candidates with strong aptitude and fit are identified and are brought into the organization to begin a regimented training process.
+          This includes those that may not have IT experience, and to date, approximately 35% of Xpanxion’s 250 US employees are of non-traditional IT backgrounds.
+        </p>
+
+        <p>
+          The success of the endeavor has led to high growth and expansion of the firm, so Xpanxion looks to partner with the TechHire initiative to leverage the obvious synergies.
+        </p>
+      HTML
+    ).find_or_create_by(name: "xpan1")
+
+    Content.create_with(page_id: Page.find_by(name: "Xpanxion").id, location: 2, body: <<-HTML.strip_heredoc
+        <h2>See How Xpanxion Helped Jason and Michael:</h2>
+        <p><strong>Jason Arens</strong></p>
+        <p>
+          After growing up in the agricultural industry, I earned my bachelor’s degree in Journalism and began a career in sports media. When I decided to pursue a different career path a few years later, I came knocking on Xpanxion’s door with an unrelated background, but the will to learn.
+        </p>
+
+        <p>
+          I was given the opportunity and haven’t looked back since. Thanks to the company’s in-house training sessions and knowledge transfer from colleagues with expertise, I’ve grown in leaps and bounds through my first year to position myself as a valuable asset for the software services company as a Business and QA Analyst. It was undoubtedly the right move for me, and I look forward to continue growing within this ever-changing industry.
+        </p>
+
+
+        <p><strong>Michael Wortman</strong></p>
+
+        <p>
+          I became a member of the Xpanxion Team after spending 21 years in the military in multiple fields and managing a restaurant for over 10 years. During that time I realized that a lifestyle change was desperately needed. Working for Xpanxion was that change, and has been one of the most rewarding decisions I could have made.
+        </p>
+        <p>
+          Previous experience had taught me to mold into whatever the situation called for. Now I am working throughout several QA teams guiding and assisting in multiple ways. Xpanxion is fantastic about finding and keeping good people on projects.
+        </p>
+        <p>
+          They also make sure that almost any tools or resources needed to make you successful are available. I feel that Xpanxion brought me on as part of their team because they saw my eagerness to be part of a successful team, capacity to grow, self-motivation, and long term dedication.
+        </p>
+      HTML
+    ).find_or_create_by(name: "xpan2")
+
+    Content.create_with(page_id: Page.find_by(name: "Xpanxion").id, location: 3, body: <<-HTML.strip_heredoc
+
+      HTML
+    ).find_or_create_by(name: "xpan3")
+
     # ==== END ====
     puts "content built"
   end

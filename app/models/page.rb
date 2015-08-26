@@ -1,6 +1,7 @@
 class Page < ActiveRecord::Base
   has_many :contents
   validates :name, uniqueness: true
+  scope :nav_pages, -> {where(navigation: true)}
 
   def content_for(n)
     raise IndexError if n < 1

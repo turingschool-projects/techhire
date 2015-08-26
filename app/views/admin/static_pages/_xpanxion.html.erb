@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Edit <%=name%> Content</h1>
+  <div class="mod-heading tools">
+    <h1>Case Study: Xpanxion</h1>
+  </div><br/>
+
+  <div class="mod-content">
+    <div class="layout-wrap">
+      <span class="xpanxion case-study-logo"></span>
+    </div>
+    <div class="layout-wrap icon-case">
+      <div class="col">
+        <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
+      </div>
+    </div>
+
+    <div class="mod-content yellow">
+      <div class="layout-wrap icon-check">
+        <div class="col">
+          <%= render partial: "update_form", :locals => {content: @contents[1], style: "height:200px;width:100%;" } %><br/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

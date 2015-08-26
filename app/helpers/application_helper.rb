@@ -26,7 +26,7 @@ module ApplicationHelper
   end
 
   def nav_pages
-    Page.where.not(name: "Home")
+    Page.nav_pages
   end
 
   def slugify(name)

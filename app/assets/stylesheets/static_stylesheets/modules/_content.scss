@@ -225,3 +225,33 @@
   height: 120px;
   margin-right: 20px;
 }
+
+.capital-one{
+  $filename: "capital_one.png";
+  background-image: image-url($filename);
+  background-size: 450px 180px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 500px;
+  height: 200px;
+}
+
+.rural-sourcing{
+  $filename: "RuralSourcing.png";
+  background-image: image-url($filename);
+  background-size: 300px 120px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 300px;
+  height: 120px;
+}
+
+.xpanxion{
+  $filename: "XpanxionLogo.png";
+  background-image: image-url($filename);
+  background-size: 600px 170px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 600px;
+  height: 200px;
+}
