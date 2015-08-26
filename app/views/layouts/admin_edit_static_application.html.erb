@@ -11,9 +11,11 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-  <% if current_user && current_user.admin? %>
-    <%= render 'navbar' %>
-  <% end %>
+    <div class="container">
+      <% if current_user && current_user.admin? %>
+        <%= render 'navbar' %>
+      <% end %>
+    </div>
     <div class="layout-main">
       <main role="main">
         <%= yield %>
