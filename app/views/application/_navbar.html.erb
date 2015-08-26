@@ -1,60 +1,58 @@
-<div class="container">
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      </button>
-      <a class="navbar-brand" href="/admin/dashboard">Admin Dashboard</a>
-      <a class="navbar-brand" href="/admin/dashboard/cms-instructions">CMS Instructions</a>
-      <a class="navbar-brand" href="/admin/companies">Companies</a>
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand" href="/admin/dashboard">Admin Dashboard</a>
+    <a class="navbar-brand" href="/admin/dashboard/cms-instructions">CMS Instructions</a>
+    <a class="navbar-brand" href="/admin/companies">Companies</a>
+  </div>
+  <div class="collapse navbar-collapse js-navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="dropdown mega-dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage Content <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        <ul class="dropdown-menu mega-dropdown-menu row">
+          <li class="user-menu col-sm-3">
+            <ul>
+              <li class="dropdown-header">View As User</li>
+              <li class="divider"></li>
+              <% pages.each do |page| %>
+                <li>
+                  <%= link_to("/#{view_as_user_link(page.name)}") do %>
+                    <%= page.name %><span class="glyphicon glyphicon-log-in pull-right"></span>
+                  <% end %>
+                </li>
+              <% end %>
+              <li class="view-signup"><a href="/signup">Sign Up<span class="glyphicon glyphicon-log-in pull-right"></span></a></li>
+            </ul>
+          </li>
+          <li class="col-sm-4">
+            <ul>
+              <li class="dropdown-header">Manage Content</li>
+              <li class="divider"></li>
+              <li class="dropdown-header manage-static-link"><a href="/admin/contents">Manage Static Content <span class="glyphicon glyphicon-list"></span></a></li>
+              <li class="dropdown-header manage-pdf"><a href="/admin/pdfs">Manage PDF Files <span class="glyphicon glyphicon-file"></span></a></li>
+            </ul>
+          </li>
+          <li class="col-sm-4">
+            <ul id="edit-static-page">
+              <li class="dropdown-header">Change Page Display</li>
+              <li class="divider"></li>
+              <%pages.each do |page|%>
+                <li class="dropdown-header page">
+                  <%= link_to(admin_static_pages_path(slugify(page.name))) do  %>
+                    <%= page.name %>
+                    <span class="glyphicon glyphicon-<%=glyph(page.name)%>"></span>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav navbar-right">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-brand" %>
     </div>
-    <div class="collapse navbar-collapse js-navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="dropdown mega-dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage Content <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-          <ul class="dropdown-menu mega-dropdown-menu row">
-            <li class="user-menu col-sm-3">
-              <ul>
-                <li class="dropdown-header">View As User</li>
-                <li class="divider"></li>
-                <% pages.each do |page| %>
-                  <li>
-                    <%= link_to("/#{view_as_user_link(page.name)}") do %>
-                      <%= page.name %><span class="glyphicon glyphicon-log-in pull-right"></span>
-                    <% end %>
-                  </li>
-                <% end %>
-                <li class="view-signup"><a href="/signup">Sign Up<span class="glyphicon glyphicon-log-in pull-right"></span></a></li>
-              </ul>
-            </li>
-            <li class="col-sm-4">
-              <ul>
-                <li class="dropdown-header">Manage Content</li>
-                <li class="divider"></li>
-                <li class="dropdown-header manage-static-link"><a href="/admin/contents">Manage Static Content <span class="glyphicon glyphicon-list"></span></a></li>
-                <li class="dropdown-header manage-pdf"><a href="/admin/pdfs">Manage PDF Files <span class="glyphicon glyphicon-file"></span></a></li>
-              </ul>
-            </li>
-            <li class="col-sm-4">
-              <ul id="edit-static-page">
-                <li class="dropdown-header">Change Page Display</li>
-                <li class="divider"></li>
-                <%pages.each do |page|%>
-                  <li class="dropdown-header page">
-                    <%= link_to(admin_static_pages_path(slugify(page.name))) do  %>
-                      <%= page.name %>
-                      <span class="glyphicon glyphicon-<%=glyph(page.name)%>"></span>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <div class="nav navbar-right">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-brand" %>
-      </div>
-    </div>
-  </nav>
-</div>
+  </div>
+</nav>
