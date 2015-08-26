@@ -1,18 +1,16 @@
-<div class="container">
- <h1>Edit <%=name%> Content</h1>
-  <div style="background-color:#F8EFE6;">
-    <div class="mod-heading tools">
-      <h1>Case Study: Capital One</h1>
-    </div>
-    <div class="mod-content">
-      <div class="layout-wrap">
-        <span class="capital-one case-study-logo"></span>
-        </div>
-    </div>
-      <div class="layout-wrap icon-case">
-        <div class="col">
-          <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
-        </div>
+<h1>Edit <%=name%> Content</h1>
+<div style="background-color:#F8EFE6;">
+  <div class="mod-heading tools">
+    <h1>Case Study: Capital One</h1>
+  </div>
+  <div class="mod-content">
+    <div class="layout-wrap">
+      <span class="capital-one case-study-logo"></span>
+      </div>
+  </div>
+    <div class="layout-wrap icon-case">
+      <div class="col">
+        <%= render partial: "update_form", :locals => {content: @contents[0], style: "height:200px;width:100%;" } %><br/>
       </div>
     </div>
   </div>
