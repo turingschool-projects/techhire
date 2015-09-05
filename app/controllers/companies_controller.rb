@@ -44,6 +44,10 @@ class CompaniesController < ApplicationController
       :interest_connecting,
       :interest_supporting,
       :interest_community,
+      # employer fields:
+      :sector,
+      :phone,
+      :location,
     )
     if params[:company][:hiring] == "1"
       cp.merge(hiring: true, hire_count: params[:company][:hire_count].to_i)

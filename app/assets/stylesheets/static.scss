@@ -1,3 +1,9 @@
+h1.form_title {
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
 label.error {
   clear: both;
   color: #ef514c;
@@ -24,6 +30,10 @@ input.error, select.error, textarea.error {
   border-color: #fdc7c7;
 }
 
-#org_type_other {
-    display: none;
+#employer_fields {
+  display: none;
+}
+
+#org_type_other, #it_category_other_description {
+  display: none;
 }

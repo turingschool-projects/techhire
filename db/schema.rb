@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826154407) do
+ActiveRecord::Schema.define(version: 20150905152048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20150826154407) do
     t.boolean  "interest_connecting",  default: false
     t.boolean  "interest_supporting",  default: false
     t.boolean  "interest_community",   default: false
+    t.string   "sector"
+    t.string   "phone"
+    t.string   "location"
   end
 
   create_table "contents", force: :cascade do |t|

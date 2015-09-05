@@ -5,12 +5,15 @@
 <div class="layout-wrap">
   <%= form_for @company, url: companies_path do |f| %>
     <p class="intro">
-      Whether you’re an employer, hiring manager, or community leader, all we need is an interest from you in learning more about TechHire, and a passion to find and hire talented employees in your community who are ready to work.
+      Whether you’re an employer, non-profit, community leader, or private organization, all we need is an interest from you in learning more about TechHire, and a passion to find, train, and employ talented individuals in your community who are ready to work.
     </p>
 
     <% if @company.errors.any? %>
       <div class="signup-errors">
-        <p>Sorry, we had problems processing that information. Please fix the following issues:</p>
+        <p>
+          <strong>Sorry, we had problems processing that information.</strong>
+          <br />Please fix the following issues:
+        </p>
         <ul>
           <% @company.errors.each do |field, message| %>
             <li><strong><%= field %>: </strong><span><%= message%></span></li>
@@ -32,13 +35,30 @@
     <div class="row cols-75-25">
       <div class="col">
         <%= f.label(:organization_type, "Organization Type (select one)") %>
-        <%= select_tag "organization_type", options_for_select(@registration.organization_types), id: "org_type" %>
+        <%= select_tag "organization_type", options_for_select(@registration.organization_types), id: "org_type", :include_blank => true %>
       </div>
 
       <div class="col" id="org_type_other">
         <%= f.label(:organization_type_other, "Enter:") %>
         <%= text_field_tag :organization_type_other, "" %>
         <%= f.hidden_field :organization_type %>
+      </div>
+    </div>
+
+    <div id="employer_fields">
+      <div class="row">
+        <%= f.label(:sector, "Sector") %>
+        <%= f.text_field :sector %>
+      </div>
+
+      <div class="row">
+        <%= f.label(:phone, "Phone") %>
+        <%= f.text_field :phone %>
+      </div>
+
+      <div class="row">
+        <%= f.label(:location, "Location where you are seeking skilled employees (you may enter multiple locations)") %>
+        <%= f.text_field :location %>
       </div>
     </div>
 
@@ -74,24 +94,24 @@
       <%= f.text_area :techhire_involvement  %>
     </div>
 
-    <div class="row check_box_set">
-      <p>
-        Please indicate your interest in TechHire (Check all that apply):
-      </p>
-      <%= f.check_box :interest_hiring %><%= f.label(:interest_hiring, "Employer interested in hiring based on skill and job readiness") %>
-      <%= f.check_box :interest_training %><%= f.label(:interest_training, "Training institution creating clear pathways that lead to better jobs") %>
-      <%= f.check_box :interest_connecting %><%= f.label(:interest_connecting, "Local leader interested in connecting people to jobs with on-ramp programs") %>
-      <%= f.check_box :interest_supporting %><%= f.label(:interest_supporting, "Workforce leader/nonprofit interested in supporting job seekers") %>
-      <%= f.check_box :interest_community %><%= f.label(:interest_community, "Organization interested in making a commitment to support TechHire community activities") %>
-    </div>
+    <p class="callout">
+      Some examples of ways to get involved:
+    <p>
+    <ul class="checkmark">
+      <li>Employers interested in hiring based on skill and job readiness regardless of degree or pedigree</li>
+      <li>Training institutions creating clear pathways that lead to better jobs through accelerated programs</li>
+      <li>Local leader interested in connecting people to jobs with on-ramp programs</li>
+      <li>Workforce leaders/nonprofits interested in supporting job seekers</li>
+      <li>Organizations interested in making a commitment to support TechHire community activities</li>
+    </ul>
 
     <div class="row button-center">
       <%= f.submit "Sign Up", class: 'button registration-submit' %>
+
+      <p class="notification">
+        *This information may be shared with local and national partners that are participating in TechHire.
+      </p>
     </div>
 
   <% end %>
-  <p class="notification">
-    *This information may be shared with local and national partners
-    that are participating in TechHire.
-  </p>
 </div>

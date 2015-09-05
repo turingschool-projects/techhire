@@ -1,10 +1,17 @@
 $(document).ready(function(){
   $('#org_type').change(function() {
+    if($(this).val() === 'Employer') {
+      $('#employer_fields').fadeIn();
+    } else {
+      $('#employer_fields').fadeOut();
+    }
+
     if($(this).val() === 'Other') {
       $('#org_type_other').fadeIn();
       $('#organization_type_other').attr('required', true);
     } else {
       $('#org_type_other').fadeOut();
+      $('#organization_type_other').attr('required', false);
     }
   });
 
@@ -16,4 +23,5 @@ $(document).ready(function(){
     }
     $('#company_organization_type').val(org_type);
   });
+
 });
