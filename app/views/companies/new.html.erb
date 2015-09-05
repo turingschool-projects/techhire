@@ -35,7 +35,7 @@
     <div class="row cols-75-25">
       <div class="col">
         <%= f.label(:organization_type, "Organization Type (select one)") %>
-        <%= select_tag "organization_type", options_for_select(@registration.organization_types), id: "org_type", :include_blank => true %>
+        <%= select_tag "organization_type", options_for_select(@registration.organization_types), prompt: 'Click to select...', id: "org_type" %>
       </div>
 
       <div class="col" id="org_type_other">
@@ -75,7 +75,7 @@
 
       <div class="col">
         <%= f.label(:state, "State") %>
-        <%= f.select :state, options_for_select(Company.known_states, @company.state) %>
+        <%= f.select :state, options_for_select(Company.known_states, @company.state), prompt: "Click to select..." %>
       </div>
 
       <div class="col">

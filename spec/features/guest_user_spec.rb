@@ -54,7 +54,6 @@ RSpec.feature "Company Signup Page", type: :feature do
         select('Colorado', from: 'company[state]')
         fill_in 'company[zip_code]', with: "80001"
         fill_in 'company[email]', with: "google@email.com"
-        check 'company[interest_hiring]'
       end
 
       it "can signup their company using the signup form and a standard organization type" do

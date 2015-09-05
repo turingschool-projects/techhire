@@ -7,7 +7,6 @@ class Company < ActiveRecord::Base
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, },
                     uniqueness: true
   validates :hire_count, numericality: { only_integer: true, }
-  validates :organization_type, presence: true
 
   after_create :send_welcome_email
 

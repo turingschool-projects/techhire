@@ -46,9 +46,10 @@ RSpec.describe ApplicationHelper, type: :helper do
     it "returns all types" do
       list = [["Please select..."],
             "Employer",
-            "Training Institution",
             "Government",
             "Interested Individual",
+            "Non-Profit/Private Organization",
+            "Training Institution",
             "Other"]
       expect(helper.organization_type_helper).to eq(list)
     end

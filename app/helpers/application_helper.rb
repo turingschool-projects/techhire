@@ -13,9 +13,10 @@ module ApplicationHelper
 
   def organization_type_helper
    types = ["Employer",
-            "Training Institution",
             "Government",
             "Interested Individual",
+            "Non-Profit/Private Organization",
+            "Training Institution",
             "Other"]
 
     return types.insert(0, ["Please select..."])
