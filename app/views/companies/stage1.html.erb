@@ -1,0 +1,220 @@
+<div class="mod-heading check">
+  <h2>SIGN UP TO FIND GOOD TECH TALENT</h2>
+</div>
+
+<p class="header">
+  Opportunity@Work wants to introduce you to talented job seekers for the IT jobs you need to fill in your organization. We would like to better understand what jobs and skills you are seeking so we can build an ecosystem for training providers and community partners to provide you with these candidates. Our goal is to send you skilled, motivated candidates, trained through nontraditional sources, who you can choose to hire into your organization.
+</p>
+
+<div class="stages">
+  <div class="three-boxes">
+    <span class="stage full">
+      <div class="title">
+        STAGE 1
+        <div class="progress">
+          <span style="width:90%;"></span>
+        </div>
+      </div>
+      <div class="body">
+        <div class="header">
+          Join TechHire
+        </div>
+        <div class="focus">
+          Almost done! We just need a few more pieces of information about your company and the jobs you are seeking to fill.
+        </div>
+        <div>
+          We are gathering this information because in the coming months, we will work with training providers and community partners in your region to assemble skilled, qualified and motivated candidates with the skills you demand most.
+        </div>
+        <div>
+          We may contact you to learn more about these jobs.
+        </div>
+      </div>
+    </span>
+    <span class="stage full">
+      <div class="title">
+        STAGE 2
+        <div class="progress">
+          <span style="width:0;"></span>
+        </div>
+      </div>
+      <div class="body">
+        <div class="header">
+          Commit to TechHire
+        </div>
+        <div class="focus">
+          Want access to TechHire candidates? A commitment to TechHire is a commitment to take action to hire, or bring on an intern or apprentice to your organization.
+        </div>
+        <div>
+          There are no strings attached though: if we send you a candidate who doesn’t work out, you do not have to hire the individual.
+        </div>
+        <div>
+          We will connect you with local organizations training and placing quality candidates.
+        </div>
+      </div>
+    </span>
+    <span class="stage full">
+      <div class="title">
+        STAGE 3
+        <div class="progress">
+          <span style="width:0;"></span>
+        </div>
+      </div>
+      <div class="body">
+        <div class="header">
+          Action Plan
+        </div>
+        <div class="focus">
+          What practices you are currently undertaking, or planning to implement which plan for, attract, evaluate and retain nontraditional hires?
+        </div>
+        <div>
+          We want to help you bring more inclusive hiring practices to your organization to support candidates trained from nontraditional sources.
+        </div>
+        <div>
+          We will use this information to build and find resources that will help you successfully hire, onboard and retain nontraditional IT job candidates.
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<p class="header small">
+  We understand you may not be quite ready to make a commitment or outline an action plan; that’s okay!<br />
+  These stages are optional at this time, and we will connect with you to answer any questions you may have before making your commitment.
+</p>
+
+<div class="banner">
+  <p>
+    There is no fee to join the TechHire initiative. If you have questions at any time as you are filling out this form, or want to speak to one of us at the organization, please feel free to email us at <a href="mailto:info@opportunityatwork.org">info@opportunityatwork.org</a>.
+  </p>
+</div>
+
+<div class="layout-wrap">
+  <%= form_for @company, url: stage2_path(@company) do |f| %>
+
+    <% if @company.errors.any? %>
+      <div class="signup-errors">
+        <p>
+          <strong>Sorry, we had problems processing that information.</strong>
+          <br />Please fix the following issues:
+        </p>
+        <ul>
+          <% @company.errors.each do |field, message| %>
+            <li><strong><%= field %>: </strong><span><%= message%></span></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row radio_set">
+      <p>
+        What is the size of your organization's IT workforce?
+      </p>
+      <%= f.radio_button :it_employees, '1-10' %><%= f.label(:it_employees, "1 - 10 employees") %>
+      <%= f.radio_button :it_employees, '11-50' %><%= f.label(:it_employees, "11 - 50 employees") %>
+      <%= f.radio_button :it_employees, '51-150' %><%= f.label(:it_employees, "51 - 150 employees") %>
+      <%= f.radio_button :it_employees, '151-300' %><%= f.label(:it_employees, "151 - 300 employees") %>
+      <%= f.radio_button :it_employees, '301-500' %><%= f.label(:it_employees, "301 - 500 employees") %>
+      <%= f.radio_button :it_employees, '501-1000' %><%= f.label(:it_employees, "501 - 1,000 employees") %>
+      <%= f.radio_button :it_employees, '1001-2500' %><%= f.label(:it_employees, "1,001 - 2,500 employees") %>
+      <%= f.radio_button :it_employees, '2501+' %><%= f.label(:it_employees, "Over 2,501 employees") %>
+    </div>
+
+    <div class="row check_box_set">
+      <p>
+        Tell us about the categories of IT positions you envision hiring for in the coming 6-9 months (select up to five critical needs):
+      </p>
+      <ul class="checkbox-grid two-rows">
+        <li><%= f.check_box :it_category_software %><%= f.label(:it_category_software, "Software Developer") %></li>
+        <li><%= f.check_box :it_category_qa %><%= f.label(:it_category_qa, "Quality Assurance Analyst") %></li>
+        <li><%= f.check_box :it_category_frontend %><%= f.label(:it_category_frontend, "Front End Web Developer") %></li>
+        <li><%= f.check_box :it_category_sysadmin %><%= f.label(:it_category_sysadmin, "System Administrator/Network Support") %></li>
+        <li><%= f.check_box :it_category_backend %><%= f.label(:it_category_backend, "Back End Web Developer") %></li>
+        <li><%= f.check_box :it_category_tech_support %><%= f.label(:it_category_tech_support, "Technical Assistance/User Support") %></li>
+        <li><%= f.check_box :it_category_mobile %><%= f.label(:it_category_mobile, "Mobile Developer") %></li>
+        <li><%= f.check_box :it_category_writer %><%= f.label(:it_category_writer, "Technical Writer") %></li>
+        <li><%= f.check_box :it_category_data %><%= f.label(:it_category_data, "Data Scientist") %></li>
+        <li><%= f.check_box :it_category_design %><%= f.label(:it_category_design, "Graphic Designer") %></li>
+        <li><%= f.check_box :it_category_biz_intel %><%= f.label(:it_category_biz_intel, "Business Intelligence") %></li>
+        <li><%= f.check_box :it_category_is %><%= f.label(:it_category_is, "Information Security Analyst") %></li>
+        <li><%= f.check_box :it_category_pm %><%= f.label(:it_category_pm, "IT Project Manager") %></li>
+        <li><%= f.check_box :it_category_other, id: "it_category_other" %><%= f.label(:it_category_other, "Other") %></li>
+      </ul>
+
+      <div class="row cols-25-75">
+        <div class="col" />
+        <div class="col" id="it_category_other_description">
+          <%= f.label(:it_category_other_description, "Please specify:") %>
+          <%= f.text_field :it_category_other_description %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <%= f.label(:skills_needed, "Please indicate any skills needed for these positions. We use this information to inform what skills training providers focus on in your community.") %>
+      <%= f.text_area :skills_needed %>
+    </div>
+
+    <div class="row">
+      <%= f.label(:job_locations, "Please specify where these jobs are located (city/state).") %>
+      <%= f.text_area :job_locations %>
+    </div>
+
+    <p>OPTIONAL:</p>
+
+    <div class="row">
+      <%= f.label(:it_openings, "Current number of IT Openings?") %>
+      <%= f.text_field :it_openings %>
+    </div>
+
+    <div class="row">
+      <%= f.label(:languages_needed, "Are any non-English languages needed? Please specify.") %>
+      <%= f.text_field :languages_needed %>
+    </div>
+
+    <div class="row radio_set">
+      <div class="radio-toggle">
+        Does your company engage in drug testing?<br />
+        <%= f.radio_button :drug_testing, "yes" %><%= f.label(:drug_testing, "yes") %><%= f.radio_button :drug_testing, "no" %><%= f.label(:drug_testing, "no") %>
+      </div>
+
+      <div class="radio-toggle">
+        Does the candidate need to have good credit (ie: for security clearance)?<br />
+        <%= f.radio_button :good_credit, "yes" %><%= f.label(:good_credit, "yes") %><%= f.radio_button :good_credit, "no" %><%= f.label(:good_credit, "no") %>
+      </div>
+
+      <div class="radio-toggle">
+        Would you consider a candidate with a criminal record?<br />
+        <%= f.radio_button :criminal_record, "yes" %><%= f.label(:criminal_record, "yes") %><%= f.radio_button :criminal_record, "no" %><%= f.label(:criminal_record, "no") %>
+      </div>
+
+      <div class="radio-toggle">
+        Does this position allow for casual dress?<br />
+        <%= f.radio_button :casual_dress, "yes" %><%= f.label(:casual_dress, "yes") %><%= f.radio_button :casual_dress, "no" %><%= f.label(:casual_dress, "no") %>
+      </div>
+
+      <div class="radio-toggle">
+        Can you provide a candidate with visa sponsorship for this position?<br />
+        <%= f.radio_button :sponsorship, "yes" %><%= f.label(:sponsorship, "yes") %><%= f.radio_button :sponsorship, "no" %><%= f.label(:sponsorship, "no") %>
+      </div>
+
+      <div class="radio-toggle">
+        Are you willing to pay relocation costs for a candidate?<br />
+        <%= f.radio_button :relocation, "yes" %><%= f.label(:relocation, "yes") %><%= f.radio_button :relocation, "no" %><%= f.label(:relocation, "no") %>
+      </div>
+
+      <div class="radio-toggle">
+        Do you provide paid internships or apprenticeships?<br />
+        <%= f.radio_button :internship, "yes" %><%= f.label(:internship, "yes") %><%= f.radio_button :internship, "no" %><%= f.label(:internship, "no") %>
+      </div>
+    </div>
+
+    <div class="row button-center">
+      <%= f.submit "Join TechHire", class: 'button' %>
+
+      <p class="notification">
+        *This information may be shared with local and national partners that are participating in TechHire.
+      </p>
+    </div>
+
+  <% end %>
+</div>

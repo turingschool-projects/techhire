@@ -29,7 +29,16 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :companies, only: [:create, :show]
+  resources :companies, only: [:create, :show, :update]
+
+  get 'employer_stage1/:id', to: "companies#stage1", as: "stage1"
+  get 'employer_stage2/:id', to: "companies#stage2"
+  get 'employer_stage3/:id', to: "companies#stage3"
+
+  patch 'employer_stage2/:id', to: "companies#stage2", as: "stage2"
+  patch 'employer_stage3/:id', to: "companies#stage3", as: "stage3"
+  patch "/employer_finished/:id", to: "companies#finished", as: "finished"
+
   resources :pdfs, only: [:show]
 
   require 'sidekiq/web'

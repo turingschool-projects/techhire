@@ -1,0 +1,300 @@
+<p class="spacer" />
+<div class="banner">
+  <h1>Thank you for committing to TechHire!</h1>
+  <p>
+    Proceed forward to form an action plan.
+  </p>
+</div>
+
+<div class="stages">
+  <div class="three-boxes">
+    <a href="<%= url_for(stage1_path(@company)) %>">
+      <span class="stage">
+        <div class="title">
+          STAGE 1
+          <div class="progress">
+            <span style="width:100%;"></span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="header">
+            Join TechHire
+          </div>
+        </div>
+      </span>
+    </a>
+    <a href="<%= url_for(stage2_path(@company)) %>">
+      <span class="stage">
+        <div class="title">
+          STAGE 2
+          <div class="progress">
+            <span style="width:100%;"></span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="header">
+            Commit to TechHire
+          </div>
+        </div>
+      </span>
+    </a>
+    <span class="stage">
+      <div class="title">
+        STAGE 3
+        <div class="progress">
+          <span style="width:10%;"></span>
+        </div>
+      </div>
+      <div class="body">
+        <div class="header">
+          Action Plan
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="layout-wrap">
+  <p class="spacer">
+    Actions to Implement to Hire Nontraditional Candidates:
+  </p>
+
+  <p>Many TechHire employers will engage in the activities below as a member of the TechHire initiative. Please indicate which activities you are currently undertaking, and which activities you will begin to undertake in the next 6-12 months.</p>
+
+  <%= form_for @company, url: finished_path(@company) do |f| %>
+
+    <% if @company.errors.any? %>
+      <div class="signup-errors">
+        <p>
+          <strong>Sorry, we had problems processing that information.</strong>
+          <br />Please fix the following issues:
+        </p>
+        <ul>
+          <% @company.errors.each do |field, message| %>
+            <li><strong><%= field %>: </strong><span><%= message%></span></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <p class="spacer">PLAN:</p>
+      <div class="checkboxes-set-exclusive">
+        <div class="checkbox-header">
+          <div>Already under-<br/>taking</div>
+          <div>Will begin under-<br/>taking</div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[plan_talent]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[plan_talent]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Implement a talent strategy to consider hiring consistently from nontraditional sources by educating business partners about the ability of these candidates to perform the job well.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[plan_posting]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[plan_posting]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Align job postings to knowledge, skills and abilities that are required for the job.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[plan_champion]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[plan_champion]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Identify a champion within the enterprise to seek out and advocate for nontraditional candidates.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[plan_business]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[plan_business]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Implement a business strategy that defines and hires nontraditional candidates for IT roles and publicizes your commitment to nontraditional candidates.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[plan_metrics]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[plan_metrics]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Tie your nontraditional candidate recruiting goals to performance metrics by setting target numbers and rewarding recruiters who successfully recruit a nontraditional candidate.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[plan_other]', "doing", checked=false, class: "checkbox-exclusive", id: "plan_other_doing" %>
+          <%= check_box_tag 'company[plan_other]', "will do", checked=false, class: "checkbox-exclusive", id: "plan_other_will_do" %>
+          <div class="checkbox-label">
+            Other
+          </div>
+        </div>
+        <div id="plan_other_description">
+          <%= f.text_area :plan_other_description, :placeholder => "Please specify" %>
+        </div>
+      </div>
+
+      <p class="spacer">SOURCE:</p>
+      <div class="checkboxes-set-exclusive">
+        <div class="checkbox-header">
+          <div>Already under-<br/>taking</div>
+          <div>Will begin under-<br/>taking</div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[source_language]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[source_language]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Eliminate language in job descriptions that discourages nontraditional candidates from applying. For example, do not use phrases such as "must have bachelor's degree" or "must currently be employed."
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[source_relationships]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[source_relationships]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Build strong relationships with local accelerated training sources.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[source_hiring]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[source_hiring]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Ensure that hiring managers understand the business case for hiring nontraditional candidates. Build the business case and share through email, department meetings, and trainings to review resumes and conduct interviews.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[source_other]', "doing", checked=false, class: "checkbox-exclusive", id: "source_other_doing" %>
+          <%= check_box_tag 'company[source_other]', "will do", checked=false, class: "checkbox-exclusive", id: "source_other_will_do" %>
+          <div class="checkbox-label">
+            Other
+          </div>
+        </div>
+        <div id="source_other_description">
+          <%= f.text_area :source_other_description, :placeholder => "Please specify" %>
+        </div>
+      </div>
+
+      <p class="spacer">ATTRACT:</p>
+      <div class="checkboxes-set-exclusive">
+        <div class="checkbox-header">
+          <div>Already under-<br/>taking</div>
+          <div>Will begin under-<br/>taking</div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[attract_connect]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[attract_connect]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Craft messages that enable applicants from nontraditional sources to connect emotionally with your brand.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[attract_leverage]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[attract_leverage]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Leverage existing employee base for referrals by asking for their assistance in identifying qualified candidates.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[attract_customize]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[attract_customize]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Customize your brand to target applicants from nontraditional sources.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[attract_other]', "doing", checked=false, class: "checkbox-exclusive", id: "attract_other_doing" %>
+          <%= check_box_tag 'company[attract_other]', "will do", checked=false, class: "checkbox-exclusive", id: "attract_other_will_do" %>
+          <div class="checkbox-label">
+            Other
+          </div>
+        </div>
+        <div id="attract_other_description">
+          <%= f.text_area :attract_other_description, :placeholder => "Please specify" %>
+        </div>
+      </div>
+
+      <p class="spacer">EVALUATE:</p>
+      <div class="checkboxes-set-exclusive">
+        <div class="checkbox-header">
+          <div>Already under-<br/>taking</div>
+          <div>Will begin under-<br/>taking</div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[evaluate_behavior]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[evaluate_behavior]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Revamp interview guides to focus on behavior-based interview techniques which evaluate the candidates' skills, abilities, work ethic and motivations.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[evaluate_screening]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[evaluate_screening]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Remove inappropriate filters and screening procedures such as asking for the dates of last IT experiences.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[evaluate_other]', "doing", checked=false, class: "checkbox-exclusive", id: "evaluate_other_doing" %>
+          <%= check_box_tag 'company[evaluate_other]', "will do", checked=false, class: "checkbox-exclusive", id: "evaluate_other_will_do" %>
+          <div class="checkbox-label">
+            Other
+          </div>
+        </div>
+        <div id="evaluate_other_description">
+          <%= f.text_area :evaluate_other_description, :placeholder => "Please specify" %>
+        </div>
+      </div>
+
+      <p class="spacer">RETAIN:</p>
+      <div class="checkboxes-set-exclusive">
+        <div class="checkbox-header">
+          <div>Already under-<br/>taking</div>
+          <div>Will begin under-<br/>taking</div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[retain_onboard]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[retain_onboard]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Develop a formal onboarding program that is tailored for new nontraditional hires to successfully begin their careers within your organization.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[retain_mentor]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[retain_mentor]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Assign mentors who are committed to nontraditional candidate success to coach new hires through the first 90 days of employment and organize events to make the new hires feel welcome within the organization.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[retain_manage]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[retain_manage]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Distribute onboarding materials to managers to help them understand the specific challenges they face.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[retain_track]', "doing", checked=false, class: "checkbox-exclusive" %>
+          <%= check_box_tag 'company[retain_track]', "will do", checked=false, class: "checkbox-exclusive" %>
+          <div class="checkbox-label">
+            Incorporate mechanisms to track and compare the success of nontraditional candidates against traditional candidates.
+          </div>
+        </div>
+        <div class="checkbox-set">
+          <%= check_box_tag 'company[retain_other]', "doing", checked=false, class: "checkbox-exclusive", id: "retain_other_doing" %>
+          <%= check_box_tag 'company[retain_other]', "will do", checked=false, class: "checkbox-exclusive", id: "retain_other_will_do" %>
+          <div class="checkbox-label">
+            Other
+          </div>
+        </div>
+        <div id="retain_other_description">
+          <%= f.text_area :retain_other_description, :placeholder => "Please specify" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row button-center">
+      <%= f.submit "Take Action", class: 'button' %>
+
+      <p class="notification">
+        *This information may be shared with local and national partners that are participating in TechHire.
+      </p>
+    </div>
+
+  <% end %>
+</div>

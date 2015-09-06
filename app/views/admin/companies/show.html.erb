@@ -47,6 +47,185 @@
   </div>
 </div><br/><hr/>
 
+<% if @company.organization_type == 'Employer' %>
+  <div class="well">
+    <h1>Employer Details</h1>
+    <div class="col-sm-3">
+      Sector: <h4><%= @company.sector %></h4>
+    </div>
+    <div class="col-sm-3">
+      Phone: <h4><%= @company.phone %></h4>
+    </div>
+    <div class="col-sm-3">
+      Location: <h4><%= @company.location %></h4>
+    </div>
+    <div class="row">
+      # IT Employees: <h4><%= @company.it_employees %></h4>
+    </div>
+    <div class="row">
+      IT skill categories:
+      <ul>
+        <% if @company.it_category_software %><li>software</li><% end %>
+        <% if @company.it_category_frontend %><li>frontend</li><% end %>
+        <% if @company.it_category_backend %><li>backend</li><% end %>
+        <% if @company.it_category_mobile %><li>mobile</li><% end %>
+        <% if @company.it_category_data %><li>data</li><% end %>
+        <% if @company.it_category_biz_intel %><li>biz_intel</li><% end %>
+        <% if @company.it_category_pm %><li>PM</li><% end %>
+        <% if @company.it_category_qa %><li>QA</li><% end %>
+        <% if @company.it_category_sysadmin %><li>sysadmin</li><% end %>
+        <% if @company.it_category_tech_support %><li>tech_support</li><% end %>
+        <% if @company.it_category_writer %><li>writer</li><% end %>
+        <% if @company.it_category_design %><li>design</li><% end %>
+        <% if @company.it_category_is %><li>IS</li><% end %>
+        <% if @company.it_category_other %><li>other</li><% end %>
+        <% if @company.it_category_other_description.length %>
+          Description for other: <%= @company.it_category_other_description %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-sm-3">
+      Skills needed: <h4><%= @company.skills_needed %></h4><br />
+    </div>
+    <div class="col-sm-3">
+      Job locations: <h4><%= @company.job_locations %></h4><br />
+    </div>
+    <div class="col-sm-3">
+      IT openings: <h4><%= @company.it_openings %></h4><br />
+    </div>
+    <div class="row">
+      Languages needed: <h4><%= @company.languages_needed %></h4><br />
+    </div>
+    <div class="row">
+      Optional checks:
+      <ul>
+        <li>Drug testing? <%= @company.drug_testing %></li>
+        <li>Good credit? <%= @company.good_credit %></li>
+        <li>Criminal record? <%= @company.criminal_record %></li>
+        <li>Casual dress? <%= @company.casual_dress %></li>
+        <li>Sponsorship? <%= @company.sponsorship %></li>
+        <li>Relocation? <%= @company.relocation %></li>
+        <li>Internship? <%= @company.internship %></li>
+      </ul>
+  </div>
+    <div class="row">
+      City participation:
+      <ul>
+        <% if @company.participate_akron %><li>akron</li><% end %>
+        <% if @company.participate_louisville %><li>louisville</li><% end %>
+        <% if @company.participate_philadelphia %><li>philadelphia</li><% end %>
+        <% if @company.participate_albuquerque %><li>albuquerque</li><% end %>
+        <% if @company.participate_lynchburg %><li>lynchburg</li><% end %>
+        <% if @company.participate_pittsburgh %><li>pittsburgh</li><% end %>
+        <% if @company.participate_birmingham %><li>birmingham</li><% end %>
+        <% if @company.participate_me %><li>me</li><% end %>
+        <% if @company.participate_portland %><li>portland</li><% end %>
+        <% if @company.participate_chattanooga %><li>chattanooga</li><% end %>
+        <% if @company.participate_memphis %><li>memphis</li><% end %>
+        <% if @company.participate_ri %><li>ri</li><% end %>
+        <% if @company.participate_cincinnati %><li>cincinnati</li><% end %>
+        <% if @company.participate_minneapolis %><li>minneapolis</li><% end %>
+        <% if @company.participate_rochester %><li>rochester</li><% end %>
+        <% if @company.participate_co %><li>co</li><% end %>
+        <% if @company.participate_nashville %><li>nashville</li><% end %>
+        <% if @company.participate_saltlakecity %><li>saltlakecity</li><% end %>
+        <% if @company.participate_de %><li>de</li><% end %>
+        <% if @company.participate_kearney %><li>kearney</li><% end %>
+        <% if @company.participate_sanantonio %><li>sanantonio</li><% end %>
+        <% if @company.participate_detroit %><li>detroit</li><% end %>
+        <% if @company.participate_sanfrancisco %><li>sanfrancisco</li><% end %>
+        <% if @company.participate_eastky %><li>eastky</li><% end %>
+        <% if @company.participate_neworleans %><li>neworleans</li><% end %>
+        <% if @company.participate_sanjose %><li>sanjose</li><% end %>
+        <% if @company.participate_kansascity %><li>kansascity</li><% end %>
+        <% if @company.participate_newyork %><li>newyork</li><% end %>
+        <% if @company.participate_stlouis %><li>stlouis</li><% end %>
+        <% if @company.participate_losangeles %><li>losangeles</li><% end %>
+        <% if @company.participate_oakland %><li>oakland</li><% end %>
+        <% if @company.participate_other %><li>other</li><% end %>
+      </ul>
+      <% if @company.participate_other_description %>
+        Description for other: <%= @company.participate_other_description %>
+      <% end %>
+    </div>
+    <div class="row">
+      Internship commitment:
+      <p><%= @company.commit_internship_description %></p>
+      Hiring commitment:
+      <p><%= @company.commit_fulltime_description %></p>
+    </div>
+    <div class="row">
+      Feedback commitments:
+      <ul>
+        <% if @company.commit_written %><li>written</li><% end %>
+        <% if @company.commit_phone %><li>phone</li><% end %>
+        <% if @company.commit_metrics %><li>metrics</li><% end %>
+        <% if @company.commit_other %><li>other</li><% end %>
+      </ul>
+      <% if @company.commit_other_description %>
+        Description for other: <%= @company.commit_other_description %>
+      <% end %>
+    </div>
+    <div class="row">
+      Signature: <%= @company.signature %>
+    </div>
+
+    <h2>Action Plan</h2>
+    <div class="row">
+      <h4>PLAN</h4>
+      <div class="col-sm-4">
+        <li>talent: <%= @company.plan_talent %></li>
+        <li>posting: <%= @company.plan_posting %></li>
+        <li>champion: <%= @company.plan_champion %></li>
+        <li>business: <%= @company.plan_business %></li>
+        <li>metrics: <%= @company.plan_metrics %></li>
+        <li>other: <%= @company.plan_other %></li>
+        other_description: <%= @company.plan_other_description %>
+      </div>
+    </div>
+    <div class="row">
+      <h4>SOURCE</h4>
+      <div class="col-sm-4">
+        <li>language: <%= @company.source_language %></li>
+        <li>relationships: <%= @company.source_relationships %></li>
+        <li>hiring: <%= @company.source_hiring %></li>
+        <li>other: <%= @company.source_other %></li>
+        other_description: <%= @company.source_other_description %>
+      </div>
+    </div>
+    <div class="row">
+      <h4>ATTRACT</h4>
+      <div class="col-sm-4">
+        <li>connect: <%= @company.attract_connect %></li>
+        <li>leverage: <%= @company.attract_leverage %></li>
+        <li>customize: <%= @company.attract_customize %></li>
+        <li>other: <%= @company.attract_other %></li>
+        other_description: <%= @company.attract_other_description %>
+      </div>
+    </div>
+    <div class="row">
+      <h4>EVALUATE</h4>
+      <div class="col-sm-4">
+        <li>behavior: <%= @company.evaluate_behavior %></li>
+        <li>screening: <%= @company.evaluate_screening %></li>
+        <li>other: <%= @company.evaluate_other %></li>
+        other_description: <%= @company.evaluate_other_description %>
+      </div>
+    </div>
+    <div class="row">
+      <h4>RETAIN</h4>
+      <div class="col-sm-4">
+        <li>onboard: <%= @company.retain_onboard %></li>
+        <li>mentor: <%= @company.retain_mentor %></li>
+        <li>manage: <%= @company.retain_manage %></li>
+        <li>track: <%= @company.retain_track %></li>
+        <li>other: <%= @company.retain_other %></li>
+        other_description: <%= @company.retain_other_description %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="row text-center">
   <div class="col-sm-4">
     <%= form_for @company, url: admin_company_path do |f| %>

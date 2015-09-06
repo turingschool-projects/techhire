@@ -1,0 +1,162 @@
+<p class="spacer" />
+<div class="banner">
+  <h1>Thank you for joining the TechHire Initiative!</h1>
+  <p>
+    Proceed forward to commit to hiring IT candidates (as FTEs, interns, apprentices or contractors) from nontraditional sources.</a>.
+  </p>
+</div>
+
+<div class="stages">
+  <div class="three-boxes">
+    <a href="<%= url_for(stage1_path(@company)) %>">
+      <span class="stage">
+        <div class="title">
+          STAGE 1
+          <div class="progress">
+            <span style="width:100%;"></span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="header">
+            Join TechHire
+          </div>
+        </div>
+      </span>
+    </a>
+    <span class="stage">
+      <div class="title">
+        STAGE 2
+        <div class="progress">
+          <span style="width:10%;"></span>
+        </div>
+      </div>
+      <div class="body">
+        <div class="header">
+          Commit to TechHire
+        </div>
+      </div>
+    </span>
+    <a href="<%= url_for(stage3_path(@company)) %>">
+      <span class="stage">
+        <div class="title">
+          STAGE 3
+          <div class="progress">
+            <span style="width:0;"></span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="header">
+            Action Plan
+          </div>
+        </div>
+      </span>
+    </a>
+  </div>
+</div>
+
+<div class="layout-wrap">
+  <p class="spacer">
+    Make a Commitment to TechHire:
+  </p>
+
+  <%= form_for @company, url: stage3_path(@company) do |f| %>
+
+    <% if @company.errors.any? %>
+      <div class="signup-errors">
+        <p>
+          <strong>Sorry, we had problems processing that information.</strong>
+          <br />Please fix the following issues:
+        </p>
+        <ul>
+          <% @company.errors.each do |field, message| %>
+            <li><strong><%= field %>: </strong><span><%= message%></span></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <p>TechHire is in 31 communities across the US, but is coming to more in the near future. Please identify the city(ies), state(s) or rural area(s) where you anticipate participating in TechHire (select all that apply):</p>
+      <ul class="checkbox-grid three-rows">
+          <li><div><%= f.check_box :participate_akron %><%= f.label(:participate_akron, "Akron, OH") %></div></li>
+        <li><div><%= f.check_box :participate_louisville %><%= f.label(:participate_louisville, "Louisville, KY") %></div></li>
+        <li><div><%= f.check_box :participate_philadelphia %><%= f.label(:participate_philadelphia, "Philadelphia, PA") %></div></li>
+        <li><div><%= f.check_box :participate_albuquerque %><%= f.label(:participate_albuquerque, "Albuquerque, NM") %></div></li>
+        <li><div><%= f.check_box :participate_lynchburg %><%= f.label(:participate_lynchburg, "Lynchburg, VA") %></div></li>
+        <li><div><%= f.check_box :participate_pittsburgh %><%= f.label(:participate_pittsburgh, "Pittsburgh, PA") %></div></li>
+        <li><div><%= f.check_box :participate_birmingham %><%= f.label(:participate_birmingham, "Birmingham, AL") %></div></li>
+        <li><div><%= f.check_box :participate_me %><%= f.label(:participate_me, "Maine") %></div></li>
+        <li><div><%= f.check_box :participate_portland %><%= f.label(:participate_portland, "Portland, OR") %></div></li>
+        <li><div><%= f.check_box :participate_chattanooga %><%= f.label(:participate_chattanooga, "Chattanooga, TN") %></div></li>
+        <li><div><%= f.check_box :participate_memphis %><%= f.label(:participate_memphis, "Memphis, TN") %></div></li>
+        <li><div><%= f.check_box :participate_ri %><%= f.label(:participate_ri, "Rhode Island") %></div></li>
+        <li><div><%= f.check_box :participate_cincinnati %><%= f.label(:participate_cincinnati, "Cincinnati, OH") %></div></li>
+        <li><div><%= f.check_box :participate_minneapolis %><%= f.label(:participate_minneapolis, "Minneapolis, MN") %></div></li>
+        <li><div><%= f.check_box :participate_rochester %><%= f.label(:participate_rochester, "Rochester, NY") %></div></li>
+        <li><div><%= f.check_box :participate_co %><%= f.label(:participate_co, "Colorado") %></div></li>
+        <li><div><%= f.check_box :participate_nashville %><%= f.label(:participate_nashville, "Nashville, TN") %></div></li>
+        <li><div><%= f.check_box :participate_saltlakecity %><%= f.label(:participate_saltlakecity, "Salt Lake City, UT") %></div></li>
+        <li><div><%= f.check_box :participate_de %><%= f.label(:participate_de, "Delaware") %></div></li>
+        <li><div><%= f.check_box :participate_kearney %><%= f.label(:participate_kearney, "Buffalo County and the City") %></div></li>
+        <li><div><%= f.check_box :participate_sanantonio %><%= f.label(:participate_sanantonio, "San Antonio, TX") %></div></li>
+        <li><div><%= f.check_box :participate_detroit %><%= f.label(:participate_detroit, "Detroit, MI") %></div></li>
+        <li><div style="padding-left:20px;">of Kearney, Nebraska</div></li>
+        <li><div><%= f.check_box :participate_sanfrancisco %><%= f.label(:participate_sanfrancisco, "San Francisco, CA") %></div></li>
+        <li><div><%= f.check_box :participate_eastky %><%= f.label(:participate_eastky, "Eastern Kentucky") %></div></li>
+        <li><div><%= f.check_box :participate_neworleans %><%= f.label(:participate_neworleans, "New Orleans, LA") %></div></li>
+        <li><div><%= f.check_box :participate_sanjose %><%= f.label(:participate_sanjose, "San Jose, CA") %></div></li>
+        <li><div><%= f.check_box :participate_kansascity %><%= f.label(:participate_kansascity, "Kansas City, MO") %></div></li>
+        <li><div><%= f.check_box :participate_newyork %><%= f.label(:participate_newyork, "New York, NY") %></div></li>
+        <li><div><%= f.check_box :participate_stlouis %><%= f.label(:participate_stlouis, "St. Louis, MO") %></div></li>
+        <li><div><%= f.check_box :participate_losangeles %><%= f.label(:participate_losangeles, "Los Angeles, CA") %></div></li>
+        <li><div><%= f.check_box :participate_oakland %><%= f.label(:participate_oakland, "Oakland, CA") %></div></li>
+        <li><div><%= f.check_box :participate_other, id: "participate_other" %><%= f.label(:participate_other, "Other") %></div></li>
+      </ul>
+
+      <div class="row cols-25-75">
+        <div class="col"></div>
+        <div class="col" id="participate_other_description">
+          <%= f.text_field :participate_other_description, :placeholder => "Please specify" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p>All employers participating in TechHire will commit to at least ONE of the TWO activities below:</p>
+      
+      <label><input type="checkbox" validate="required:true" id="commit_internship">Commit to create or expand a paid internship and/or apprenticeship experience for a nontraditional candidate.</label>
+      <div id="commit_internship_description">
+        <label>Please explain how you plan to do this, for which roles, and by which means. For instance, you might use an accelerated training source to recruit and onboard a help desk candidates who can work within your organization, develop skills and learn about your organization's culture.</label>
+        <%= f.text_area :commit_internship_description %>
+      </div>
+      <label><input type="checkbox" id="commit_fulltime">Commit to hire qualified candidates into full-time IT roles.</label>
+      <div id="commit_fulltime_description">
+        <label>Please explain how you plan to do this, for which roles, and by which means. For instance, you might use an accelerated training source to recruit and onboard a help desk candidates who can work within your organization, develop skills and learn about your organization's culture.</label>
+        <%= f.text_area :commit_fulltime_description %>
+      </div>
+    </div>
+
+    <div class="row check_box_set">
+      <p>All employers will provide feedback on the nontraditional programs used to source IT job candidates. Please indicate how you will provide feedback below (select as many boxes as you would like):</p>
+      <%= f.check_box :commit_written %><%= f.label(:commit_written, "My organization commits to providing feedback about the effectiveness of my organization's actions in written form in 6-12 months.") %>
+      <%= f.check_box :commit_phone %><%= f.label(:commit_phone, "My organization commits to providing feedback if requested by phone on the effectiveness of my organization's actions in 6-12 months.") %>
+      <%= f.check_box :commit_metrics %><%= f.label(:commit_metrics, "My organization commits to providing hiring and retention metrics (number of nontraditional hires, and metrics on whether the candidate is in seat) in 6-12 months.") %>
+      <%= f.check_box :commit_other %><%= f.label(:commit_other, "Other, please explain:") %>
+      <%= f.text_area :commit_other_description %>
+    </div>
+
+    <div class="row">
+      <p>By typing you name in the box below you a verifying your commitment to TechHire (as expressed above), and giving permission to TechHire.org to use your company's name and logo on the website and in presentations as a company that supports the TechHire initiative.</p>
+      <%= f.text_field :signature, :placeholder => "Type your full name here", required: true %>
+    </div>
+
+    <div class="row button-center">
+      <%= f.submit "Commit to TechHire", class: 'button' %>
+
+      <p class="notification">
+        *This information may be shared with local and national partners that are participating in TechHire.
+      </p>
+    </div>
+
+  <% end %>
+</div>

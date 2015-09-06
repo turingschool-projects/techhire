@@ -28,6 +28,11 @@
     </div>
 
     <div class="row">
+      <%= f.label(:title, "Your Title") %>
+      <%= f.text_field :title, required: true  %>
+    </div>
+
+    <div class="row">
       <%= f.label(:organization, "Organization") %>
       <%= f.text_field :organization, required: true  %>
     </div>
@@ -62,11 +67,6 @@
       </div>
     </div>
 
-    <div class="row">
-      <%= f.label(:title, "Your Title") %>
-      <%= f.text_field :title, required: true  %>
-    </div>
-
     <div class="row cols-50-25-25">
       <div class="col">
         <%= f.label(:city, "City") %>
@@ -91,7 +91,7 @@
 
     <div class="row">
       <%= f.label(:techhire_involvement, "How would you or your organization like to be involved? (up to 3 sentences)") %>
-      <%= f.text_area :techhire_involvement  %>
+      <%= f.text_area :techhire_involvement %>
     </div>
 
     <p class="callout">

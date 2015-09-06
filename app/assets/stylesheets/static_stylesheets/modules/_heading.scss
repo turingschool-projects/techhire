@@ -14,10 +14,15 @@
   }
 
   h1 {
-    padding-top: 115px;
     font-size: 36px;
+    padding-top: 115px;
     text-transform: capitalize;
     color: $blue;
     background: center 30px no-repeat;
+  }
+
+  h2 {
+    @extend h1;
+    font-size: 20px;
   }
 }

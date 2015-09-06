@@ -34,6 +34,38 @@ p.callout {
   margin: 30px 0 0;
 }
 
+p.header {
+  max-width: 725px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 17px;
+
+  &.small {
+    font-size: 14px;
+  }
+}
+
+p.spacer {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+div.banner {
+  padding: 30px 20px 30px;
+  margin: 20px 0 20px;
+  background-color: #f8efe6;
+  text-align: center;
+  p {
+    margin: auto;
+    width: 725px;
+  }
+
+  h1 {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
+}
+
 ul.checkmark {
   padding-bottom: 15px;
 
@@ -45,6 +77,64 @@ ul.checkmark {
     margin-left: 5px;
     overflow: visible;
     line-height: 1.5;
+  }
+}
+
+ul.checkbox-grid {
+  display: inline-block;
+  width: 100%;
+
+  li {
+    display: block;
+    float: left;
+
+    div {
+      @extend label;
+      display: inline-block;
+      label {
+        display: inline;
+        position: absolute;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &.two-rows li {
+    width: 50%;
+  }
+  &.three-rows li {
+    width: 33.3%;
+  }
+}
+
+div.checkboxes-set-exclusive {
+  display: inline-block;
+
+  div.checkbox-header {
+    font-size: 10px;
+    display: block;
+    div {
+      display: inline-block;
+      max-width: 35px;
+    }
+  }
+
+  div.checkbox-set {
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
+
+  div.checkbox-label {
+    display: inline;
+    position: absolute;
+    padding: 5px 5px 5px 5px;
+    font-size: 14px;
+    width: 600px;
+  }
+
+  .checkbox-exclusive {
+    margin-right: 15px;
+    display: inline-block;
   }
 }
 
@@ -195,6 +285,21 @@ form {
     }
   }
 
+  .radio-toggle {
+    clear: both;
+    line-height: 1.5;
+
+    input, label {
+      float: left;
+      display: inline;
+      margin-right: 5px;
+    }
+
+    label {
+      margin-top: -5px;
+    }
+  }
+
   .commit {
     margin: 20px 0;
     font-size: 16px;
@@ -269,5 +374,71 @@ form#rate-calculator {
   small {
     font-size: 12px;
     color: $gray;
+  }
+}
+
+div.stages {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  a, a:visited, a:hover, a:active {
+    color: inherit;
+  }
+
+  div.three-boxes {
+    width: 670px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stage {
+    float: left;
+    width: 210px;
+    background-color: #f8efe6;
+    margin-right: 10px;
+    &.full {
+      min-height: 320px;
+    }
+  }
+
+  .title {
+    background-color: #327683;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    padding-top: 10px;
+  }
+
+  .header {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .progress {
+    padding-top: 5px;
+
+    span {
+      background-color: red;
+      height: 5px;
+      display: block;
+    }
+  }
+
+  .body {
+    margin: 5px;
+    div {
+      padding-bottom: 10px;
+    }
+  }
+
+  .focus {
+    font-weight: 400;
+    line-height: 1.2;
   }
 }
