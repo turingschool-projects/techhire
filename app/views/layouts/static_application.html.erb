@@ -18,5 +18,8 @@
     <%= render 'layouts/static_footer' %>
     <%= javascript_include_tag 'static_application' %>
     <%= yield :footer %>
+    <% if Rails.env.production? %>
+      <%= render 'layouts/google_analytics' %>
+    <% end %>
   </body>
 </html>
