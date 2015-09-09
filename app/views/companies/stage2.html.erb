@@ -7,7 +7,7 @@
 </div>
 
 <div class="stages">
-  <div class="three-boxes">
+  <div class="two-boxes">
     <a href="<%= url_for(stage1_path(@company)) %>">
       <span class="stage">
         <div class="title">
@@ -36,7 +36,7 @@
         </div>
       </div>
     </span>
-    <a href="<%= url_for(stage3_path(@company)) %>">
+    <!-- <a href="<%= url_for(stage3_path(@company)) %>">
       <span class="stage">
         <div class="title">
           STAGE 3
@@ -50,7 +50,7 @@
           </div>
         </div>
       </span>
-    </a>
+    </a> -->
   </div>
 </div>
 
@@ -59,7 +59,7 @@
     Make a Commitment to TechHire:
   </p>
 
-  <%= form_for @company, url: stage3_path(@company) do |f| %>
+  <%= form_for @company, url: finished_path(@company) do |f| %>
 
     <% if @company.errors.any? %>
       <div class="signup-errors">

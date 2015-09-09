@@ -389,11 +389,18 @@ div.stages {
     color: inherit;
   }
 
-  div.three-boxes {
-    width: 670px;
+  div {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .three-boxes {
+    width: 670px;
+  }
+
+  .two-boxes {
+    width: 450px;
   }
 
   .stage {
