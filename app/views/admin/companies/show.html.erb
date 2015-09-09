@@ -50,13 +50,13 @@
 <% if @company.organization_type == 'Employer' %>
   <div class="well">
     <h1>Employer Details</h1>
-    <div class="col-sm-3">
+    <div class="row">
       Sector: <h4><%= @company.sector %></h4>
     </div>
-    <div class="col-sm-3">
+    <div class="row">
       Phone: <h4><%= @company.phone %></h4>
     </div>
-    <div class="col-sm-3">
+    <div class="row">
       Location: <h4><%= @company.location %></h4>
     </div>
     <div class="row">
@@ -84,13 +84,13 @@
         <% end %>
       </ul>
     </div>
-    <div class="col-sm-3">
+    <div class="row">
       Skills needed: <h4><%= @company.skills_needed %></h4><br />
     </div>
-    <div class="col-sm-3">
+    <div class="row">
       Job locations: <h4><%= @company.job_locations %></h4><br />
     </div>
-    <div class="col-sm-3">
+    <div class="row">
       IT openings: <h4><%= @company.it_openings %></h4><br />
     </div>
     <div class="row">
@@ -144,7 +144,7 @@
         <% if @company.participate_oakland %><li>oakland</li><% end %>
         <% if @company.participate_other %><li>other</li><% end %>
       </ul>
-      <% if @company.participate_other_description %>
+      <% if @company.participate_other_description.length > 0 %>
         Description for other: <%= @company.participate_other_description %>
       <% end %>
     </div>
@@ -162,7 +162,7 @@
         <% if @company.commit_metrics %><li>metrics</li><% end %>
         <% if @company.commit_other %><li>other</li><% end %>
       </ul>
-      <% if @company.commit_other_description %>
+      <% if @company.commit_other_description.length > 0 %>
         Description for other: <%= @company.commit_other_description %>
       <% end %>
     </div>
@@ -180,7 +180,9 @@
         <li>business: <%= @company.plan_business %></li>
         <li>metrics: <%= @company.plan_metrics %></li>
         <li>other: <%= @company.plan_other %></li>
-        other_description: <%= @company.plan_other_description %>
+        <% if @company.plan_other_description.length > 0 %>
+          Description for other: <%= @company.plan_other_description %>
+        <% end %>
       </div>
     </div>
     <div class="row">
@@ -190,7 +192,9 @@
         <li>relationships: <%= @company.source_relationships %></li>
         <li>hiring: <%= @company.source_hiring %></li>
         <li>other: <%= @company.source_other %></li>
-        other_description: <%= @company.source_other_description %>
+        <% if @company.source_other_description.length > 0 %>
+          Description for other: <%= @company.source_other_description %>
+        <% end %>
       </div>
     </div>
     <div class="row">
@@ -200,7 +204,9 @@
         <li>leverage: <%= @company.attract_leverage %></li>
         <li>customize: <%= @company.attract_customize %></li>
         <li>other: <%= @company.attract_other %></li>
-        other_description: <%= @company.attract_other_description %>
+        <% if @company.attract_other_description.length > 0 %>
+          Description for other: <%= @company.attract_other_description %>
+        <% end %>
       </div>
     </div>
     <div class="row">
@@ -209,7 +215,9 @@
         <li>behavior: <%= @company.evaluate_behavior %></li>
         <li>screening: <%= @company.evaluate_screening %></li>
         <li>other: <%= @company.evaluate_other %></li>
-        other_description: <%= @company.evaluate_other_description %>
+        <% if @company.evaluate_other_description.length > 0 %>
+          Description for other: <%= @company.evaluate_other_description %>
+        <% end %>
       </div>
     </div>
     <div class="row">
@@ -220,7 +228,9 @@
         <li>manage: <%= @company.retain_manage %></li>
         <li>track: <%= @company.retain_track %></li>
         <li>other: <%= @company.retain_other %></li>
-        other_description: <%= @company.retain_other_description %>
+        <% if @company.retain_other_description.length > 0 %>
+          Description for other: <%= @company.retain_other_description %>
+        <% end %>
       </div>
     </div>
   </div>
