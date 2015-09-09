@@ -79,7 +79,7 @@
         <% if @company.it_category_design %><li>design</li><% end %>
         <% if @company.it_category_is %><li>IS</li><% end %>
         <% if @company.it_category_other %><li>other</li><% end %>
-        <% if @company.it_category_other_description.length %>
+        <% if @company.it_category_other_description? %>
           Description for other: <%= @company.it_category_other_description %>
         <% end %>
       </ul>
@@ -144,7 +144,7 @@
         <% if @company.participate_oakland %><li>oakland</li><% end %>
         <% if @company.participate_other %><li>other</li><% end %>
       </ul>
-      <% if @company.participate_other_description.length > 0 %>
+      <% if @company.participate_other_description? %>
         Description for other: <%= @company.participate_other_description %>
       <% end %>
     </div>
@@ -162,7 +162,7 @@
         <% if @company.commit_metrics %><li>metrics</li><% end %>
         <% if @company.commit_other %><li>other</li><% end %>
       </ul>
-      <% if @company.commit_other_description.length > 0 %>
+      <% if @company.commit_other_description? %>
         Description for other: <%= @company.commit_other_description %>
       <% end %>
     </div>
@@ -180,7 +180,7 @@
         <li>business: <%= @company.plan_business %></li>
         <li>metrics: <%= @company.plan_metrics %></li>
         <li>other: <%= @company.plan_other %></li>
-        <% if @company.plan_other_description.length > 0 %>
+        <% if @company.plan_other_description? %>
           Description for other: <%= @company.plan_other_description %>
         <% end %>
       </div>
@@ -192,7 +192,7 @@
         <li>relationships: <%= @company.source_relationships %></li>
         <li>hiring: <%= @company.source_hiring %></li>
         <li>other: <%= @company.source_other %></li>
-        <% if @company.source_other_description.length > 0 %>
+        <% if @company.source_other_description? %>
           Description for other: <%= @company.source_other_description %>
         <% end %>
       </div>
@@ -204,7 +204,7 @@
         <li>leverage: <%= @company.attract_leverage %></li>
         <li>customize: <%= @company.attract_customize %></li>
         <li>other: <%= @company.attract_other %></li>
-        <% if @company.attract_other_description.length > 0 %>
+        <% if @company.attract_other_description? %>
           Description for other: <%= @company.attract_other_description %>
         <% end %>
       </div>
@@ -215,7 +215,7 @@
         <li>behavior: <%= @company.evaluate_behavior %></li>
         <li>screening: <%= @company.evaluate_screening %></li>
         <li>other: <%= @company.evaluate_other %></li>
-        <% if @company.evaluate_other_description.length > 0 %>
+        <% if @company.evaluate_other_description? %>
           Description for other: <%= @company.evaluate_other_description %>
         <% end %>
       </div>
@@ -228,7 +228,7 @@
         <li>manage: <%= @company.retain_manage %></li>
         <li>track: <%= @company.retain_track %></li>
         <li>other: <%= @company.retain_other %></li>
-        <% if @company.retain_other_description.length > 0 %>
+        <% if @company.retain_other_description? %>
           Description for other: <%= @company.retain_other_description %>
         <% end %>
       </div>
