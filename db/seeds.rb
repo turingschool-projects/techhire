@@ -1,39 +1,9 @@
 class Seed
   def initialize
-    # build_companies("uncontacted", "MO", "St. Louis")
-    # build_companies("contacted", "CO", "Denver", 11)
-    # build_companies("confirmed", "KS", "Witchita", 21)
-    # build_companies("dead", "OK", "Oklahoma City", 31)
-    # build_pdf
     # build_users
     build_pages
+    build_pdf
     build_content
-  end
-
-  def build_pdf
-    pdf = Pdf.create(content_id: 5)
-    pdf.pdf_file = File.open("public/assets/pdfs/sample_pdf.pdf")
-    pdf.save
-  end
-
-  #Companies
-  def build_companies(status, state, city, offset=1)
-    10.times do |iteration|
-     i = iteration + offset
-      Company.create(
-        name: "user#{i}",
-        organization: "company#{i}",
-        title: "head person#{i}",
-        state: state,
-        city: city,
-        zip_code: "80013",
-        email: "user#{i}@email.com",
-        hiring: 1,
-        hire_count: 5,
-        status: status
-      )
-    end
-    puts "companies built"
   end
 
   def build_pages
@@ -43,7 +13,7 @@ class Seed
           <section class="mod-hero">
             $LOCATION1
             <p class="actions">
-              <a href="/learn-more" class="button">Learn More</a>
+              <a href="/learn_more" class="button">Learn More</a>
               <a href="/signup" class="button">Sign Up</a>
             </p>
           </section>
@@ -57,7 +27,10 @@ class Seed
             </div>
           </section>
 
-          <p class="finisher"><a href="/tools-resources">More stories about businesses that are implementing TechHire strategies</a>
+          <p class="finisher"><a href="/tools_resources/#case-studies">More stories about businesses that are implementing TechHire strategies</a><br/><br/>
+          <div class="layout-wrap" style="padding-left: 0px;padding-right: 0px;">
+            <iframe width="1000" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.arcgis.com/apps/MapJournal/index.html?appid=ef3a5773f73e4487976dadb24fc45576&folderid=ff312344dc8a4b0099e78d3a62c0879b"></iframe>
+          </div>
         </div>
       HTML
     ).find_or_create_by(name: "Home")
@@ -169,12 +142,19 @@ class Seed
     ).find_or_create_by(name: "TechHire Locations")
 
     Page.create_with(number_of_locations: 9, navigation: true,
-                    template: <<-HTML.strip_heredoc
+                     template: <<-HTML.strip_heredoc
         <div class="mod-heading tools">
           <h1>Tools/Resources</h1>
         </div>
 
+        <div class="text-center">
+          <a href="http://s3.amazonaws.com/whitehousetechhire2/public/assets/pdfs/EmployerPlaybook.pdf?1442252349" target="_blank">
+            <span class="employer-playbook"></span>
+          </a><br/>
+        </div>
+
         <div class="mod-content yellow">
+          <a name="case-studies"></a>
           <div class="layout-wrap">
             <div class="three-columns">
               <div class="col icon-case">
@@ -726,6 +706,14 @@ class Seed
 
     # ==== END ====
     puts "content built"
+  end
+
+  def build_pdf
+    pdf = Pdf.create
+    pdf.pdf_file = File.open("public/assets/pdfs/EmployerPlaybook.pdf")
+    pdf.save
+
+    puts "PDF built"
   end
 
   def build_users
