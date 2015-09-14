@@ -1,10 +1,6 @@
 class Admin::PdfsController < ApplicationController
   before_action :authorize!
 
-  def index
-    @pdfs = Pdf.all
-  end
-
   def new
   end
 

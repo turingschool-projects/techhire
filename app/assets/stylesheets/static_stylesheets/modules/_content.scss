@@ -255,3 +255,27 @@
   width: 600px;
   height: 200px;
 }
+
+.employer-playbook {
+  padding-top: 5px;
+  $filename: "employer_playbook.png";
+  background-image: image-url($filename);
+  background-size: 300px 252px;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 30px auto;
+  width: 300px;
+  height: 200px;
+}
+
+.pdf-view {
+  padding-top: 5px;
+  $filename: "pdf_download.png";
+  background-image: image-url($filename);
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 30px auto;
+  width: 100px;
+  height: 100px;
+}
