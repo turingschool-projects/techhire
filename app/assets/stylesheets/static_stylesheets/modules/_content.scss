@@ -198,17 +198,17 @@
 }
 
 @include min-width(551px) {
-  @each $logo in knack, linkedin, better_weekdays, ceb {
+  @each $logo in knack, linkedin, better_weekdays, ceb, code, codecademy, coursera, devbootcamp, flatiron_school, general_assembly, glassdoor, hack_reactor, microsoft, rural_sourcing, treehouse, udacity, yeswecode, capital_one, cisco, edx, galvanize, hackbright_academy, sabio, year_up {
     .#{$logo}-logo {
       padding-top: 5px;
       $filename: "#{$logo}_logo.png";
       background-image: image-url($filename);
-      background-size: 400px 100px;
+      background-size: 100px 30px;
       background-repeat: no-repeat;
       display: block;
       margin: 30px auto;
-      width: 400px;
-      height: 120px;
+      width: 100px;
+      height: 30px;
     }
   }
 }
@@ -278,4 +278,9 @@
   margin: 30px auto;
   width: 100px;
   height: 100px;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  padding: 10px;
 }

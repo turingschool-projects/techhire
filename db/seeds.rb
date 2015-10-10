@@ -47,7 +47,18 @@ class Seed
                 $LOCATION1
               </div>
             </div>
-            $LOCATION2
+              <p>
+                Beginning with the 21 communities of the TechHire initiative – announced by President Obama in March 2015 – which today represent over 130,000 open IT jobs, Opportunity<span class="opportunity-at">@</span>Work will work with a range of technology, private sector, and philanthropic partners to create freely available tools to streamline the sign-up and participation of thousands of employers in inclusive hiring, and to facilitate a nationwide learning network to rapidly improve the impact of TechHire. Over 300 employers have already signed on.
+              </p>
+              <p>
+                The 21 TechHire communities are committed to taking action – working with each other, employers, training institutions, and other partners – to create a better marketplace for IT jobs. TechHire communities – including cities, small states, and rural areas - have announced plans to work together in new ways to recruit and place applicants based on their actual skills and to create more fast track tech training opportunities, based on market-wide hiring needs.
+              </p>
+              <p>
+                TechHire communities will build a talent pipeline by leveraging their 4-year universities and community colleges, but will also leverage non-traditional approaches, including hiring on-ramps for people with the skills but not the pedigree to be hired in traditional ways, accelerated coding “boot camps,” and high-quality online courses that prepare workers for well-paying IT jobs, often in just a few months.
+              </p>
+              <p>
+                The long-term objective of TechHire is to create the labor market conditions nationally that enable employers to "hire when ready" and job seekers to be aware of, prepare for, and connect with IT jobs and careers. By creating compelling proof points in communities throughout the country; uncovering common challenges; developing scalable solutions; and bringing to bear national and regional partnerships and resources, TechHire, with support from Opportunity<span class="opportunity-at">@</span>Work, will serve as a catalyst to transforming the broader labor market.
+              </p>
           </div>
         </div>
         <div class="mod-content">
@@ -97,13 +108,45 @@ class Seed
         <div class="mod-content yellow">
           <div class="layout-wrap icon-check">
             $LOCATION4
-            <div class="two-columns">
+            <div class="three-columns">
               <div class="col icon-playbook">
-                $LOCATION5
+                
+                <h2>Self-defeating Employer Practices</h2>
+                <ul class="bulleted">
+                  <li>
+                    <b>Creeping credentialism:</b> 19% of administrative assistants have a four-year college degree but 65% of new assistant jobs require it
+                  </li>
+
+                  <li>
+                    <b>Bias in hiring:</b> 45% lower callback rate for LTU versus recently employed despite identical education, skills and experience and evidence of no difference in job performance
+                  </li>
+                </ul>
               </div>
 
               <div class="col icon-sheet">
-                $LOCATION6
+                <h2>Poor Coordination, Information, and Access</h2>
+                <ul class="bulleted">
+                  <li>
+                    <b>No clear path to jobs:</b> educational institutions and training programs are unclear about industry needs for specific jobs
+                  </li>
+
+                  <li>
+                    <b>Barriers to awareness and access:</b> students, workers and job-seekers don’t know which choices make them attractive and/or can’t access these pathways
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col icon-sheet">
+                <h2>Lack of Replication and Scale</h2>
+                <ul class="bulleted">
+                  <li>
+                    <b>Scale is elusive:</b> there are pockets of success but scale remains too slow, costly and complex – as each one invents or re-invents its own approach
+                  </li>
+
+                  <li>
+                    <b>Inefficient resource allocation:</b> limited data and no marketplace to evaluate what is and is not working
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -175,35 +218,193 @@ class Seed
         <div class="mod-content">
           <div class="layout-wrap icon-case">
             <h2>Private Sector Tools</h2>
-            <h3>Click a company to find out more about their commitment to TechHire.</h3>
-            <div>
-              <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">
-                <span class="knack-logo private-sector-tool-logo"></span>
-              </a>
-            </div>
-            <div>
-              <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content">
-                <span class="better_weekdays-logo private-sector-tool-logo"></span>
-              </a>
-            </div>
-            <div>
-              <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content">
-                <span class="linkedin-logo private-sector-tool-logo"></span>
-              </a>
-            </div>
-            <div>
-              <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content">
-                <span class="ceb-logo private-sector-tool-logo"></span>
-              </a>
-            </div>
+            <h3>The following organizations are partnering with Opportunity@Work to support TechHire communities, to enable more employers to recruit and place applicants based on their skills and to increase access to accelerated training opportunities.</h3>
 
+            <table>
+              <tr>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">
+                            <span class="knack-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content">
+                            <span class="better_weekdays-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content">
+                            <span class="linkedin-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content">
+                            <span class="ceb-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>  
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#code-content">
+                            <span class="code-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#codecademy-content">
+                            <span class="codecademy-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#coursera-content">
+                            <span class="coursera-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#devbootcamp-content">
+                            <span class="devbootcamp-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>  
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#flatiron_school-content">
+                            <span class="flatiron_school-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#general_assembly-content">
+                            <span class="general_assembly-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#glassdoor-content">
+                            <span class="glassdoor-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>            
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#hack_reactor-content">
+                            <span class="hack_reactor-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>             
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#microsoft-content">
+                            <span class="microsoft-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>  
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#rural_sourcing-content">
+                            <span class="rural_sourcing-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+              </tr>
+              <tr>
+                <td>              
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#treehouse-content">
+                            <span class="treehouse-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>              
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#udacity-content">
+                            <span class="udacity-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>              
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#yeswecode-content">
+                            <span class="yeswecode-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td> 
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#capital_one-content">
+                            <span class="capital_one-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td> 
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#cisco-content">
+                            <span class="cisco-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>            
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#edx-content">
+                            <span class="edx-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>            
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#galvanize-content">
+                            <span class="galvanize-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+              </tr>
+              <tr>
+                <td>   
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#hackbright_academy-content">
+                            <span class="hackbright_academy-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>   
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#sabio-content">
+                            <span class="sabio-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+                <td>              
+                        <div>
+                          <a href="#" class="content-dropdown-toggle" data-dd-target="#year_up-content">
+                            <span class="year_up-logo private-sector-tool-logo"></span>
+                          </a>
+                        </div>
+                </td>
+              </tr>
+            <table>           
 
             <div class="col">
               <div class="content-dropdown" id="knack-content">
                 $LOCATION4
               </div>
-
             </div>
+     
             <div class="col">
               <div class="content-dropdown" id="bwd-content">
                 $LOCATION5
@@ -221,6 +422,127 @@ class Seed
                 $LOCATION7
               </div>
             </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="code-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="codecademy-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="coursera-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="devbootcamp-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="flatiron_school-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="general_assembly-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="glassdoor-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="hack_reactor-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="microsoft-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="rural_sourcing-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="treehouse-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="udacity-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="yeswecode-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="capital_one-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="cisco-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="edx-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="galvanize-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="hackbright_academy-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="sabio-content">
+                $LOCATION4
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="content-dropdown" id="year_up-content">
+                $LOCATION4
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -354,7 +676,7 @@ class Seed
     ).find_or_create_by(name: "learn_more1")
 
     Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 2, body: <<-HTML.strip_heredoc
-         <p>
+        <p>
           Beginning with the 21 communities of the TechHire initiative – announced by President Obama in March 2015 – which today represent over 130,000 open IT jobs, Opportunity<span class="opportunity-at">@</span>Work will work with a range of technology, private sector, and philanthropic partners to create freely available tools to streamline the sign-up and participation of thousands of employers in inclusive hiring, and to facilitate a nationwide learning network to rapidly improve the impact of TechHire. Over 300 employers have already signed on.
         </p>
         <p>
@@ -391,33 +713,30 @@ class Seed
     ).find_or_create_by(name: "learn_more4")
 
     Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 5, body: <<-HTML.strip_heredoc
-        <h2>U.S. Job Openings by the Numbers</h2>
+        <h2>Self-defeating Employer Practices</h2>
         <ul class="bulleted">
-
-          U.S. Job Openings by the Numbers
-
           <li>
-            While only 19 percent of administrative assistants have four-year college degrees, 65 percent of new assistant job postings require a four-year degree just to be considered. (Burning Glass)
+            <b>Creeping credentialism:</b> 19% of administrative assistants have a four-year college degree but 65% of new assistant jobs require it
           </li>
 
           <li>
-            Employers are only half as likely to grant an interview to a job candidate unemployed for over 6 months, compared to someone more recently employed with identical education, skills and experience. Yet, a study of 20,000 hires found that this distinction made no difference in likely job performance. (Evolv)
-          </li>
-
-          <li>
-            Less educated workers report being only half as likely to receive valuable on-the-job training from their employers as did workers with more formal education. (OECD)
+            <b>Bias in hiring:</b> 45% lower callback rate for LTU versus recently employed despite identical education, skills and experience and evidence of no difference in job performance
           </li>
         </ul>
       HTML
     ).find_or_create_by(name: "learn_more5")
 
     Content.create_with(page_id: Page.find_by(name: "Learn More").id, location: 6, body: <<-HTML.strip_heredoc
-        <h2>Underlying Issues</h2>
-        <p>
-          What these dysfunctions all have in common is an origin on the “demand” side of the U.S. labor market – how employers recruit, hire, train, and promote. Yet most interventions that aim to improve employment outcomes focus purely on the “supply side”— education and job training. These efforts are important, but they can’t “close the skills gap” without demand-side reforms. We need smarter, more inclusive employer practices and the partnerships and public policies to support them.
-          Employers are experiencing a classic market failure, in which screening, hiring, and training practices are inadvertently limiting the collective talent pipeline and creating “skills mismatches” with economy-wide ripple effects. As an illustration of how costly this is for employers, consider the following back-of-the-envelope estimate. An open job costs $434 each day in lost productivity and sales (CEB) – considerably more in high-value fields such as IT, where jobs pay 76 percent above average (BLS).
-          The average time to fill an open IT job nearly doubled from 43 to 76 days in the past 5 years. With nearly 600,000 open IT jobs now – just 12 percent of total open jobs – and a million more projected in the next few years, just shrinking average time-to-fill IT jobs back to 2010 levels is worth around $40 billion annually to US employers: double what’s spent on all federal job training programs.
-        </p>
+        <h2>Lack of Replication and Scale</h2>
+        <ul class="bulleted">
+          <li>
+            <b>Scale is elusive:</b> there are pockets of success but scale remains too slow, costly and complex – as each one invents or re-invents its own approach
+          </li>
+
+          <li>
+            <b>Inefficient resource allocation:</b> limited data and no marketplace to evaluate what is and is not working
+          </li>
+        </ul>
       HTML
     ).find_or_create_by(name: "learn_more6")
 
