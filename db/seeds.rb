@@ -110,7 +110,7 @@ class Seed
             $LOCATION4
             <div class="three-columns">
               <div class="col icon-playbook">
-                
+
                 <h2>Self-defeating Employer Practices</h2>
                 <ul class="bulleted">
                   <li>
@@ -223,188 +223,188 @@ class Seed
             <table>
               <tr>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">
-                            <span class="knack-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#knack-content">
+                      <span class="knack-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content">
-                            <span class="better_weekdays-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#bwd-content">
+                      <span class="better_weekdays-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content">
-                            <span class="linkedin-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#linkedin-content">
+                      <span class="linkedin-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content">
-                            <span class="ceb-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
-                </td>
-                <td>  
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#code-content">
-                            <span class="code-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#ceb-content">
+                      <span class="ceb-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#codecademy-content">
-                            <span class="codecademy-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#code-content">
+                      <span class="code-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#coursera-content">
-                            <span class="coursera-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#codecademy-content">
+                      <span class="codecademy-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#coursera-content">
+                      <span class="coursera-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
               </tr>
               <tr>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#devbootcamp-content">
-                            <span class="devbootcamp-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
-                </td>
-                <td>  
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#flatiron_school-content">
-                            <span class="flatiron_school-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#devbootcamp-content">
+                      <span class="devbootcamp-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#general_assembly-content">
-                            <span class="general_assembly-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#flatiron_school-content">
+                      <span class="flatiron_school-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
                 <td>
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#glassdoor-content">
-                            <span class="glassdoor-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#general_assembly-content">
+                      <span class="general_assembly-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>            
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#hack_reactor-content">
-                            <span class="hack_reactor-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#glassdoor-content">
+                      <span class="glassdoor-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>             
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#microsoft-content">
-                            <span class="microsoft-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#hack_reactor-content">
+                      <span class="hack_reactor-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>  
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#rural_sourcing-content">
-                            <span class="rural_sourcing-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#microsoft-content">
+                      <span class="microsoft-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#rural_sourcing-content">
+                      <span class="rural_sourcing-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
               </tr>
               <tr>
-                <td>              
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#treehouse-content">
-                            <span class="treehouse-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#treehouse-content">
+                      <span class="treehouse-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>              
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#udacity-content">
-                            <span class="udacity-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#udacity-content">
+                      <span class="udacity-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>              
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#yeswecode-content">
-                            <span class="yeswecode-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#yeswecode-content">
+                      <span class="yeswecode-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td> 
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#capital_one-content">
-                            <span class="capital_one-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#capital_one-content">
+                      <span class="capital_one-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td> 
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#cisco-content">
-                            <span class="cisco-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#cisco-content">
+                      <span class="cisco-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>            
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#edx-content">
-                            <span class="edx-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#edx-content">
+                      <span class="edx-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>            
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#galvanize-content">
-                            <span class="galvanize-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#galvanize-content">
+                      <span class="galvanize-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
               </tr>
               <tr>
-                <td>   
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#hackbright_academy-content">
-                            <span class="hackbright_academy-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#hackbright_academy-content">
+                      <span class="hackbright_academy-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>   
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#sabio-content">
-                            <span class="sabio-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#sabio-content">
+                      <span class="sabio-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
-                <td>              
-                        <div>
-                          <a href="#" class="content-dropdown-toggle" data-dd-target="#year_up-content">
-                            <span class="year_up-logo private-sector-tool-logo"></span>
-                          </a>
-                        </div>
+                <td>
+                  <div>
+                    <a href="#" class="content-dropdown-toggle" data-dd-target="#year_up-content">
+                      <span class="year_up-logo private-sector-tool-logo"></span>
+                    </a>
+                  </div>
                 </td>
               </tr>
-            <table>           
+            </table>
 
             <div class="col">
               <div class="content-dropdown" id="knack-content">
                 $LOCATION4
               </div>
             </div>
-     
+
             <div class="col">
               <div class="content-dropdown" id="bwd-content">
                 $LOCATION5
@@ -542,7 +542,6 @@ class Seed
                 $LOCATION4
               </div>
             </div>
-
           </div>
         </div>
 
@@ -561,7 +560,6 @@ class Seed
             </div>
           </div>
         </div>
-
       HTML
     ).find_or_create_by(name: "Tools and Resources")
 
@@ -609,7 +607,6 @@ class Seed
             </div>
           </div>
         </div>
-
       HTML
     ).find_or_create_by(name: "Rural Sourcing")
 
@@ -637,7 +634,6 @@ class Seed
             </div>
           </div>
         </div>
-
       HTML
     ).find_or_create_by(name: "Xpanxion")
 
