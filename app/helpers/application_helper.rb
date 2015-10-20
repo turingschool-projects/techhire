@@ -42,6 +42,8 @@ module ApplicationHelper
   def slugify(name)
     if name.strip.scan(/\s/).empty?
       name.downcase
+    elsif name == "TechHire Rhode Island"
+      "rhode_island"
     else
       name.gsub("and", "").split(" ").join('_').downcase
     end

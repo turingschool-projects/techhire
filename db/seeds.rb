@@ -425,121 +425,101 @@ class Seed
 
             <div class="col">
               <div class="content-dropdown" id="code-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="codecademy-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="coursera-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="devbootcamp-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="flatiron_school-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="general_assembly-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="glassdoor-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="hack_reactor-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="microsoft-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="rural_sourcing-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="treehouse-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="udacity-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="yeswecode-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="capital_one-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="cisco-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="edx-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="galvanize-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="hackbright_academy-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="sabio-content">
-                $LOCATION4
               </div>
             </div>
 
             <div class="col">
               <div class="content-dropdown" id="year_up-content">
-                $LOCATION4
               </div>
             </div>
           </div>
@@ -636,6 +616,36 @@ class Seed
         </div>
       HTML
     ).find_or_create_by(name: "Xpanxion")
+
+    Page.create_with(number_of_locations: 0, navigation: true,
+                     template: <<-HTML.strip_heredoc
+      <div class="mod-heading location">
+        <h1>TechHire Rhode Island</h1>
+      </div>
+      <div class="mod-map layout-wrap">
+        <p style="text-align: center;">Connecting Businesses, Communities and the Tech Talent Pipeline in Rhode Island</p>
+
+        <p>This multi-sector initiative focuses on engaging employers to hire nontraditional candidates, empowering Americans with IT skills, and leveraging community leaders to expand access to IT skills.</p>
+
+        <p><strong>The goal of this initiative is to build a job market where…</strong></p>
+
+        <p>… Employers hire based on <strong>mastery, competence, readiness, and attitude</strong> - not just on experience and pedigree</p>
+
+        <p>… High-quality training to master valuable job skills is accessible to anyone motivated and prepared to train</p>
+
+        <p>…Technology is used to <strong>accelerate learning and match talent</strong> to opportunity</p>
+
+        <section class="mod-stories layout-wrap">
+          <div class="story launchcode">
+            <a href="/rhode_island/apply" target="_blank" class="button">Job Seekers</a>
+          </div>
+          <div class="story launchcode">
+            <a href="/rhode_island/employers" target="_blank" class="button">Employers</a>
+          </div>
+        </section>
+      </div>
+    HTML
+    ).find_or_create_by(name: "TechHire Rhode Island")
 
     puts "pages built"
   end
