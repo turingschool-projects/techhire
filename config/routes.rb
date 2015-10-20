@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "/learn_more", to: "static_pages#show", as: "learn_more", name: "Learn More"
   get "/tools_resources", to: "static_pages#show", as: "tools_resources", name: "Tools and Resources"
   get "/techhire_locations", to: "static_pages#show", as: "techhire_locations", name: "TechHire Locations"
+  get "/rhode_island", to: "static_pages#show", as: "rhode_island", name: "TechHire Rhode Island"
+
 
   get "/companies/welcome", to: "companies#welcome", as: "welcome"
   get 'signup', to: "companies#new", as: :signup
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
     resources :companies, except: [:create] do
       resources :notes, only: [:index, :create, :destroy]
     end
+
   end
 
   resources :companies, only: [:create, :show, :update]
@@ -43,4 +46,7 @@ Rails.application.routes.draw do
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
+
+  get "/rhode_island/apply"     => redirect("https://www.launchcode.org/apply")
+  get "/rhode_island/employers" => redirect("https://www.launchcode.org/rhodeisland/hire")
 end
