@@ -53,6 +53,16 @@ class Company < ActiveRecord::Base
     end
   end
 
+  def self.to_csv(options = {})
+    column_names = ['ID', 'Name', 'Organization', 'Contact', 'Title', 'City', 'State', 'Email', 'Status', 'Hiring', 'Amount', 'Interest in Hiring', 'Interest in Training', 'Interest in Connecting', 'Interest in Supporting', 'Interest in Community']
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |companies|
+        csv << companies.attributes.values_at('id','name','organization','contact', 'title', 'city', 'state', 'email', 'status', 'hiring', 'hire_count', 'interest_hiring', 'interest_training', 'interest_connecting', 'interest_supporting', 'interest_community' )
+      end
+    end
+  end
+
   private
 
   def send_welcome_email
