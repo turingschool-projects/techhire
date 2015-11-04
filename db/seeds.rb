@@ -76,7 +76,7 @@ class Seed
                 <span class="leading-dollar"> $ </span>
                 <span class="calc-group">
                   <label for="calculator_rate">Daily Rate:</label>
-                  <input type="text" name="calculator[rate]" class="calc-input calc-rate" value="434">
+                  <input type="text" name="calculator[rate]" class="calc-input calc-rate" value="407">
                 </span>
 
                 <span> X </span>
@@ -97,7 +97,7 @@ class Seed
 
                 <span class="calc-group">
                   <label for="calculator_total">Total Cost:</label>
-                  <input type="text" name="calculator[days]" class="calc-total" readonly value="$434.00">
+                  <input type="text" name="calculator[days]" class="calc-total" readonly value="$407.00">
                 </span>
               </p>
               <small>Source: CEB Corporate Leadership Council</small>
