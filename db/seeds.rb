@@ -693,17 +693,19 @@ class Seed
         <h1>TechHire Rhode Island</h1>
       </div>
       <div class="mod-map layout-wrap">
-        <p style="text-align: center;">Connecting Businesses, Communities and the Tech Talent Pipeline in Rhode Island</p>
+        <p style="text-align: center;">Delivering in-demand tech talent for Rhode Island’s companies.</p>
 
-        <p>This multi-sector initiative focuses on engaging employers to hire nontraditional candidates, empowering Americans with IT skills, and leveraging community leaders to expand access to IT skills.</p>
+        <p>TechHire Rhode Island is a new statewide initiative for delivering in-demand tech talent for Rhode Island companies in collaboration with Governor Raimondo, Rhode Island state agencies, local businesses, educational institutions and community-based organizations. Its focus is four-fold:</p>
 
-        <p><strong>The goal of this initiative is to build a job market where…</strong></p>
+        <p>1. <strong>Employer driven</strong>, working with employers across industry to build hiring solutions aligned to IT job and training needs;</p>
 
-        <p>… Employers hire based on <strong>mastery, competence, readiness, and attitude</strong> - not just on experience and pedigree</p>
+        <p>2. <strong>Unlocking new talent</strong>, expanding the local IT talent pool by hiring for mastery, not pedigree;</p>
 
-        <p>… High-quality training to master valuable job skills is accessible to anyone motivated and prepared to train</p>
+        <p>3. <strong>Growing proven education and training solutions</strong>, to include new higher education computer science (CS) minors/majors and best-in-class bootcamps and hiring onramps, like LaunchCode; and</p>
 
-        <p>…Technology is used to <strong>accelerate learning and match talent</strong> to opportunity</p>
+        <p>4. <strong>Funding success</strong>, such as the Wavemaker Fellowship for repaying tech job candidate student loans, as well as RealJobs RI industry partnerships and CS training offerings.</p>
+
+        <p>TechHire Rhode Island's partner for skills assessment and job placement is <a href="https://www.launchcode.org/rhodeisland/hire" target="_blank">LaunchCode</a>.</p>
 
         <section class="mod-stories layout-wrap">
           <div class="story launchcode">
@@ -713,6 +715,164 @@ class Seed
             <a href="/rhode_island/employers" target="_blank" class="button">Employers</a>
           </div>
         </section>
+
+        <table>
+          <tr>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/amica_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/atrion_logo.jpg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/brave_river_solutions_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/brown_logo.jpeg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ccri_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/citizens_bank_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/commerce_ri_logo.png');"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ed_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/edx_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/envision_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/hasbro_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/igt_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/innovex_logo.jpg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/launchcode_logo.png');"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/new_england_institute_of_tech_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/new_horizons_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/prepare_ri_logo.jpg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/prov_plan_logo.jpg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ptech_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/purvis_systems_logo.jpg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ri_dlt_logo.jpg');"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ri_state_seal_logo.jpg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/risd_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/rjri_logo.jpg');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/secure_future_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/senedia_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/shape_up_logo.png');"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/tech_collective_logo.jpg');"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/univ_of_ri_logo.png');"></span>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
     HTML
     ).find_or_create_by(name: "TechHire Rhode Island")
