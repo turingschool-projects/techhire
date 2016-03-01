@@ -720,155 +720,155 @@ class Seed
           <tr>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/amica_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/amica_logo-5ff07b2bbc790b36daee5b6fd5e71e899c9b7fe683dcb7fd6f969f4ba576719e.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/atrion_logo.jpg');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/atrion_logo-dcc9748aa16f5004e3f318e3978b395a6f8a69ecaeee02342f7c3d5871e2464a.jpg);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/brave_river_solutions_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/brave_river_solutions_logo-b34e28ea006a9c4ad31a5bb709c4cdd84a7cda6889947d632dafc30bdd4ac921.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/brown_logo.jpeg');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/brown_logo-afea2f10064b1a846bcabb6e58d726af285a67d64dbf3e4b21bcff5966144965.jpg);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ccri_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/ccri_logo-33fd38be33b83a102cd27d1315f852626e94c18f5e1144c7288ef90b9a0299ef.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/citizens_bank_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/citizens_bank_logo-d339f26823d42a38c02b64adf93a18572d33ef6f39252f9eeb4ea506f544c4ad.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/commerce_ri_logo.png');"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ed_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/edx_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/envision_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/hasbro_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/igt_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/innovex_logo.jpg');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/launchcode_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/commerce_ri_logo-d644fcd6d39dbdab3269d5416a2a4a0e2c0b85ecc3d40f8405ac18d0c5c46ea1.png);"></span>
               </div>
             </td>
           </tr>
           <tr>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/new_england_institute_of_tech_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/ed_logo-4f0839ef880087b5de127039e236917f4344fc289a0d6764428f9e15c23051c6.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/new_horizons_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/edx_logo-a96d128f0175ef0871f8bdf2b293640c7850eb5aff178f55ac58ec90aa820f14.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/prepare_ri_logo.jpg');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/envision_logo-47cb4cdc4b0c7924b1a033f998a8c4617ded8c6c5bc0a9e83e0e2c331f5ae3af.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/prov_plan_logo.jpg');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/hasbro_logo-54ade57e8a105294ea1b6770368fe21d0dc5dbdba76dd8de12cab7debb296e1c.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ptech_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/igt_logo-0951ee826b27bb5aa1b802719478b2734bb96a787c3ffaf7cd4f504bca681999.png);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/purvis_systems_logo.jpg');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/innovex_logo-72bbc1644647b3ba85da4256e69c763698d777121a5977d177edfeaf821ef229.jpg);"></span>
               </div>
             </td>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ri_dlt_logo.jpg');"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/ri_state_seal_logo.jpg');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/risd_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/rjri_logo.jpg');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/secure_future_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/senedia_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/shape_up_logo.png');"></span>
-              </div>
-            </td>
-            <td>
-              <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/tech_collective_logo.jpg');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/launchcode_logo-7c6f826582ee1b2f3db6b25f171a376f81ae7f3fcdccbfb32b13a76395036779.png);"></span>
               </div>
             </td>
           </tr>
           <tr>
             <td>
               <div>
-                <span class="knack-logo private-sector-tool-logo" style="background-image: url('/assets/univ_of_ri_logo.png');"></span>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/new_england_institute_of_tech_logo-4ac382a3ee6aa80eb00401f28ecc1834179df951795d391017d4429db67ec960.png);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/new_horizons_logo-f0eeff3c8c1e3789ee8b198811e03f1d0cc8158b6650fba23b260009cf0b5d14.png);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/prepare_ri_logo-bd9d9c747615303693c497afcaa59278ce3bca24e48cef06f8dab75c03233eb6.jpg);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/prov_plan_logo-bd9d706faeef78b274a5a04b66f7026cd90c0934a129b2928f16838d59368782.jpg);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/ptech_logo-e3e20cfbd300d71b604a4d7c78612622245cb073e6216c831421acca2cefa298.png);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/purvis_systems_logo-78239841fc94e0ad7bf47befecfe69fd60eebd2d50d88ac3bb50575253cb299c.jpg);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/ri_dlt_logo-94244656ba36322d2bc4a3fe68afca98ed06c24871c0827abe23b2e42b9a836d.jpg);"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/ri_state_seal_logo-f0e20e477ac6bc6f47db0c556484c812684fb2bb8d12fb852b3ae89fe61a6a94.jpg);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/risd_logo-53c574f04c316a2f5cf859f5201fa01292c58c6186d72f3f5a1627d798d1514b.png);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/rjri_logo-601826b879e91e2972b5978d00001fbcb8dd768186f35adf4ba6e68eefa58b7d.jpg);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/secure_future_logo-c96180625255af67bf68a0025c2fb0d07b1160415d348e42c72afab092fc3672.png);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/senedia_logo-f09ff12cfd89d27242060e4b1a63d937314e5453087e930fadd1d764b25e95b8.png);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/shape_up_logo-f4391cc1e971a11b17fad6177eb8d13a0146e592b7d467c34f9ac10a95d01698.png);"></span>
+              </div>
+            </td>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/tech_collective_logo-c0b94272b10da5b322e19c6aa7d0f9355d8806c4b7d9cbf7213cae399c1a8710.jpg);"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <span class="knack-logo private-sector-tool-logo" style="background-image: url(/assets/univ_of_ri_logo-3b4a5cfea2590de7d57bac2331f57cd3d5d3f511150b239f5b2e2f5655dfc06b.png);"></span>
               </div>
             </td>
           </tr>
